@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "name": "JavaScript 30",
+      "info": "bla bla bla",
+      "url": "https://afuh.github.io/js30/",
+      "code": "https://github.com/afuh/js30",
+      "image": "bla.jpeg",
+      "tags": ["JavaScript"]
+    },
+    {
+      "name": "Step Sequencer",
+      "info": "bla bla bla",
+      "url": "https://afuh.github.io/sequencer/",
+      "code": "https://github.com/afuh/sequencer",
+      "image": "bla.jpeg",
+      "tags": ["JQuery", "API"],
+      "API": "Web Audio"
+    },
+    {
+      "name": "Calculator",
+      "info": "bla bla bla",
+      "url": "https://afuh.github.io/calculator/",
+      "code": "https://github.com/afuh/calculator",
+      "image": "bla.jpeg",
+      "tags": ["JQuery"]
+    },
+    {
+      "name": "Sketchpad",
+      "info": "bla bla bla",
+      "url": "https://afuh.github.io/sketchpad/",
+      "code": "https://github.com/afuh/sketchpad",
+      "image": "bla.jpeg",
+      "tags": ["JQuery"]
+    },
+    {
+      "name": "Quote Machine",
+      "info": "bla bla bla",
+      "url": "https://afuh.github.io/frases/",
+      "code": "https://github.com/afuh/frases",
+      "image": "bla.jpeg",
+      "tags": ["JavaScript"]
+    },
+    {
+      "name": "Minimalistic Image Slider",
+      "info": "bla bla bla",
+      "url": "https://afuh.github.io/slider/",
+      "code": "https://github.com/afuh/slider",
+      "image": "bla.jpeg",
+      "tags": ["JavaScript"]
+    },
+    {
+      "name": "Snake Game",
+      "info": "bla bla bla",
+      "url": "https://afuh.github.io/snake-game/",
+      "code": "https://github.com/afuh/snake-game",
+      "image": "bla.jpeg",
+      "tags": ["JavaScript", "P5"]
+    },
+    {
+      "name": "Where is the ISS right now?",
+      "info": "bla bla bla",
+      "url": "http://subsequent-distance.surge.sh/",
+      "code": "https://github.com/afuh/iss",
+      "image": "bla.jpeg",
+      "tags": ["JavaScript", "API"],
+      "API": "Google Maps"
+    },
+    {
+      "name": "Weather React",
+      "info": "bla bla bla",
+      "url": "http://naughty-joke.surge.sh/",
+      "code": "https://github.com/afuh/weather",
+      "image": "bla.jpeg",
+      "tags": ["React", "API"],
+      "API": "Open Weather Map"
+    },
+    {
+      "name": "GitHub Battle",
+      "info": "bla bla bla",
+      "url": "http://faded-bun.surge.sh/",
+      "code": "https://github.com/afuh/battle",
+      "image": "bla.jpeg",
+      "tags": ["React", "API"],
+      "API": "GitHub"
+    },
+    {
+      "name": "Simple Tabbed Browsing",
+      "info": "bla bla bla",
+      "url": "https://afuh.github.io/react-browsing/",
+      "code": "https://github.com/afuh/react-browsing",
+      "image": "bla.jpeg",
+      "tags": ["React"]
+    },
+    {
+      "name": "Pinstagram",
+      "info": "bla bla bla",
+      "url": "https://pinstagram-app.herokuapp.com/",
+      "code": "https://github.com/afuh/pinstagram",
+      "image": "bla.jpeg",
+      "tags": ["Node", "Express", "MongoDB", "Mongoose", "Pug", "JavaScript", "Passport"]
+    },
+    {
+      "name": "Delicious",
+      "info": "bla bla bla",
+      "url": "https://delicious-app.herokuapp.com/",
+      "code": "https://github.com/afuh/delicious",
+      "image": "bla.jpeg",
+      "tags": ["Node", "Express", "MongoDB", "Mongoose", "Pug", "JavaScript", "Passport"]
+    },
+    {
+      "name": "Sasso",
+      "info": "bla bla bla",
+      "url": "",
+      "code": "https://github.com/afuh/sasso",
+      "image": "bla.jpeg",
+      "tags": ["Sass"]
+    }
+  ]
+}
