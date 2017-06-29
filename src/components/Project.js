@@ -1,13 +1,20 @@
 import React from 'react';
 
-class Project extends React.Component {
-  render () {
+const Project = (props) => {
+    const {name, info, url, code, image, tags} = props.data
+    const cl = "project"
     return (
-      <div>
-        Project
+    <div className={cl}>
+      <img className={`${cl}__img`}src='http://www.collared-scholar.com/wp-content/uploads/2017/02/placeholder.jpg'/>
+      <div className={`${cl}__content col`}>
+        <span className={`${cl}__name`}>{name}</span>
+        <span className={`${cl}__info`}>{info}</span>
+        <a className={`${cl}__live`} href={url} target="_blank">view it live</a>
+        <a className={`${cl}__code`} href={code} target="_blank">code</a>
+        <code className={`${cl}__tags`}>{tags.filter(a => a !== "API").map(b => `${b.toLowerCase()} `)}</code>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Project;

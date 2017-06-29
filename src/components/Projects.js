@@ -1,11 +1,12 @@
 import React from 'react';
-import { getInfo } from '../api';
+import { getInfo } from '../helpers/api';
+import Project from './Project';
 
 class Projects extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: {},
+      data: [],
     }
   }
   componentDidMount(){
@@ -15,13 +16,13 @@ class Projects extends React.Component {
     this.request(nextProps.match.params.lang);
   }
   request(path){
-    getInfo(path).then(data => this.setState({ data }))
+    this.setState({ data: getInfo(path) })
   }
   render () {
     const { data } = this.state
     return (
-      <div>
-        {this.props.match.params.lang}
+      <div className="projects row">
+        {data.map((a, i) => (<Project key={i} data={a} />))}
       </div>
     )
   }

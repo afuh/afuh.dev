@@ -1,4 +1,4 @@
-[
+export const db = [
   {
     "name": "JavaScript 30",
     "info": "bla bla bla",
@@ -13,8 +13,7 @@
     "url": "https://afuh.github.io/sequencer/",
     "code": "https://github.com/afuh/sequencer",
     "image": "bla.jpeg",
-    "tags": ["JQuery", "API"],
-    "API": "Web Audio"
+    "tags": ["JQuery", "Web Audio API", "API"]
   },
   {
     "name": "Calculator",
@@ -54,7 +53,7 @@
     "url": "https://afuh.github.io/snake-game/",
     "code": "https://github.com/afuh/snake-game",
     "image": "bla.jpeg",
-    "tags": ["JavaScript", "P5"]
+    "tags": ["JavaScript", "P5.js"]
   },
   {
     "name": "Where is the ISS right now?",
@@ -62,8 +61,7 @@
     "url": "http://subsequent-distance.surge.sh/",
     "code": "https://github.com/afuh/iss",
     "image": "bla.jpeg",
-    "tags": ["JavaScript", "API"],
-    "API": "Google Maps"
+    "tags": ["JavaScript", "Google Maps API", "API"]
   },
   {
     "name": "Weather React",
@@ -71,8 +69,7 @@
     "url": "http://naughty-joke.surge.sh/",
     "code": "https://github.com/afuh/weather",
     "image": "bla.jpeg",
-    "tags": ["React", "API"],
-    "API": "Open Weather Map"
+    "tags": ["React", "Open Weather Map API", "API"]
   },
   {
     "name": "GitHub Battle",
@@ -80,8 +77,7 @@
     "url": "http://faded-bun.surge.sh/",
     "code": "https://github.com/afuh/battle",
     "image": "bla.jpeg",
-    "tags": ["React", "API"],
-    "API": "GitHub"
+    "tags": ["React", "GitHub API", "API"]
   },
   {
     "name": "Simple Tabbed Browsing",
@@ -97,7 +93,7 @@
     "url": "https://pinstagram-app.herokuapp.com/",
     "code": "https://github.com/afuh/pinstagram",
     "image": "bla.jpeg",
-    "tags": ["Node", "Express", "MongoDB", "Mongoose", "Pug", "JavaScript", "Passport"]
+    "tags": ["Node", "Express", "MongoDB", "Mongoose", "Pug", "Passport"]
   },
   {
     "name": "Delicious",
@@ -105,7 +101,7 @@
     "url": "https://delicious-app.herokuapp.com/",
     "code": "https://github.com/afuh/delicious",
     "image": "bla.jpeg",
-    "tags": ["Node", "Express", "MongoDB", "Mongoose", "Pug", "JavaScript", "Passport"]
+    "tags": ["Node", "Express", "MongoDB", "Mongoose", "Pug", "Passport", "Google Maps API", "API"]
   },
   {
     "name": "Sasso",
@@ -116,7 +112,7 @@
     "tags": ["Sass"]
   },
   {
-    "name": "Sasso",
+    "name": "Recreations",
     "info": "bla bla bla",
     "url": "",
     "code": "https://github.com/afuh/sasso",
