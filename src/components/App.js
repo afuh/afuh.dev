@@ -17,9 +17,10 @@ const App = () => {
           <Route exact path="/readme" component={Readme} />
           <Route path="/p/:lang" component={Projects} />
           <Route path="/p/:lang/:id" component={Project} />
-          <Route render={() =>  <p>Page not found T_T </p> } />
+          <Route render={() => <p>page not found T_T </p> } />
         </Switch>
       </div>
+      <img src="" className="" alt=""/>
     </Router>
   )
 }

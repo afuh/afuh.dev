@@ -4,7 +4,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://afuh.github.io/js30/",
     "code": "https://github.com/afuh/js30",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/js30.jpg')}`,
     "tags": ["JavaScript"]
   },
   {
@@ -12,7 +12,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://afuh.github.io/sequencer/",
     "code": "https://github.com/afuh/sequencer",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/sequencer.jpg')}`,
     "tags": ["JQuery", "Web Audio API", "API"]
   },
   {
@@ -20,7 +20,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://afuh.github.io/calculator/",
     "code": "https://github.com/afuh/calculator",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/calc.jpg')}`,
     "tags": ["JQuery"]
   },
   {
@@ -28,7 +28,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://afuh.github.io/sketchpad/",
     "code": "https://github.com/afuh/sketchpad",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/sketch.jpg')}`,
     "tags": ["JQuery"]
   },
   {
@@ -36,7 +36,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://afuh.github.io/frases/",
     "code": "https://github.com/afuh/frases",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/quote.jpg')}`,
     "tags": ["JavaScript"]
   },
   {
@@ -44,7 +44,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://afuh.github.io/slider/",
     "code": "https://github.com/afuh/slider",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/slide.jpg')}`,
     "tags": ["JavaScript"]
   },
   {
@@ -52,7 +52,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://afuh.github.io/snake-game/",
     "code": "https://github.com/afuh/snake-game",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/snake.jpg')}`,
     "tags": ["JavaScript", "P5.js"]
   },
   {
@@ -60,7 +60,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "http://subsequent-distance.surge.sh/",
     "code": "https://github.com/afuh/iss",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/iss.jpg')}`,
     "tags": ["JavaScript", "Google Maps API", "API"]
   },
   {
@@ -68,7 +68,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "http://naughty-joke.surge.sh/",
     "code": "https://github.com/afuh/weather",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/weather.jpg')}`,
     "tags": ["React", "Open Weather Map API", "API"]
   },
   {
@@ -76,7 +76,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "http://faded-bun.surge.sh/",
     "code": "https://github.com/afuh/battle",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/battle.jpg')}`,
     "tags": ["React", "GitHub API", "API"]
   },
   {
@@ -84,7 +84,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://afuh.github.io/react-browsing/",
     "code": "https://github.com/afuh/react-browsing",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/menu.jpg')}`,
     "tags": ["React"]
   },
   {
@@ -92,7 +92,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://pinstagram-app.herokuapp.com/",
     "code": "https://github.com/afuh/pinstagram",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/pinsta.jpg')}`,
     "tags": ["Node", "Express", "MongoDB", "Mongoose", "Pug", "Passport"]
   },
   {
@@ -100,7 +100,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "https://delicious-app.herokuapp.com/",
     "code": "https://github.com/afuh/delicious",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/delicious.jpg')}`,
     "tags": ["Node", "Express", "MongoDB", "Mongoose", "Pug", "Passport", "Google Maps API", "API"]
   },
   {
@@ -108,7 +108,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "",
     "code": "https://github.com/afuh/sasso",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/placeholder.jpg')}`,
     "tags": ["Sass"]
   },
   {
@@ -116,7 +116,7 @@ export const db = [
     "info": "bla bla bla",
     "url": "",
     "code": "https://github.com/afuh/sasso",
-    "image": "bla.jpeg",
+    "image": `${require('../images/screenshots/placeholder.jpg')}`,
     "tags": ["Sass"]
   }
 ]
