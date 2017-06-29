@@ -1,0 +1,84 @@
+$yellow: #e2b882
+$green: #5cc187
+$gray: #9da5b4
+
+.nav
+  position: relative
+  +grid(2, 12)
+  &__fixed
+    +size(100%, 100%)
+    position: fixed
+    top: 0
+
+// Atom style
+
+.nav
+  .page-name
+    color: $green
+  border-right: 1px solid #181a1f
+  border-bottom: 1px solid #181a1f
+  background: #21252b
+  line-height: 1.4
+  &__fixed
+    box-shadow: inset 0 -1px 0 #181a1f
+    a,li
+      font-size: 13px
+      line-height: 1.8em
+      color: $gray
+      align-items: center
+      display: flex
+      span
+        margin-right: 6px
+    a.lang:hover
+      color: $yellow
+    a.contact:hover
+      color: $green
+  .l1
+    margin-left: 4px
+  .l2
+    margin-left: 20px
+  .l3
+    margin-left: 36px
+  .l4
+    margin-left: 66px
+  span.icon
+    &-js
+      +size(14px, 14px)
+      background: url(./images/icons/js.png)
+    &-root
+      +size(27px, 15px)
+      background: url(./images/icons/root2.png)
+    &-book
+      +size(16px, 12px)
+      background: url(./images/icons/book.png)
+    &-folder
+      +size(30px, 12px)
+      background: url(./images/icons/folder.png)
+    &-sass
+      +size(16px, 12px)
+      background: url(./images/icons/sass.png)
+    &-codepen
+      +size(16px, 16px)
+      background: url(./images/icons/cp.png)
+    &-github
+      +size(16px, 16px)
+      background: url(./images/icons/gh.png)
+    &-js,
+    &-root,
+    &-sass,
+    &-book,
+    &-codepen,
+    &-github,
+    &-folder
+      background-size: cover
+      background-repeat: no-repeat
+
+
+.nav__active-js, .nav__active-sass
+  color: $yellow !important
+.nav__active-js
+  span
+    background: url(./images/icons/js-active.png) !important
+.nav__active-sass
+  span
+    background: url(./images/icons/sass-active.png) !important

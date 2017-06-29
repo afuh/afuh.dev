@@ -1,0 +1,46 @@
+.row
+  display: flex
+  flex-wrap: wrap
+
+.col
+  display: flex
+  flex-flow: column
+
+=size($w, $h)
+  width: $w
+  height: $h
+
+=position($x, $y)
+  justify-content: $x
+  align-items: $y
+
+=font($size, $weight)
+  font-size: $size
+  font-weight: $weight
+
+ul
+  padding-left: 0
+  margin: 0
+
+=b($c: red)
+  border: 1px solid $c
+
+=grid($col: 1, $total: 12)
+  flex-basis: percentage($col/$total)
+
+$family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif
+$shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08)
+
+*
+  box-sizing: border-box
+  list-style-type: none
+  text-decoration: none
+
+body
+  font-family: $family
+  padding: 0
+  margin: 0 auto
+
+img
+  width: 100%
+  height: auto

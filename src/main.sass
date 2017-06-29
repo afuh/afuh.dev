@@ -1,0 +1,23 @@
+@import sass/_reset
+@import sass/_navbar
+
+.projects
+  +grid(10, 12)
+  justify-content: flex-start
+
+.project
+  position: relative
+  +grid(1,2)
+  &__content
+    +size(100%, 100%)
+    +position(center, center)
+    color: black
+    background: white
+    position: absolute
+    top: 0
+    transition: all 0.2s
+    opacity: 0
+    z-index: 999
+    &:hover
+      opacity: 1
+      background: rgba(white, 0.7)
