@@ -1,0 +1,49 @@
+.project
+  position: relative
+  &__warper
+    position: absolute
+    z-index: 999
+    top: 0
+    +size(100%, 100%)
+    +position(center, center)
+    opacity: 0
+    background: black
+    transition: all 0.5s
+    &:hover
+      opacity: 1
+      background: rgba($background, 0.9)
+  &__content
+    background: #fff
+    padding: 20px
+    max-width: 60%
+    min-width: 410px
+    height: auto
+    +position(center, center)
+    color: black
+    box-shadow: 0 17px 50px 0 rgba(black, 0.2), 0 12px 15px 0 rgba(black, 0.25)
+  &__name
+    +font(24px, 400)
+    margin-bottom: 10px
+    letter-spacing: .15em
+  &__tags
+    +font(16px, 200)
+  &__links
+    font-weight: 600
+    margin: 20px
+    justify-content: space-around
+    width: 40%
+  &__info
+    font-weight: 200
+  &__live,
+  &__code
+    text-decoration: none
+    &:hover
+      text-decoration: none
+  &__live
+    color: color(orange)
+    &:hover
+      color: desaturate(color(orange), 40%)
+  &__code
+    color: color(lightgreen)
+    &:hover
+      color: desaturate(color(lightgreen), 40%)

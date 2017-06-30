@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Nav from './Nav';
 import Projects from './Projects';
 import Project from './Project';
-import Random from './Random';
 import Readme from './Readme';
 
 const App = () => {
@@ -13,14 +12,13 @@ const App = () => {
       <div className="main row">
         <Nav />
         <Switch>
-          <Route exact path="/" component={Random} />
-          <Route exact path="/readme" component={Readme} />
+          <Route exact path="/" component={Projects} />
+          <Route path="/readme" component={Readme} />
           <Route path="/p/:lang" component={Projects} />
           <Route path="/p/:lang/:id" component={Project} />
           <Route render={() => <p>page not found T_T </p> } />
         </Switch>
       </div>
-      <img src="" className="" alt=""/>
     </Router>
   )
 }

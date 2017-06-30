@@ -1,16 +1,14 @@
 $yellow: #e2b882
 $green: #5cc187
 $gray: #9da5b4
+$background: #21252b
 
 .nav
   +grid(2, 12)
   &__fixed
-    +size(100%, 100%)
+    +size(170px, auto)
     position: fixed
-    top: 0
-
 // Atom style
-
 .nav
   min-width: 170px
   .page-name
@@ -18,13 +16,12 @@ $gray: #9da5b4
       color: $green
   border-right: 1px solid #181a1f
   border-bottom: 1px solid #181a1f
-  background: #21252b
+  background: $background
   line-height: 1.4
   &__fixed
     padding: 6px 2px
-    box-shadow: inset 0 -1px 0 #181a1f
     a,li
-      font-size: 13px
+      font-size: 14px
       line-height: 1.8em
       color: $gray
       align-items: center

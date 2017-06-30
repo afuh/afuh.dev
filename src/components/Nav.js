@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const Nav = () => {
-  const links = ['JavaScript', 'React', 'JQuery', 'Node', 'API'];
+  const links = ['JavaScript', 'React', 'Node', 'JQuery', 'API'];
   return (
-    <div className='nav'>
+    <nav className='main__nav nav'>
       <ul className='nav__fixed col'>
-        <li className="l1 page-name"><span className="icon-root"></span><a href="/">axel fuhrmann</a></li>
+        <li className="l1 page-name"><span className="icon-root"></span><Link to="/">axel fuhrmann</Link></li>
         <li className="l2"><span className="icon-folder"></span>src</li>
         <li className="l3"><span className="icon-folder"></span>projects</li>
         {links.map(link => (
@@ -21,7 +21,7 @@ const Nav = () => {
         <li className="l4"><span className="icon-codepen"></span><a className="contact" href="https://codepen.io/mage20">codepen</a></li>
         <li className="l4"><span className="icon-mail"></span><a className="contact" href="mailto:axelfuh@gmail.com">email</a></li>
       </ul>
-    </div>
+    </nav>
   )
 }
 
