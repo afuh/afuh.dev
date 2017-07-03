@@ -15,8 +15,7 @@ const App = () => {
           <Route exact path="/" component={Projects} />
           <Route path="/readme" component={Readme} />
           <Route path="/p/:lang" component={Projects} />
-          <Route path="/p/:lang/:id" component={Project} />
-          <Route render={() => <p>page not found T_T </p> } />
+          <Route render={() => <p>page not found</p> } />
         </Switch>
       </div>
     </Router>

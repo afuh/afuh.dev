@@ -3,16 +3,12 @@
 @import sass/_header
 @import sass/_project
 
-
 .main
   margin: 0 auto
   max-width: 1920px
   min-height: 100vh
   flex-wrap: nowrap
   &__nav
+    +grid(2, 12)
   &__section
-
-.projects
-  // border-top-right-radius: 2em
-  // border-bottom-right-radius: 2em
-  overflow: hidden
+    +grid(10, 12)

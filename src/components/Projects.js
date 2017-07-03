@@ -22,7 +22,7 @@ class Projects extends React.Component {
     if (!path) {
       this.request('Home')
     } else {
-      this.request(this.props.match.params.lang);
+      this.request(path);
     }
   }
   componentWillReceiveProps(nextProps) {
@@ -30,7 +30,7 @@ class Projects extends React.Component {
     if (!path) {
       this.request('Home')
     } else {
-      this.request(nextProps.match.params.lang);
+      this.request(path);
     }
   }
   request(path){
@@ -42,7 +42,7 @@ class Projects extends React.Component {
     return (
       <div className="main__section col">
         <Header title={path ? path : "Latests"} />
-        <section className="projects col">
+        <section className="projects">
           {data.map((a, i) => (<Project key={i} data={a} />))}
         </section>
       </div>

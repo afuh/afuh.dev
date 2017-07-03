@@ -2,15 +2,16 @@ $yellow: #e2b882
 $green: #5cc187
 $gray: #9da5b4
 $background: #21252b
+@import url('https://fonts.googleapis.com/css?family=Space+Mono')
 
 .nav
-  +grid(2, 12)
   &__fixed
-    +size(170px, auto)
+    font-family: 'Space Mono', monospace
+    +size(200px, auto)
     position: fixed
 // Atom style
 .nav
-  min-width: 170px
+  min-width: 200px
   .page-name
     a
       color: $green
@@ -21,14 +22,16 @@ $background: #21252b
   &__fixed
     padding: 6px 2px
     a,li
-      font-size: 14px
-      line-height: 1.8em
+      +font(15px, 400)
+      line-height: 2.4em
       color: $gray
       align-items: center
       display: flex
       transition: all 0.3s
       span
         margin-right: 6px
+    a
+      color: whitesmoke
     a.yellow:hover
       color: $yellow
     a.contact:hover
@@ -91,3 +94,13 @@ $background: #21252b
 .nav__active-book
   span
     background: url(./images/icons/book-active.png) !important
+
+.appear-appear
+  opacity: 0.01
+  transform: translateX(-120px)
+
+.appear-appear
+  &.appear-appear-active
+    opacity: 1
+    transition: all .3s
+    transform: translateX(0)
