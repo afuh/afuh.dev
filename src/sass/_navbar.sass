@@ -17,7 +17,7 @@ $background: #21252b
       color: $green
   border-right: 1px solid #181a1f
   border-bottom: 1px solid #181a1f
-  background: $background
+  background: transparent
   line-height: 1.4
   &__fixed
     padding: 6px 2px
@@ -31,7 +31,7 @@ $background: #21252b
       span
         margin-right: 6px
     a
-      color: whitesmoke
+      color: color(black)
     a.yellow:hover
       color: $yellow
     a.contact:hover
@@ -47,9 +47,9 @@ $background: #21252b
   .l5
     margin-left: 66px
   span.icon
-    &-js
-      +size(14px, 14px)
-      background: url(./images/icons/js.png)
+    // &-js
+    //   +size(14px, 14px)
+    //   background: url(./images/icons/js.png)
     &-root
       +size(27px, 15px)
       background: url(./images/icons/root2.png)
@@ -59,9 +59,9 @@ $background: #21252b
     &-folder
       +size(30px, 12px)
       background: url(./images/icons/folder.png)
-    &-sass
-      +size(16px, 12px)
-      background: url(./images/icons/sass.png)
+    // &-sass
+    //   +size(16px, 12px)
+    //   background: url(./images/icons/sass.png)
     &-codepen
       +size(16px, 16px)
       background: url(./images/icons/cp.png)
@@ -71,9 +71,9 @@ $background: #21252b
     &-mail
       +size(16px, 16px)
       background: url(./images/icons/mail.png)
-    &-js,
+    // &-js,
     &-root,
-    &-sass,
+    // &-sass,
     &-book,
     &-codepen,
     &-github,
@@ -85,19 +85,21 @@ $background: #21252b
 
 .nav__active-js, .nav__active-sass, .nav__active-book
   color: $yellow !important
-.nav__active-js
-  span
-    background: url(./images/icons/js-active.png) !important
-.nav__active-sass
-  span
-    background: url(./images/icons/sass-active.png) !important
-.nav__active-book
-  span
-    background: url(./images/icons/book-active.png) !important
+  border-bottom: 2px solid $yellow
+
+// .nav__active-js
+//   span
+//     background: url(./images/icons/js-active.png) !important
+// .nav__active-sass
+//   span
+//     background: url(./images/icons/sass-active.png) !important
+// .nav__active-book
+//   span
+//     background: url(./images/icons/book-active.png) !important
 
 .appear-appear
   opacity: 0.01
-  transform: translateX(-120px)
+  transform: translateX(-100%)
 
 .appear-appear
   &.appear-appear-active

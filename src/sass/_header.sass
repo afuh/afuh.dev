@@ -1,7 +1,18 @@
 .header
+  position: relative
   display: flex
   +position(flex-start, center)
   +font(18px, 600)
   color: color(black)
   height: 40px
-  padding-left: 30px
+  padding-left: 20px
+  span
+    padding: 2px
+    border-bottom: 1px solid color(black)
+  span::before
+    content: ""
+    +size(24px, 22px)
+    position: absolute
+    left: 0
+    top: 10px
+    border-bottom: 1px solid color(black)

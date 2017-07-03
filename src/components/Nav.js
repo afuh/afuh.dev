@@ -20,12 +20,12 @@ const Nav = () => {
           <span className="icon-folder"></span><span>projects</span>
         </li>
         {links.map(link => (
-          <li className="l5" key={link}>
-            <NavLink className="yellow" activeClassName='nav__active-js' to={`/p/${link}`}><span className="icon-js"></span>{link}</NavLink>
+          <li className="l5 lang" key={link}>
+            <NavLink className="yellow" activeClassName='nav__active-js' to={`/p/${link}`}>{link}</NavLink>
           </li>
         ))}
         <li className="l5">
-          <NavLink className="yellow" activeClassName='nav__active-sass' to="/p/Sass"><span className="icon-sass"></span>Sass</NavLink>
+          <NavLink className="yellow" activeClassName='nav__active-sass' to="/p/Sass">Sass</NavLink>
         </li>
         <li className="l2">
           <span className="icon-folder"></span><span>contact me</span>

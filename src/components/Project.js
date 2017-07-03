@@ -16,7 +16,6 @@ const Project = (props) => {
             <a className={`${cl}__live`} href={url} target="_blank">See it live</a>
             <a className={`${cl}__code`} href={code} target="_blank">Code</a>
           </div>
-          <span></span>
           <span className={`${cl}__tags`}>{tags.filter(a => a !== "API").map(b => `${b.toLowerCase()} `)}</span>
         </div>
       </div>

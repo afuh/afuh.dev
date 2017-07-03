@@ -2,7 +2,7 @@ import React from 'react';
 import { getInfo } from '../helpers/api';
 import Project from './Project';
 
-const Header = (props) => {
+export const Header = (props) => {
   return (
       <div className="header">
         <header><span>{props.title}</span></header>
@@ -41,7 +41,7 @@ class Projects extends React.Component {
     const path = this.props.match.params.lang
     return (
       <div className="main__section col">
-        <Header title={path ? path : "Latests"} />
+        <Header title={path} />
         <section className="projects">
           {data.map((a, i) => (<Project key={i} data={a} />))}
         </section>
