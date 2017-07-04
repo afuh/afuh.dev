@@ -14,6 +14,8 @@ export const db = [
     url: "http://subsequent-distance.surge.sh/",
     code: "https://github.com/afuh/iss",
     image: `${require('../images/screenshots/iss.jpg')}`,
+    gif: `${require('../images/gifs/iss.gif')}`,
+    video: `${require('../images/videos/iss.mp4')}`,
     tags: ["JavaScript", "Google Maps API", "API"],
     latest: true
   },
@@ -68,6 +70,8 @@ export const db = [
     url: "https://afuh.github.io/snake-game/",
     code: "https://github.com/afuh/snake-game",
     image: `${require('../images/screenshots/snake.jpg')}`,
+    gif: `${require('../images/gifs/snake.gif')}`,
+    video: `${require('../images/videos/snake2.mp4')}`,
     tags: ["JavaScript", "P5.js"],
     latest: false
   },
