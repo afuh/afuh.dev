@@ -16,3 +16,5 @@ export const getInfo = (section) => {
   }
   return db.filter(i => i.tags.includes(section))
 }
+
+export const getProject = project => db.filter(i => i.name.includes(project));

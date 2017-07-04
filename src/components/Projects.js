@@ -43,7 +43,7 @@ class Projects extends React.Component {
       <div className="main__section col">
         <Header title={path} />
         <section className="projects">
-          {data.map((a, i) => (<Project key={i} data={a} />))}
+          {data.map((a, i) => (<Project path={path} key={i} data={a} />))}
         </section>
       </div>
     )
