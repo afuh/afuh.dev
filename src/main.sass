@@ -12,3 +12,23 @@
     +grid(2, 12)
   &__section
     +grid(10, 12)
+
+
+
++break(1200px)
+  section.projects
+    padding: 0
+  div.project__content
+    +size(100%,100%)
+
+
++break(md)
+  section.projects
+    flex-flow: column
+
+  div.project__content
+    +size(90%, auto)
+
++break(sm)
+  div.project__content
+    +size(100%,100%)

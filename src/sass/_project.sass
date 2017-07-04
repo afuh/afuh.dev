@@ -1,16 +1,18 @@
 .projects
+  width: 100%
   display: flex
-  flex-flow: row wrap
-  justify-content: flex-start
+  flex-flow: column wrap
+  align-items: center
   padding: 10px 20px
   margin: 0 auto
-
+  background: #fff
+  z-index: 2
 
 .project
+  max-width: 1000px
   position: relative
-  padding: 3px
-  +grid(1, 2)
-  border: 1px solid rgba(color(black), 0.1)
+  margin-bottom: 20px
+  box-shadow: $shadow
   img
     transition: all 2s
   &:hover

@@ -9,14 +9,13 @@ $background: #21252b
     font-family: 'Space Mono', monospace
     +size(200px, auto)
     position: fixed
-// Atom style
+
 .nav
   min-width: 200px
   .page-name
     a
       color: $green
-  border-right: 1px solid #181a1f
-  border-bottom: 1px solid #181a1f
+  border-right: 1px solid color(black)
   background: transparent
   line-height: 1.4
   &__fixed
@@ -82,27 +81,32 @@ $background: #21252b
       background-size: cover
       background-repeat: no-repeat
 
+a.yellow
+  position: relative
+
+a.yellow::after
+  content: ""
+  position: absolute
+  transform: scaleX(0)
+  border-bottom: 1px solid color(black)
+  +size(500px, 1px)
+  z-index: -1
+  bottom: 0
+  left: 0
+  transition: transform 0.2s ease
 
 .nav__active-js, .nav__active-sass, .nav__active-book
   color: $yellow !important
-  border-bottom: 2px solid $yellow
+  // border-bottom: 2px solid $yellow
+  &::after
+    transform: scaleX(1) !important
 
-// .nav__active-js
-//   span
-//     background: url(./images/icons/js-active.png) !important
-// .nav__active-sass
-//   span
-//     background: url(./images/icons/sass-active.png) !important
-// .nav__active-book
-//   span
-//     background: url(./images/icons/book-active.png) !important
-
-.appear-appear
+.slide-appear
   opacity: 0.01
   transform: translateX(-100%)
 
-.appear-appear
-  &.appear-appear-active
+.slide-appear
+  &.slide-appear-active
     opacity: 1
     transition: all .3s
     transform: translateX(0)

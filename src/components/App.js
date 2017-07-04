@@ -5,6 +5,7 @@ import Nav from './Nav';
 import Projects from './Projects';
 import Home from './Home';
 import Readme from './Readme';
+import More from './More';
 
 const App = () => {
   return (
@@ -14,8 +15,9 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/readme" component={Readme} />
+          <Route path="/more" component={More} />
           <Route path="/p/:lang" component={Projects} />
-          <Route render={() => <p>page not found</p> } />
+          <Route render={() => <p>page not found T_T</p> } />
         </Switch>
       </div>
     </Router>

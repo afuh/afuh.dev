@@ -116,15 +116,15 @@ export const db = [
     tags: ["Sass"],
     latest: false
   },
-  {
-    name: "JavaScript 30",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    url: "https://afuh.github.io/js30/",
-    code: "https://github.com/afuh/js30",
-    image: `${require('../images/screenshots/js30.jpg')}`,
-    tags: ["JavaScript"],
-    latest: false
-  },
+  // {
+  //   name: "JavaScript 30",
+  //   info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   url: "https://afuh.github.io/js30/",
+  //   code: "https://github.com/afuh/js30",
+  //   image: `${require('../images/screenshots/js30.jpg')}`,
+  //   tags: ["JavaScript"],
+  //   latest: false
+  // },
   {
     name: "Recreations",
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

@@ -13,7 +13,7 @@ const Project = (props) => {
           <span className={`${cl}__name`}>{name}</span>
           <span className={`${cl}__info`}>{info}</span>
           <div className={`${cl}__links row`}>
-            <a className={`${cl}__live`} href={url} target="_blank">See it live</a>
+            <a className={`${cl}__live`} href={url}>See it live</a>
             <a className={`${cl}__code`} href={code} target="_blank">Code</a>
           </div>
           <span className={`${cl}__tags`}>{tags.filter(a => a !== "API").map(b => `${b.toLowerCase()} `)}</span>
