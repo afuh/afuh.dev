@@ -12,7 +12,7 @@ const Zoom = (props) => {
         transitionAppear={true}
         transitionAppearTimeout={900}
         transitionEnter={false}
-        transitionLeave={false}>
+        transitionLeaveTimeout={300}>
       <div className={`${cl}__warper`}>
         <h1 className={`${cl}__name`}>{name}</h1>
         <div className={`${cl}__img`}>

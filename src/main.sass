@@ -2,6 +2,7 @@
 @import sass/_navbar
 @import sass/_header
 @import sass/_project
+@import sass/_zoom
 
 .main
   margin: 0 auto
@@ -21,14 +22,13 @@
   div.project__content
     +size(100%,100%)
 
-
 +break(md)
   section.projects
     flex-flow: column
 
-  div.project__content
-    +size(90%, auto)
-
 +break(sm)
-  div.project__content
-    +size(100%,100%)
+  .project__warper
+    h1
+      font-size: 20px
+      border: none
+      box-shadow: none
