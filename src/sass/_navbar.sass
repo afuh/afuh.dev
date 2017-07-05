@@ -2,16 +2,15 @@ $yellow: #e2b882
 $green: #5cc187
 $gray: #9da5b4
 $background: #21252b
-@import url('https://fonts.googleapis.com/css?family=Space+Mono')
 
 .nav
+  min-width: 200px
   &__fixed
-    font-family: 'Space Mono', monospace
+    transform: translateX(0)
     +size(200px, auto)
     position: fixed
 
 .nav
-  min-width: 200px
   .page-name
     a
       color: $green
@@ -21,7 +20,7 @@ $background: #21252b
   &__fixed
     padding: 6px 2px
     a,li
-      +font(15px, 400)
+      +font(16px, 200)
       line-height: 2.4em
       color: $gray
       align-items: center
@@ -46,9 +45,6 @@ $background: #21252b
   .l5
     margin-left: 66px
   span.icon
-    // &-js
-    //   +size(14px, 14px)
-    //   background: url(./images/icons/js.png)
     &-root
       +size(27px, 15px)
       background: url(./images/icons/root2.png)
@@ -58,9 +54,6 @@ $background: #21252b
     &-folder
       +size(30px, 12px)
       background: url(./images/icons/folder.png)
-    // &-sass
-    //   +size(16px, 12px)
-    //   background: url(./images/icons/sass.png)
     &-codepen
       +size(16px, 16px)
       background: url(./images/icons/cp.png)
@@ -70,9 +63,7 @@ $background: #21252b
     &-mail
       +size(16px, 16px)
       background: url(./images/icons/mail.png)
-    // &-js,
     &-root,
-    // &-sass,
     &-book,
     &-codepen,
     &-github,
@@ -90,7 +81,6 @@ a.yellow::after
   transform: scaleX(0)
   border-bottom: 1px solid color(black)
   +size(500px, 1px)
-  z-index: -1
   bottom: 0
   left: 0
   transition: transform 0.2s ease

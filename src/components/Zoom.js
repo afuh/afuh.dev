@@ -7,29 +7,31 @@ const Zoom = (props) => {
   const {name, info, url, code, image, tags, video, gif} = data
   const cl = "zoom"
   return (
-    <CSSTransitionGroup className={cl} component="article"
-        transitionName="fadeIn"
-        transitionAppear={true}
-        transitionAppearTimeout={900}
-        transitionEnter={false}
-        transitionLeaveTimeout={300}>
-      <div className={`${cl}__warper`}>
-        <h1 className={`${cl}__name`}>{name}</h1>
-        <div className={`${cl}__img`}>
-          <img src={gif || image} className="" alt=""/>
-        </div>
-        <div className={`${cl}__content`}>
-          <span className={`${cl}__info`}>{info}</span>
-          <div className={`${cl}__links row`}>
-            <a className={`${cl}__live`} href={url}>See it live</a>
-            <a className={`${cl}__code`} href={code} target="_blank">Code</a>
-          </div>
+    <div className="main__section">
+      <CSSTransitionGroup className={cl} component="article"
+          transitionName="fadeIn"
+          transitionAppear={true}
+          transitionAppearTimeout={300}
+          transitionEnter={false}
+          transitionLeave={false}>
+        <div className={`${cl}__warper`}>
+          <h1 className={`${cl}__name`}>{name}</h1>
           <span className={`${cl}__tags`}>{tags.filter(a => a !== "API").map(b => `${b.toLowerCase()} `)}</span>
-          <span className={`${cl}__back`} onClick={props.history.goBack}>⇦</span>
+          <div className={`${cl}__img`}>
+            <img src={gif || image} className="" alt=""/>
+          </div>
+          <div className={`${cl}__content`}>
+            <span className={`${cl}__info`}>{info}</span>
+            <div className={`${cl}__links row`}>
+              <a className={`${cl}__live`} href={url}>See it live</a>
+              <a className={`${cl}__code`} href={code} target="_blank">Code</a>
+            </div>
+            <span className={`${cl}__back`} onClick={props.history.goBack}>⇦</span>
+          </div>
         </div>
-      </div>
-    </CSSTransitionGroup>
-    )
+      </CSSTransitionGroup>
+    </div>
+  )
 }
 
 export default Zoom
