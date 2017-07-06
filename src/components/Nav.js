@@ -6,7 +6,7 @@ const Lang = (props) => {
   const links = ['javascript', 'react', 'node', 'jquery', 'API', 'more'];
   return (
     <div>
-      <div className="list-header">Tools</div>
+      <div className="list-header">Tags</div>
       <ul className="nav__lang-list">
         {links.map(link => (
           <li

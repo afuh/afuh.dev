@@ -2,11 +2,13 @@ import React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 
+import Mark from './Mark'
+
 import { getProject, countTags } from '../helpers/api';
 
 const Zoom = (props) => {
   const data = getProject(props.match.params.name)[0]
-  const {name, info, url, code, image, tags, video, gif} = data
+  const {name, info, url, code, image, tags, video, gif, md} = data
   const cl = "zoom"
   return (
     <div className="main__section">
@@ -31,12 +33,12 @@ const Zoom = (props) => {
           <div className={`${cl}__img`}>
             <img src={gif || image} className="" alt=""/>
           </div>
+          <div className={`${cl}__links row`}>
+            <a className={`${cl}__live`} href={url}>See it live</a>
+            <a className={`${cl}__code`} href={code} target="_blank">Code</a>
+          </div>
           <div className={`${cl}__content`}>
-            <span className={`${cl}__info`}>{info}</span>
-            <div className={`${cl}__links row`}>
-              <a className={`${cl}__live`} href={url}>See it live</a>
-              <a className={`${cl}__code`} href={code} target="_blank">Code</a>
-            </div>
+            <div className={`${cl}__info`}>{md ? <Mark md={md}/> : info}</div>
             <span className={`${cl}__back`} onClick={props.history.goBack}>⇦</span>
           </div>
         </div>

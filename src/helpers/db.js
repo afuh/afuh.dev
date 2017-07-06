@@ -1,7 +1,8 @@
 export const db = [
   {
     name: "Pinstagram",
-    info: "Pinstagram is a full stack Instagram clone. It's the result of exercising with Node, MongoDB and its frameworks. The goal was to build a functional clone of some Internet-based photo-sharing application.",
+    info: `Pinstagram is a full stack Instagram clone. It's the result of exercising with Node, MongoDB and its frameworks. The goal was to build a functional clone of some Internet-based photo-sharing application.`,
+    md: `${require('../markdown/pinsta.md')}`,
     url: "https://pinstagram-app.herokuapp.com/",
     code: "https://github.com/afuh/pinstagram",
     image: `${require('../images/screenshots/pinsta.jpg')}`,
@@ -105,6 +106,7 @@ export const db = [
   {
     name: "Now That's Delicious!",
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    md: `${require('../markdown/delicious.md')}`,
     url: "https://delicious-app.herokuapp.com/",
     code: "https://github.com/afuh/delicious",
     image: `${require('../images/screenshots/delicious.jpg')}`,
@@ -114,6 +116,7 @@ export const db = [
   {
     name: "Sasso",
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    md: `${require('../markdown/sasso.md')}`,
     url: "",
     code: "https://github.com/afuh/sasso",
     image: `${require('../images/screenshots/placeholder.jpg')}`,

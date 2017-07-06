@@ -40,7 +40,7 @@ module.exports = {
         use: isProd ? cssProd : cssDev
       },
       {
-        test: /\.(jpe?g|png|gif|svg|mp4|gif|webm)$/i,
+        test: /\.(jpe?g|png|gif|svg|mp4|gif|webm|md)$/i,
         use: 'file-loader?name=images/[hash:6].[ext]'
       }
     ]
