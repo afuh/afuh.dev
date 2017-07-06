@@ -1,95 +1,68 @@
 $yellow: #e2b882
 $green: #5cc187
 $gray: #9da5b4
-$background: #21252b
 
 .nav
-  min-width: 200px
+  min-width: 160px
+  border-right: 1px solid color(lightgray)
+  background: whitesmoke
+
   &__fixed
     transform: translateX(0)
-    +size(200px, auto)
+    +size(160px, auto)
     position: fixed
 
-.nav
-  .page-name
-    a
-      color: $green
-  border-right: 1px solid color(black)
-  background: transparent
-  line-height: 1.4
-  &__fixed
-    padding: 6px 2px
-    a,li
-      +font(16px, 200)
-      line-height: 2.4em
-      color: $gray
-      align-items: center
+    &-header
+      +center
+      padding: 20px 0
+      border-bottom: 1px solid color(lightgray)
+      .n
+        font-weight: 600
+        color: color(black)
+        text-transform: uppercase
+
+  &__list-warper
+    padding: 6px
+
+  .list-header
+    padding: 14px 0 4px
+    text-transform: uppercase
+    +font(13px, 400)
+    color: color(gray)
+
+  &__lang-list, &__contact-list
+    padding-left: 12px
+    a, li
+      +font(15px, 200)
+      line-height: 1.8em
       display: flex
-      transition: all 0.3s
-      span
-        margin-right: 6px
-    a
+      align-items: center
       color: color(black)
-    a.yellow:hover
+    a.language:hover
       color: $yellow
     a.contact:hover
       color: $green
-  .l1
-    margin-left: 4px
-  .l2
-    margin-left: 20px
-  .l3
-    margin-left: 38px
-  .l4
-    margin-left: 48px
-  .l5
-    margin-left: 66px
-  span.icon
-    &-root
-      +size(27px, 15px)
-      background: url(./images/icons/root2.png)
-    &-book
-      +size(16px, 12px)
-      background: url(./images/icons/book.png)
-    &-folder
-      +size(30px, 12px)
-      background: url(./images/icons/folder.png)
-    &-codepen
-      +size(16px, 16px)
-      background: url(./images/icons/cp.png)
-    &-github
-      +size(16px, 16px)
-      background: url(./images/icons/gh.png)
-    &-mail
-      +size(16px, 16px)
-      background: url(./images/icons/mail.png)
-    &-root,
-    &-book,
-    &-codepen,
-    &-github,
-    &-mail,
-    &-folder
-      background-size: cover
-      background-repeat: no-repeat
 
-a.yellow
-  position: relative
+  &__contact-list
+    span.icon
+      margin-right: 6px
+      &-codepen
+        background: url(./images/icons/cp.png)
+      &-github
+        background: url(./images/icons/gh.png)
+      &-email
+        background: url(./images/icons/mail.png)
+      &-codepen,
+      &-github,
+      &-email,
+        +size(16px, 16px)
+        background-size: cover
+        background-repeat: no-repeat
 
-a.yellow::after
-  content: ""
-  position: absolute
-  transform: scaleX(0)
-  border-bottom: 1px solid color(black)
-  +size(500px, 1px)
-  bottom: 0
-  left: 0
-  transition: transform 0.2s ease
+
 
 .nav__active-js, .nav__active-sass, .nav__active-book
   color: $yellow !important
-  // border-bottom: 2px solid $yellow
-  &::after
-    transform: scaleX(1) !important
 
 .slide-appear
   opacity: 0.01

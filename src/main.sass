@@ -1,4 +1,9 @@
 @import ~sasso/sasso.sass
+
+=center
+  display: flex
+  +position(center, center)
+
 @import sass/_navbar
 @import sass/_header
 @import sass/_project
@@ -10,11 +15,11 @@
   min-height: 100vh
   flex-wrap: nowrap
   &__nav
-    +grid(2, 12)
+    +grid(1, 12)
     z-index: 1
   &__section
     z-index: 2
-    +grid(10, 12)
+    +grid(11, 12)
 
 
 
@@ -41,6 +46,7 @@
   .main
     flex-direction: column
   .main__nav
+    background: transparent
     border: none
     width: 100%
     z-index: 500
@@ -48,7 +54,7 @@
     box-shadow: $shadow
   .nav__fixed
     transition: all .3s ease
-    background: #fff
+    background: whitesmoke
     opacity: 0.97
     height: 100%
     border-right: 1px solid color(black)

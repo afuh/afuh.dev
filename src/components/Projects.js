@@ -1,7 +1,6 @@
 import React from 'react';
 import { getInfo } from '../helpers/api';
 import Project from './Project';
-import { CSSTransitionGroup } from 'react-transition-group'
 
 export const Header = (props) => {
   return (
