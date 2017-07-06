@@ -1,6 +1,8 @@
 import React from 'react';
-import { getProject } from '../helpers/api';
 import { CSSTransitionGroup } from 'react-transition-group'
+import { Link } from 'react-router-dom'
+
+import { getProject, countTags } from '../helpers/api';
 
 const Zoom = (props) => {
   const data = getProject(props.match.params.name)[0]
@@ -14,9 +16,18 @@ const Zoom = (props) => {
           transitionAppearTimeout={300}
           transitionEnter={false}
           transitionLeave={false}>
+
         <div className={`${cl}__warper`}>
           <h1 className={`${cl}__name`}>{name}</h1>
-          <span className={`${cl}__tags`}>{tags.filter(a => a !== "API").map(b => `${b.toLowerCase()} `)}</span>
+          <div className={`${cl}__tags`}>
+            {tags.map(tag => (
+                <Link
+                  key={tag}
+                  to={`/p/${tag}`}>
+                  {countTags(tag)}
+                </Link>
+              ))}
+          </div>
           <div className={`${cl}__img`}>
             <img src={gif || image} className="" alt=""/>
           </div>

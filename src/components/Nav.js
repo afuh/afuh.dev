@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
 const Lang = (props) => {
-  const links = ['JavaScript', 'React', 'Node', 'JQuery', 'API', 'More'];
+  const links = ['javascript', 'react', 'node', 'jquery', 'API', 'more'];
   return (
     <div>
       <div className="list-header">Tools</div>

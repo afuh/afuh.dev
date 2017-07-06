@@ -4,7 +4,6 @@ $gray: #9da5b4
 
 .nav
   min-width: 160px
-  border-right: 1px solid color(lightgray)
   background: whitesmoke
 
   &__fixed
@@ -59,10 +58,19 @@ $gray: #9da5b4
         background-size: cover
         background-repeat: no-repeat
 
-
+li.lang
+  position: relative
 
 .nav__active-js, .nav__active-sass, .nav__active-book
   color: $yellow !important
+  &::after
+    content: ""
+    position: absolute
+    right: -6px
+    border-top: 12px solid transparent
+    border-bottom: 12px solid transparent
+    border-right: 12px solid #fff
+
 
 .slide-appear
   opacity: 0.01

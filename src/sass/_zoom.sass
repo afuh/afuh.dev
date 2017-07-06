@@ -1,15 +1,13 @@
 .zoom
   +size(100%, 100vh)
-  display: flex
+  +center
   flex-flow: column
   background: #fff
-  +position(center, center)
   &__warper
     max-width: 700px
-    display: flex
+    +center
     flex-flow: column
     padding: 40px
-    +position(center, center)
   &__name
     color: color(black)
     +font(30px, 200)
@@ -42,8 +40,13 @@
     &:hover
       color: desaturate(color(lightgreen), 20%)
   &__tags
-    +font(14px, 200)
-    color: color(gray)
+    text-align: center
+    a
+      margin: 0 8px
+      +font(12px, 200)
+      color: color(gray)
+      &:hover
+        text-decoration: underline
   &__info
     color: color(black)
   &__back

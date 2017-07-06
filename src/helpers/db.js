@@ -5,7 +5,7 @@ export const db = [
     url: "https://pinstagram-app.herokuapp.com/",
     code: "https://github.com/afuh/pinstagram",
     image: `${require('../images/screenshots/pinsta.jpg')}`,
-    tags: ["Node", "Express", "MongoDB", "Mongoose", "Pug", "Passport"],
+    tags: ["node", "express", "mongodb", "mongoose", "pug", "passport", "javascript"],
     latest: true
   },
   {
@@ -16,7 +16,7 @@ export const db = [
     image: `${require('../images/screenshots/iss.jpg')}`,
     gif: `${require('../images/gifs/iss.gif')}`,
     video: `${require('../images/videos/iss2.webm')}`,
-    tags: ["JavaScript", "Google Maps API", "API"],
+    tags: ["javascript", "google maps", "api"],
     latest: true
   },
   {
@@ -25,7 +25,7 @@ export const db = [
     url: "https://afuh.github.io/sequencer/",
     code: "https://github.com/afuh/sequencer",
     image: `${require('../images/screenshots/sequencer.jpg')}`,
-    tags: ["JQuery", "Web Audio API", "API"],
+    tags: ["jquery", "web audio", "api"],
     latest: false
   },
   {
@@ -34,7 +34,7 @@ export const db = [
     url: "https://afuh.github.io/calculator/",
     code: "https://github.com/afuh/calculator",
     image: `${require('../images/screenshots/calc.jpg')}`,
-    tags: ["JQuery"],
+    tags: ["jquery"],
     latest: false
   },
   {
@@ -43,7 +43,7 @@ export const db = [
     url: "https://afuh.github.io/sketchpad/",
     code: "https://github.com/afuh/sketchpad",
     image: `${require('../images/screenshots/sketch.jpg')}`,
-    tags: ["JQuery"],
+    tags: ["jquery"],
     latest: false
   },
   {
@@ -52,7 +52,7 @@ export const db = [
     url: "https://afuh.github.io/frases/",
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.jpg')}`,
-    tags: ["JavaScript"],
+    tags: ["javascript"],
     latest: false
   },
   {
@@ -61,7 +61,7 @@ export const db = [
     url: "https://afuh.github.io/slider/",
     code: "https://github.com/afuh/slider",
     image: `${require('../images/screenshots/slide.jpg')}`,
-    tags: ["JavaScript"],
+    tags: ["javascript"],
     latest: false
   },
   {
@@ -72,7 +72,7 @@ export const db = [
     image: `${require('../images/screenshots/snake.jpg')}`,
     gif: `${require('../images/gifs/snake.gif')}`,
     video: `${require('../images/videos/snake2.webm')}`,
-    tags: ["JavaScript", "P5.js"],
+    tags: ["javascript", "p5.js"],
     latest: false
   },
   {
@@ -81,7 +81,7 @@ export const db = [
     url: "http://naughty-joke.surge.sh/",
     code: "https://github.com/afuh/weather",
     image: `${require('../images/screenshots/weather.jpg')}`,
-    tags: ["React", "Open Weather Map API", "API"],
+    tags: ["react", "open weather map", "api"],
     latest: false
   },
   {
@@ -90,7 +90,7 @@ export const db = [
     url: "http://faded-bun.surge.sh/",
     code: "https://github.com/afuh/battle",
     image: `${require('../images/screenshots/battle.jpg')}`,
-    tags: ["React", "GitHub API", "API"],
+    tags: ["react", "github", "api"],
     latest: false
   },
   {
@@ -99,16 +99,16 @@ export const db = [
     url: "https://afuh.github.io/react-browsing/",
     code: "https://github.com/afuh/react-browsing",
     image: `${require('../images/screenshots/menu.jpg')}`,
-    tags: ["React"],
+    tags: ["react"],
     latest: false
   },
   {
-    name: "Delicious",
+    name: "Now That's Delicious!",
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://delicious-app.herokuapp.com/",
     code: "https://github.com/afuh/delicious",
     image: `${require('../images/screenshots/delicious.jpg')}`,
-    tags: ["Node", "Express", "MongoDB", "Mongoose", "Pug", "Passport", "Google Maps API", "API"],
+    tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
     latest: false
   },
   {
@@ -117,16 +117,16 @@ export const db = [
     url: "",
     code: "https://github.com/afuh/sasso",
     image: `${require('../images/screenshots/placeholder.jpg')}`,
-    tags: ["Sass"],
+    tags: ["sass"],
     latest: false
   },
   // {
-  //   name: "JavaScript 30",
+  //   name: "javascript 30",
   //   info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   //   url: "https://afuh.github.io/js30/",
   //   code: "https://github.com/afuh/js30",
   //   image: `${require('../images/screenshots/js30.jpg')}`,
-  //   tags: ["JavaScript"],
+  //   tags: ["javascript"],
   //   latest: false
   // },
   {
@@ -135,7 +135,7 @@ export const db = [
     url: "",
     code: "https://github.com/afuh/sasso",
     image: `${require('../images/screenshots/placeholder.jpg')}`,
-    tags: ["Sass"],
+    tags: ["sass"],
     latest: false
   }
 ]
