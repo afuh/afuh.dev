@@ -54,7 +54,7 @@ const Contact = () => {
 class Nav extends React.Component{
   constructor() {
     super()
-    this.width = 768 //pxs
+    this.width = 600 //768 / 480
     this.state = {
       show: window.innerWidth <= this.width ? false : true,
       switcher: window.innerWidth <= this.width ? 'close' : 'open',

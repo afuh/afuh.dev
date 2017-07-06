@@ -10,7 +10,6 @@
 @import sass/_zoom
 
 .main
-  margin: 0 auto
   max-width: 1920px
   min-height: 100vh
   flex-wrap: nowrap
@@ -22,16 +21,30 @@
     +grid(11, 12)
 
 
-
-+break(1200px)
-  section.projects
-    padding: 0
-  div.project__content
-    +size(100%,100%)
++break(1440px)
+  .projects
+    flex-flow: column wrap
+  .project
+    border-radius: 10px
+    max-width: 600px
+    margin-bottom: 10px
 
 +break(md)
   section.projects
     flex-flow: column
+
++break(sm)
+  section.projects
+    padding: 0
+  div.project__content
+    +size(100%,100%)
+  .nav__active-js, .nav__active-sass, .nav__active-book
+    &::after
+      content: ""
+      position: absolute
+      right: -6px
+      border: none
+
 
 +break(sm)
   .project__warper
@@ -40,27 +53,31 @@
       border: none
       box-shadow: none
 
-+break(sm)
-  a.yellow::after
-    display: none
++break(600px)
   .main
     flex-direction: column
+    &__section
+      margin-top: 52px
   .main__nav
+    position: fixed
     background: transparent
     border: none
     width: 100%
     z-index: 500
-    margin-bottom: 10px
     box-shadow: $shadow
   .nav__fixed
+    width: 50%
     transition: all .3s ease
-    background: whitesmoke
-    opacity: 0.97
+    background: #fff
+    opacity: 0.99
     height: 100%
     border-right: 1px solid color(black)
     top: 0
-    padding-top: 50px
     z-index: -1
+    &-header
+      margin-top: 50px
+      border-top: 1px solid color(black)
+      border-bottom: none
   .nav__opener
     font-size: 30px
     z-index: 5
@@ -71,15 +88,29 @@
       transform: scale(1.1)
       box-shadow: none
   .header
-    position: absolute
+    border: none
+    position: fixed
     display: flex
     +position(center, center)
     top: 0
     +size(100%, 50px)
+    z-index: 1
+    background: #fff
     span
       border: none
       &::before
         border: none
+
+  .nav__lang-list, .nav__contact-list
+    padding: 0
+    li
+      padding: 10px 0
+      border-bottom: 1px solid color(lightgray)
+      a
+        font-size: 20px
+  .list-header
+    +center
+    margin-top: 10px
 
 .close
   transform: translateX(-100%)

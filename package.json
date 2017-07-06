@@ -27,7 +27,7 @@
     "normalize.css": "^7.0.0",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
-    "sasso": "^1.2.4",
+    "sasso": "^1.2.5",
     "style-loader": "^0.18.2",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
