@@ -63,8 +63,8 @@ module.exports = {
         },
         hash: true,
         template: './src/index.html',
-        // filename: isProd ? '200.html' : 'index.html'
-        filename: 'index.html'
+        filename: isProd ? '200.html' : 'index.html'
+        // filename: 'index.html'
       }),
       new ExtractTextPlugin({
          filename: 'main.css',

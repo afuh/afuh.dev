@@ -37,7 +37,7 @@
     "start": "webpack-dev-server",
     "prod": "npm run clean && NODE_ENV=production webpack -p",
     "clean": "rimraf ./dist/*",
-    "deploy": "npm run prod && surge dist"
+    "deploy": "npm run prod && surge dist http://truthful-yam.surge.sh"
   },
   "eslintConfig": {
     "parserOptions": {

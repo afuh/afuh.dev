@@ -16,18 +16,17 @@
     box-shadow: $shadow
     overflow: hidden
     border-radius: 10px
-    margin: 30px 0
+    margin: 30px 0 0
   &__content
     display: flex
     flex-flow: column
     color: color(black)
     align-items: center
-    padding: 10px
     +position(center, center)
     color: #fff
   &__links
-    font-weight: 600
-    margin: 20px
+    +font(16px, 600)
+    margin: 30px
     justify-content: space-around
     width: 40%
   &__live
@@ -65,6 +64,6 @@
   &.fadeIn-appear-active
     transition: all .3s
     opacity: 1
-    filter: grayscale(0%) 
+    filter: grayscale(0%)
 
 @import _markdown

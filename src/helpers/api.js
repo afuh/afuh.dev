@@ -1,5 +1,14 @@
 import { db } from './db.js';
 
+// export const getInfo = (section) => {
+//   if (section === 'Home'){
+//     return db.filter(i => i.latest);
+//   }
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => (resolve(db.filter(i => i.tags.includes(section.toLowerCase())))), 10000)
+//   })
+// }
+
 export const getInfo = (section) => {
   if (section === 'Home'){
     return db.filter(i => i.latest);
