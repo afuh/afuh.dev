@@ -2,7 +2,7 @@ import React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 
-import Mark from './Mark'
+import Mark from '../helpers/Mark'
 
 import { getProject, countTags } from '../helpers/api';
 
@@ -48,7 +48,3 @@ const Zoom = (props) => {
 }
 
 export default Zoom
-
-// <video autoPlay src={video} width="600px" loop="true" poster={image}/>
-//×
-//⇦

@@ -1,18 +1,22 @@
 .projects
+  position: relative
   width: 100%
   display: flex
-  // flex-flow: column wrap
-  flex-flow: row wrap
+  flex-flow: column wrap
+  // flex-flow: row wrap
+  justify-content: center
   align-items: center
   padding: 10px 20px
   margin: 0 auto
   background: #fff
+  .spinner
+    z-index: 999
 
 .project
   border-radius: 10px
-  +grid(1, 2, 0.5)
-  // max-width: 600px
-  // margin-bottom: 10px
+  // +grid(1, 2, 0.5)
+  max-width: 720px
+  margin-bottom: 10px
   position: relative
   box-shadow: $shadow
   overflow: hidden
