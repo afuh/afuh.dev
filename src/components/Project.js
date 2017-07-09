@@ -10,7 +10,7 @@ const Project = (props) => {
     return (
     <article className={cl}>
       <div className={`${cl}__img`}>
-        <img onLoad={props.onload} src={image} alt={name} />
+        <img onLoad={props.onload} onError={props.onload} src={image} alt={name} />
       </div>
       <Link to={`/p/${props.path}/${name}`} className={`${cl}__warper row`}>
         <h1 style={{color: "#fff"}}>{name}</h1>

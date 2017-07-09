@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getInfo } from '../helpers/api';
+import { getData } from '../helpers/api';
 import Project from './Project';
 import Spinner from './Spinner';
 
@@ -17,27 +17,26 @@ Header.propTypes = {
   title: PropTypes.string.isRequired
 }
 
+const loaded = (el) => {
+  const imgEl = el.querySelectorAll('img');
+  for (const img of imgEl) {
+    if (!img.complete) return false;
+  }
+  return true;
+}
 
 class Projects extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       data: [],
-      count: 0,
-      loaded: 0,
       spinner: true
     }
     this.handleLoad = this.handleLoad.bind(this)
   }
   handleLoad(){
-    const { count, loaded } = this.state
-
-    const plusOne = loaded + 1
-    this.setState({ loaded: plusOne })
-
-    if (count === loaded + 1) {
-      this.setState({ spinner: false });
-    }
+    const section = this.section
+    this.setState({spinner: !loaded(section) })
   }
   componentWillMount(){
     const path = this.props.match.params.lang
@@ -56,19 +55,17 @@ class Projects extends React.Component {
     }
   }
   request(path){
-    const data = getInfo(path)
-    const count = data.length
-    this.setState({ data, count, spinner: true, loaded: 0 })
+    this.setState({ data: getData(path)  })
   }
   render () {
     const path = this.props.match.params.lang
-    const { count, loaded, spinner, data } = this.state
-    console.log({count,loaded, spinner});
+    const { spinner, data } = this.state
+    console.log({spinner});
 
      return (
       <div className="main__section col">
         <Header title={path} />
-        <section className="projects">
+        <section className="projects" ref={section => this.section = section}>
           {spinner && <Spinner />}
           {data.map((project, i) => (
             <Project

@@ -9,7 +9,7 @@ import { db } from './db.js';
 //   })
 // }
 
-export const getInfo = (section) => {
+export const getData = (section) => {
   if (section === 'Home'){
     return db.filter(i => i.latest);
   }
