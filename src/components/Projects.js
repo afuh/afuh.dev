@@ -17,28 +17,45 @@ Header.propTypes = {
   title: PropTypes.string.isRequired
 }
 
-const loaded = (el) => {
-  const imgEl = el.querySelectorAll('img');
-  for (const img of imgEl) {
-    if (!img.complete) return false;
-  }
-  return true;
-}
+
+// const loaded = (el) => {
+//   const complete = [...el.querySelectorAll('img')]
+//     .filter(a => !a.src.includes('tail-spin'))
+//     .map(img => img.complete)
+//     .filter(complete => !complete)
+//
+//   if (!complete.length) {
+//     return true;
+//   }
+// }
 
 class Projects extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       data: [],
-      spinner: true
+      spinner: true,
+      count: null
     }
     this.handleLoad = this.handleLoad.bind(this)
   }
-  handleLoad(){
-    const section = this.section
-    this.setState({ spinner: !loaded(section) })
+  loaded(el){
+    const complete = [...el.querySelectorAll('img')]
+      .filter(a => !a.src.includes('tail-spin'))
+      .map(img => img.complete)
+      .filter(complete => !complete)
+
+    this.setState({count: complete.length})
+    if (!complete.length) {
+      return true;
+    }
   }
-  componentDidMount(){
+  handleLoad(){
+    const spinner = !this.loaded(this.section)
+    this.setState({ spinner })
+  }
+  componentWillMount(){
+    this.setState({ spinner: true })
     const path = this.props.match.params.lang
     if (!path) {
       this.request('Home')
@@ -47,6 +64,8 @@ class Projects extends React.Component {
     }
   }
   componentWillReceiveProps(nextProps) {
+    this.setState({ data: [] })
+
     const path = nextProps.match.params.lang
     if (!path) {
       this.request('Home')
@@ -55,17 +74,17 @@ class Projects extends React.Component {
     }
   }
   request(path){
-    this.setState({ data: getData(path)  })
+    const data = getData(path)
+    this.setState({ data })
   }
   render () {
     const path = this.props.match.params.lang
     const { spinner, data } = this.state
-
      return (
       <div className="main__section col">
         <Header title={path} />
         <section className="projects" ref={section => this.section = section}>
-          {spinner && <Spinner />}
+          {spinner && <Spinner count={this.state.count}/>}
           {data.map((project, i) => (
             <Project
               onload={this.handleLoad}

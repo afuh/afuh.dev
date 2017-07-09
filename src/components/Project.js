@@ -29,7 +29,6 @@ class Project extends React.Component {
     this.setState({ name: null, image: null })
   }
   render() {
-    console.log(this.props.data);
     const {name, image} = this.state
     const cl = "project"
 
