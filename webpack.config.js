@@ -40,8 +40,8 @@ module.exports = {
         use: isProd ? cssProd : cssDev
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        use: 'file-loader?name=images/[hash:6].[ext]'
+        test: /\.(jpe?g|png|gif|svg|mp4|gif|webm|md)$/i,
+        use: 'file-loader?name=images/[name].[ext]'
       }
     ]
   },
@@ -63,8 +63,8 @@ module.exports = {
         },
         hash: true,
         template: './src/index.html',
-        // filename: isProd ? '200.html' : 'index.html'
-        filename: 'index.html'
+        filename: isProd ? '200.html' : 'index.html'
+        // filename: 'index.html'
       }),
       new ExtractTextPlugin({
          filename: 'main.css',

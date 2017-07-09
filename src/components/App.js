@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Nav from './Nav';
 import Projects from './Projects';
-import Project from './Project';
+import Home from './Home';
+import More from './More';
+import Zoom from './Zoom';
 
 const App = () => {
   return (
@@ -11,10 +13,11 @@ const App = () => {
       <div className="main row">
         <Nav />
         <Switch>
-          <Route exact path="/" component={Projects} />
+          <Route exact path="/" component={Home} />
+          <Route path="/more" component={More} />
+          <Route path="/p/:lang/:name" component={Zoom} />
           <Route path="/p/:lang" component={Projects} />
-          <Route path="/p/:lang/:id" component={Project} />
-          <Route render={() => <p>page not found T_T </p> } />
+          <Route render={() => <p>page not found T_T</p> } />
         </Switch>
       </div>
     </Router>

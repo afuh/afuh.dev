@@ -5,7 +5,7 @@ export const db = [
     md: `${require('../markdown/pinsta.md')}`,
     url: "https://pinstagram-app.herokuapp.com/",
     code: "https://github.com/afuh/pinstagram",
-    image: `${require('../images/screenshots/pinsta.png')}`,
+    image: "http://truthful-yam.surge.sh/images/pinsta.png",
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport", "javascript"],
     latest: true
   },
@@ -14,7 +14,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "http://subsequent-distance.surge.sh/",
     code: "https://github.com/afuh/iss",
-    image: `${require('../images/screenshots/iss.png')}`,
+    image: "http://truthful-yam.surge.sh/images/iss.png",
     gif: `${require('../images/gifs/iss.gif')}`,
     video: `${require('../images/videos/iss2.webm')}`,
     tags: ["javascript", "google maps", "api"],
@@ -25,7 +25,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://afuh.github.io/sequencer/",
     code: "https://github.com/afuh/sequencer",
-    image: `${require('../images/screenshots/sequencer.png')}`,
+    image: "http://truthful-yam.surge.sh/images/sequencer.png",
     tags: ["jquery", "web audio", "api"],
     latest: false
   },
@@ -34,7 +34,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://afuh.github.io/calculator/",
     code: "https://github.com/afuh/calculator",
-    image: `${require('../images/screenshots/calc.png')}`,
+    image: "http://truthful-yam.surge.sh/images/calc.png",
     tags: ["jquery"],
     latest: false
   },
@@ -43,7 +43,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://afuh.github.io/sketchpad/",
     code: "https://github.com/afuh/sketchpad",
-    image: `${require('../images/screenshots/sketch.png')}`,
+    image: "http://truthful-yam.surge.sh/images/sketch.png",
     tags: ["jquery"],
     latest: false
   },
@@ -52,7 +52,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://afuh.github.io/frases/",
     code: "https://github.com/afuh/frases",
-    image: `${require('../images/screenshots/quote.png')}`,
+    image: "http://truthful-yam.surge.sh/images/quote.png",
     tags: ["javascript"],
     latest: false
   },
@@ -61,7 +61,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://afuh.github.io/slider/",
     code: "https://github.com/afuh/slider",
-    image: `${require('../images/screenshots/slide.png')}`,
+    image: "http://truthful-yam.surge.sh/images/slide.png",
     tags: ["javascript"],
     latest: false
   },
@@ -70,7 +70,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://afuh.github.io/snake-game/",
     code: "https://github.com/afuh/snake-game",
-    image: `${require('../images/screenshots/snake.png')}`,
+    image: "http://truthful-yam.surge.sh/images/snake.png",
     gif: `${require('../images/gifs/snake.gif')}`,
     video: `${require('../images/videos/snake2.webm')}`,
     tags: ["javascript", "p5.js"],
@@ -81,7 +81,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "http://naughty-joke.surge.sh/",
     code: "https://github.com/afuh/weather",
-    image: `${require('../images/screenshots/weather.png')}`,
+    image: "http://truthful-yam.surge.sh/images/weather.png",
     tags: ["react", "open weather map", "api"],
     latest: false
   },
@@ -90,7 +90,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "http://faded-bun.surge.sh/",
     code: "https://github.com/afuh/battle",
-    image: `${require('../images/screenshots/battle.png')}`,
+    image: "http://truthful-yam.surge.sh/images/battle.png",
     tags: ["react", "github", "api"],
     latest: false
   },
@@ -99,7 +99,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://afuh.github.io/react-browsing/",
     code: "https://github.com/afuh/react-browsing",
-    image: `${require('../images/screenshots/menu.png')}`,
+    image: "http://truthful-yam.surge.sh/images/menu.png",
     tags: ["react"],
     latest: false
   },
@@ -109,7 +109,7 @@ export const db = [
     md: `${require('../markdown/delicious.md')}`,
     url: "https://delicious-app.herokuapp.com/",
     code: "https://github.com/afuh/delicious",
-    image: `${require('../images/screenshots/delicious.png')}`,
+    image: "http://truthful-yam.surge.sh/images/delicious.png",
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
     latest: false
   },
@@ -119,7 +119,7 @@ export const db = [
     md: `${require('../markdown/sasso.md')}`,
     url: "",
     code: "https://github.com/afuh/sasso",
-    image: `${require('../images/screenshots/placeholder.jpg')}`,
+    image: "http://truthful-yam.surge.sh/images/placeholder.jpg",
     tags: ["sass"],
     latest: false
   },
@@ -128,7 +128,7 @@ export const db = [
   //   info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   //   url: "https://afuh.github.io/js30/",
   //   code: "https://github.com/afuh/js30",
-  //   image: `${require('../images/screenshots/js30.png')}`,
+  //   image: "http://truthful-yam.surge.sh/images/js30.png",
   //   tags: ["javascript"],
   //   latest: false
   // },
@@ -137,7 +137,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "",
     code: "https://github.com/afuh/sasso",
-    image: `${require('../images/screenshots/placeholder.jpg')}`,
+    image: "http://truthful-yam.surge.sh/images/placeholder.jpg",
     tags: ["sass"],
     latest: false
   }

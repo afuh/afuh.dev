@@ -1,93 +1,86 @@
-$yellow: #e2b882
-$green: #5cc187
+$yellow: color(orange)
+$green: color(green)
 $gray: #9da5b4
-$background: #21252b
 
 .nav
-  +grid(2, 12)
+  min-width: 160px
+  background: whitesmoke
+
   &__fixed
-    +size(170px, auto)
+    flex-wrap: nowrap
+    overflow: auto
+    transform: translateX(0)
+    +size(160px, auto)
     position: fixed
-// Atom style
-.nav
-  min-width: 170px
-  .page-name
-    a
-      color: $green
-  border-right: 1px solid #181a1f
-  border-bottom: 1px solid #181a1f
-  background: $background
-  line-height: 1.4
-  &__fixed
-    padding: 6px 2px
-    a,li
-      font-size: 14px
+
+    &-header
+      +center
+      padding: 22px 0
+      border-bottom: 1px solid color(lightgray)
+      .n
+        font-weight: 600
+        color: color(black)
+        text-transform: uppercase
+      transition: text-shadow 2s
+
+  &__list-warper
+    padding: 6px
+
+  .list-header
+    padding: 14px 0 4px
+    text-transform: uppercase
+    +font(13px, 400)
+    color: color(gray)
+
+  &__lang-list, &__contact-list
+    padding-left: 12px
+    a, li
+      +font(15px, 200)
       line-height: 1.8em
-      color: $gray
-      align-items: center
       display: flex
-      transition: all 0.3s
-      span
-        margin-right: 6px
-    a.yellow:hover
+      align-items: center
+      color: color(black)
+    a.language:hover
       color: $yellow
     a.contact:hover
       color: $green
-  .l1
-    margin-left: 4px
-  .l2
-    margin-left: 20px
-  .l3
-    margin-left: 38px
-  .l4
-    margin-left: 48px
-  .l5
-    margin-left: 66px
-  span.icon
-    &-js
-      +size(14px, 14px)
-      background: url(./images/icons/js.png)
-    &-root
-      +size(27px, 15px)
-      background: url(./images/icons/root2.png)
-    &-book
-      +size(16px, 12px)
-      background: url(./images/icons/book.png)
-    &-folder
-      +size(30px, 12px)
-      background: url(./images/icons/folder.png)
-    &-sass
-      +size(16px, 12px)
-      background: url(./images/icons/sass.png)
-    &-codepen
-      +size(16px, 16px)
-      background: url(./images/icons/cp.png)
-    &-github
-      +size(16px, 16px)
-      background: url(./images/icons/gh.png)
-    &-mail
-      +size(16px, 16px)
-      background: url(./images/icons/mail.png)
-    &-js,
-    &-root,
-    &-sass,
-    &-book,
-    &-codepen,
-    &-github,
-    &-mail,
-    &-folder
-      background-size: cover
-      background-repeat: no-repeat
 
+  &__contact-list
+    span.icon
+      margin-right: 6px
+      &-codepen
+        background: url(./images/icons/cp.png)
+      &-github
+        background: url(./images/icons/gh.png)
+      &-email
+        background: url(./images/icons/mail.png)
+      &-codepen,
+      &-github,
+      &-email,
+        +size(16px, 16px)
+        background-size: cover
+        background-repeat: no-repeat
+
+li.lang
+  position: relative
 
 .nav__active-js, .nav__active-sass, .nav__active-book
   color: $yellow !important
-.nav__active-js
-  span
-    background: url(./images/icons/js-active.png) !important
-.nav__active-sass
-  span
-    background: url(./images/icons/sass-active.png) !important
-.nav__active-book
-  span
-    background: url(./images/icons/book-active.png) !important
+  &::after
+    content: ""
+    position: absolute
+    right: -6px
+    border-top: 12px solid transparent
+    border-bottom: 12px solid transparent
+    border-right: 12px solid #fff
+
+
+.slide-appear
+  opacity: 0.01
+  transform: translateX(-100%)
+
+.slide-appear
+  &.slide-appear-active
+    opacity: 1
+    transition: all .3s
+    transform: translateX(0)
