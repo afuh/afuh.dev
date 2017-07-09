@@ -20,7 +20,7 @@ const style = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: "#bbb"
+    color: "#eee"
   }
 }
 

@@ -16,7 +16,6 @@ class Project extends React.Component {
   }
   componentWillUnmount(){
     this.remove()
-
   }
   componentWillReceiveProps(nextProps) {
     this.remove()

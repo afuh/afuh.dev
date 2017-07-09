@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from './Projects';
+import Header from './Header';
 
 const More = (props) => {
   return (

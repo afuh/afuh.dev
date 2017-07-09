@@ -1,33 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { getData } from '../helpers/api';
 import Project from './Project';
 import Spinner from './Spinner';
-
-export const Header = (props) => {
-  return (
-      <div className="header">
-        <header><span>{props.title}</span></header>
-      </div>
-    )
-}
-
-Header.propTypes = {
-  title: PropTypes.string.isRequired
-}
-
-
-// const loaded = (el) => {
-//   const complete = [...el.querySelectorAll('img')]
-//     .filter(a => !a.src.includes('tail-spin'))
-//     .map(img => img.complete)
-//     .filter(complete => !complete)
-//
-//   if (!complete.length) {
-//     return true;
-//   }
-// }
+import Header  from './Header';
 
 class Projects extends React.Component {
   constructor(props) {
@@ -46,6 +22,7 @@ class Projects extends React.Component {
       .filter(complete => !complete)
 
     this.setState({count: complete.length})
+
     if (!complete.length) {
       return true;
     }

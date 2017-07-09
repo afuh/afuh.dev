@@ -1,6 +1,7 @@
 import React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
+import Header  from './Header';
 
 import Mark from '../helpers/Mark'
 
@@ -12,22 +13,23 @@ const Zoom = (props) => {
   const cl = "zoom"
   return (
     <div className="main__section">
+      <Header title={name} />
       <CSSTransitionGroup className={cl} component="article"
-          transitionName="fadeIn"
-          transitionAppear={true}
-          transitionAppearTimeout={300}
-          transitionEnter={false}
-          transitionLeave={false}>
+        transitionName="fadeIn"
+        transitionAppear={true}
+        transitionAppearTimeout={300}
+        transitionEnter={false}
+        transitionLeave={false}>
 
         <div className={`${cl}__warper`}>
           <h1 className={`${cl}__name`}>{name}</h1>
           <div className={`${cl}__tags`}>
             {tags.map(tag => (
-                <Link
-                  key={tag}
-                  to={`/p/${tag}`}>
-                  {countTags(tag)}
-                </Link>
+              <Link
+                key={tag}
+                to={`/p/${tag}`}>
+                {countTags(tag)}
+              </Link>
               ))}
           </div>
           <div className={`${cl}__img`}>

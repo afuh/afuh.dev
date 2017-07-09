@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from './Projects';
+import Header from './Header';
 import Project from './Project';
 import { getInfo } from '../helpers/api';
 
