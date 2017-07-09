@@ -36,9 +36,9 @@ class Projects extends React.Component {
   }
   handleLoad(){
     const section = this.section
-    this.setState({spinner: !loaded(section) })
+    this.setState({ spinner: !loaded(section) })
   }
-  componentWillMount(){
+  componentDidMount(){
     const path = this.props.match.params.lang
     if (!path) {
       this.request('Home')
@@ -60,7 +60,6 @@ class Projects extends React.Component {
   render () {
     const path = this.props.match.params.lang
     const { spinner, data } = this.state
-    console.log({spinner});
 
      return (
       <div className="main__section col">
