@@ -1,6 +1,7 @@
 import React from 'react';
+import DocumentTitle from 'react-document-title';
 
-import { getData } from '../helpers/api';
+import { getData, site } from '../helpers/api';
 import Project from './Project';
 import Spinner from './Spinner';
 import Header  from './Header';
@@ -58,19 +59,21 @@ class Projects extends React.Component {
     const path = this.props.match.params.lang
     const { spinner, data } = this.state
      return (
-      <div className="main__section col">
-        <Header title={path} />
-        <section className="projects" ref={section => this.section = section}>
-          {spinner && <Spinner count={this.state.count}/>}
-          {data.map((project, i) => (
-            <Project
-              onload={this.handleLoad}
-              path={path}
-              key={i}
-              data={{name: project.name, image: project.image}} />
-          ))}
-        </section>
-      </div>
+      <DocumentTitle title={`${site} | ${path}`}>
+        <div className="main__section col">
+          <Header title={path} />
+          <section className="projects" ref={section => this.section = section}>
+            {spinner && <Spinner count={this.state.count}/>}
+            {data.map((project, i) => (
+              <Project
+                onload={this.handleLoad}
+                path={path}
+                key={i}
+                data={{name: project.name, image: project.image}} />
+            ))}
+          </section>
+        </div>
+      </DocumentTitle>
     )
   }
 }

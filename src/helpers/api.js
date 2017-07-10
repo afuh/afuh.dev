@@ -28,3 +28,5 @@ export const countTags = (tag) => {
 }
 
 export const getProject = project => db.filter(i => i.name.includes(project));
+
+export const site = 'Axel Fuhrmann';

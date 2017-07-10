@@ -16,7 +16,7 @@ const Lang = (props) => {
             <NavLink
               className="language"
               activeClassName='nav__active-js'
-              to={`/p/${link}`}>{link.toLowerCase()}
+              to={link === "more" ? `/more` : `/p/${link}`}>{link.toLowerCase()}
             </NavLink>
           </li>
         ))}

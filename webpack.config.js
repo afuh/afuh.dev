@@ -57,7 +57,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-        title: 'Portfolio',
+        title: 'Axel Fuhrmann',
+        favicon: './src/images/favicon.png',
         minify: {
             collapseWhitespace: true
         },
