@@ -15,7 +15,7 @@ const Zoom = (props) => {
   return (
     <DocumentTitle title={`${site} | ${name}`}>
       <div className="main__section">
-        <Header title={name} />
+        <Header title={props.match.params.lang} />
         <CSSTransitionGroup className={cl} component="article"
           transitionName="fadeIn"
           transitionAppear={true}

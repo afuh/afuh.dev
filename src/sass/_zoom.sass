@@ -8,6 +8,7 @@
     +center
     padding: 40px
   &__name
+    text-align: center
     color: color(black)
     +font(30px, 200)
     margin-bottom: 10px
@@ -38,7 +39,9 @@
     &:hover
       color: desaturate(color(lightgreen), 20%)
   &__tags
-    text-align: center
+    width: 100%
+    +center
+    flex-wrap: wrap
     a
       margin: 0 8px
       +font(12px, 200)
@@ -46,10 +49,15 @@
       &:hover
         text-decoration: underline
   &__info
+    padding: 0 45px 45px
+    border-bottom: 1px solid color(lightgray)
     color: color(black)
   &__back
+    +size(80px, 50px)
+    +center
     cursor: pointer
-    +font(30px, 200)
+    +font(40px, 200)
+    margin: 20px 0
     color: color(lightgray)
     transition: transform 0.3s
     &:hover
