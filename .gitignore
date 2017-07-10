@@ -5,6 +5,13 @@
 node_modules
 dist
 images.xcf
-images
+
 markdown
 dbTEST
+
+gifs
+screenshots
+videos
+tail-spin.svg
+
+!favicon.png
