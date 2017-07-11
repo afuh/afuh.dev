@@ -1,7 +1,9 @@
 import React from 'react';
+import DocumentTitle from 'react-document-title';
+
 import Header from './Header';
 import Project from './Project';
-import DocumentTitle from 'react-document-title';
+
 import { getInfo, site } from '../helpers/api';
 
 class Home extends React.Component {

@@ -1,10 +1,12 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 
-import { getData, site } from '../helpers/api';
 import Project from './Project';
-import Spinner from './Spinner';
 import Header  from './Header';
+
+import { getData, site } from '../helpers/api';
+import Spinner from '../helpers/Spinner';
+import ErrorMessage  from '../helpers/Error';
 
 class Projects extends React.Component {
   constructor(props) {
@@ -58,6 +60,10 @@ class Projects extends React.Component {
   render () {
     const path = this.props.match.params.lang
     const { spinner, data } = this.state
+
+    if (data.error) {
+      return <ErrorMessage message={data.error} />
+    }
      return (
       <DocumentTitle title={`${site} | ${path}`}>
         <div className="main__section col">

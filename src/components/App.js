@@ -7,6 +7,8 @@ import Home from './Home';
 import More from './More';
 import Zoom from './Zoom';
 
+import ErrorMessage from '../helpers/Error';
+
 const App = () => {
   return (
     <Router>
@@ -17,7 +19,7 @@ const App = () => {
           <Route path="/more" component={More} />
           <Route path="/p/:lang/:name" component={Zoom} />
           <Route path="/p/:lang" component={Projects} />
-          <Route render={() => <p>page not found T_T</p> } />
+          <Route render={() => <ErrorMessage message={'Not found :('} fixed={true}/> } />
         </Switch>
       </div>
     </Router>

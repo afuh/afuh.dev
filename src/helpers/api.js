@@ -13,7 +13,12 @@ export const getData = (section) => {
   if (section === 'Home'){
     return db.filter(i => i.latest);
   }
-  return db.filter(i => i.tags.includes(section.toLowerCase()))
+  const tag = db.filter(i => i.tags.includes(section.toLowerCase()))
+
+  if (!tag.length) {
+    return { error: `${section} is not present in our huge database.` }
+  }
+  return tag;
 }
 
 export const countTags = (tag) => {

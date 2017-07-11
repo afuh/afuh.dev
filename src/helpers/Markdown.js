@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from "react-markdown";
 
-class Mark extends React.Component {
+class Markdown extends React.Component {
   constructor(props){
     super(props)
     this.state = {markdown: ""}
@@ -19,4 +19,4 @@ class Mark extends React.Component {
   }
 }
 
-export default Mark;
+export default Markdown;

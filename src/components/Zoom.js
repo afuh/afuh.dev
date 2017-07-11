@@ -2,10 +2,10 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
+
 import Header  from './Header';
 
-import Mark from '../helpers/Mark'
-
+import Markdown from '../helpers/Markdown'
 import { getProject, countTags, site } from '../helpers/api';
 
 const Zoom = (props) => {
@@ -42,7 +42,7 @@ const Zoom = (props) => {
               <a className={`${cl}__code`} href={code} target="_blank">Code</a>
             </div>
             <div className={`${cl}__content`}>
-              <div className={`${cl}__info`}>{md ? <Mark md={md}/> : info}</div>
+              <div className={`${cl}__info`}>{md ? <Markdown md={md}/> : info}</div>
               <span className={`${cl}__back`} onClick={props.history.goBack}>⇦</span>
             </div>
           </div>
