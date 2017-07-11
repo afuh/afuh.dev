@@ -7,11 +7,16 @@ import Header  from './Header';
 
 import Markdown from '../helpers/Markdown'
 import { getProject, countTags, site } from '../helpers/api';
+import ErrorMessage  from '../helpers/Error';
 
 const Zoom = (props) => {
-  const data = getProject(props.match.params.name)[0]
+  const data = getProject(props.match.params.name)
   const {name, info, url, code, image, tags, video, gif, md} = data
   const cl = "zoom"
+
+  if (data.error) {
+    return <ErrorMessage message={data.error} />
+  }
   return (
     <DocumentTitle title={`${site} | ${name}`}>
       <div className="main__section">

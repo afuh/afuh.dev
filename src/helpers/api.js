@@ -32,6 +32,13 @@ export const countTags = (tag) => {
  return `${tag}(${count[tag]})`
 }
 
-export const getProject = project => db.filter(i => i.name.includes(project));
+export const getProject = pr => {
+  const project = db.filter(i => i.name.includes(pr))
+
+  if (!project.length) {
+    return { error: `${pr} is not a known project.`}
+  }
+  return project[0]
+};
 
 export const site = 'Axel Fuhrmann';
