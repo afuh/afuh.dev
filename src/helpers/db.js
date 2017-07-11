@@ -1,5 +1,14 @@
 export const db = [
   {
+    name: "Portfolio",
+    info: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    url: "https://afuh.github.io/",
+    code: "https://github.com/afuh/afuh.github.io",
+    image: `${require('../images/screenshots/portfolio.png')}`,
+    tags: ["react"],
+    latest: true
+  },
+  {
     name: "Pinstagram",
     info: `Pinstagram is a full stack Instagram clone. It's the result of exercising with Node, MongoDB and its frameworks. The goal was to build a functional clone of some Internet-based photo-sharing application.`,
     md: `${require('../markdown/pinsta.md')}`,

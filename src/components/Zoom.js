@@ -43,7 +43,7 @@ const Zoom = (props) => {
               <img src={gif || image} className="" alt=""/>
             </div>
             <div className={`${cl}__links row`}>
-              <a className={`${cl}__live`} href={url}>See it live</a>
+              {name !== "Portfolio" && <a className={`${cl}__live`} href={url}>See it live</a>}
               <a className={`${cl}__code`} href={code} target="_blank">Code</a>
             </div>
             <div className={`${cl}__content`}>
