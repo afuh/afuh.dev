@@ -48,7 +48,7 @@ class ErrorMessage extends React.Component {
       <DocumentTitle title={site + " | error"}>
         <div className="main__section col" style={style.main}>
           {this.renderMsg()}
-          <span style={style.message}>But there is a cute cat for you.</span>
+          <span style={style.message}>But here is a cute cat for you.</span>
           {this.state.cat && <img src={this.state.cat} style={style.img} alt='🐈'/>}
         </div>
       </DocumentTitle>

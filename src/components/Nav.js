@@ -26,10 +26,11 @@ const Lang = (props) => {
 }
 
 const Contact = () => {
+  const icon = file => require(`../images/icons/${file}.png`)
   const links = [
-    { name: "github", url: "https://github.com/afuh" },
-    { name: "codepen", url: "https://codepen.io/mage20" },
-    { name: "email", url: "mailto:axelfuh@gmail.com" }
+    { name: "github", url: "https://github.com/afuh", icon: icon('gh')},
+    { name: "codepen", url: "https://codepen.io/mage20", icon: icon('cp')},
+    { name: "email", url: "mailto:axelfuh@gmail.com", icon: icon('mail')}
   ]
   return (
     <div>
@@ -37,12 +38,13 @@ const Contact = () => {
       <ul className="nav__contact-list">
         {links.map(link => (
           <li key={link.name}>
-            <span className={`icon icon-${link.name}`}></span>
             <a
               className='contact'
               target="_blank"
               rel='noreferrer noopener'
-              href={link.url}>{link.name}
+              href={link.url}>
+              <img className={`icon icon-${link.name}`} src={link.icon}/>
+              {link.name}
             </a>
           </li>
         ))}
