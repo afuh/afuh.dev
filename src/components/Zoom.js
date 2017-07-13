@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
@@ -8,6 +9,24 @@ import Header  from './Header';
 import Markdown from '../helpers/Markdown'
 import { getProject, countTags, site } from '../helpers/api';
 import ErrorMessage  from '../helpers/Error';
+
+const HandleVisual = (props) => {
+  const { video, gif, image } = props.data;
+
+  if (video && video.length) {
+    return (
+      <video autoPlay loop preload="auto" width="640px" poster={image}>
+        <source src={video[0]} type="video/webm"></source>
+        <source src={video[1]} type="video/mp4"></source>
+      </video>
+    )
+  }
+  return <img src={gif || image} />
+}
+
+HandleVisual.propTypes = {
+  data: PropTypes.object.isRequired
+}
 
 const Zoom = (props) => {
   const data = getProject(props.match.params.name)
@@ -39,9 +58,7 @@ const Zoom = (props) => {
                 </Link>
                 ))}
             </div>
-            <div className={`${cl}__img`}>
-              <img src={gif || image} className="" alt=""/>
-            </div>
+            <div className={`${cl}__img`}><HandleVisual data={{video, gif, image}} /></div>
             <div className={`${cl}__links row`}>
               {name !== "Portfolio" && <a className={`${cl}__live`} href={url}>See it live</a>}
               <a className={`${cl}__code`} href={code} target="_blank">Code</a>
@@ -58,3 +75,12 @@ const Zoom = (props) => {
 }
 
 export default Zoom
+
+
+/*
+  <video autoPlay loop preload="auto">
+    <source src={video[0]} type="video/webm"></source>
+    <source src={video[1]} type="video/mp4"></source>
+  </video>
+  <img src={props.gif || props.image} className="" alt=""/>
+*/

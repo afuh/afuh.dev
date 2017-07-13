@@ -15,6 +15,7 @@ export const db = [
     url: "https://pinstagram-app.herokuapp.com/",
     code: "https://github.com/afuh/pinstagram",
     image: `${require('../images/screenshots/pinsta.png')}`,
+    video: [`${require('../images/videos/pinsta.webm')}`, `${require('../images/videos/pinsta.mp4')}` ],
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport", "javascript"],
     latest: true
   },
@@ -25,7 +26,7 @@ export const db = [
     code: "https://github.com/afuh/iss",
     image: `${require('../images/screenshots/iss.png')}`,
     gif: `${require('../images/gifs/iss.gif')}`,
-    video: `${require('../images/videos/iss2.webm')}`,
+    video: [`${require('../images/videos/iss.webm')}`, `${require('../images/videos/iss.mp4')}` ],
     tags: ["javascript", "google maps", "api"],
     latest: true
   },
@@ -44,7 +45,7 @@ export const db = [
     url: "https://afuh.github.io/calculator/",
     code: "https://github.com/afuh/calculator",
     image: `${require('../images/screenshots/calc.png')}`,
-    tags: ["jquery"],
+    tags: ["jquery", "fcc", "odin project"],
     latest: false
   },
   {
@@ -53,7 +54,7 @@ export const db = [
     url: "https://afuh.github.io/sketchpad/",
     code: "https://github.com/afuh/sketchpad",
     image: `${require('../images/screenshots/sketch.png')}`,
-    tags: ["jquery"],
+    tags: ["jquery", "odin project"],
     latest: false
   },
   {
@@ -62,7 +63,7 @@ export const db = [
     url: "https://afuh.github.io/frases/",
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.png')}`,
-    tags: ["javascript"],
+    tags: ["javascript", "fcc"],
     latest: false
   },
   {
@@ -71,7 +72,7 @@ export const db = [
     url: "https://afuh.github.io/slider/",
     code: "https://github.com/afuh/slider",
     image: `${require('../images/screenshots/slide.png')}`,
-    tags: ["javascript"],
+    tags: ["javascript", "odin project"],
     latest: false
   },
   {
@@ -81,8 +82,8 @@ export const db = [
     code: "https://github.com/afuh/snake-game",
     image: `${require('../images/screenshots/snake.png')}`,
     gif: `${require('../images/gifs/snake.gif')}`,
-    video: `${require('../images/videos/snake2.webm')}`,
-    tags: ["javascript", "p5.js"],
+    video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
+    tags: ["javascript", "p5.js", "odin project"],
     latest: false
   },
   {
@@ -91,13 +92,13 @@ export const db = [
     url: "http://naughty-joke.surge.sh/",
     code: "https://github.com/afuh/weather",
     image: `${require('../images/screenshots/weather.png')}`,
-    tags: ["react", "open weather map", "api"],
+    tags: ["react", "open weather map", "api", "fcc"],
     latest: false
   },
   {
     name: "GitHub Battle",
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    url: "http://faded-bun.surge.sh/",
+    url: "http://milky-help.surge.sh/",
     code: "https://github.com/afuh/battle",
     image: `${require('../images/screenshots/battle.png')}`,
     tags: ["react", "github", "api"],
@@ -109,7 +110,7 @@ export const db = [
     url: "https://afuh.github.io/react-browsing/",
     code: "https://github.com/afuh/react-browsing",
     image: `${require('../images/screenshots/menu.png')}`,
-    tags: ["react"],
+    tags: ["react", "odin project"],
     latest: false
   },
   {
