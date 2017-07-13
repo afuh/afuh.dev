@@ -21,7 +21,10 @@ export const db = [
   },
   {
     name: "Where is the ISS right now?",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: `Know exactly where the International Space Station is and who is on board.
+
+    For some time I wanted to do something super simple that would tell me where the ISS. I know there are plenty of places to look for that information, but considering that it's always a good time to continue exploring the Google API, I decided to build it myself.`,
+    md: `${require('../markdown/iss.md')}`,
     url: "http://subsequent-distance.surge.sh/",
     code: "https://github.com/afuh/iss",
     image: `${require('../images/screenshots/iss.png')}`,
@@ -60,6 +63,7 @@ export const db = [
   {
     name: "Quote Machine",
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    md: `${require('../markdown/quote.md')}`,
     url: "https://afuh.github.io/frases/",
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.png')}`,
