@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const path = require("path");
@@ -40,8 +40,16 @@ module.exports = {
         use: isProd ? cssProd : cssDev
       },
       {
-        test: /\.(jpe?g|png|gif|svg|mp4|gif|webm|md)$/i,
+        test: /\.(jpe?g|png|svg|gif)$/i,
         use: 'file-loader?name=images/[name].[ext]'
+      },
+      {
+        test: /\.(md)$/i,
+        use: 'file-loader?name=markdown/[name].[ext]'
+      },
+      {
+        test: /\.(webm|mp4)$/i,
+        use: 'file-loader?name=video/[name].[ext]'
       }
     ]
   },
@@ -62,10 +70,8 @@ module.exports = {
         minify: {
             collapseWhitespace: true
         },
-        hash: true,
         template: './src/index.html',
         filename: isProd ? '200.html' : 'index.html'
-        // filename: 'index.html'
       }),
       new ExtractTextPlugin({
          filename: 'main.css',
