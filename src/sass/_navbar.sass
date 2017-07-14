@@ -7,8 +7,9 @@ $gray: #9da5b4
   background: whitesmoke
 
   &__fixed
+    padding-bottom: 10px
     flex-wrap: nowrap
-    overflow: auto
+    // overflow: auto
     transform: translateX(0)
     +size(160px, auto)
     position: fixed
@@ -24,6 +25,7 @@ $gray: #9da5b4
       transition: text-shadow 2s
 
   &__list-warper
+    overflow-y: scroll
     padding: 6px
 
   .list-header

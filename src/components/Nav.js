@@ -92,7 +92,7 @@ class Nav extends React.Component{
 
           <div className="nav__fixed-header"><Link className="n" to="/">axel fuhrmann</Link></div>
 
-          <div className="nav__list-warper">
+          <div className="nav__list-warper" style={{overflowY: "scroll"}}>
             <Lang hide={() => this.hide()}/>
             <Contact />
           </div>

@@ -12,7 +12,7 @@ import ErrorMessage from '../helpers/Error';
 const App = () => {
   return (
     <Router>
-      <div className="main row">
+      <div className="main">
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
