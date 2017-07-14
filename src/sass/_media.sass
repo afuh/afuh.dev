@@ -61,6 +61,7 @@
     width: 50%
     transition: all .3s ease
     background: #fff
+    opacity: 0.99
     height: 100%
     border-right: 1px solid color(gray)
     top: 1
@@ -80,17 +81,19 @@
       box-shadow: none
 
   // lists
+  .nav__list-warper
+    padding-bottom: 35px
   .nav__lang-list, .nav__contact-list
     padding: 0
-    margin-bottom: 30px
+    margin-bottom: 10px
     li
       padding: 10px
       border-bottom: 1px solid color(lightgray)
       a
+        width: 100%
         font-size: 20px
   .list-header
     +center
-    margin-top: 10px
 
 .close
   transform: translateX(-110%)

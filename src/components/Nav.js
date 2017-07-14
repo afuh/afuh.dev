@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
@@ -23,6 +24,10 @@ const Lang = (props) => {
       </ul>
     </div>
   )
+}
+
+Lang.propTypes = {
+  hide: PropTypes.func.isRequired
 }
 
 const Contact = () => {

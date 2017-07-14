@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactMarkdown from "react-markdown";
 
 class Markdown extends React.Component {
@@ -17,6 +18,10 @@ class Markdown extends React.Component {
     const { markdown } = this.state;
     return <ReactMarkdown className='markdown' source={markdown} />
   }
+}
+
+Markdown.propTypes = {
+  md: PropTypes.string.isRequired
 }
 
 export default Markdown;

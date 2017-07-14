@@ -1,7 +1,14 @@
 export const db = [
   {
     name: "Portfolio",
-    info: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    info: `When I decided to built a Portfolio I first started writing the database, which is a large array of objects, where each object is the data of a particular project or app. To showcase them easily I decided to use React because of the reusability it offers and also because I wanted to built it with a tag system.
+
+    I did the client side routing with React Router using the tags as parameters for the URLs.
+
+    The info of each project is written in Markdown and save it in a separated .md file and converted on-the-fy by Render Markdown. This processes is extremely comfortable, I can write or edit the text in a separate file and reuse it anywhere I want.
+
+    This way I can end up using this portfolio as an almost blog.`,
+    md: `${require('../markdown/portfolio.md')}`,
     url: "https://afuh.github.io/",
     code: "https://github.com/afuh/afuh.github.io",
     image: `${require('../images/screenshots/portfolio.png')}`,
@@ -62,7 +69,7 @@ export const db = [
   },
   {
     name: "Quote Machine",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: "I put together a bunch of ancient quotes of Diego Maradonain a .json file together with an array of outstanding personalities of history. Mixing them randomly gives pretty funny results..",
     md: `${require('../markdown/quote.md')}`,
     url: "https://afuh.github.io/frases/",
     code: "https://github.com/afuh/frases",
@@ -71,8 +78,9 @@ export const db = [
     latest: false
   },
   {
-    name: "Minimalistic Image Slider",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: "Minimalist Image Slider",
+    info: "If the user does not interact with the Image Slider for a certain amount of time, the images will start to slide automatically until the user interact with it again. This way the user will never be bothered by the auto-slide.",
+    md: `${require('../markdown/slide.md')}`,
     url: "https://afuh.github.io/slider/",
     code: "https://github.com/afuh/slider",
     image: `${require('../images/screenshots/slide.png')}`,
@@ -81,7 +89,8 @@ export const db = [
   },
   {
     name: "Snake Game",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: "This is the classic Snake game where the player controls a snake that grows longer with each piece of food it eats. The player lose if it gets so big it hits itself or if it goes off the board.",
+    md: `${require('../markdown/snake.md')}`,
     url: "https://afuh.github.io/snake-game/",
     code: "https://github.com/afuh/snake-game",
     image: `${require('../images/screenshots/snake.png')}`,

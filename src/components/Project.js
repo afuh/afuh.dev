@@ -27,15 +27,16 @@ class Project extends React.Component {
     this.setState({ name: null, image: null })
   }
   render() {
-    const {name, image} = this.state
+    const { onload, path } = this.props
+    const { name, image } = this.state
     const cl = "project"
 
     return (
       <article className={cl}>
         <div className={`${cl}__img`}>
-          <img onLoad={this.props.onload} onError={this.props.onload} src={image} alt={name} />
+          <img onLoad={onload} onError={onload} src={image} alt={name} />
         </div>
-        <Link to={`/p/${this.props.path}/${name}`} className={`${cl}__warper row`}>
+        <Link to={`/p/${path}/${name}`} className={`${cl}__warper row`}>
           <h1 style={{color: "#fff"}}>{name}</h1>
         </Link>
       </article>

@@ -28,18 +28,17 @@ HandleVisual.propTypes = {
   data: PropTypes.object.isRequired
 }
 
-const Zoom = (props) => {
-  const data = getProject(props.match.params.name)
-  const {name, info, url, code, image, tags, video, gif, md} = data
+const Zoom = ({ match, history }) => {
+  const { name, info, url, code, image, tags, video, gif, md, error } = getProject(match.params.name)
   const cl = "zoom"
 
-  if (data.error) {
-    return <ErrorMessage message={data.error} />
+  if (error) {
+    return <ErrorMessage message={error} />
   }
   return (
     <DocumentTitle title={`${site} | ${name}`}>
       <div className="main__section">
-        <Header title={props.match.params.lang} />
+        <Header title={match.params.lang} />
         <CSSTransitionGroup className={cl} component="article"
           transitionName="fadeIn"
           transitionAppear={true}
@@ -65,7 +64,7 @@ const Zoom = (props) => {
             </div>
             <div className={`${cl}__content`}>
               <div className={`${cl}__info`}>{md ? <Markdown md={md}/> : info}</div>
-              <span className={`${cl}__back`} onClick={props.history.goBack}>⇦</span>
+              <span className={`${cl}__back`} onClick={history.goBack}>⇦</span>
             </div>
           </div>
         </CSSTransitionGroup>
