@@ -4,7 +4,7 @@ import DocumentTitle from 'react-document-title';
 import Project from './Project';
 import Header  from './Header';
 
-import { getData, site } from '../helpers/api';
+import { getData, siteName } from '../helpers/api';
 import Spinner from '../helpers/Spinner';
 import ErrorMessage  from '../helpers/Error';
 
@@ -64,8 +64,8 @@ class Projects extends React.Component {
     if (data.error) {
       return <ErrorMessage message={data.error} />
     }
-     return (
-      <DocumentTitle title={`${site} | ${path}`}>
+    return (
+      <DocumentTitle title={`${siteName} | ${path}`}>
         <div className="main__section col">
           <Header title={path} />
           <section className="projects" ref={section => this.section = section}>

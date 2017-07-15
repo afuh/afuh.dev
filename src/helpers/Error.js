@@ -2,7 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import PropTypes from 'prop-types';
 
-import { site } from '../helpers/api';
+import { siteName } from '../helpers/api';
 
 const randomCat = () => fetch('http://random.cat/meow').then(res => res.json()).then(res => res.file)
 
@@ -45,7 +45,7 @@ class ErrorMessage extends React.Component {
   }
   render() {
     return (
-      <DocumentTitle title={site + " | error"}>
+      <DocumentTitle title={siteName + " | error"}>
         <div className="main__section col" style={style.main}>
           {this.renderMsg()}
           <span style={style.message}>But here is a cute cat for you.</span>

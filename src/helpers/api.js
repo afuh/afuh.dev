@@ -41,4 +41,4 @@ export const getProject = pr => {
   return project[0]
 };
 
-export const site = 'Axel Fuhrmann';
+export const siteName = 'Axel Fuhrmann';

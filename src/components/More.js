@@ -3,12 +3,12 @@ import DocumentTitle from 'react-document-title';
 
 import Header from './Header';
 
-import { site } from '../helpers/api';
+import { siteName } from '../helpers/api';
 
 
 const More = () => {
   return (
-    <DocumentTitle title={`${site} | more stuff`}>
+    <DocumentTitle title={`${siteName} | more stuff`}>
       <div className="main__section col">
         <Header title="More stuff" />
         <div className="more">

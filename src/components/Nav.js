@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
+import { siteName } from '../helpers/api';
+
 const Lang = (props) => {
   const links = ['javascript', 'react', 'node', 'jquery', 'API', 'more'];
   return (
@@ -95,7 +97,7 @@ class Nav extends React.Component{
           transitionEnter={false}
           transitionLeave={false}>
 
-          <div className="nav__fixed-header"><Link className="n" to="/">axel fuhrmann</Link></div>
+          <div className="nav__fixed-header"><Link className="n" to="/">{siteName}</Link></div>
 
           <div className="nav__list-warper" style={{overflowY: "scroll"}}>
             <Lang hide={() => this.hide()}/>

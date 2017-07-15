@@ -4,7 +4,7 @@ import DocumentTitle from 'react-document-title';
 import Header from './Header';
 import Project from './Project';
 
-import { getInfo, site } from '../helpers/api';
+import { getInfo, siteName } from '../helpers/api';
 
 class Home extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Home extends React.Component {
   render(){
     const { data } = this.state
     return (
-      <DocumentTitle title={`${site} | Latests`}>
+      <DocumentTitle title={`${siteName} | Latests`}>
         <div className="main__section col">
           <Header title="Latests" />
           <div className="readme">
