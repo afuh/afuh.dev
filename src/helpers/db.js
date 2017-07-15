@@ -42,7 +42,10 @@ export const db = [
   },
   {
     name: "Step Sequencer",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: `A 16 Step Sequencer built with JQuery and Web Audio API.
+
+    It was an interesting challenge. I started building it as soon as I started learning JavaScript and it was quite hard to making it work. I already updated it a couple of times because of the new things that I've learned, and I guess I will continue to do so in the future.`,
+    md: `${require('../markdown/sequencer.md')}`,
     url: "https://afuh.github.io/sequencer/",
     code: "https://github.com/afuh/sequencer",
     image: `${require('../images/screenshots/sequencer.png')}`,
@@ -51,20 +54,29 @@ export const db = [
   },
   {
     name: "Calculator",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: `Simple JQuery calculator
+
+    The idea from the beginning was **not** to use eval() and do everything myself.
+    This is a project as described in Free Code Camp and The Odin Project`,
+    md: `${require('../markdown/calc.md')}`,
     url: "https://afuh.github.io/calculator/",
     code: "https://github.com/afuh/calculator",
     image: `${require('../images/screenshots/calc.png')}`,
-    tags: ["jquery", "fcc", "odin project"],
+    tags: ["jquery", "free code camp", "the odin project"],
     latest: false
   },
   {
     name: "Sketchpad",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: `A browser version of something between a Sketchpad and an Etch-A-Sketch.
+
+    The user can edit the thickness of the grid to create drawings in more detail and change the stroke's color and shape.
+
+    This is the first JavaScript project from the The Odin Project curriculum.`,
+    md: `${require('../markdown/sketch.md')}`,
     url: "https://afuh.github.io/sketchpad/",
     code: "https://github.com/afuh/sketchpad",
     image: `${require('../images/screenshots/sketch.png')}`,
-    tags: ["jquery", "odin project"],
+    tags: ["jquery", "the odin project"],
     latest: false
   },
   {
@@ -74,7 +86,7 @@ export const db = [
     url: "https://afuh.github.io/frases/",
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.png')}`,
-    tags: ["javascript", "fcc"],
+    tags: ["javascript", "free code camp"],
     latest: false
   },
   {
@@ -84,7 +96,7 @@ export const db = [
     url: "https://afuh.github.io/slider/",
     code: "https://github.com/afuh/slider",
     image: `${require('../images/screenshots/slide.png')}`,
-    tags: ["javascript", "odin project"],
+    tags: ["javascript", "the odin project"],
     latest: false
   },
   {
@@ -96,21 +108,29 @@ export const db = [
     image: `${require('../images/screenshots/snake.png')}`,
     gif: `${require('../images/gifs/snake.gif')}`,
     video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
-    tags: ["javascript", "p5.js", "odin project"],
+    tags: ["javascript", "p5.js", "the odin project"],
     latest: false
   },
   {
     name: "Weather React",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: `Show the local weather.
+
+    The user can search the by city, country or ZIP code and access the current weather and 5 days forecast.`,
+    md: `${require('../markdown/weather.md')}`,
     url: "http://naughty-joke.surge.sh/",
     code: "https://github.com/afuh/weather",
     image: `${require('../images/screenshots/weather.png')}`,
-    tags: ["react", "open weather map", "api", "fcc"],
+    tags: ["react", "open weather map", "api", "free code camp"],
     latest: false
   },
   {
     name: "GitHub Battle",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: `This App is the result of the awesome course React Fundamental sby Tyler McGinnis.
+
+    This app uses the GitHub API to showcase the most popular repositories. The user can also select between different languages to filter the results.
+
+    Additionally, the user can search and select two GitHub users to 'battle' each other. The application will find those users, analyze them and declare a winner.`,
+    md: `${require('../markdown/battle.md')}`,
     url: "http://milky-help.surge.sh/",
     code: "https://github.com/afuh/battle",
     image: `${require('../images/screenshots/battle.png')}`,
@@ -119,16 +139,21 @@ export const db = [
   },
   {
     name: "Simple Tabbed Browsing",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: `A restaurant site that use tabbed browsing to access the Menu, About Us and Contact pages.
+
+    This is a project as described in The Odin Project but instead of building it in JQuery (as proposed) I decided to do it with React as I read the documentation.
+
+    This is my first App using React.`,
+    md: `${require('../markdown/menu.md')}`,
     url: "https://afuh.github.io/react-browsing/",
     code: "https://github.com/afuh/react-browsing",
     image: `${require('../images/screenshots/menu.png')}`,
-    tags: ["react", "odin project"],
+    tags: ["react", "the odin project"],
     latest: false
   },
   {
     name: "Now That's Delicious!",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: "A full stack restaurant application which users can search, geolocate, review and curate their favourite restaurants from around the world.",
     md: `${require('../markdown/delicious.md')}`,
     url: "https://delicious-app.herokuapp.com/",
     code: "https://github.com/afuh/delicious",
