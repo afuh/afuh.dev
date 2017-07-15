@@ -165,7 +165,7 @@ export const db = [
     url: "https://afuh.github.io/js30/",
     code: "https://github.com/afuh/js30",
     image: `${require('../images/screenshots/placeholder.jpg')}`,
-    tags: ["extra"]
+    tags: ["extra", "javascript"]
   },
   {
     name: "FCC Back End API Projects",
@@ -173,6 +173,6 @@ export const db = [
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
     image: `${require('../images/screenshots/placeholder.jpg')}`,
-    tags: ["extra"]
+    tags: ["extra", "node", "express", "mongodb", "mongoose"]
   }
 ]

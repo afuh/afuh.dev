@@ -70,13 +70,16 @@ class Projects extends React.Component {
           <Header title={path} />
           <section className="projects" ref={section => this.section = section}>
             {spinner && <Spinner count={this.state.count}/>}
-            {data.map((project, i) => (
-              <Project
-                onload={this.handleLoad}
-                path={path}
-                key={i}
-                data={{name: project.name, image: project.image}} />
-            ))}
+            {data
+              .filter(a => !a.tags.includes('extra'))
+              .map((project, i) => (
+                <Project
+                  onload={this.handleLoad}
+                  path={path}
+                  key={i}
+                  data={{name: project.name, image: project.image}} />
+              ))
+            }
           </section>
         </div>
       </DocumentTitle>
