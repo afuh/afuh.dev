@@ -46,7 +46,7 @@ const Zoom = ({ match, history }) => {
           transitionEnter={false}
           transitionLeave={false}>
 
-          <div className={`${cl}__warper`}>
+          <div className={`${cl}__conteiner`}>
             <h1 className={`${cl}__name`}>{name}</h1>
             <div className={`${cl}__tags`}>
               {tags.map(tag => (

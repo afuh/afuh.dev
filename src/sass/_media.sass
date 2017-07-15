@@ -9,7 +9,7 @@
     &:hover
       img
         filter: none
-  .project__warper
+  .project__conteiner
     &:hover
       transition: all 0.2s
     h1
@@ -21,7 +21,7 @@
 +break(sm)
   .zoom
     justify-content: flex-start
-    &__warper,
+    &__conteiner,
       padding: 10px 20px
     &__info
       padding: 0
@@ -81,7 +81,7 @@
       box-shadow: none
 
   // lists
-  .nav__list-warper
+  .nav__list-conteiner
     padding-bottom: 35px
   .nav__lang-list, .nav__contact-list
     padding: 0
@@ -93,7 +93,8 @@
         width: 100%
         font-size: 20px
   .list-header
-    +center
+    display: flex
+    +position(center, center)
 
 .close
   transform: translateX(-110%)

@@ -38,7 +38,6 @@ export const db = [
     gif: `${require('../images/gifs/iss.gif')}`,
     video: [`${require('../images/videos/iss.webm')}`, `${require('../images/videos/iss.mp4')}` ],
     tags: ["javascript", "google maps", "api"],
-    latest: true
   },
   {
     name: "Step Sequencer",
@@ -50,7 +49,6 @@ export const db = [
     code: "https://github.com/afuh/sequencer",
     image: `${require('../images/screenshots/sequencer.png')}`,
     tags: ["jquery", "web audio", "api"],
-    latest: false
   },
   {
     name: "Calculator",
@@ -63,7 +61,6 @@ export const db = [
     code: "https://github.com/afuh/calculator",
     image: `${require('../images/screenshots/calc.png')}`,
     tags: ["jquery", "free code camp", "the odin project"],
-    latest: false
   },
   {
     name: "Sketchpad",
@@ -77,7 +74,6 @@ export const db = [
     code: "https://github.com/afuh/sketchpad",
     image: `${require('../images/screenshots/sketch.png')}`,
     tags: ["jquery", "the odin project"],
-    latest: false
   },
   {
     name: "Quote Machine",
@@ -87,7 +83,6 @@ export const db = [
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.png')}`,
     tags: ["javascript", "free code camp"],
-    latest: false
   },
   {
     name: "Minimalist Image Slider",
@@ -97,7 +92,6 @@ export const db = [
     code: "https://github.com/afuh/slider",
     image: `${require('../images/screenshots/slide.png')}`,
     tags: ["javascript", "the odin project"],
-    latest: false
   },
   {
     name: "Snake Game",
@@ -109,7 +103,6 @@ export const db = [
     gif: `${require('../images/gifs/snake.gif')}`,
     video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
     tags: ["javascript", "p5.js", "the odin project"],
-    latest: false
   },
   {
     name: "Weather React",
@@ -121,7 +114,6 @@ export const db = [
     code: "https://github.com/afuh/weather",
     image: `${require('../images/screenshots/weather.png')}`,
     tags: ["react", "open weather map", "api", "free code camp"],
-    latest: false
   },
   {
     name: "GitHub Battle",
@@ -135,7 +127,6 @@ export const db = [
     code: "https://github.com/afuh/battle",
     image: `${require('../images/screenshots/battle.png')}`,
     tags: ["react", "github", "api"],
-    latest: false
   },
   {
     name: "Simple Tabbed Browsing",
@@ -149,7 +140,6 @@ export const db = [
     code: "https://github.com/afuh/react-browsing",
     image: `${require('../images/screenshots/menu.png')}`,
     tags: ["react", "the odin project"],
-    latest: false
   },
   {
     name: "Now That's Delicious!",
@@ -159,34 +149,30 @@ export const db = [
     code: "https://github.com/afuh/delicious",
     image: `${require('../images/screenshots/delicious.png')}`,
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
-    latest: false
   },
   {
     name: "Sasso",
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    md: `${require('../markdown/sasso.md')}`,
+    // md: `${require('../markdown/sasso.md')}`,
     url: "",
     code: "https://github.com/afuh/sasso",
     image: `${require('../images/screenshots/placeholder.jpg')}`,
-    tags: ["sass"],
-    latest: false
+    tags: ["extra"]
   },
-  // {
-  //   name: "javascript 30",
-  //   info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   url: "https://afuh.github.io/js30/",
-  //   code: "https://github.com/afuh/js30",
-  //   image: `${require('../images/screenshots/js30.png')}`,
-  //   tags: ["javascript"],
-  //   latest: false
-  // },
   {
-    name: "Recreations",
+    name: "JavaScript 30",
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    url: "",
-    code: "https://github.com/afuh/sasso",
+    url: "https://afuh.github.io/js30/",
+    code: "https://github.com/afuh/js30",
     image: `${require('../images/screenshots/placeholder.jpg')}`,
-    tags: ["sass"],
-    latest: false
+    tags: ["extra"]
+  },
+  {
+    name: "FCC Back End API Projects",
+    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    url: "https://fcc-backend.herokuapp.com/",
+    code: "https://github.com/afuh/fcc-backend-projects",
+    image: `${require('../images/screenshots/placeholder.jpg')}`,
+    tags: ["extra"]
   }
 ]

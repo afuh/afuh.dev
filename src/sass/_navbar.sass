@@ -9,13 +9,12 @@ $gray: #9da5b4
   &__fixed
     padding-bottom: 10px
     flex-wrap: nowrap
-    // overflow: auto
     transform: translateX(0)
     +size(160px, auto)
     position: fixed
 
     &-header
-      +center
+      @extend .centrate, .row
       padding: 22px 0
       border-bottom: 1px solid color(lightgray)
       .n
@@ -24,7 +23,7 @@ $gray: #9da5b4
         text-transform: uppercase
       transition: text-shadow 2s
 
-  &__list-warper
+  &__list-conteiner
     overflow-y: scroll
     padding: 6px
 
@@ -37,9 +36,9 @@ $gray: #9da5b4
   &__lang-list, &__contact-list
     padding-left: 12px
     a, li
+      @extend .row
       +font(15px, 200)
       line-height: 1.8em
-      display: flex
       align-items: center
       color: color(black)
     a.language:hover

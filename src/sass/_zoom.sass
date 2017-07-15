@@ -1,11 +1,9 @@
 .zoom
-  +center
-  flex-flow: column
+  @extend .centrate, .col
   background: #fff
-  &__warper
+  &__conteiner
+    @extend .centrate, .col
     max-width: 980px
-    flex-flow: column
-    +center
     padding: 40px
   &__name
     text-align: center
@@ -19,12 +17,7 @@
     border-radius: 10px
     margin: 30px 0 0
   &__content
-    display: flex
-    flex-flow: column
-    color: color(black)
-    align-items: center
-    +position(center, center)
-    color: #fff
+    @extend .centrate, .col
   &__links
     +font(16px, 600)
     margin: 30px
@@ -40,8 +33,7 @@
       color: desaturate(color(lightgreen), 20%)
   &__tags
     width: 100%
-    +center
-    flex-wrap: wrap
+    @extend .centrate, .row
     a
       margin: 0 8px
       +font(12px, 200)
@@ -54,10 +46,10 @@
     border-bottom: 1px solid color(lightgray)
     color: color(black)
   &__back
+    @extend .centrate, .row
     +size(80px, 50px)
-    +center
-    cursor: pointer
     +font(40px, 200)
+    cursor: pointer
     margin: 20px 0
     color: color(lightgray)
     transition: transform 0.3s

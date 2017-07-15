@@ -1,11 +1,7 @@
 .projects
+  @extend .centrate, .col
+  +size(100%, auto)
   position: relative
-  width: 100%
-  display: flex
-  flex-flow: column wrap
-  // flex-flow: row wrap
-  justify-content: center
-  align-items: center
   padding: 10px 20px
   margin: 0 auto
   background: #fff
@@ -14,7 +10,6 @@
 
 .project
   border-radius: 10px
-  // +grid(1, 2, 0.5)
   max-width: 720px
   margin-bottom: 10px
   position: relative
@@ -25,14 +20,14 @@
   &:hover
     img
       filter: grayscale(100%) blur(5px)
-  &__warper
+  &__conteiner
+    @extend .centrate
     h1
       text-align: center
       padding: 30px
       border: 3px solid white
       box-shadow: 0 17px 50px 0 rgba(black, 0.2), 0 12px 15px 0 rgba(black, 0.25)
     background: rgba(0,0,0, 0.6)
-    +position(center, center)
     opacity: 0
     position: absolute
     top: 0
@@ -40,5 +35,4 @@
     +size(100%, 100%)
     &:hover
       transition: all 0.6s
-      // background: linear-gradient(to bottom, rgba(black, 0.7) 10%, rgba(black, 0.5))
       opacity: 1
