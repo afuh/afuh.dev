@@ -90,7 +90,7 @@ class Nav extends React.Component{
       <nav className='main__nav nav'>
         {window.innerWidth <= this.width && <button type="text" className="nav__opener" onClick={() => this.hide()}>{this.state.show ? "‹" : "›"}</button>}
 
-        <CSSTransitionGroup  className={`nav__fixed col ${this.state.switcher}`} component="div"
+        <CSSTransitionGroup  className={`nav__fixed ${this.state.switcher}`} component="div"
           transitionName="slide"
           transitionAppear={true}
           transitionAppearTimeout={300}

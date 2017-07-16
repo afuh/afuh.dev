@@ -19,10 +19,11 @@
   &__content
     @extend .centrate, .col
   &__links
+    @extend .row
     +font(16px, 600)
     margin: 30px
     justify-content: space-around
-    width: 40%
+    width: 50%
   &__live
     color: color(orange)
     &:hover
@@ -35,8 +36,8 @@
     width: 100%
     @extend .centrate, .row
     a
-      margin: 0 8px
       +font(12px, 200)
+      margin: 0 8px
       color: color(gray)
       &:hover
         text-decoration: underline

@@ -36,7 +36,7 @@ class Project extends React.Component {
         <div className={`${cl}__img`}>
           <img onLoad={onload} onError={onload} src={image} alt={name} />
         </div>
-        <Link to={`/p/${path}/${name}`} className={`${cl}__conteiner row`}>
+        <Link to={`/p/${path}/${name}`} className={`${cl}__conteiner`}>
           <h1 style={{color: "#fff"}}>{name}</h1>
         </Link>
       </article>
