@@ -156,7 +156,7 @@ export const db = [
     // md: `${require('../markdown/sasso.md')}`,
     url: "",
     code: "https://github.com/afuh/sasso",
-    image: `${require('../images/screenshots/placeholder.jpg')}`,
+    image: `${require('../images/screenshots/sasso.png')}`,
     tags: ["extra"]
   },
   {
@@ -164,7 +164,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://afuh.github.io/js30/",
     code: "https://github.com/afuh/js30",
-    image: `${require('../images/screenshots/placeholder.jpg')}`,
+    image: `${require('../images/screenshots/js30.png')}`,
     tags: ["extra", "javascript"]
   },
   {
@@ -172,7 +172,7 @@ export const db = [
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
-    image: `${require('../images/screenshots/placeholder.jpg')}`,
+    image: `${require('../images/screenshots/backend.png')}`,
     tags: ["extra", "node", "express", "mongodb", "mongoose"]
   }
 ]

@@ -1,3 +1,5 @@
+$noNav: 700px
+
 // ==== Projects list
 +break(sm)
   .projects
@@ -29,13 +31,13 @@
         width: 100%
         box-shadow: none
     &__links
-      width: 100%   
+      width: 100%
     +break(700px)
     &__img
       border-radius: 0
 
 // ==== Header
-+break(700px)
++break($noNav)
   .main__section .header
     position: fixed
     top: 0
@@ -46,14 +48,14 @@
     box-shadow: $shadow
 
 // ==== Main layout to column
-+break(700px)
++break($noNav)
   .main
     flex-direction: column
     &__section
       margin-top: 60px
 
 // ==== Navbar
-+break(700px)
++break($noNav)
   .main__nav
     position: fixed
     background: transparent
@@ -106,6 +108,16 @@
 
 
 // ==== 'More stuff' section
-+break(sm)
++break(1440px)
+  .more-stuff__conteiner
+    +grid(1, 2, 3)
+
++break(md)
   .more-stuff
     flex-direction: column
+
++break($noNav)
+  .more-stuff
+    padding: 0
+    &__conteiner
+      border-radius: 0
