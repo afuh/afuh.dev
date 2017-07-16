@@ -2,6 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router-dom'
 
+
 import Header from './Header';
 
 import { siteName, getData, countTags } from '../helpers/api';
@@ -33,7 +34,7 @@ const More = () => {
               <div className={`${cl}__img`}>
                 <img src={p.image} alt={p.name}/>
               </div>
-              <p className={`${cl}__info`}>{p.info}</p>
+              <p className={`${cl}__info`} dangerouslySetInnerHTML={{__html: p.info}}></p>
               <div className={`${cl}__links`}>
                 <a className={`${cl}__live`} href={p.url}>See it live</a>
                 <a className={`${cl}__code`} href={p.code} target="_blank">Code</a>
