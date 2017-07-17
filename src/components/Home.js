@@ -4,7 +4,7 @@ import DocumentTitle from 'react-document-title';
 import Header from './Header';
 import Project from './Project';
 
-import { getInfo, siteName } from '../helpers/api';
+import { getData, siteName } from '../helpers/api';
 
 class Home extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Home extends React.Component {
     this.request('Home')
   }
   request(path){
-    this.setState({ data: getInfo(path) })
+    this.setState({ data: getData(path) })
   }
   render(){
     const { data } = this.state

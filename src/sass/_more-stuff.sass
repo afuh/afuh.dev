@@ -1,16 +1,12 @@
 .more-stuff
-  display: grid
-  grid-template-columns: 1fr 1fr 1fr
-  grid-column-gap: 20px
-  grid-row-gap: 20px
-  // @extend .row
+  @extend .row
+  align-items: stretch
   padding: 10px 20px
   img
     transform: none
-  justify-content: flex-start
   &__conteiner
-    @extend .col, .centrate
-    // +grid(1, 3, 3)
+    @extend .row, .centrate
+    +grid(1, 3, 1)
     border-radius: 10px
     box-shadow: $shadow
     overflow: hidden
@@ -23,6 +19,8 @@
     border-bottom: 1px solid color(lightgray)
     padding: 20px
     margin: 0
+    line-height: 1.3
+    font-size: 15px
   &__links
     @extend .zoom__links
   &__live

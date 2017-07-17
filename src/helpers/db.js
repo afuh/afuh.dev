@@ -152,16 +152,20 @@ export const db = [
   },
   {
     name: "Sasso",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    // md: `${require('../markdown/sasso.md')}`,
-    url: "",
+    info: `Sasso is my personal CSS framework. It's a grid system made with Flexbox based on percentages. It has several shortcuts to speed things up. It doesn't use or need HTML classes and is 100% built with Sass functions and mixins.
+
+    Go to the <a href="https://github.com/afuh/sasso/blob/master/README.md"><strong>documentation</strong></a>`,
     code: "https://github.com/afuh/sasso",
     image: `${require('../images/screenshots/sasso.png')}`,
     tags: ["extra"]
   },
   {
     name: "JavaScript 30",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: `<a href="https://javascript30.com/" target="_blank">JavaScript30</a> is a great course by Wes Bos. The main idea is to build 30 things in 30 days just with vanilla JavaScript. No frameworks, no compilers, no libraries, no boilerplate.
+
+    I took this course to focus on learn and practice DOM manipulation.
+    This is a showcase with all my exercises.
+    `,
     url: "https://afuh.github.io/js30/",
     code: "https://github.com/afuh/js30",
     image: `${require('../images/screenshots/js30.png')}`,

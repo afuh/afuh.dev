@@ -109,18 +109,16 @@ $noNav: 700px
 
 // ==== 'More stuff' section
 +break(1440px)
-  .more-stuff
-    grid-template-columns: 1fr 1fr
-  // .more-stuff__conteiner
-  //   +grid(1, 2, 3)
+  .more-stuff__conteiner
+    +grid(1, 2, 3)
 
 +break(md)
   .more-stuff
-    grid-template-columns: 1fr
-    // flex-direction: column
+    flex-direction: column
+    display: block
 
 +break($noNav)
   .more-stuff
-    padding: 0
+    padding: 10px 20px
     &__conteiner
       border-radius: 0

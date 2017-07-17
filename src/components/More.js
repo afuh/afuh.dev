@@ -36,7 +36,7 @@ const More = () => {
               </div>
               <p className={`${cl}__info`} dangerouslySetInnerHTML={{__html: p.info}}></p>
               <div className={`${cl}__links`}>
-                <a className={`${cl}__live`} href={p.url}>See it live</a>
+                {p.url && <a className={`${cl}__live`} href={p.url}>See it live</a>}
                 <a className={`${cl}__code`} href={p.code} target="_blank">Code</a>
               </div>
             </article>

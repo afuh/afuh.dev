@@ -74,12 +74,3 @@ const Zoom = ({ match, history }) => {
 }
 
 export default Zoom
-
-
-/*
-  <video autoPlay loop preload="auto">
-    <source src={video[0]} type="video/webm"></source>
-    <source src={video[1]} type="video/mp4"></source>
-  </video>
-  <img src={props.gif || props.image} className="" alt=""/>
-*/
