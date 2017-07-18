@@ -38,6 +38,7 @@ export const db = [
     gif: `${require('../images/gifs/iss.gif')}`,
     video: [`${require('../images/videos/iss.webm')}`, `${require('../images/videos/iss.mp4')}` ],
     tags: ["javascript", "google maps", "api"],
+    latest: true
   },
   {
     name: "Step Sequencer",
