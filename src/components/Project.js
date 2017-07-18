@@ -47,7 +47,7 @@ class Project extends React.Component {
 Project.propTypes = {
   data: PropTypes.object.isRequired,
   path: PropTypes.string.isRequired,
-  onload: PropTypes.func.isRequired
+  onload: PropTypes.func
 }
 
 export default Project;

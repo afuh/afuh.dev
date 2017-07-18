@@ -58,7 +58,7 @@ class Projects extends React.Component {
     this.setState({ data })
   }
   render () {
-    const path = this.props.match.params.lang
+    const path = this.props.match.params.lang || this.props.match.path.split("/").slice(-1).toString()
     const { spinner, data } = this.state
 
     if (data.error) {

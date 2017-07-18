@@ -42,7 +42,7 @@ const Zoom = ({ match, history }) => {
         <CSSTransitionGroup className={cl} component="article"
           transitionName="fadeIn"
           transitionAppear={true}
-          transitionAppearTimeout={300}
+          transitionAppearTimeout={600}
           transitionEnter={false}
           transitionLeave={false}>
 

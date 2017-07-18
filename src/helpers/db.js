@@ -173,10 +173,10 @@ export const db = [
   },
   {
     name: "FCC Back End API Projects",
-    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    info: "I built a small page to showcase my solutions to the FreeCodeCamp API and microservices challenges. They all are built in Node.",
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
     image: `${require('../images/screenshots/backend.png')}`,
-    tags: ["extra", "node", "express", "mongodb", "mongoose"]
+    tags: ["extra", "node", "express", "mongodb", "mongoose", "api"]
   }
 ]
