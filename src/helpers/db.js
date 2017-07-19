@@ -174,7 +174,7 @@ export const db = [
   },
   {
     name: "FCC Back End API Projects",
-    info: "I built a small page to showcase my solutions to the FreeCodeCamp API and microservices challenges. They all are built in Node.",
+    info: "I built a small page to showcase my solutions to the FreeCodeCamp API and microservices challenges. They are all built in Node.",
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
     image: `${require('../images/screenshots/backend.png')}`,

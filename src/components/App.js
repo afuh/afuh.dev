@@ -18,7 +18,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/more" component={More} />
           <Route path="/p/:lang/:name" component={Zoom} />
-          <Route exact path="/p/latests" component={Projects} />
+          <Route exact path="/p/latest" component={Projects} />
           <Route path="/p/:lang" component={Projects} />
           <Route render={() => <ErrorMessage message={'Not found :('} fixed={true}/> } />
         </Switch>

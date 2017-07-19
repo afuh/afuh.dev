@@ -1,7 +1,18 @@
 .content
   padding: 10px 20px
+  height: 50vh
 
 .intro
-  margin: 0 auto
+  @extend .col
   max-width: 720px
+  justify-content: center
+  margin: 0 auto
   line-height: 1.3
+  h1, h2
+    font-weight: 300
+  &__1
+    @extend .col
+    justify-content: flex-end
+    flex: 1
+  &__2
+    flex: 1

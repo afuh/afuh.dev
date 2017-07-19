@@ -25,11 +25,11 @@ const style = {
 }
 
 const Spinner = (props) => {
-  const loader = require('../images/tail-spin.svg')
+  const spinner = require('../images/tail-spin.svg')
   return (
     <div className="spinner" style={style.spinner}>
       <div style={{position: "relative"}}>
-        <img style={{width: "60px"}} src={loader} />
+        <img style={{width: "60px"}} src={spinner} />
         <div style={style.counter}>{typeof props.count === "number" && props.count}</div>
       </div>
     </div>
