@@ -1,10 +1,11 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 
-import Header from './Header';
 import Project from './Project';
+import Header from './Header';
 
 import { getData, siteName } from '../helpers/api';
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -24,21 +25,13 @@ class Home extends React.Component {
     return (
       <DocumentTitle title={`${siteName} | Latests`}>
         <div className="main__section col">
-          <Header title="Latests" />
-          <div className="content">
+          <Header title={''}/>
+          <div className="content" ref={section => this.section = section}>
             <div className="intro">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>
+              <h2>I am a self-tought aspiring Front-End Web Developer.</h2>
             </div>
           </div>
-          <section className="projects">
-            {data.map((project, i) => (
-              <Project
-                key={i}
-                path={'latests'}
-                data={{name: project.name, image: project.image}} />
-            ))}
-          </section>
         </div>
       </DocumentTitle>
     )
@@ -46,3 +39,14 @@ class Home extends React.Component {
 }
 
 export default Home;
+
+/*
+  <section className="projects">
+    {data.map((project, i) => (
+      <Project
+        key={i}
+        path={'latest'}
+        data={{name: project.name, image: project.image}} />
+    ))}
+  </section>
+  */
