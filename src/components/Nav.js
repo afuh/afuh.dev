@@ -6,7 +6,7 @@ import { CSSTransitionGroup } from 'react-transition-group'
 import { siteName, icon } from '../helpers/api';
 
 const Lang = (props) => {
-  const links = ['latest','javascript', 'react', 'node', 'jquery', 'API', 'more'];
+  const links = ['javascript', 'react', 'node', 'jquery', 'API', 'more'];
   return (
     <div>
       <div className="list-header">Tags</div>

@@ -26,10 +26,24 @@ class Project extends React.Component {
   remove(){
     this.setState({ name: null, image: null })
   }
+  showTags(cl){
+    const { tags } = this.props.data
+    return (
+      <div className={`${cl}__tags`}>
+        {tags.map(tag => (
+          <Link
+            key={tag}
+            to={`/p/${tag}`}>
+            {tag}
+          </Link>
+          ))}
+      </div>
+    )
+  }
   render() {
     const { onload, path } = this.props
     const { name, image } = this.state
-    const cl = "project"
+    const cl = this.props.mini ? 'mini' : "project"
 
     return (
       <article className={cl}>
@@ -38,6 +52,7 @@ class Project extends React.Component {
         </div>
         <Link to={`/p/${path}/${name}`} className={`${cl}__conteiner`}>
           <h1 style={{color: "#fff"}}>{name}</h1>
+          {this.props.mini && this.showTags(cl)}
         </Link>
       </article>
     )
@@ -47,7 +62,8 @@ class Project extends React.Component {
 Project.propTypes = {
   data: PropTypes.object.isRequired,
   path: PropTypes.string.isRequired,
-  onload: PropTypes.func
+  onload: PropTypes.func,
+  mini: PropTypes.bool
 }
 
 export default Project;

@@ -1,8 +1,101 @@
 .content
   @extend .col, .centrate
-  +size(100%, 50vh)
+  +size(100%, auto)
 
 .intro
+  @extend .centrate, .col
   text-align: center
+  max-width: 850px
+  height: 700px
+  h1
+    font-size: 50px
+  h2
+    font-size: 40px
   h1, h2
+    letter-spacing: 0.04em
     font-weight: 300
+
+.latest
+  @extend .centrate, .col
+  width: 100%
+  background: #eeeeee
+  h3
+    padding: 50px 0 40px
+    text-align: center
+    +font(30px, 300)
+  &__conteiner
+    margin: 0 auto
+    max-width: 1000px
+    .projects
+      @extend .row
+      background: transparent
+    .mini
+      box-shadow: 0 17px 50px 0 rgba(black, 0.2), 0 12px 15px 0 rgba(black, 0.25)
+      position: relative
+      +size(500px, 400px)
+      +grid(1, 3, 3)
+      overflow: hidden
+      transition: all .2s
+      &:hover
+        box-shadow: none
+        .mini__conteiner
+          background: rgba(black, 0.6)
+        .mini__tags
+          transform: translateY(0)
+
+      &__img
+        display: flex
+        justify-content: center
+        height: 100%
+        img
+          +size(inherit, 100%)
+
+      &__conteiner
+        @extend .col, .centrate
+        background: rgba(black, 0.5)
+        +size(100%, 100%)
+        position: absolute
+        top: 0
+        transition: all .2s
+        h1
+          padding: 0 10px
+          text-align: center
+          +font(28px, 400)
+
+      &__tags
+        @extend .zoom__tags
+        transition: all .2s
+        transform: translateY(100%)
+        position: absolute
+        bottom: 0
+        padding: 10px 0
+        a
+          font-size: 14px
+          color: #fff
+
+
+  .see-more
+    padding-bottom: 30px
+    h3
+      padding: 50px 0 10px
+    &__tags
+      @extend .row, .centrate
+      +font(14px, 400)
+      margin-bottom: 30px
+      a
+        color: color(black)
+        margin: 0 8px
+        line-height: 1.3
+        position: relative
+        &:after
+          content: ""
+          transition: transform 0.2s
+          transform: scaleX(0)
+        &:hover::after
+          transform: scaleX(1)
+          position: absolute
+          content: ""
+          width: 100%
+          left: 0
+          bottom: 0
+          border-bottom: 2px solid color(orange)

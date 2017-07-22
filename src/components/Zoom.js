@@ -76,5 +76,3 @@ const Zoom = ({ match, history }) => {
 }
 
 export default Zoom
-
-// <span className={`${cl}__back`} onClick={history.goBack}>⇦</span>
