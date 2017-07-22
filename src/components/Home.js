@@ -10,11 +10,7 @@ import { db } from '../helpers/db';
 
 const allTags = () => {
   const arr = db.map(p => p.tags).reduce((a, b) => a.concat(b))
-  return (
-    arr.filter((tag, i) => arr.indexOf(tag) === i)
-    .filter(a => !a.includes('extra'))
-    .sort()
-  )
+  return arr.filter((tag, i) => arr.indexOf(tag) === i).sort()
 }
 
 const Latest = (props) => {

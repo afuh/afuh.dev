@@ -44,44 +44,6 @@ $noNav: 700px
 
 // ==== Navbar
 +break($noNav)
-  .main__nav
-    position: fixed
-    background: transparent
-    z-index: 500
-
-  .nav__fixed
-    width: 50%
-    transition: all .3s ease
-    background: #fff
-    opacity: 0.99
-    height: 100%
-    border-right: 1px solid color(gray)
-    top: 1
-    z-index: -1
-    &-header
-      padding: 16px 0
-
-  // lists
-  .nav__list-conteiner
-    padding-bottom: 35px
-  .nav__lang-list, .nav__contact-list
-    padding: 0
-    margin-bottom: 10px
-    li
-      padding: 10px
-      border-bottom: 1px solid color(lightgray)
-      a
-        width: 100%
-        font-size: 20px
-  .list-header
-    display: flex
-    +position(center, center)
-
-.close
-  transform: translateX(-110%)
-
-.open
-  transform: translateX(0)
 
 
 // ==== 'More stuff' section

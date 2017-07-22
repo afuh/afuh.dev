@@ -43,11 +43,15 @@
           background: rgba(black, 0.6)
         .mini__tags
           transform: translateY(0)
+        .mini__img
+          filter: blur(2px)
+          height: 100%
 
       &__img
         display: flex
         justify-content: center
-        height: 100%
+        height: 105%
+        transition: all .2s
         img
           +size(inherit, 100%)
 

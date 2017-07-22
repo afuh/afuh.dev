@@ -158,7 +158,7 @@ export const db = [
     Go to the <a href="https://github.com/afuh/sasso/blob/master/README.md"><strong>documentation</strong></a>`,
     code: "https://github.com/afuh/sasso",
     image: `${require('../images/screenshots/sasso.png')}`,
-    tags: ["extra"]
+    tags: []
   },
   {
     name: "JavaScript 30",
@@ -170,7 +170,7 @@ export const db = [
     url: "https://afuh.github.io/js30/",
     code: "https://github.com/afuh/js30",
     image: `${require('../images/screenshots/js30.png')}`,
-    tags: ["extra", "javascript"]
+    tags: ["javascript"]
   },
   {
     name: "FCC Back End API Projects",
@@ -178,6 +178,6 @@ export const db = [
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
     image: `${require('../images/screenshots/backend.png')}`,
-    tags: ["extra", "node", "express", "mongodb", "mongoose", "api"]
+    tags: ["node", "express", "mongodb", "mongoose", "api"]
   }
 ]

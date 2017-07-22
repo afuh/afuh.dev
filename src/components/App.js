@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Nav from './Nav';
 import Projects from './Projects';
 import Home from './Home';
-import More from './More';
 import Zoom from './Zoom';
 
 import ErrorMessage from '../helpers/Error';
@@ -16,7 +15,6 @@ const App = () => {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/more" component={More} />
           <Route path="/p/:lang/:name" component={Zoom} />
           <Route exact path="/p/latest" component={Projects} />
           <Route path="/p/:lang" component={Projects} />

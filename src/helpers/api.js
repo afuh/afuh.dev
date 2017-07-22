@@ -1,14 +1,5 @@
 import { db } from './db.js';
 
-// export const getInfo = (section) => {
-//   if (section === 'Home'){
-//     return db.filter(i => i.latest);
-//   }
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => (resolve(db.filter(i => i.tags.includes(section.toLowerCase())))), 10000)
-//   })
-// }
-
 export const getData = (section) => {
   if (section === 'Home'){
     return db.filter(i => i.latest);
@@ -42,5 +33,4 @@ export const getProject = pr => {
 };
 
 export const icon = file => require(`../images/icons/${file}`)
-
 export const siteName = 'Axel Fuhrmann';

@@ -69,7 +69,6 @@ class Projects extends React.Component {
           <section className="projects" ref={section => this.section = section}>
             {spinner && <Spinner count={this.state.count}/>}
             {data
-              .filter(a => !a.tags.includes('extra'))
               .map((project, i) => (
                 <Project
                   onload={this.handleLoad}
