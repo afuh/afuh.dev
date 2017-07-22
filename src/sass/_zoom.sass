@@ -4,7 +4,7 @@
   &__conteiner
     @extend .centrate, .col
     max-width: 980px
-    padding: 40px
+    padding: 40px 40px 0
   &__name
     text-align: center
     color: color(black)
@@ -48,14 +48,14 @@
     color: color(black)
   &__back
     @extend .centrate, .row
-    +size(80px, 50px)
-    +font(40px, 200)
+    width: 50%
     cursor: pointer
     margin: 20px 0
-    color: color(lightgray)
     transition: transform 0.3s
+    img
+      width: 50px
     &:hover
-      transform: scale(1.1)
+      transform: scale(1.05)
 
 
 .fadeIn-appear

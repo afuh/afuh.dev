@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import Header  from './Header';
 
 import Markdown from '../helpers/Markdown'
-import { getProject, countTags, siteName } from '../helpers/api';
+import { getProject, countTags, siteName, icon } from '../helpers/api';
 import ErrorMessage  from '../helpers/Error';
 
 const HandleVisual = (props) => {
@@ -64,7 +64,9 @@ const Zoom = ({ match, history }) => {
             </div>
             <div className={`${cl}__content`}>
               <div className={`${cl}__info`}>{md ? <Markdown md={md}/> : info}</div>
-              <span className={`${cl}__back`} onClick={history.goBack}>⇦</span>
+              <div className={`${cl}__back`} onClick={history.goBack}>
+                <img src={icon('back.svg')} />
+              </div>
             </div>
           </div>
         </CSSTransitionGroup>
@@ -74,3 +76,5 @@ const Zoom = ({ match, history }) => {
 }
 
 export default Zoom
+
+// <span className={`${cl}__back`} onClick={history.goBack}>⇦</span>

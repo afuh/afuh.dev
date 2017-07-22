@@ -41,4 +41,6 @@ export const getProject = pr => {
   return project[0]
 };
 
+export const icon = file => require(`../images/icons/${file}`)
+
 export const siteName = 'Axel Fuhrmann';

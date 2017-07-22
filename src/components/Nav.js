@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-import { siteName } from '../helpers/api';
+import { siteName, icon } from '../helpers/api';
 
 const Lang = (props) => {
   const links = ['latest','javascript', 'react', 'node', 'jquery', 'API', 'more'];
@@ -31,8 +31,6 @@ const Lang = (props) => {
 Lang.propTypes = {
   hide: PropTypes.func.isRequired
 }
-
-const icon = file => require(`../images/icons/${file}`)
 
 const Contact = () => {
   const links = [
