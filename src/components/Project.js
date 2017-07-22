@@ -52,8 +52,8 @@ class Project extends React.Component {
         </div>
         <Link to={`/p/${path}/${name}`} className={`${cl}__conteiner`}>
           <h1 style={{color: "#fff"}}>{name}</h1>
-          {this.props.mini && this.showTags(cl)}
         </Link>
+        {this.props.mini && this.showTags(cl)}
       </article>
     )
   }

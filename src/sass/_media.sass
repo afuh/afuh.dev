@@ -110,3 +110,16 @@ $noNav: 700px
     &__conteiner
       margin: 0 0 20px
       border-radius: 0
+
+// ==== Home
++break(md)
+  .latest__conteiner .mini
+    +grid(1, 2, 3)
+
++break($noNav)
+  .latest__conteiner
+    .projects
+      flex-direction: column
+      max-width: 100vw
+  .mini
+    width: 100% !important

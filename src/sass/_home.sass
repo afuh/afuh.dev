@@ -6,7 +6,7 @@
   @extend .centrate, .col
   text-align: center
   max-width: 850px
-  height: 700px
+  height: 50vh
   h1
     font-size: 50px
   h2
@@ -29,6 +29,7 @@
     .projects
       @extend .row
       background: transparent
+
     .mini
       box-shadow: 0 17px 50px 0 rgba(black, 0.2), 0 12px 15px 0 rgba(black, 0.25)
       position: relative
@@ -63,15 +64,17 @@
           +font(28px, 400)
 
       &__tags
-        @extend .zoom__tags
+        @extend .row, .centrate, .see-more__tags
+        width: 100%
         transition: all .2s
         transform: translateY(100%)
         position: absolute
         bottom: 0
         padding: 10px 0
+        margin: 0 !important
         a
-          font-size: 14px
-          color: #fff
+          font-size: 15px
+          color: #fff !important
 
 
   .see-more

@@ -86,14 +86,3 @@ class Home extends React.Component {
 }
 
 export default Home;
-
-/*
-  <section className="projects">
-    {latest.map((project, i) => (
-      <Project
-        key={i}
-        path={'latest'}
-        data={{name: project.name, image: project.image}} />
-    ))}
-  </section>
-  */
