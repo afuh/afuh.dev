@@ -5,8 +5,17 @@ import PropTypes from 'prop-types';
 
 import Project from './Project';
 
-import { getData, siteName, countTags } from '../helpers/api';
+import { getData, siteName, countTags, icon } from '../helpers/api';
 import { db } from '../helpers/db';
+
+const Header = () => {
+  return (
+    <div className="intro">
+      <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>
+      <h2>I am a self-tought aspiring Front-End Web Developer.</h2>
+    </div>
+  )
+}
 
 const allTags = () => {
   const arr = db.map(p => p.tags).reduce((a, b) => a.concat(b))
@@ -48,6 +57,35 @@ Latest.propTypes = {
   data: PropTypes.array.isRequired
 }
 
+const Contact = () => {
+  const links = [
+    { name: "GitHub", url: "https://github.com/afuh", icon: icon('gh.png')},
+    { name: "CodePen", url: "https://codepen.io/mage20", icon: icon('cp.png')},
+    { name: "E-Mail", url: "mailto:axelfuh@gmail.com", icon: icon('mail.png')}
+  ]
+  return (
+    <div className="contact">
+      <h3 id="contact">Contact Me</h3>
+      <ul className="contact__list">
+        {links.map(link => (
+          <li key={link.name}>
+            <a
+              className='contact__link'
+              target="_blank"
+              rel='noreferrer noopener'
+              href={link.url}>
+              <img className={`contact__icon icon-${link.name}`} src={link.icon}/>
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+
+
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -67,11 +105,9 @@ class Home extends React.Component {
       <DocumentTitle title={`${siteName} | Latests`}>
         <div className="main__section col">
           <div className="content">
-            <div className="intro">
-              <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>
-              <h2>I am a self-tought aspiring Front-End Web Developer.</h2>
-            </div>
+            <Header />
             <Latest data={data}/>
+            <Contact />
           </div>
         </div>
       </DocumentTitle>

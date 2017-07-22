@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-import { siteName, icon } from '../helpers/api';
+import { siteName } from '../helpers/api';
 
 const Lang = (props) => {
-  const links = ['javascript', 'react', 'node', 'jquery', 'API'];
+  const links = ['javascript', 'react', 'node', 'jquery', 'API', 'contact'];
   return (
       <ul className="nav__lang">
         {links.map(link => (
@@ -17,7 +17,7 @@ const Lang = (props) => {
             <NavLink
               className="language"
               activeClassName='nav__active-js'
-              to={link === "more" ? `/more` : `/p/${link}`}>{link.toLowerCase()}
+              to={link !== "contact" && `/p/${link}`}>{link.toLowerCase()}
             </NavLink>
           </li>
         ))}
@@ -28,33 +28,6 @@ const Lang = (props) => {
 Lang.propTypes = {
   hide: PropTypes.func.isRequired
 }
-
-// const Contact = () => {
-//   const links = [
-//     { name: "github", url: "https://github.com/afuh", icon: icon('gh.png')},
-//     { name: "codepen", url: "https://codepen.io/mage20", icon: icon('cp.png')},
-//     { name: "email", url: "mailto:axelfuh@gmail.com", icon: icon('mail.png')}
-//   ]
-//   return (
-//     <div>
-//       <div className="list-header">contact</div>
-//       <ul className="nav__contact-list">
-//         {links.map(link => (
-//           <li key={link.name}>
-//             <a
-//               className='contact'
-//               target="_blank"
-//               rel='noreferrer noopener'
-//               href={link.url}>
-//               <img className={`icon icon-${link.name}`} src={link.icon}/>
-//               {link.name}
-//             </a>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   )
-// }
 
 class Nav extends React.Component{
   constructor() {
