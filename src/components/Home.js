@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 import Project from './Project';
-import Header from './Header';
 
 import { getData, siteName, countTags } from '../helpers/api';
 import { db } from '../helpers/db';
@@ -71,7 +70,6 @@ class Home extends React.Component {
     return (
       <DocumentTitle title={`${siteName} | Latests`}>
         <div className="main__section col">
-          {/*<Header title={'Latest Projects'} />*/}
           <div className="content">
             <div className="intro">
               <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>

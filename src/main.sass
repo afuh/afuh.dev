@@ -1,6 +1,5 @@
 @import ~sasso/sasso.sass
 @import sass/_navbar
-@import sass/_header
 @import sass/_project
 @import sass/_zoom
 @import sass/_more-stuff
@@ -8,17 +7,14 @@
 
 // === general settings
 .main
-  @extend .row
+  @extend .col
   max-width: 1920px
   min-height: 100vh
   flex-wrap: nowrap
   &__nav
-    +grid(1, 12)
-    z-index: 1
   &__section
     @extend .col
     z-index: 2
-    +grid(11, 12)
 
 
 img

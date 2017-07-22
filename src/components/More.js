@@ -2,8 +2,6 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router-dom'
 
-import Header from './Header';
-
 import { siteName, getData, countTags } from '../helpers/api';
 
 
@@ -13,7 +11,6 @@ const More = () => {
   return (
     <DocumentTitle title={`${siteName} | more stuff`}>
       <div className="main__section">
-        <Header title="More stuff" />
         <section className={cl}>
           {data.map((p, i) => (
             <article className={`${cl}__conteiner`} key={i}>

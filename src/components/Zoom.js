@@ -4,8 +4,6 @@ import DocumentTitle from 'react-document-title';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 
-import Header  from './Header';
-
 import Markdown from '../helpers/Markdown'
 import { getProject, countTags, siteName, icon } from '../helpers/api';
 import ErrorMessage  from '../helpers/Error';
@@ -38,7 +36,6 @@ const Zoom = ({ match, history }) => {
   return (
     <DocumentTitle title={`${siteName} | ${name}`}>
       <div className="main__section">
-        <Header title={match.params.lang} />
         <CSSTransitionGroup className={cl} component="article"
           transitionName="fadeIn"
           transitionAppear={true}

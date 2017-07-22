@@ -2,7 +2,6 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 
 import Project from './Project';
-import Header  from './Header';
 
 import { getData, siteName } from '../helpers/api';
 import Spinner from '../helpers/Spinner';
@@ -67,7 +66,6 @@ class Projects extends React.Component {
     return (
       <DocumentTitle title={`${siteName} | ${path}`}>
         <div className="main__section col">
-          <Header title={path} />
           <section className="projects" ref={section => this.section = section}>
             {spinner && <Spinner count={this.state.count}/>}
             {data
