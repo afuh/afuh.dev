@@ -51,6 +51,14 @@ $gray: #9da5b4
     img.icon
       margin-right: 6px
       +size(16px, 16px)
+      
+  &__opener
+    @extend .row, .centrate
+    +size(60px, 50px)
+    z-index: 5
+    cursor: pointer
+    img
+      width: 30%
 
 li.lang
   position: relative

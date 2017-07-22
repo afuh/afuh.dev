@@ -32,12 +32,13 @@ Lang.propTypes = {
   hide: PropTypes.func.isRequired
 }
 
+const icon = file => require(`../images/icons/${file}`)
+
 const Contact = () => {
-  const icon = file => require(`../images/icons/${file}.png`)
   const links = [
-    { name: "github", url: "https://github.com/afuh", icon: icon('gh')},
-    { name: "codepen", url: "https://codepen.io/mage20", icon: icon('cp')},
-    { name: "email", url: "mailto:axelfuh@gmail.com", icon: icon('mail')}
+    { name: "github", url: "https://github.com/afuh", icon: icon('gh.png')},
+    { name: "codepen", url: "https://codepen.io/mage20", icon: icon('cp.png')},
+    { name: "email", url: "mailto:axelfuh@gmail.com", icon: icon('mail.png')}
   ]
   return (
     <div>
@@ -88,7 +89,11 @@ class Nav extends React.Component{
 
     return (
       <nav className='main__nav nav'>
-        {window.innerWidth <= this.width && <button type="text" className="nav__opener" onClick={() => this.hide()}>{this.state.show ? "‹" : "›"}</button>}
+        {window.innerWidth <= this.width &&
+          <div className="nav__opener" onClick={() => this.hide()}>
+            <img src={this.state.show ? icon('left.svg') : icon('right.svg')} />
+          </div>
+        }
 
         <CSSTransitionGroup  className={`nav__fixed ${this.state.switcher}`} component="div"
           transitionName="slide"
@@ -112,3 +117,5 @@ class Nav extends React.Component{
 
 
 export default Nav;
+
+//<div className="nav__opener" onClick={() => this.hide()}>{this.state.show ? "‹" : "›"}</div>
