@@ -16,7 +16,7 @@ $noNav: 640px
   .main
     flex-direction: column
     &__section
-      margin-top: 60px
+      margin-top: 80px
 
 // ==== Navbar
 +break(720px)
@@ -28,7 +28,7 @@ $noNav: 640px
       font-size: 15px
       .nav__lang
         justify-content: space-around
-        
+
 +break($noNav)
   .nav
     position: fixed
@@ -37,7 +37,6 @@ $noNav: 640px
     background: #fff
     box-shadow: $shadow
     .nav__fixed
-      height: 50px
       position: relative
       justify-content: space-between
       &-header
@@ -93,10 +92,11 @@ $noNav: 640px
     padding: 0
     flex-direction: column
     max-width: 100vw
+    align-items: center
     .mini
       box-shadow: none
       margin: 10px 0
-      width: 100% !important
+      width: 95% !important
       &:hover
         .mini__tags
           transform: translateY(0)

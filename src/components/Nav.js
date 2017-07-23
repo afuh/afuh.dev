@@ -64,7 +64,7 @@ class Nav extends React.Component{
     const darkColor = window.location.pathname.split("/").length === 4 ? true : false
     const headerStyle = {on: {color: "#4CAF50"}, off: darkColor ? {color: "#fff"} : {color: "#4f4f4f"}}
     const bckStyle = {on: {background: "#4f4f4f"}, off: {background: "#fff" }}
-    const iconColor = darkColor ? "rightWhite.svg" : "right.svg"
+    const iconColor = darkColor ? "openW.svg" : "open.svg"
 
     return (
       <nav style={darkColor ? bckStyle.on : bckStyle. off} className='main__nav nav'>
@@ -77,7 +77,7 @@ class Nav extends React.Component{
 
           {window.innerWidth <= this.width &&
             <div className="nav__opener" onClick={() => this.hide()}>
-              <img src={this.state.show ? icon('left.svg') : icon(iconColor)} />
+              <img src={this.state.show ? icon('close.svg') : icon(iconColor)} />
             </div>
           }
 
