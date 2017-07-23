@@ -152,21 +152,14 @@ export const db = [
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
   },
   {
-    name: "Sasso",
-    info: `Sasso is my personal CSS framework. It's a grid system made with Flexbox based on percentages. It has several shortcuts to speed things up. It doesn't use or need HTML classes and is 100% built with Sass functions and mixins.
-
-    Go to the <a href="https://github.com/afuh/sasso/blob/master/README.md"><strong>documentation</strong></a>`,
-    code: "https://github.com/afuh/sasso",
-    image: `${require('../images/screenshots/sasso.png')}`,
-    tags: []
-  },
-  {
     name: "JavaScript 30",
-    info: `<a href="https://javascript30.com/" target="_blank">JavaScript30</a> is a great course by Wes Bos. The main idea is to build 30 things in 30 days just with vanilla JavaScript. No frameworks, no compilers, no libraries, no boilerplate.
+    info: `JavaScript30 is a great course by Wes Bos. The main idea is to build 30 things in 30 days with vanilla JavaScript. No frameworks, no compilers, no libraries, no boilerplate.
 
     I took this course to focus on learn and practice DOM manipulation.
+
     This is a showcase with all my exercises.
     `,
+    md: `${require('../markdown/js30.md')}`,
     url: "https://afuh.github.io/js30/",
     code: "https://github.com/afuh/js30",
     image: `${require('../images/screenshots/js30.png')}`,
@@ -174,7 +167,8 @@ export const db = [
   },
   {
     name: "FCC Back End API Projects",
-    info: "I built a small page to showcase my solutions to the FreeCodeCamp API and microservices challenges. They are all built in Node.",
+    info: "This is a small page to showcase my solutions to the FreeCodeCamp API and microservices challenges.",
+    md: `${require('../markdown/fccapi.md')}`,
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
     image: `${require('../images/screenshots/backend.png')}`,

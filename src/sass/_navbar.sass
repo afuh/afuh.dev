@@ -1,5 +1,6 @@
 .nav
   box-shadow: $shadow
+  transition: all .2s
   .nav__fixed
     margin: 0 auto
     @extend .row
@@ -12,6 +13,9 @@
       a
         font-weight: 600
         color: color(darkgray)
+        transition: all .2s
+        &:hover
+          color: color(green) !important
     &-conteiner
       +grid(9, 12)
       .nav__lang
@@ -37,7 +41,7 @@
           &:hover::after
             transform: scaleX(1)
 
-.nav__active-js
+.lang-link-active
   color: color(orange) !important
 
 
@@ -50,9 +54,8 @@
     transform: translateY(0)
 
 
-
-
 .nav .nav__opener
+  cursor: pointer
   @extend .row, .centrate
   +grid(1, 3)
   z-index: 3

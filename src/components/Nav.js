@@ -6,7 +6,7 @@ import { CSSTransitionGroup } from 'react-transition-group'
 import { siteName, icon } from '../helpers/api';
 
 const Lang = (props) => {
-  const links = ['javascript', 'react', 'node', 'jquery', 'API', 'contact'];
+  const links = ['javascript', 'react', 'node', 'jquery', 'API'];
   return (
       <ul className="nav__lang">
         {links.map(link => (
@@ -15,18 +15,21 @@ const Lang = (props) => {
             onClick={props.hide}
             key={link}>
             <NavLink
-              className="language"
-              activeClassName='nav__active-js'
+              className="lang-link"
+              activeClassName='lang-link-active'
               to={link !== "contact" && `/p/${link}`}>{link.toLowerCase()}
             </NavLink>
           </li>
         ))}
+        <li className="lang" onClick={props.hide}>
+          <a style={{fontWeight: 600}} className="lang-link" href={`${window.location.origin}#contact`}>contact</a>
+        </li>
       </ul>
     )
 }
 
 Lang.propTypes = {
-  hide: PropTypes.func.isRequired
+  hide: PropTypes.func
 }
 
 class Nav extends React.Component{
@@ -54,6 +57,7 @@ class Nav extends React.Component{
   }
   render(){
     window.onresize = () => this.handleResize();
+    const headerStyle = {on: {color: "#4CAF50"}, off: {color: "#4f4f4f" }}
 
     return (
       <nav className='main__nav nav'>
@@ -70,7 +74,7 @@ class Nav extends React.Component{
             </div>
           }
 
-          <div className="nav__fixed-header"><Link className="n" to="/">{siteName}</Link></div>
+          <div className="nav__fixed-header"><Link to="/" style={window.location.pathname === '/' ? headerStyle.on : headerStyle.off}>{siteName}</Link></div>
 
           {window.innerWidth >= this.width &&
             <div className={`nav__fixed-conteiner`}>

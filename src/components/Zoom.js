@@ -8,8 +8,8 @@ import Markdown from '../helpers/Markdown'
 import { getProject, countTags, siteName, icon } from '../helpers/api';
 import ErrorMessage  from '../helpers/Error';
 
-const HandleVisual = (props) => {
-  const { video, gif, image } = props.data;
+const HandleVisual = ({ data }) => {
+  const { video, gif, image } = data;
 
   if (video && video.length) {
     return (
@@ -26,16 +26,72 @@ HandleVisual.propTypes = {
   data: PropTypes.object.isRequired
 }
 
+const Visual = ({ data, cl }) => {
+  const {name, tags, video, gif, image, code, url} = data
+  return (
+    <div className={`${cl}__visual`}>
+      <h1 className={`${cl}__name`}>{name}</h1>
+      <div className={`${cl}__tags`}>
+        {tags.map(tag => (
+          <Link
+            key={tag}
+            to={`/p/${tag}`}>
+            {countTags(tag)}
+          </Link>
+          ))
+        }
+      </div>
+      <div className={`${cl}__img`}><HandleVisual data={{video, gif, image}} /></div>
+      <div className={`${cl}__links`}>
+        {name !== "Portfolio" && <a className={`${cl}__live`} href={url}>See it live</a>}
+        <a className={`${cl}__code`} href={code} target="_blank">Code</a>
+      </div>
+    </div>
+  )
+}
+
+Visual.propTypes = {
+  data: PropTypes.object.isRequired,
+  cl: PropTypes.string.isRequired
+}
+
+const Info = ({ data, cl }) => {
+  const { md, info } = data
+  return (
+    <div className={`${cl}__info`}>{md ? <Markdown md={md}/> : info}</div>
+  )
+}
+
+Info.propTypes = {
+  data: PropTypes.object.isRequired,
+  cl: PropTypes.string.isRequired
+}
+
+const Back = ({ onclick, cl }) => {
+  return(
+    <div className={`${cl}__back`} onClick={onclick}>
+        <img src={icon('back.svg')} />
+    </div>
+  )
+}
+
+Back.propTypes = {
+  onclick: PropTypes.func.isRequired,
+  cl: PropTypes.string.isRequired
+}
+
 const Zoom = ({ match, history }) => {
   const { name, info, url, code, image, tags, video, gif, md, error } = getProject(match.params.name)
-  const cl = "zoom"
+  const cl = 'zoom'
 
   if (error) {
     return <ErrorMessage message={error} />
   }
+
   return (
     <DocumentTitle title={`${siteName} | ${name}`}>
       <div className="main__section">
+
         <CSSTransitionGroup className={cl} component="article"
           transitionName="fadeIn"
           transitionAppear={true}
@@ -43,29 +99,10 @@ const Zoom = ({ match, history }) => {
           transitionEnter={false}
           transitionLeave={false}>
 
-          <div className={`${cl}__conteiner`}>
-            <h1 className={`${cl}__name`}>{name}</h1>
-            <div className={`${cl}__tags`}>
-              {tags.map(tag => (
-                <Link
-                  key={tag}
-                  to={`/p/${tag}`}>
-                  {countTags(tag)}
-                </Link>
-                ))}
-            </div>
-            <div className={`${cl}__img`}><HandleVisual data={{video, gif, image}} /></div>
-            <div className={`${cl}__links`}>
-              {name !== "Portfolio" && <a className={`${cl}__live`} href={url}>See it live</a>}
-              <a className={`${cl}__code`} href={code} target="_blank">Code</a>
-            </div>
-            <div className={`${cl}__content`}>
-              <div className={`${cl}__info`}>{md ? <Markdown md={md}/> : info}</div>
-              <div className={`${cl}__back`} onClick={history.goBack}>
-                <img src={icon('back.svg')} />
-              </div>
-            </div>
-          </div>
+          <Visual data={{name, tags, video, gif, image, code, url}} cl={cl}/>
+          <Info data={{md, info}} cl={cl}/>
+          <Back onclick={history.goBack} cl={cl}/>
+
         </CSSTransitionGroup>
       </div>
     </DocumentTitle>

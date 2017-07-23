@@ -1,29 +1,39 @@
 .zoom
   @extend .centrate, .col
   background: #fff
-  &__conteiner
-    @extend .centrate, .col
-    max-width: 980px
-    padding: 40px 40px 0
+  margin-top: 20px
+  min-height: calc(100vh - 80px)
+
+
+  &__visual
+    border-bottom: 2px solid color(whitesmoke)
+    max-width: 960px
   &__name
     text-align: center
     color: color(black)
     +font(30px, 200)
     margin-bottom: 10px
     letter-spacing: .15em
+  &__tags
+    @extend .centrate, .row
+    width: 100%
+    a
+      +font(12px, 200)
+      margin: 0 8px
+      color: color(gray)
+      &:hover
+        text-decoration: underline
   &__img
     box-shadow: $shadow
     overflow: hidden
     border-radius: 10px
     margin: 30px 0 0
-  &__content
-    @extend .centrate, .col
   &__links
     @extend .row
     +font(16px, 600)
-    margin: 30px
+    margin: 30px 0
     justify-content: space-around
-    width: 50%
+    width: 100%
   &__live
     color: color(orange)
     &:hover
@@ -32,30 +42,25 @@
     color: color(lightgreen)
     &:hover
       color: desaturate(color(lightgreen), 20%)
-  &__tags
-    width: 100%
-    @extend .centrate, .row
-    a
-      +font(12px, 200)
-      margin: 0 8px
-      color: color(gray)
-      &:hover
-        text-decoration: underline
+
+
+
   &__info
+    max-width: 640px
     white-space: pre-line
-    padding: 0 45px 45px
-    border-bottom: 1px solid color(lightgray)
+    margin: 25px 0 45px 0
     color: color(black)
+
+
+
   &__back
-    @extend .centrate, .row
-    width: 50%
+    @extend .row, .centrate
+    background: color(whitesmoke)
+    width: 100%
+    min-height: 20vh
     cursor: pointer
-    margin: 20px 0
-    transition: transform 0.3s
     img
       width: 50px
-    &:hover
-      transform: scale(1.05)
 
 
 .fadeIn-appear
