@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-import { siteName } from '../helpers/api';
+import { siteName, icon } from '../helpers/api';
 
 const Lang = (props) => {
   const links = ['javascript', 'react', 'node', 'jquery', 'API', 'contact'];
@@ -32,7 +32,7 @@ Lang.propTypes = {
 class Nav extends React.Component{
   constructor() {
     super()
-    this.width = 700 //768 / 480
+    this.width = 620 //768 / 480
     this.state = {
       show: window.innerWidth <= this.width ? false : true,
       switcher: window.innerWidth <= this.width ? 'close' : 'open',
@@ -57,26 +57,32 @@ class Nav extends React.Component{
 
     return (
       <nav className='main__nav nav'>
-        {/*window.innerWidth <= this.width &&
-          <div className="nav__opener" onClick={() => this.hide()}>
-            <img src={this.state.show ? icon('left.svg') : icon('right.svg')} />
-          </div>
-        */}
-
-        <CSSTransitionGroup  className={`nav__fixed ${this.state.switcher}`} component="div"
+        <CSSTransitionGroup  className="nav__fixed" component="div"
           transitionName="slide"
           transitionAppear={true}
           transitionAppearTimeout={300}
           transitionEnter={false}
           transitionLeave={false}>
 
+          {window.innerWidth <= this.width &&
+            <div className="nav__opener" onClick={() => this.hide()}>
+              <img src={this.state.show ? icon('left.svg') : icon('right.svg')} />
+            </div>
+          }
+
           <div className="nav__fixed-header"><Link className="n" to="/">{siteName}</Link></div>
 
-          <div className="nav__fixed-conteiner" style={{overflowY: "scroll"}}>
-            <Lang hide={() => this.hide()}/>
-          </div>
+          {window.innerWidth >= this.width &&
+            <div className={`nav__fixed-conteiner`}>
+            <Lang />
+          </div>}
 
         </CSSTransitionGroup>
+
+        {window.innerWidth <= this.width &&
+          <div className={`nav__fixed-conteiner ${this.state.switcher}`}>
+          <Lang hide={() => this.hide()}/>
+        </div>}
       </nav>
     )
   }
