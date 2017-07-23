@@ -5,31 +5,35 @@ import { CSSTransitionGroup } from 'react-transition-group'
 
 import { siteName, icon } from '../helpers/api';
 
-const Lang = (props) => {
+const Lang = ({ hide, color }) => {
   const links = ['javascript', 'react', 'node', 'jquery', 'API'];
+  const fontColor = {white: {color: "#fff"}, dark: {color: "#4f4f4f" }}
+  const font =  color ? fontColor.white : fontColor.dark
   return (
       <ul className="nav__lang">
         {links.map(link => (
           <li
             className="lang"
-            onClick={props.hide}
+            onClick={hide}
             key={link}>
             <NavLink
+              style={font}
               className="lang-link"
               activeClassName='lang-link-active'
               to={link !== "contact" && `/p/${link}`}>{link.toLowerCase()}
             </NavLink>
           </li>
         ))}
-        <li className="lang" onClick={props.hide}>
-          <a style={{fontWeight: 600}} className="lang-link" href={`${window.location.origin}#contact`}>contact</a>
+        <li className="lang" onClick={hide}>
+          <a style={{fontWeight: 600, color: font.color }} className="lang-link" href={`${window.location.origin}#contact`}>contact</a>
         </li>
       </ul>
     )
 }
 
 Lang.propTypes = {
-  hide: PropTypes.func
+  hide: PropTypes.func,
+  color: PropTypes.bool
 }
 
 class Nav extends React.Component{
@@ -57,10 +61,13 @@ class Nav extends React.Component{
   }
   render(){
     window.onresize = () => this.handleResize();
-    const headerStyle = {on: {color: "#4CAF50"}, off: {color: "#4f4f4f" }}
+    const darkColor = window.location.pathname.split("/").length === 4 ? true : false
+    const headerStyle = {on: {color: "#4CAF50"}, off: darkColor ? {color: "#fff"} : {color: "#4f4f4f"}}
+    const bckStyle = {on: {background: "#4f4f4f"}, off: {background: "#fff" }}
+    const iconColor = darkColor ? "rightWhite.svg" : "right.svg"
 
     return (
-      <nav className='main__nav nav'>
+      <nav style={darkColor ? bckStyle.on : bckStyle. off} className='main__nav nav'>
         <CSSTransitionGroup  className="nav__fixed" component="div"
           transitionName="slide"
           transitionAppear={true}
@@ -70,7 +77,7 @@ class Nav extends React.Component{
 
           {window.innerWidth <= this.width &&
             <div className="nav__opener" onClick={() => this.hide()}>
-              <img src={this.state.show ? icon('left.svg') : icon('right.svg')} />
+              <img src={this.state.show ? icon('left.svg') : icon(iconColor)} />
             </div>
           }
 
@@ -78,7 +85,7 @@ class Nav extends React.Component{
 
           {window.innerWidth >= this.width &&
             <div className={`nav__fixed-conteiner`}>
-            <Lang />
+            <Lang color={darkColor}/>
           </div>}
 
         </CSSTransitionGroup>
