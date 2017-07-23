@@ -8,7 +8,7 @@ const randomCat = () => fetch('http://random.cat/meow').then(res => res.json()).
 
 const style = {
   main: {
-    height: "100vh",
+    height: "90vh",
     alignItems: "center",
     justifyContent: "center"
   },
@@ -46,7 +46,7 @@ class ErrorMessage extends React.Component {
   render() {
     return (
       <DocumentTitle title={siteName + " | error"}>
-        <div className="main__section col" style={style.main}>
+        <div className="main__section" style={style.main}>
           {this.renderMsg()}
           <span style={style.message}>But here is a cute cat for you.</span>
           {this.state.cat && <img src={this.state.cat} style={style.img} alt='🐈'/>}

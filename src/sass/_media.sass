@@ -1,22 +1,4 @@
-$noNav: 620px
-
-// ==== Projects list
-+break(sm)
-  .projects
-    display: block
-  .project
-    border-radius: 0
-    overflow: visible
-    &:hover
-      img
-        filter: none
-  .project__conteiner
-    &:hover
-      transition: all 0.2s
-    h1
-      font-size: 20px
-      border: none
-      box-shadow: none
+$noNav: 640px
 
 // ==== Project zoom page
 +break(sm)
@@ -37,12 +19,23 @@ $noNav: 620px
       margin-top: 60px
 
 // ==== Navbar
++break(720px)
+  .nav .nav__fixed
+    &-header
+      +grid(2, 6)
+    &-conteiner
+      +grid(4, 6)
+      font-size: 15px
+      .nav__lang
+        justify-content: space-around
+        
 +break($noNav)
   .nav
     position: fixed
     width: 100%
     z-index: 1
     background: #fff
+    box-shadow: $shadow
     .nav__fixed
       height: 50px
       position: relative
@@ -74,33 +67,39 @@ $noNav: 620px
           width: 100%
           +font(24px, 400)
 
+// === Home
++break(800px)
+  .content
+    h1
+      font-size: 35px
+    h2
+      font-size: 25px
+
++break($noNav)
+  .content .intro
+    padding: 0 20px
 
 
-// ==== 'More stuff' section
-+break(1440px)
-  .more-stuff__conteiner
-    +grid(1, 2, 3)
 
-+break(md)
-  .more-stuff
+// === Projects
++break(740px)
+  .projects
+    padding: 0
+    .mini
+      +grid(1, 2, 3)
+
++break($noNav)
+  .projects
+    padding: 0
     flex-direction: column
-    display: block
-
-+break($noNav)
-  .more-stuff
-    &__conteiner
-      margin: 0 0 20px
-      border-radius: 0
-
-// ==== Home
-+break(md)
-  .latest__conteiner .mini
-    +grid(1, 2, 3)
-
-+break($noNav)
-  .latest__conteiner
-    .projects
-      flex-direction: column
-      max-width: 100vw
-  .mini
-    width: 100% !important
+    max-width: 100vw
+    .mini
+      box-shadow: none
+      margin: 10px 0
+      width: 100% !important
+      &:hover
+        .mini__tags
+          transform: translateY(0)
+        .mini__img
+          filter: blur(0)
+          height: 100%

@@ -65,16 +65,17 @@ class Projects extends React.Component {
     }
     return (
       <DocumentTitle title={`${siteName} | ${path}`}>
-        <div className="main__section col">
+        <div className="main__section">
           <section className="projects" ref={section => this.section = section}>
             {spinner && <Spinner count={this.state.count}/>}
             {data
               .map((project, i) => (
                 <Project
+                  mini={true}
                   onload={this.handleLoad}
                   path={path}
                   key={i}
-                  data={{name: project.name, image: project.image}} />
+                  data={{name: project.name, image: project.image, tags: project.tags}} />
               ))
             }
           </section>

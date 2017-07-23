@@ -95,17 +95,6 @@ export const db = [
     tags: ["javascript", "the odin project"],
   },
   {
-    name: "Snake Game",
-    info: "This is the classic Snake game where the player controls a snake that grows longer with each piece of food it eats. The player lose if it gets so big it hits itself or if it goes off the board.",
-    md: `${require('../markdown/snake.md')}`,
-    url: "https://afuh.github.io/snake-game/",
-    code: "https://github.com/afuh/snake-game",
-    image: `${require('../images/screenshots/snake.png')}`,
-    gif: `${require('../images/gifs/snake.gif')}`,
-    video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
-    tags: ["javascript", "p5.js", "the odin project"],
-  },
-  {
     name: "Weather React",
     info: `Show the local weather.
 
@@ -128,6 +117,17 @@ export const db = [
     code: "https://github.com/afuh/battle",
     image: `${require('../images/screenshots/battle.png')}`,
     tags: ["react", "github", "api"],
+  },
+  {
+    name: "Snake Game",
+    info: "This is the classic Snake game where the player controls a snake that grows longer with each piece of food it eats. The player lose if it gets so big it hits itself or if it goes off the board.",
+    md: `${require('../markdown/snake.md')}`,
+    url: "https://afuh.github.io/snake-game/",
+    code: "https://github.com/afuh/snake-game",
+    image: `${require('../images/screenshots/snake.png')}`,
+    gif: `${require('../images/gifs/snake.gif')}`,
+    video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
+    tags: ["javascript", "p5.js", "the odin project"],
   },
   {
     name: "Simple Tabbed Browsing",

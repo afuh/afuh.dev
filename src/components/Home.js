@@ -103,7 +103,7 @@ class Home extends React.Component {
     const { data } = this.state
     return (
       <DocumentTitle title={`${siteName} | Latests`}>
-        <div className="main__section col">
+        <div className="main__section">
           <div className="content">
             <Header />
             <Latest data={data}/>

@@ -35,7 +35,7 @@ Lang.propTypes = {
 class Nav extends React.Component{
   constructor() {
     super()
-    this.width = 620 //768 / 480
+    this.width = 640 //768 / 480
     this.state = {
       show: window.innerWidth <= this.width ? false : true,
       switcher: window.innerWidth <= this.width ? 'close' : 'open',

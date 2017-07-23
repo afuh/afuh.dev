@@ -1,16 +1,16 @@
 .nav
-  box-shadow: $shadow
   transition: all .2s
   .nav__fixed
     margin: 0 auto
     @extend .row
-    max-width: 1000px
+    max-width: 960px
     height: 80px
     &-header
       @extend .row, .centrate
       +grid(3, 12)
       text-transform: uppercase
       a
+        font-size: 18px
         font-weight: 600
         color: color(darkgray)
         transition: all .2s
