@@ -172,6 +172,6 @@ export const db = [
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
     image: `${require('../images/screenshots/backend.png')}`,
-    tags: ["node", "express", "mongodb", "mongoose", "api"]
+    tags: ["node", "express", "mongodb", "mongoose", "pug", "api"]
   }
 ]

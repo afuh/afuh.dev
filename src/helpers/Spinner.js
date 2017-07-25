@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { icon } from './api';
+
 const style = {
   spinner: {
     padding: "80px",
@@ -25,7 +27,7 @@ const style = {
 }
 
 const Spinner = (props) => {
-  const spinner = require('../images/tail-spin.svg')
+  const spinner = icon('tail-spin.svg')
   return (
     <div className="spinner" style={style.spinner}>
       <div style={{position: "relative"}}>
