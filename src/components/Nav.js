@@ -25,7 +25,7 @@ const Lang = ({ hide, color }) => {
           </li>
         ))}
         <li className="lang" onClick={hide}>
-          <a style={{fontWeight: 600, color: font.color }} className="lang-link" href={`${window.location.origin}#contact`}>contact</a>
+          <Link style={{fontWeight: 600, color: font.color }} className="lang-link" to={`/#contact`}>contact</Link>
         </li>
       </ul>
     )
@@ -62,7 +62,7 @@ class Nav extends React.Component{
   render(){
     window.onresize = () => this.handleResize();
     const darkColor = window.location.pathname.split("/").length === 4 ? true : false
-    const headerStyle = {on: {color: "#4CAF50"}, off: darkColor ? {color: "#fff"} : {color: "#4f4f4f"}}
+    const headerStyle = darkColor ? {color: "#fff"} : {color: "#4f4f4f"}
     const bckStyle = {on: {background: "#4f4f4f"}, off: {background: "#fff" }}
     const iconColor = darkColor ? "openW.svg" : "open.svg"
 
@@ -81,7 +81,7 @@ class Nav extends React.Component{
             </div>
           }
 
-          <div className="nav__fixed-header"><Link to="/" style={window.location.pathname === '/' ? headerStyle.on : headerStyle.off}>{siteName}</Link></div>
+          <div className="nav__fixed-header"><Link to="/" style={headerStyle}>{siteName}</Link></div>
 
           {window.innerWidth >= this.width &&
             <div className={`nav__fixed-conteiner`}>
@@ -101,3 +101,5 @@ class Nav extends React.Component{
 
 
 export default Nav;
+
+// <a style={{fontWeight: 600, color: font.color }} className="lang-link" href={`${window.location.origin}#contact`}>contact</a>
