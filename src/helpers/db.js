@@ -17,7 +17,13 @@ export const db = [
   },
   {
     name: "Pinstagram",
-    info: `Pinstagram is a full stack Instagram clone. It's the result of exercising with Node, MongoDB and its frameworks. The goal was to build a functional clone of some Internet-based photo-sharing application.`,
+    info: `Pinstagram is a full stack Instagram clone. It's the result of exercising with Node, MongoDB and its frameworks.
+
+    The goal was to build a functional clone of some Internet-based photo-sharing application.
+
+    I finally decided to copy the web version of Instagram and add some extra features to it, such as the ability to upload images in the browser or to be able to see all the images that I liked in one place, such as the Pinterest boards.
+
+    This is my first approach to the Back-end kingdom.`,
     md: `${require('../markdown/pinsta.md')}`,
     url: "https://pinstagram-app.herokuapp.com/",
     code: "https://github.com/afuh/pinstagram",
@@ -30,7 +36,7 @@ export const db = [
     name: "Where is the ISS right now?",
     info: `Know exactly where the International Space Station is and who is on board.
 
-    For some time I wanted to do something super simple that would tell me where the ISS. I know there are plenty of places to look for that information, but considering that it's always a good time to continue exploring the Google API, I decided to build it myself.`,
+    For some time I wanted to do something simple that would tell me where the ISS is. I know there are plenty of places to look for that information, but considering that it's always a good time to continue exploring the Google API, I decided to build it myself.`,
     md: `${require('../markdown/iss.md')}`,
     url: "http://subsequent-distance.surge.sh/",
     code: "https://github.com/afuh/iss",
@@ -44,7 +50,7 @@ export const db = [
     name: "Step Sequencer",
     info: `A 16 Step Sequencer built with JQuery and Web Audio API.
 
-    It was an interesting challenge. I started building it as soon as I started learning JavaScript and it was quite hard to making it work. I already updated it a couple of times because of the new things that I've learned, and I guess I will continue to do so in the future.`,
+    This was an interesting challenge. I started building it as soon as I started learning JavaScript and it was quite hard to making it work. I already updated it a couple of times because of the new things that I've learned, and I guess I will continue to do so in the future.`,
     md: `${require('../markdown/sequencer.md')}`,
     url: "https://afuh.github.io/sequencer/",
     code: "https://github.com/afuh/sequencer",
@@ -53,9 +59,9 @@ export const db = [
   },
   {
     name: "Calculator",
-    info: `Simple JQuery calculator
+    info: `A simple JQuery calculator
 
-    The idea from the beginning was **not** to use eval() and do everything myself.
+    The main idea from the beginning was **not** to use eval() and do everything myself.
     This is a project as described in Free Code Camp and The Odin Project`,
     md: `${require('../markdown/calc.md')}`,
     url: "https://afuh.github.io/calculator/",
@@ -78,7 +84,7 @@ export const db = [
   },
   {
     name: "Quote Machine",
-    info: "I put together a bunch of ancient quotes of Diego Maradonain a .json file together with an array of outstanding personalities of history. Mixing them randomly gives pretty funny results..",
+    info: "I put together a bunch of ancient quotes of Diego Maradonain a .json file together with an array of outstanding personalities of history. Mixing them randomly gives pretty funny results.",
     md: `${require('../markdown/quote.md')}`,
     url: "https://afuh.github.io/frases/",
     code: "https://github.com/afuh/frases",
@@ -87,7 +93,10 @@ export const db = [
   },
   {
     name: "Minimalist Image Slider",
-    info: "If the user does not interact with the Image Slider for a certain amount of time, the images will start to slide automatically until the user interact with it again. This way the user will never be bothered by the auto-slide.",
+    info: `A minimalist UI image slider.
+
+    If the user does not interact with the Image Slider for a certain amount of time, the images will start to slide automatically until the user interact with it again. This way the user will never be bothered by the auto-slide.
+    `,
     md: `${require('../markdown/slide.md')}`,
     url: "https://afuh.github.io/slider/",
     code: "https://github.com/afuh/slider",
@@ -98,7 +107,7 @@ export const db = [
     name: "Weather React",
     info: `Show the local weather.
 
-    The user can search the by city, country or ZIP code and access the current weather and 5 days forecast.`,
+    The user can search a location by city, country or ZIP code and access the current weather and a 5 days forecast.`,
     md: `${require('../markdown/weather.md')}`,
     url: "http://naughty-joke.surge.sh/",
     code: "https://github.com/afuh/weather",
@@ -120,7 +129,7 @@ export const db = [
   },
   {
     name: "Snake Game",
-    info: "This is the classic Snake game where the player controls a snake that grows longer with each piece of food it eats. The player lose if it gets so big it hits itself or if it goes off the board.",
+    info: "This is the classic Snake game where the player controls a snake that grows longer with each piece of food it eats. The player loses if the snake gets so big it hits itself or if it goes off the board.",
     md: `${require('../markdown/snake.md')}`,
     url: "https://afuh.github.io/snake-game/",
     code: "https://github.com/afuh/snake-game",
