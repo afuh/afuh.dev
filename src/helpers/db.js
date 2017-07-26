@@ -38,7 +38,7 @@ export const db = [
 
     For some time I wanted to do something simple that would tell me where the ISS is. I know there are plenty of places to look for that information, but considering that it's always a good time to continue exploring the Google API, I decided to build it myself.`,
     md: `${require('../markdown/iss.md')}`,
-    url: "http://subsequent-distance.surge.sh/",
+    url: "http://iss.surge.sh/",
     code: "https://github.com/afuh/iss",
     image: `${require('../images/screenshots/iss.png')}`,
     gif: `${require('../images/gifs/iss.gif')}`,
@@ -109,7 +109,7 @@ export const db = [
 
     The user can search a location by city, country or ZIP code and access the current weather and a 5 days forecast.`,
     md: `${require('../markdown/weather.md')}`,
-    url: "http://naughty-joke.surge.sh/",
+    url: "http://weather-react.surge.sh/",
     code: "https://github.com/afuh/weather",
     image: `${require('../images/screenshots/weather.png')}`,
     tags: ["react", "open weather map", "api", "free code camp"],
@@ -122,7 +122,7 @@ export const db = [
 
     Additionally, the user can search and select two GitHub users to 'battle' each other. The application will find those users, analyze them and declare a winner.`,
     md: `${require('../markdown/battle.md')}`,
-    url: "http://milky-help.surge.sh/",
+    url: "http://battle-gh.surge.sh/",
     code: "https://github.com/afuh/battle",
     image: `${require('../images/screenshots/battle.png')}`,
     tags: ["react", "github", "api"],
@@ -181,6 +181,6 @@ export const db = [
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
     image: `${require('../images/screenshots/backend.png')}`,
-    tags: ["node", "express", "mongodb", "mongoose", "pug", "api"]
+    tags: ["node", "express", "mongodb", "mongoose", "pug", "api", "free code camp"]
   }
 ]

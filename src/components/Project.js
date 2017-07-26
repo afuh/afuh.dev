@@ -33,7 +33,7 @@ class Project extends React.Component {
         {tags.map(tag => (
           <Link
             key={tag}
-            to={`/p/${tag}`}>
+            to={`/${tag}`}>
             {tag}
           </Link>
           ))}
@@ -50,7 +50,7 @@ class Project extends React.Component {
         <div className={`${cl}__img`}>
           <img onLoad={onload} onError={onload} src={image} alt={name} />
         </div>
-        <Link to={`/p/${path}/${name}`} className={`${cl}__conteiner`}>
+        <Link to={`/${path}/${name}`} className={`${cl}__conteiner`}>
           <h1 style={{color: "#fff"}}>{name}</h1>
         </Link>
         {this.props.mini && this.showTags(cl)}

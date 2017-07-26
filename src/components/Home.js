@@ -42,7 +42,7 @@ const Latest = (props) => {
             {allTags().map((tag, i) => (
               <Link
                 key={i}
-                to={`/p/${tag}`}>
+                to={`/${tag}`}>
                 {countTags(tag).toUpperCase()}
               </Link>
             ))}

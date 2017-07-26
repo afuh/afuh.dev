@@ -20,7 +20,7 @@ const Lang = ({ hide, color }) => {
               style={font}
               className="lang-link"
               activeClassName='lang-link-active'
-              to={link !== "contact" && `/p/${link}`}>{link.toLowerCase()}
+              to={link !== "contact" && `/${link}`}>{link.toLowerCase()}
             </NavLink>
           </li>
         ))}
@@ -61,7 +61,7 @@ class Nav extends React.Component{
   }
   render(){
     window.onresize = () => this.handleResize();
-    const darkColor = window.location.pathname.split("/").length === 4 ? true : false
+    const darkColor = window.location.pathname.split("/").length === 3 ? true : false
     const headerStyle = darkColor ? {color: "#fff"} : {color: "#4f4f4f"}
     const bckStyle = {on: {background: "#4f4f4f"}, off: {background: "#fff" }}
     const iconColor = darkColor ? "openW.svg" : "open.svg"
@@ -101,5 +101,3 @@ class Nav extends React.Component{
 
 
 export default Nav;
-
-// <a style={{fontWeight: 600, color: font.color }} className="lang-link" href={`${window.location.origin}#contact`}>contact</a>

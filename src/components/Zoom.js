@@ -35,7 +35,7 @@ const Visual = ({ data, cl }) => {
         {tags.map(tag => (
           <Link
             key={tag}
-            to={`/p/${tag}`}>
+            to={`/${tag}`}>
             {countTags(tag)}
           </Link>
           ))
