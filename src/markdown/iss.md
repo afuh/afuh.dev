@@ -1,4 +1,4 @@
-Know exactly where the International Space Station is and who is on board.
+Know exactly where the **International Space Station** is and who is on board.
 
 For some time I wanted to do something simple that would tell me where the ISS is. I know there are plenty of places to look for that information, but considering that it's always a good time to continue exploring the Google API, I decided to build it myself.
 
