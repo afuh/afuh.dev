@@ -8,8 +8,8 @@ import Spinner from '../helpers/Spinner';
 import ErrorMessage  from '../helpers/Error';
 
 class Projects extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       data: [],
       spinner: true,

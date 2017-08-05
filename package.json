@@ -27,7 +27,6 @@
     "html-webpack-plugin": "^2.28.0",
     "image-webpack-loader": "^3.3.0",
     "node-sass": "^4.5.3",
-    "normalize.css": "^7.0.0",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
     "sasso": "^1.2.9",
