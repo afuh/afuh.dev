@@ -47,6 +47,29 @@ export const db = [
     latest: true
   },
   {
+    name: "Minimalist Image Slider",
+    info: `A minimalist UI image slider.
+
+    If the user does not interact with the Image Slider for a certain amount of time, the images will start to slide automatically until the user interact with it again. This way the user will never be bothered by the auto-slide.
+    `,
+    md: `${require('../markdown/slide.md')}`,
+    url: "https://afuh.github.io/slider/",
+    code: "https://github.com/afuh/slider",
+    image: `${require('../images/screenshots/slide.png')}`,
+    tags: ["javascript", "the odin project"],
+  },
+  {
+    name: "Weather React",
+    info: `Show the local weather.
+
+    The user can search a location by city, country or ZIP code and access the current weather and a 5 days forecast.`,
+    md: `${require('../markdown/weather.md')}`,
+    url: "http://weather-react.surge.sh/",
+    code: "https://github.com/afuh/weather",
+    image: `${require('../images/screenshots/weather.png')}`,
+    tags: ["react", "open weather map", "api", "free code camp"],
+  },
+  {
     name: "Step Sequencer",
     info: `A 16 Step Sequencer built with JQuery and Web Audio API.
 
@@ -56,6 +79,30 @@ export const db = [
     code: "https://github.com/afuh/sequencer",
     image: `${require('../images/screenshots/sequencer.png')}`,
     tags: ["jquery", "web audio", "api"],
+  },
+  {
+    name: "GitHub Battle",
+    info: `This App is the result of the awesome course React Fundamental sby Tyler McGinnis.
+
+    This app uses the GitHub API to showcase the most popular repositories. The user can also select between different languages to filter the results.
+
+    Additionally, the user can search and select two GitHub users to 'battle' each other. The application will find those users, analyze them and declare a winner.`,
+    md: `${require('../markdown/battle.md')}`,
+    url: "http://battle-gh.surge.sh/",
+    code: "https://github.com/afuh/battle",
+    image: `${require('../images/screenshots/battle.png')}`,
+    tags: ["react", "github", "api"],
+  },
+  {
+    name: "Snake Game",
+    info: "This is the classic Snake game where the player controls a snake that grows longer with each piece of food it eats. The player loses if the snake gets so big it hits itself or if it goes off the board.",
+    md: `${require('../markdown/snake.md')}`,
+    url: "https://afuh.github.io/snake-game/",
+    code: "https://github.com/afuh/snake-game",
+    image: `${require('../images/screenshots/snake.png')}`,
+    gif: `${require('../images/gifs/snake.gif')}`,
+    video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
+    tags: ["javascript", "p5.js", "the odin project"],
   },
   {
     name: "Calculator",
@@ -90,53 +137,6 @@ export const db = [
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.png')}`,
     tags: ["javascript", "free code camp"],
-  },
-  {
-    name: "Minimalist Image Slider",
-    info: `A minimalist UI image slider.
-
-    If the user does not interact with the Image Slider for a certain amount of time, the images will start to slide automatically until the user interact with it again. This way the user will never be bothered by the auto-slide.
-    `,
-    md: `${require('../markdown/slide.md')}`,
-    url: "https://afuh.github.io/slider/",
-    code: "https://github.com/afuh/slider",
-    image: `${require('../images/screenshots/slide.png')}`,
-    tags: ["javascript", "the odin project"],
-  },
-  {
-    name: "Weather React",
-    info: `Show the local weather.
-
-    The user can search a location by city, country or ZIP code and access the current weather and a 5 days forecast.`,
-    md: `${require('../markdown/weather.md')}`,
-    url: "http://weather-react.surge.sh/",
-    code: "https://github.com/afuh/weather",
-    image: `${require('../images/screenshots/weather.png')}`,
-    tags: ["react", "open weather map", "api", "free code camp"],
-  },
-  {
-    name: "GitHub Battle",
-    info: `This App is the result of the awesome course React Fundamental sby Tyler McGinnis.
-
-    This app uses the GitHub API to showcase the most popular repositories. The user can also select between different languages to filter the results.
-
-    Additionally, the user can search and select two GitHub users to 'battle' each other. The application will find those users, analyze them and declare a winner.`,
-    md: `${require('../markdown/battle.md')}`,
-    url: "http://battle-gh.surge.sh/",
-    code: "https://github.com/afuh/battle",
-    image: `${require('../images/screenshots/battle.png')}`,
-    tags: ["react", "github", "api"],
-  },
-  {
-    name: "Snake Game",
-    info: "This is the classic Snake game where the player controls a snake that grows longer with each piece of food it eats. The player loses if the snake gets so big it hits itself or if it goes off the board.",
-    md: `${require('../markdown/snake.md')}`,
-    url: "https://afuh.github.io/snake-game/",
-    code: "https://github.com/afuh/snake-game",
-    image: `${require('../images/screenshots/snake.png')}`,
-    gif: `${require('../images/gifs/snake.gif')}`,
-    video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
-    tags: ["javascript", "p5.js", "the odin project"],
   },
   {
     name: "Simple Tabbed Browsing",
