@@ -9,7 +9,7 @@ import { getProject, countTags, siteName, icon } from '../helpers/api';
 import ErrorMessage  from '../helpers/Error';
 
 const HandleVisual = ({ data }) => {
-  const { video, gif, image } = data;
+  const { video, gif, image, name } = data;
 
   if (video && video.length) {
     return (
@@ -19,7 +19,7 @@ const HandleVisual = ({ data }) => {
       </video>
     )
   }
-  return <img src={gif || image} />
+  return <img src={gif || image} alt={name}/>
 }
 
 HandleVisual.propTypes = {
@@ -41,7 +41,7 @@ const Visual = ({ data, cl }) => {
           ))
         }
       </div>
-      <div className={`${cl}__img`}><HandleVisual data={{video, gif, image}} /></div>
+      <div className={`${cl}__img`}><HandleVisual data={{video, gif, image, name}} /></div>
       <div className={`${cl}__links`}>
         {name !== "Portfolio" && <a className={`${cl}__live`} href={url}>See it live</a>}
         <a className={`${cl}__code`} href={code} target="_blank">Code</a>

@@ -31,7 +31,7 @@ const Spinner = (props) => {
   return (
     <div className="spinner" style={style.spinner}>
       <div style={{position: "relative"}}>
-        <img style={{width: "60px"}} src={spinner} />
+        <img style={{width: "60px"}} src={spinner} alt="spinner"/>
         <div style={style.counter}>{typeof props.count === "number" && props.count}</div>
       </div>
     </div>

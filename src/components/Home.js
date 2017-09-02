@@ -74,7 +74,7 @@ const Contact = () => {
               target="_blank"
               rel='noreferrer noopener'
               href={link.url}>
-              <img className={`contact__icon icon-${link.name}`} src={link.icon}/>
+              <img className={`contact__icon icon-${link.name}`} src={link.icon} alt={link.name}/>
               {link.name}
             </a>
           </li>

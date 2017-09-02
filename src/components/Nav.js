@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
@@ -36,7 +36,7 @@ Lang.propTypes = {
   color: PropTypes.bool
 }
 
-class Nav extends React.Component{
+class Nav extends Component{
   constructor() {
     super()
     this.width = 640 //768 / 480
@@ -77,7 +77,7 @@ class Nav extends React.Component{
 
           {window.innerWidth <= this.width &&
             <div className="nav__opener" onClick={() => this.hide()}>
-              <img src={this.state.show ? icon('close.svg') : icon(iconColor)} />
+              <img src={this.state.show ? icon('close.svg') : icon(iconColor)} alt="menu"/>
             </div>
           }
 
