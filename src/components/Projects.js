@@ -12,8 +12,7 @@ class Projects extends React.Component {
     super()
     this.state = {
       data: [],
-      spinner: true,
-      count: null
+      spinner: true
     }
     this.handleLoad = this.handleLoad.bind(this)
   }
@@ -22,8 +21,6 @@ class Projects extends React.Component {
       .filter(a => !a.src.includes('tail-spin'))
       .map(img => img.complete)
       .filter(complete => !complete)
-
-    this.setState({count: complete.length})
 
     if (!complete.length) {
       return true;
@@ -67,7 +64,7 @@ class Projects extends React.Component {
       <DocumentTitle title={`${siteName} | ${path}`}>
         <div className="main__section">
           <section className="projects" ref={section => this.section = section}>
-            {spinner && <Spinner count={this.state.count}/>}
+            {spinner && <Spinner />}
             {data
               .map((project, i) => (
                 <Project
