@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-import { siteName, icon } from '../helpers/api';
+import { siteName } from '../helpers/api';
+import NavIcon from '../helpers/NavIcon';
 
 const Lang = ({ hide, color }) => {
   const links = ['javascript', 'react', 'node', 'jquery', 'API'];
@@ -64,7 +65,6 @@ class Nav extends Component{
     const darkColor = window.location.pathname.split("/").length === 3 ? true : false
     const headerStyle = darkColor ? {color: "#fff"} : {color: "#4f4f4f"}
     const bckStyle = {on: {background: "#4f4f4f"}, off: {background: "#fff" }}
-    const iconColor = darkColor ? "openW.svg" : "open.svg"
 
     return (
       <nav style={darkColor ? bckStyle.on : bckStyle. off} className='main__nav nav'>
@@ -75,13 +75,18 @@ class Nav extends Component{
           transitionEnter={false}
           transitionLeave={false}>
 
+          {/*Mobile navigation icon*/}
           {window.innerWidth <= this.width &&
             <div className="nav__opener" onClick={() => this.hide()}>
-              <img src={this.state.show ? icon('close.svg') : icon(iconColor)} alt="menu"/>
+              <NavIcon
+                switcher={this.state.switcher}
+                color={darkColor ? "#fff" : "#000"}/>
             </div>
           }
 
-          <div className="nav__fixed-header"><Link to="/" style={headerStyle}>{siteName}</Link></div>
+          <div className="nav__fixed-header">
+            <Link to="/" style={headerStyle}>{siteName}</Link>
+          </div>
 
           {window.innerWidth >= this.width &&
             <div className={`nav__fixed-conteiner`}>
@@ -98,6 +103,5 @@ class Nav extends Component{
     )
   }
 }
-
 
 export default Nav;
