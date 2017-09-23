@@ -1,5 +1,17 @@
 export const db = [
   {
+    name: "The Next Web Layout",
+    info: `This is news magazine clone of the The Next Web's layout.
+
+    I built it in React with the great and simple News api using different sources.`,
+    md: `${require('../markdown/nextweb.md')}`,
+    url: "http://next-web.surge.sh/",
+    code: "https://github.com/afuh/next-web",
+    image: `${require('../images/screenshots/nextweb.png')}`,
+    tags: ["react", "the odin project", "news api", "api"],
+    latest: true
+  },
+  {
     name: "Portfolio",
     info: `When I decided to built a Portfolio I first started writing the database, which is a large array of objects, where each object is the data of a particular project or app. To showcase them easily I decided to use React because of the reusability it offers and also because I wanted to built it with a tag system.
 
