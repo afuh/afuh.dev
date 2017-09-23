@@ -7,13 +7,20 @@
 // === general settings
 .main
   @extend .col
-  // max-width: 1920px
   min-height: 100vh
   flex-wrap: nowrap
   margin: 0 auto
-  &__nav
   &__section
     @extend .col
+
+// When the mobile navbar is opened, animate the main section
+.main__section
+  transition: transform .4s
+  transform: translateY(0)
+
+.open-nav
+  .main__section
+    transform: translateY(5%)
 
 img
   transform: translateZ(0)

@@ -56,8 +56,10 @@ class Nav extends Component{
   hide(){
     if (this.state.show && window.innerWidth <= this.width) {
       this.setState({ switcher: "close", show: !this.state.show })
+      document.body.classList.remove("open-nav");
     } else {
       this.setState({ switcher: "open", show: !this.state.show })
+      document.body.classList.add("open-nav");
     }
   }
   render(){
