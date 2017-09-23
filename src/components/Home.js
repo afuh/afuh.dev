@@ -10,10 +10,10 @@ import { db } from '../helpers/db';
 
 const Header = () => {
   return (
-    <div className="intro">
+    <section className="intro">
       <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>
       <h2>I am a self-tought aspiring Front-End Web Developer.</h2>
-    </div>
+    </section>
   )
 }
 
@@ -24,7 +24,7 @@ const allTags = () => {
 
 const Latest = (props) => {
   return(
-    <div className="latest">
+    <section className="latest">
       <div className="latest__conteiner">
         <h3>Latest Projects</h3>
         <section className="projects">
@@ -49,7 +49,7 @@ const Latest = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
@@ -64,7 +64,7 @@ const Contact = () => {
     { name: "E-Mail", url: "mailto:axelfuh@gmail.com", icon: icon('mail.png')}
   ]
   return (
-    <div className="contact">
+    <section className="contact">
       <h3>Contact Me</h3>
       <ul className="contact__list">
         {links.map(link => (
@@ -80,7 +80,7 @@ const Contact = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 
@@ -111,13 +111,13 @@ class Home extends React.Component {
     const { data } = this.state
     return (
       <DocumentTitle title={`${siteName} | Latests`}>
-        <div className="main__section" ref={main => this.main = main}>
+        <main className="main__section" ref={main => this.main = main}>
           <div className="content">
             <Header />
             <Latest data={data}/>
             <Contact />
           </div>
-        </div>
+        </main>
       </DocumentTitle>
     )
   }

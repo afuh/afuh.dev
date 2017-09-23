@@ -90,7 +90,7 @@ const Zoom = ({ match, history }) => {
 
   return (
     <DocumentTitle title={`${siteName} | ${name}`}>
-      <div className="main__section">
+      <main className="main__section">
 
         <CSSTransitionGroup className={cl} component="article"
           transitionName="fadeIn"
@@ -104,7 +104,7 @@ const Zoom = ({ match, history }) => {
           <Back onclick={history.goBack} cl={cl}/>
 
         </CSSTransitionGroup>
-      </div>
+      </main>
     </DocumentTitle>
   )
 }

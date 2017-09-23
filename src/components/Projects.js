@@ -62,7 +62,7 @@ class Projects extends React.Component {
     }
     return (
       <DocumentTitle title={`${siteName} | ${path}`}>
-        <div className="main__section">
+        <main className="main__section">
           <section className="projects" ref={section => this.section = section}>
             {spinner && <Spinner />}
             {data
@@ -76,7 +76,7 @@ class Projects extends React.Component {
               ))
             }
           </section>
-        </div>
+        </main>
       </DocumentTitle>
     )
   }

@@ -69,8 +69,8 @@ class Nav extends Component{
     const bckStyle = {on: {background: "#4f4f4f"}, off: {background: "#fff" }}
 
     return (
-      <nav style={darkColor ? bckStyle.on : bckStyle. off} className='main__nav nav'>
-        <CSSTransitionGroup  className="nav__fixed" component="div"
+      <header style={darkColor ? bckStyle.on : bckStyle. off} className='main__nav nav'>
+        <CSSTransitionGroup  className="nav__fixed" component="nav"
           transitionName="slide"
           transitionAppear={true}
           transitionAppearTimeout={300}
@@ -91,17 +91,17 @@ class Nav extends Component{
           </div>
 
           {window.innerWidth >= this.width &&
-            <div className={`nav__fixed-conteiner`}>
-            <Lang color={darkColor}/>
-          </div>}
+            <nav className={`nav__fixed-conteiner`}>
+              <Lang color={darkColor}/>
+            </nav>}
 
         </CSSTransitionGroup>
 
         {window.innerWidth <= this.width &&
-          <div className={`nav__fixed-conteiner ${this.state.switcher}`}>
-          <Lang hide={() => this.hide()}/>
-        </div>}
-      </nav>
+          <nav className={`nav__fixed-conteiner ${this.state.switcher}`}>
+            <Lang hide={() => this.hide()}/>
+          </nav>}
+      </header>
     )
   }
 }
