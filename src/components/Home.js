@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <section className="intro">
       <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>
-      <h2>I am a self-tought aspiring Front-End Web Developer.</h2>
+      <h2>I am a self-taught aspiring Front-End Web Developer.</h2>
     </section>
   )
 }
