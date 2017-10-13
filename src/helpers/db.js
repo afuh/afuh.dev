@@ -41,7 +41,7 @@ export const db = [
     code: "https://github.com/afuh/pinstagram",
     image: `${require('../images/screenshots/pinsta.png')}`,
     video: [`${require('../images/videos/pinsta.webm')}`, `${require('../images/videos/pinsta.mp4')}` ],
-    tags: ["javascript", "node", "express", "mongodb", "mongoose", "pug", "passport"],
+    tags: ["node", "javascript", "express", "mongodb", "mongoose", "pug", "passport"],
     latest: true
   },
   {
