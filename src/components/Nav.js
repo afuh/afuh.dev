@@ -3,33 +3,33 @@ import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-import { siteName } from '../helpers/api';
+import { siteName, nav } from '../helpers/api';
 import NavIcon from '../helpers/NavIcon';
 
 const Lang = ({ hide, color }) => {
-  const links = ['javascript', 'react', 'node', 'jquery', 'API'];
   const fontColor = {white: {color: "#fff"}, dark: {color: "#4f4f4f" }}
   const font =  color ? fontColor.white : fontColor.dark
+
   return (
-      <ul className="nav__lang">
-        {links.map(link => (
-          <li
-            className="lang"
-            onClick={hide}
-            key={link}>
-            <NavLink
-              style={font}
-              className="lang-link"
-              activeClassName='lang-link-active'
-              to={link !== "contact" && `/${link}`}>{link.toLowerCase()}
-            </NavLink>
-          </li>
-        ))}
-        <li className="lang" onClick={hide}>
-          <Link style={{fontWeight: 600, color: font.color }} className="lang-link" to={`/#contact`}>contact</Link>
+    <ul className="nav__lang">
+      {nav.map(link => (
+        <li
+          className="lang"
+          onClick={hide}
+          key={link}>
+          <NavLink
+            style={font}
+            className="lang-link"
+            activeClassName='lang-link-active'
+            to={link !== "contact" && `/${link}`}>{link.toLowerCase()}
+          </NavLink>
         </li>
-      </ul>
-    )
+      ))}
+      <li className="lang" onClick={hide}>
+        <Link style={{fontWeight: 600, color: font.color }} className="lang-link" to={`/#contact`}>contact</Link>
+      </li>
+    </ul>
+  )
 }
 
 Lang.propTypes = {
@@ -41,24 +41,28 @@ class Nav extends Component{
   constructor() {
     super()
     this.width = 640 //768 / 480
+    this.show = window.innerWidth <= this.width ? false : true
     this.state = {
-      show: window.innerWidth <= this.width ? false : true,
       switcher: window.innerWidth <= this.width ? 'close' : 'open',
     }
   }
   handleResize(){
     if (window.innerWidth <= this.width) {
-      this.setState({ switcher: "close", show: false })
+      this.setState({ switcher: "close" })
+      this.show = false
     } else {
-      this.setState({ switcher: "open", show: true })
+      this.setState({ switcher: "open" })
+      this.show = true
     }
   }
   hide(){
-    if (this.state.show && window.innerWidth <= this.width) {
-      this.setState({ switcher: "close", show: !this.state.show })
+    if (this.show && window.innerWidth <= this.width) {
+      this.setState({ switcher: "close" })
+      this.show = !this.show
       document.body.classList.remove("open-nav");
     } else {
-      this.setState({ switcher: "open", show: !this.state.show })
+      this.setState({ switcher: "open" })
+      this.show = !this.show
       document.body.classList.add("open-nav");
     }
   }
