@@ -1,4 +1,4 @@
-import { db } from './db.js';
+import db from '../data/db.js';
 
 export const getData = (section) => {
   if (section === 'Home'){
@@ -23,6 +23,11 @@ export const countTags = (tag) => {
  return `${tag}(${count[tag]})`
 }
 
+export const allTags = () => {
+  const arr = db.map(p => p.tags).reduce((a, b) => a.concat(b))
+  return arr.filter((tag, i) => arr.indexOf(tag) === i).sort()
+}
+
 export const getProject = pr => {
   const project = db.filter(i => i.name.includes(pr))
 
@@ -35,3 +40,8 @@ export const getProject = pr => {
 export const icon = file => require(`../images/icons/${file}`)
 export const siteName = 'Axel Fuhrmann';
 export const nav = ['javascript', 'react', 'node', 'jquery', 'API'];
+export const contactLinks = [
+  { name: "GitHub", url: "https://github.com/afuh", icon: icon('gh.png')},
+  { name: "CodePen", url: "https://codepen.io/mage20", icon: icon('cp.png')},
+  { name: "E-Mail", url: "mailto:axelfuh@gmail.com", icon: icon('mail.png')}
+]

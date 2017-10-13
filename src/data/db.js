@@ -1,4 +1,4 @@
-export const db = [
+const db = [
   {
     name: "The Next Web Layout",
     info: `This is news magazine clone of the The Next Web's layout.
@@ -196,3 +196,5 @@ export const db = [
     tags: ["node", "express", "mongodb", "mongoose", "pug", "api", "free code camp"]
   }
 ]
+
+export default db

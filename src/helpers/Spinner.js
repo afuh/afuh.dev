@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { icon } from './api';
 
@@ -16,20 +15,13 @@ const style = {
   }
 }
 
-const Spinner = (props) => {
-  const spinner = icon('tail-spin.svg')
-  return (
-    <div className="spinner" style={style.spinner}>
-      <div style={{position: "relative"}}>
-        <img style={{width: "60px"}} src={spinner} alt="spinner"/>
-      </div>
+const Spinner = () => (
+  <div className="spinner" style={style.spinner}>
+    <div style={{position: "relative"}}>
+      <img style={{width: "60px"}} src={icon('tail-spin.svg')} alt="spinner"/>
     </div>
-  )
-}
-
-Spinner.propTypes = {
-  count: PropTypes.number
-}
+  </div>
+)
 
 
 export default Spinner

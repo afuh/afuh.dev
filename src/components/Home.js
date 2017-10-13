@@ -5,8 +5,7 @@ import PropTypes from 'prop-types';
 
 import ProjectCard from './ProjectCard';
 
-import { getData, siteName, countTags, icon } from '../helpers/api';
-import { db } from '../helpers/db';
+import { getData, siteName, countTags, allTags, contactLinks } from '../helpers/api';
 
 const Header = () => {
   return (
@@ -15,11 +14,6 @@ const Header = () => {
       <h2>I am a self-taught aspiring Front-End Web Developer.</h2>
     </section>
   )
-}
-
-const allTags = () => {
-  const arr = db.map(p => p.tags).reduce((a, b) => a.concat(b))
-  return arr.filter((tag, i) => arr.indexOf(tag) === i).sort()
 }
 
 const Latest = (props) => {
@@ -58,16 +52,11 @@ Latest.propTypes = {
 }
 
 const Contact = () => {
-  const links = [
-    { name: "GitHub", url: "https://github.com/afuh", icon: icon('gh.png')},
-    { name: "CodePen", url: "https://codepen.io/mage20", icon: icon('cp.png')},
-    { name: "E-Mail", url: "mailto:axelfuh@gmail.com", icon: icon('mail.png')}
-  ]
   return (
     <section className="contact">
       <h3>Contact Me</h3>
       <ul className="contact__list">
-        {links.map(link => (
+        {contactLinks.map(link => (
           <li key={link.name}>
             <a
               className='contact__link'
