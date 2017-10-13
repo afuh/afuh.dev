@@ -1,7 +1,7 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 
-import Project from './Project';
+import ProjectCard from './ProjectCard';
 
 import { getData, siteName } from '../helpers/api';
 import Spinner from '../helpers/Spinner';
@@ -67,7 +67,7 @@ class Projects extends React.Component {
             {spinner && <Spinner />}
             {data
               .map((project, i) => (
-                <Project
+                <ProjectCard
                   mini={true}
                   onload={this.handleLoad}
                   path={path}

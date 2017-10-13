@@ -80,7 +80,7 @@ Back.propTypes = {
   cl: PropTypes.string.isRequired
 }
 
-const Zoom = ({ match, history }) => {
+const ProjectPage = ({ match, history }) => {
   const { name, info, url, code, image, tags, video, gif, md, error } = getProject(match.params.name)
   const cl = 'zoom'
 
@@ -109,4 +109,4 @@ const Zoom = ({ match, history }) => {
   )
 }
 
-export default Zoom
+export default ProjectPage

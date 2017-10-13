@@ -3,7 +3,7 @@ import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
-import Project from './Project';
+import ProjectCard from './ProjectCard';
 
 import { getData, siteName, countTags, icon } from '../helpers/api';
 import { db } from '../helpers/db';
@@ -29,7 +29,7 @@ const Latest = (props) => {
         <h3>Latest Projects</h3>
         <section className="projects">
           {props.data.map((project, i) =>  (
-            <Project
+            <ProjectCard
               mini={true}
               key={i}
               path={project.tags[0]}

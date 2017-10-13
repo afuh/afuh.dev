@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 
-class Project extends React.Component {
+class ProjectCard extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -59,11 +59,11 @@ class Project extends React.Component {
   }
 }
 
-Project.propTypes = {
+ProjectCard.propTypes = {
   data: PropTypes.object.isRequired,
   path: PropTypes.string.isRequired,
   onload: PropTypes.func,
   mini: PropTypes.bool
 }
 
-export default Project;
+export default ProjectCard;
