@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
     "react-document-title": "^2.0.3",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.0.0",
     "react-markdown": "^2.5.0",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^1.2.0"
@@ -31,8 +31,8 @@
     "sass-loader": "^6.0.6",
     "sasso": "^1.2.9",
     "style-loader": "^0.18.2",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack": "^3.7.1",
+    "webpack-dev-server": "^2.9.1"
   },
   "scripts": {
     "start": "webpack-dev-server",
