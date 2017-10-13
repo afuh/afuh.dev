@@ -28,11 +28,11 @@ const Latest = (props) => {
       <div className="latest__conteiner">
         <h3>Latest Projects</h3>
         <section className="projects">
-          {props.data.map((project, i) => (
+          {props.data.map((project, i) =>  (
             <Project
               mini={true}
               key={i}
-              path={'latest'}
+              path={project.tags[0]}
               data={{name: project.name, image: project.image, tags: project.tags}} />
           ))}
         </section>

@@ -1,28 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
-import Nav from './Nav';
 import Projects from './Projects';
 import Home from './Home';
 import Zoom from './Zoom';
+import Layout from './Layout';
 
-import ErrorMessage from '../helpers/Error';
+import ErrorMessage  from '../helpers/Error';
 
-const App = () => {
-  return (
-    <Router>
-      <div className="main">
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/:lang/:name" component={Zoom} />
-          <Route exact path="/latest" component={Projects} />
-          <Route path="/:lang" component={Projects} />
-          <Route render={() => <ErrorMessage message={'Not found :('} fixed={true}/> } />
-        </Switch>
-      </div>
-    </Router>
-  )
-}
+const App = () => (
+  <Layout>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/:lang/:name" component={Zoom} />
+      <Route path="/:lang" component={Projects} />
+      <Route render={() => <ErrorMessage /> } />
+    </Switch>
+  </Layout>
+)
 
 export default App;
