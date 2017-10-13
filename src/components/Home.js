@@ -28,10 +28,10 @@ const Latest = (props) => {
       <div className="latest__conteiner">
         <h3>Latest Projects</h3>
         <section className="projects">
-          {props.data.map((project, i) =>  (
+          {props.data.map(project =>  (
             <ProjectCard
               mini={true}
-              key={i}
+              key={project.name}
               path={project.tags[0]}
               data={{name: project.name, image: project.image, tags: project.tags}} />
           ))}
@@ -39,9 +39,9 @@ const Latest = (props) => {
         <div className="see-more">
           <h3 style={{padding: "50px 0 5px"}}>See More</h3>
           <div className={`see-more__tags`}>
-            {allTags().map((tag, i) => (
+            {allTags().map(tag => (
               <Link
-                key={i}
+                key={tag}
                 to={`/${tag}`}>
                 {countTags(tag).toUpperCase()}
               </Link>

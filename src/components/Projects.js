@@ -66,12 +66,12 @@ class Projects extends React.Component {
           <section className="projects" ref={section => this.section = section}>
             {spinner && <Spinner />}
             {data
-              .map((project, i) => (
+              .map(project => (
                 <ProjectCard
                   mini={true}
                   onload={this.handleLoad}
                   path={path}
-                  key={i}
+                  key={project.name}
                   data={{name: project.name, image: project.image, tags: project.tags}} />
               ))
             }
