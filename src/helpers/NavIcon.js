@@ -52,5 +52,3 @@ NavIcon.defaultProps = {
 }
 
 export default NavIcon
-
-// switcher === 'open' ? '#000' : color

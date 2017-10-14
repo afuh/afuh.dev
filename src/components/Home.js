@@ -3,10 +3,9 @@ import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
-import Project from './Project';
+import ProjectCard from './ProjectCard';
 
-import { getData, siteName, countTags, icon } from '../helpers/api';
-import { db } from '../helpers/db';
+import { getData, siteName, countTags, allTags, contactLinks } from '../helpers/api';
 
 const Header = () => {
   return (
@@ -17,31 +16,26 @@ const Header = () => {
   )
 }
 
-const allTags = () => {
-  const arr = db.map(p => p.tags).reduce((a, b) => a.concat(b))
-  return arr.filter((tag, i) => arr.indexOf(tag) === i).sort()
-}
-
 const Latest = (props) => {
   return(
     <section className="latest">
       <div className="latest__conteiner">
         <h3>Latest Projects</h3>
         <section className="projects">
-          {props.data.map((project, i) => (
-            <Project
+          {props.data.map(project =>  (
+            <ProjectCard
               mini={true}
-              key={i}
-              path={'latest'}
+              key={project.name}
+              path={project.tags[0]}
               data={{name: project.name, image: project.image, tags: project.tags}} />
           ))}
         </section>
         <div className="see-more">
           <h3 style={{padding: "50px 0 5px"}}>See More</h3>
           <div className={`see-more__tags`}>
-            {allTags().map((tag, i) => (
+            {allTags().map(tag => (
               <Link
-                key={i}
+                key={tag}
                 to={`/${tag}`}>
                 {countTags(tag).toUpperCase()}
               </Link>
@@ -58,16 +52,11 @@ Latest.propTypes = {
 }
 
 const Contact = () => {
-  const links = [
-    { name: "GitHub", url: "https://github.com/afuh", icon: icon('gh.png')},
-    { name: "CodePen", url: "https://codepen.io/mage20", icon: icon('cp.png')},
-    { name: "E-Mail", url: "mailto:axelfuh@gmail.com", icon: icon('mail.png')}
-  ]
   return (
     <section className="contact">
       <h3>Contact Me</h3>
       <ul className="contact__list">
-        {links.map(link => (
+        {contactLinks.map(link => (
           <li key={link.name}>
             <a
               className='contact__link'

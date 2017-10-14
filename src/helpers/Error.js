@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 
 import { siteName } from '../helpers/api';
 
-const randomCat = () => fetch('http://random.cat/meow').then(res => res.json()).then(res => res.file)
+const randomCat = () => (
+  fetch('http://random.cat/meow')
+  .then(res => res.json())
+  .then(res => res.file)
+)
 
 const style = {
   main: {
@@ -36,12 +40,13 @@ class ErrorMessage extends React.Component {
     randomCat().then(cat => this.setState({ cat }))
   }
   renderMsg() {
-    const { message, fixed } = this.props
-    if (fixed) return <span style={style.message}>{message}</span>
+    const { message } = this.props
     return (
-      <span style={style.message}><span style={style.query}>{message.split(" ")[0] + " "}</span>{message.split(" ").slice(1).join(" ")}</span>
+      <span style={style.message}>
+        <span style={style.query}>{message.split(" ")[0] + " "}</span>
+        {message.split(" ").slice(1).join(" ")}
+      </span>
     )
-
   }
   render() {
     return (
@@ -62,7 +67,6 @@ ErrorMessage.defaultProps = {
 
 ErrorMessage.propTypes = {
   message: PropTypes.string.isRequired,
-  fixed: PropTypes.bool
 }
 
 export default ErrorMessage;
