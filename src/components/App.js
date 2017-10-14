@@ -8,12 +8,20 @@ import Layout from './Layout';
 
 import ErrorMessage  from '../helpers/Error';
 
+import { allTags } from '../helpers/api';
+
+const checkPath = ({ match, history }) => (
+  allTags().includes(match.params.lang) ?
+  <ProjectPage match={match} history={history}/> :
+  <ErrorMessage message='404'/>
+)
+
 const App = () => (
   <Layout>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/:lang/:name" component={ProjectPage} />
-      <Route path="/:lang" component={Projects} />
+      <Route exact path="/:lang" component={Projects} />
+      <Route exact path="/:lang/:name" component={checkPath} />
       <Route render={() => <ErrorMessage /> } />
     </Switch>
   </Layout>
