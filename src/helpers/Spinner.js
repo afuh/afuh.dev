@@ -4,7 +4,7 @@ import { icon } from './api';
 
 const style = {
   spinner: {
-    padding: "80px",
+    padding: "15% 0",
     background: "#fff",
     position: "absolute",
     height: "100%",
@@ -17,9 +17,7 @@ const style = {
 
 const Spinner = () => (
   <div className="spinner" style={style.spinner}>
-    <div style={{position: "relative"}}>
-      <img style={{width: "60px"}} src={icon('tail-spin.svg')} alt="spinner"/>
-    </div>
+    <img style={{width: "60px"}} src={icon('tail-spin.svg')} alt="spinner"/>
   </div>
 )
 

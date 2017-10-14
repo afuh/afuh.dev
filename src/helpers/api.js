@@ -39,7 +39,7 @@ export const getProject = pr => {
 
 export const icon = file => require(`../images/icons/${file}`)
 export const siteName = 'Axel Fuhrmann';
-export const nav = ['javascript', 'react', 'node', 'jquery', 'API'];
+export const nav = ['javascript', 'react', 'node', 'jquery', 'api'];
 export const contactLinks = [
   { name: "GitHub", url: "https://github.com/afuh", icon: icon('gh.png')},
   { name: "CodePen", url: "https://codepen.io/mage20", icon: icon('cp.png')},

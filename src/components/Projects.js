@@ -8,41 +8,37 @@ import Spinner from '../helpers/Spinner';
 import ErrorMessage  from '../helpers/Error';
 
 class Projects extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    this.path = this.props.match.params.lang
     this.state = {
       data: [],
       spinner: true
     }
     this.handleLoad = this.handleLoad.bind(this)
   }
-  loaded(el){
-    const complete = [...el.querySelectorAll('img')]
-      .filter(a => !a.src.includes('tail-spin'))
-      .map(img => img.complete)
-      .filter(complete => !complete)
-
-    if (!complete.length) {
-      return true;
+  handleLoad(){
+    const loaded = [...this.section.querySelectorAll('img')].filter(i => !i.complete)
+    if (!loaded.length) {
+      this.setState({spinner: false})
     }
   }
-  handleLoad(){
-    const spinner = !this.loaded(this.section)
-    this.setState({ spinner })
-  }
-  componentWillMount(){
-    this.setState({ spinner: true })
-    const path = this.props.match.params.lang
-    if (!path) {
+  componentDidMount(){
+    if (!this.path) {
       this.request('Home')
     } else {
-      this.request(path);
+      this.request(this.path);
     }
   }
   componentWillReceiveProps(nextProps) {
-    this.setState({ data: [] })
-
     const path = nextProps.match.params.lang
+
+    if (this.path === path){
+      return
+    }
+    this.path = path
+    this.setState({spinner: true})
+
     if (!path) {
       this.request('Home')
     } else {
@@ -55,7 +51,7 @@ class Projects extends React.Component {
   }
   render () {
     const path = this.props.match.params.lang || this.props.match.path.split("/").slice(-1).toString()
-    const { spinner, data } = this.state
+    const { data } = this.state
 
     if (data.error) {
       return <ErrorMessage message={data.error} />
@@ -64,18 +60,18 @@ class Projects extends React.Component {
       <DocumentTitle title={`${siteName} | ${path}`}>
         <main className="main__section">
           <section className="projects" ref={section => this.section = section}>
-            {spinner && <Spinner />}
-            {data
-              .map(project => (
-                <ProjectCard
-                  mini={true}
-                  onload={this.handleLoad}
-                  path={path}
-                  key={project.name}
-                  data={{name: project.name, image: project.image, tags: project.tags}} />
+            {data.map(project => (
+              <ProjectCard
+                mini={true}
+                onload={this.handleLoad}
+                path={path}
+                key={project.name}
+                data={{name: project.name, image: project.image, tags: project.tags}}
+              />
               ))
             }
           </section>
+          {this.state.spinner && <Spinner />}
         </main>
       </DocumentTitle>
     )
