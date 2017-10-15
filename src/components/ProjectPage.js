@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
+import ReactMarkdown from "react-markdown";
 
-import Markdown from '../helpers/Markdown'
 import { getProject, countTags, siteName, icon } from '../helpers/api';
 import ErrorMessage  from '../helpers/Error';
 
@@ -55,15 +55,29 @@ Visual.propTypes = {
   cl: PropTypes.string.isRequired
 }
 
-const Info = ({ data, cl }) => {
-  const { md, info } = data
-  return (
-    <div className={`${cl}__info`}>{md ? <Markdown md={md}/> : info}</div>
-  )
+class Info extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      markdown: ""
+    }
+  }
+  componentWillMount(){
+    fetch(this.props.md)
+      .then(res => res.text())
+      .then(res => this.setState({ markdown: res }))
+  }
+  render () {
+    return (
+      <div className={`${this.props.cl}__info`}>
+        <ReactMarkdown className='markdown' source={this.state.markdown} />
+      </div>
+    )
+  }
 }
 
 Info.propTypes = {
-  data: PropTypes.object.isRequired,
+  md: PropTypes.string.isRequired,
   cl: PropTypes.string.isRequired
 }
 
@@ -81,7 +95,7 @@ Back.propTypes = {
 }
 
 const ProjectPage = ({ match, history }) => {
-  const { name, info, url, code, image, tags, video, gif, md, error } = getProject(match.params.name)
+  const { name, url, code, image, tags, video, gif, md, error } = getProject(match.params.name)
   const cl = 'zoom'
 
   if (error) {
@@ -100,7 +114,7 @@ const ProjectPage = ({ match, history }) => {
           transitionLeave={false}>
 
           <Visual data={{name, tags, video, gif, image, code, url}} cl={cl}/>
-          <Info data={{md, info}} cl={cl}/>
+          <Info md={md} cl={cl}/>
           <Back onclick={history.goBack} cl={cl}/>
 
         </CSSTransitionGroup>
