@@ -99,7 +99,7 @@ class Home extends React.Component {
   render(){
     const { data } = this.state
     return (
-      <DocumentTitle title={`${siteName} | Latests`}>
+      <DocumentTitle title={`${siteName} | Web Developer`}>
         <main className="main__section" ref={main => this.main = main}>
           <div className="content">
             <Header />
