@@ -1,5 +1,14 @@
 const db = [
   {
+    name: "React universal",
+    md: `${require('../markdown/universal.md')}`,
+    url: "https://afuh.github.io/universal/",
+    code: "https://github.com/afuh/universal",
+    image: `${require('../images/screenshots/universal.png')}`,
+    tags: ["react", "node", "express", "mongodb", "mongoose", "material ui"],
+    latest: true
+  },
+  {
     name: "The Next Web Layout",
     info: `This is news magazine clone of the The Next Web's layout.
 
