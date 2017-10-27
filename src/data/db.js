@@ -1,6 +1,7 @@
 const db = [
   {
     name: "React universal",
+    info: `A mobile blog/instant messaging mock application.`,
     md: `${require('../markdown/universal.md')}`,
     url: "https://afuh.github.io/universal/",
     code: "https://github.com/afuh/universal",
