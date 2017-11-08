@@ -39,7 +39,7 @@
     "start": "webpack-dev-server",
     "prod": "npm run clean && NODE_ENV=production webpack -p --optimize-minimize",
     "clean": "rimraf ./dist/*",
-    "deploy": "npm run prod && surge dist http://afuh.surge.sh"
+    "deploy": "npm run prod && surge dist http://axelfuhrmann.com"
   },
   "eslintConfig": {
     "parserOptions": {
