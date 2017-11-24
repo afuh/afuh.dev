@@ -65,20 +65,29 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-        title: 'Axel Fuhrmann',
-        favicon: './src/images/favicon.png',
-        minify: {
-            collapseWhitespace: true
-        },
-        template: './src/index.html',
-        filename: isProd ? '200.html' : 'index.html'
-      }),
-      new ExtractTextPlugin({
-         filename: 'main.css',
-         disable: !isProd,
-         allChunks: true
-       }),
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin()
+      title: 'Axel Fuhrmann',
+      favicon: './src/images/favicon.png',
+      minify: {
+          collapseWhitespace: true
+      },
+      template: './src/index.html',
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Axel Fuhrmann',
+      favicon: './src/images/favicon.png',
+      minify: {
+          collapseWhitespace: true
+      },
+      template: './src/index.html',
+      filename: '404.html'
+    }),
+    new ExtractTextPlugin({
+       filename: 'main.css',
+       disable: !isProd,
+       allChunks: true
+     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
   ]
 };

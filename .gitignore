@@ -6,3 +6,4 @@ node_modules
 dist
 dbTEST.js
 images
+deploy.js

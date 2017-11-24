@@ -30,7 +30,7 @@
     "postcss-loader": "^2.0.6",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
-    "sasso": "^1.2.9",
+    "sasso": "^1.2.10",
     "style-loader": "^0.18.2",
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.1"
@@ -39,7 +39,7 @@
     "start": "webpack-dev-server",
     "prod": "npm run clean && NODE_ENV=production webpack -p --optimize-minimize",
     "clean": "rimraf ./dist/*",
-    "deploy": "npm run prod && surge dist http://axelfuhrmann.com"
+    "deploy": "npm run prod && node deploy"
   },
   "eslintConfig": {
     "parserOptions": {
