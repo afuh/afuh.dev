@@ -37,16 +37,13 @@ Lang.propTypes = {
   color: PropTypes.bool
 }
 
-class Nav extends Component{
-  constructor() {
-    super()
-    this.width = 640 //768 / 480
-    this.show = window.innerWidth <= this.width ? false : true
-    this.state = {
-      switcher: window.innerWidth <= this.width ? 'close' : 'open',
-    }
+class Nav extends Component {
+  width = 640 //768 / 480
+  show = window.innerWidth <= this.width ? false : true
+  state = {
+    switcher: window.innerWidth <= this.width ? 'close' : 'open',
   }
-  handleResize(){
+  handleResize = () => {
     if (window.innerWidth <= this.width) {
       this.setState({ switcher: "close" })
       this.show = false
@@ -56,7 +53,7 @@ class Nav extends Component{
       this.show = true
     }
   }
-  hide(){
+  hide = () => {
     if (this.show && window.innerWidth <= this.width) {
       this.setState({ switcher: "close" })
       this.show = !this.show
@@ -68,7 +65,7 @@ class Nav extends Component{
     }
   }
   render(){
-    window.onresize = () => this.handleResize();
+    window.onresize = this.handleResize
     const darkColor = window.location.pathname.split("/").length === 3 ? true : false
     const headerStyle = darkColor ? {color: "#fff"} : {color: "#4f4f4f"}
     const bckStyle = {on: {background: "#4f4f4f"}, off: {background: "#fff" }}
@@ -84,7 +81,7 @@ class Nav extends Component{
 
           {/*Mobile navigation icon*/}
           {window.innerWidth <= this.width &&
-            <div className="nav__opener" onClick={() => this.hide()}>
+            <div className="nav__opener" onClick={this.hide}>
               <NavIcon
                 switcher={this.state.switcher}
                 color={darkColor ? "#fff" : "#000"}/>
@@ -104,7 +101,7 @@ class Nav extends Component{
 
         {window.innerWidth <= this.width &&
           <nav className={`nav__fixed-conteiner ${this.state.switcher}`}>
-            <Lang hide={() => this.hide()}/>
+            <Lang hide={this.hide}/>
           </nav>}
       </header>
     )

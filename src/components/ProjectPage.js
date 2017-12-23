@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 import { CSSTransitionGroup } from 'react-transition-group'
@@ -27,7 +27,7 @@ HandleVisual.propTypes = {
 }
 
 const Visual = ({ data, cl }) => {
-  const {name, tags, video, gif, image, code, url} = data
+  const { name, tags, video, gif, image, code, url } = data
   return (
     <div className={`${cl}__visual`}>
       <h1 className={`${cl}__name`}>{name}</h1>
@@ -41,7 +41,9 @@ const Visual = ({ data, cl }) => {
           ))
         }
       </div>
-      <div className={`${cl}__img`}><HandleVisual data={{video, gif, image, name}} /></div>
+      <div className={`${cl}__img`}>
+        <HandleVisual data={{video, gif, image, name}} />
+      </div>
       <div className={`${cl}__links`}>
         {name !== "Portfolio" && <a className={`${cl}__live`} href={url}>See it live</a>}
         <a className={`${cl}__code`} href={code} target="_blank">Code</a>
@@ -55,21 +57,20 @@ Visual.propTypes = {
   cl: PropTypes.string.isRequired
 }
 
-class Info extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      markdown: ""
-    }
+class Info extends Component {
+  state = {
+    markdown: ""
   }
   componentWillMount(){
-    fetch(this.props.md)
+    const { md } = this.props
+    fetch(md)
       .then(res => res.text())
       .then(res => this.setState({ markdown: res }))
   }
-  render () {
+  render(){
+    const { cl } = this.props
     return (
-      <div className={`${this.props.cl}__info`}>
+      <div className={`${cl}__info`}>
         <ReactMarkdown className='markdown' source={this.state.markdown} />
       </div>
     )
@@ -81,13 +82,11 @@ Info.propTypes = {
   cl: PropTypes.string.isRequired
 }
 
-const Back = ({ onclick, cl }) => {
-  return(
-    <div className={`${cl}__back`} onClick={onclick}>
-        <img src={icon('back.svg')} />
-    </div>
-  )
-}
+const Back = ({ onclick, cl }) => (
+  <div className={`${cl}__back`} onClick={onclick}>
+    <img src={icon('back.svg')} />
+  </div>
+)
 
 Back.propTypes = {
   onclick: PropTypes.func.isRequired,
@@ -98,9 +97,7 @@ const ProjectPage = ({ match, history }) => {
   const { name, url, code, image, tags, video, gif, md, error } = getProject(match.params.name)
   const cl = 'zoom'
 
-  if (error) {
-    return <ErrorMessage message={error} />
-  }
+  if (error) return <ErrorMessage message={error} />
 
   return (
     <DocumentTitle title={`${siteName} | ${name}`}>

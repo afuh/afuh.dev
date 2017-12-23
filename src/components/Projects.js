@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import DocumentTitle from 'react-document-title';
 
 import ProjectCard from './ProjectCard';
@@ -7,17 +7,13 @@ import { getData, siteName } from '../helpers/api';
 import Spinner from '../helpers/Spinner';
 import ErrorMessage  from '../helpers/Error';
 
-class Projects extends React.Component {
-  constructor(props) {
-    super(props)
-    this.path = this.props.match.params.lang
-    this.state = {
-      data: [],
-      spinner: true
-    }
-    this.handleLoad = this.handleLoad.bind(this)
+class Projects extends Component {
+  path = this.props.match.params.lang
+  state = {
+    data: [],
+    spinner: true
   }
-  handleLoad(){
+  handleLoad = () => {
     const loaded = [...this.section.querySelectorAll('img')].filter(i => !i.complete)
     if (!loaded.length) {
       this.setState({spinner: false})

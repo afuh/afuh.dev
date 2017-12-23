@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import DocumentTitle from 'react-document-title';
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
@@ -7,80 +7,71 @@ import ProjectCard from './ProjectCard';
 
 import { getData, siteName, countTags, allTags, contactLinks } from '../helpers/api';
 
-const Header = () => {
-  return (
-    <section className="intro">
-      <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>
-      <h2>I am a self-taught aspiring Front-End Web Developer.</h2>
-    </section>
-  )
-}
+const Header = () => (
+  <section className="intro">
+    <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>
+    <h2>I am a self-taught aspiring Front-End Web Developer.</h2>
+  </section>
+)
 
-const Latest = (props) => {
-  return(
-    <section className="latest">
-      <div className="latest__conteiner">
-        <h3>Latest Projects</h3>
-        <section className="projects">
-          {props.data.map(project =>  (
-            <ProjectCard
-              mini={true}
-              key={project.name}
-              path={project.tags[0]}
-              data={{name: project.name, image: project.image, tags: project.tags}} />
+const Latest = ({data}) => (
+  <section className="latest">
+    <div className="latest__conteiner">
+      <h3>Latest Projects</h3>
+      <section className="projects">
+        {data.map(project => (
+          <ProjectCard
+            mini={true}
+            key={project.name}
+            path={project.tags[0]}
+            data={{name: project.name, image: project.image, tags: project.tags}} />
+        ))}
+      </section>
+      <div className="see-more">
+        <h3 style={{padding: "50px 0 5px"}}>See More</h3>
+        <div className={`see-more__tags`}>
+          {allTags().map(tag => (
+            <Link
+              key={tag}
+              to={`/${tag}`}>
+              {countTags(tag).toUpperCase()}
+            </Link>
           ))}
-        </section>
-        <div className="see-more">
-          <h3 style={{padding: "50px 0 5px"}}>See More</h3>
-          <div className={`see-more__tags`}>
-            {allTags().map(tag => (
-              <Link
-                key={tag}
-                to={`/${tag}`}>
-                {countTags(tag).toUpperCase()}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
-    </section>
-  )
-}
+    </div>
+  </section>
+)
 
 Latest.propTypes = {
   data: PropTypes.array.isRequired
 }
 
-const Contact = () => {
-  return (
-    <section className="contact">
-      <h3>Contact Me</h3>
-      <ul className="contact__list">
-        {contactLinks.map(link => (
-          <li key={link.name}>
-            <a
-              className='contact__link'
-              target="_blank"
-              rel='noreferrer noopener'
-              href={link.url}>
-              <img className={`contact__icon icon-${link.name}`} src={link.icon} alt={link.name}/>
-              {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )
-}
+const Contact = () => (
+  <section className="contact">
+    <h3>Contact Me</h3>
+    <ul className="contact__list">
+      {contactLinks.map(link => (
+        <li key={link.name}>
+          <a
+            className='contact__link'
+            target="_blank"
+            rel='noreferrer noopener'
+            href={link.url}>
+            <img className={`contact__icon icon-${link.name}`} src={link.icon} alt={link.name}/>
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+)
 
 
 
-class Home extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      data: []
-    }
+class Home extends Component {
+  state = {
+    data: []
   }
   componentDidMount(){
     this.request('Home')
