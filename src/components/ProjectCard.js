@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 
-class ProjectCard extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      name: null,
-      image: null,
-    }
+class ProjectCard extends Component {
+  state = {
+    name: null,
+    image: null
   }
   componentWillMount() {
-    this.add(this.props.data.name, this.props.data.image)
+    const { name, image } = this.props.data
+    this.add(name, image)
   }
   componentWillUnmount(){
     this.remove()
   }
   componentWillReceiveProps(nextProps) {
+    const { name, image } = nextProps.data
     this.remove()
-    this.add(nextProps.data.name, nextProps.data.image)
+    this.add(name, image)
   }
   add(name, image){
     this.setState({ name, image })
@@ -30,20 +29,14 @@ class ProjectCard extends React.Component {
     const { tags } = this.props.data
     return (
       <div className={`${cl}__tags`}>
-        {tags.map(tag => (
-          <Link
-            key={tag}
-            to={`/${tag}`}>
-            {tag}
-          </Link>
-          ))}
+        {tags.map(tag => <Link key={tag} to={`/${tag}`}> {tag} </Link>)}
       </div>
     )
   }
   render() {
-    const { onload, path } = this.props
+    const { onload, path, mini } = this.props
     const { name, image } = this.state
-    const cl = this.props.mini ? 'mini' : "project"
+    const cl = mini ? 'mini' : "project"
 
     return (
       <article className={cl}>

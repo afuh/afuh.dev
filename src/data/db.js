@@ -3,7 +3,7 @@ const db = [
     name: "React universal",
     info: `A mobile blog/instant messaging mock application.`,
     md: `${require('../markdown/universal.md')}`,
-    url: "https://afuh.github.io/universal/",
+    url: "http://universal.axelfuhrmann.com",
     code: "https://github.com/afuh/universal",
     image: `${require('../images/screenshots/universal.png')}`,
     tags: ["react", "node", "express", "mongodb", "mongoose", "material ui"],
@@ -31,7 +31,7 @@ const db = [
 
     This way I can end up using this portfolio as an almost blog.`,
     md: `${require('../markdown/portfolio.md')}`,
-    url: "https://afuh.github.io/",
+    url: "https://axelfuhrmann.com",
     code: "https://github.com/afuh/afuh.github.io",
     image: `${require('../images/screenshots/portfolio.png')}`,
     tags: ["react"],
@@ -47,7 +47,7 @@ const db = [
 
     This is my first approach to the Back-end kingdom.`,
     md: `${require('../markdown/pinsta.md')}`,
-    url: "https://pinstagram-app.herokuapp.com/",
+    url: "http://pinstagram.axelfuhrmann.com",
     code: "https://github.com/afuh/pinstagram",
     image: `${require('../images/screenshots/pinsta.png')}`,
     video: [`${require('../images/videos/pinsta.webm')}`, `${require('../images/videos/pinsta.mp4')}` ],
@@ -177,24 +177,10 @@ const db = [
     name: "Now That's Delicious!",
     info: "A full stack restaurant application which users can search, geolocate, review and curate their favourite restaurants from around the world.",
     md: `${require('../markdown/delicious.md')}`,
-    url: "https://delicious-app.herokuapp.com/",
+    url: "http://delicious.axelfuhrmann.com",
     code: "https://github.com/afuh/delicious",
     image: `${require('../images/screenshots/delicious.png')}`,
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
-  },
-  {
-    name: "JavaScript 30",
-    info: `JavaScript30 is a great course by Wes Bos. The main idea is to build 30 things in 30 days with vanilla JavaScript. No frameworks, no compilers, no libraries, no boilerplate.
-
-    I took this course to focus on learn and practice DOM manipulation.
-
-    This is a showcase with all my exercises.
-    `,
-    md: `${require('../markdown/js30.md')}`,
-    url: "https://afuh.github.io/js30/",
-    code: "https://github.com/afuh/js30",
-    image: `${require('../images/screenshots/js30.png')}`,
-    tags: ["javascript"]
   },
   {
     name: "FCC Back End API Projects",
