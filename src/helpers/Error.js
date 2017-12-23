@@ -1,14 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import DocumentTitle from 'react-document-title';
 import PropTypes from 'prop-types';
 
 import { siteName } from '../helpers/api';
-
-const randomCat = () => (
-  fetch('http://random.cat/meow')
-  .then(res => res.json())
-  .then(res => res.file)
-)
 
 const style = {
   main: {
@@ -25,20 +19,12 @@ const style = {
     color: "#FF9800"
   },
   img: {
-    width: "200px"
+    width: "400px",
+    borderRadius: "10px"
   }
 }
 
-class ErrorMessage extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      cat: ""
-    }
-  }
-  componentDidMount() {
-    randomCat().then(cat => this.setState({ cat }))
-  }
+class ErrorMessage extends Component {
   renderMsg() {
     const { message } = this.props
     return (
@@ -54,7 +40,7 @@ class ErrorMessage extends React.Component {
         <main className="main__section" style={style.main}>
           {this.renderMsg()}
           <span style={style.message}>But here is a cute cat for you.</span>
-          {this.state.cat && <img src={this.state.cat} style={style.img} alt='🐈'/>}
+          <img src="https://source.unsplash.com/random/?cat,cats" style={style.img} alt='🐈'/>
         </main>
       </DocumentTitle>
     )

@@ -183,20 +183,6 @@ const db = [
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
   },
   {
-    name: "JavaScript 30",
-    info: `JavaScript30 is a great course by Wes Bos. The main idea is to build 30 things in 30 days with vanilla JavaScript. No frameworks, no compilers, no libraries, no boilerplate.
-
-    I took this course to focus on learn and practice DOM manipulation.
-
-    This is a showcase with all my exercises.
-    `,
-    md: `${require('../markdown/js30.md')}`,
-    url: "https://afuh.github.io/js30/",
-    code: "https://github.com/afuh/js30",
-    image: `${require('../images/screenshots/js30.png')}`,
-    tags: ["javascript"]
-  },
-  {
     name: "FCC Back End API Projects",
     info: "This is a small page to showcase my solutions to the FreeCodeCamp API and microservices challenges.",
     md: `${require('../markdown/fccapi.md')}`,

@@ -5,35 +5,36 @@
   "main": "index.js",
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
+    "react": "^16.2.0",
     "react-document-title": "^2.0.3",
-    "react-dom": "^16.0.0",
-    "react-markdown": "^2.5.0",
+    "react-dom": "^16.2.0",
+    "react-markdown": "^3.1.3",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^1.2.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.3",
+    "autoprefixer": "^7.2.3",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
-    "eslint": "^4.6.0",
-    "eslint-plugin-react": "^7.3.0",
-    "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^0.11.1",
-    "gh-pages": "^1.0.0",
+    "eslint": "^4.13.1",
+    "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.0",
-    "node-sass": "^4.5.3",
-    "postcss-loader": "^2.0.6",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.0.9",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "sasso": "^1.2.10",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.7.1",
-    "webpack-dev-server": "^2.9.1"
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   },
   "scripts": {
     "start": "webpack-dev-server",
@@ -41,49 +42,6 @@
     "clean": "rimraf ./dist/*",
     "deploy": "npm run prod && node deploy"
   },
-  "eslintConfig": {
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 8,
-      "ecmaFeatures": {
-        "jsx": true,
-        "browser": true
-      }
-    },
-    "plugins": [
-      "react"
-    ],
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ],
-    "rules": {
-      "object-shorthand": "warn",
-      "prefer-arrow-callback": "warn",
-      "react/jsx-uses-react": "error",
-      "react/jsx-uses-vars": "error",
-      "react/prop-types": [
-        2,
-        {
-          "ignore": [
-            "match",
-            "history"
-          ]
-        }
-      ]
-    },
-    "env": {
-      "es6": true,
-      "node": true,
-      "browser": true
-    }
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ]
-  },
-  "author": "",
+  "author": "Axel Fuhrmann",
   "license": "ISC"
 }

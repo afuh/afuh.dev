@@ -14,8 +14,8 @@ const postcss = {
 const isProd = process.env.NODE_ENV === "production";
 const cssDev = ['style-loader', 'css-loader', postcss, 'sass-loader'];
 const cssProd = ExtractTextPlugin.extract({
-                fallbackLoader: 'style-loader',
-                loader: ['css-loader', postcss, 'sass-loader'],
+                fallback: 'style-loader',
+                use: ['css-loader', postcss, 'sass-loader'],
                 publicPath: '/dist'
               });
 
