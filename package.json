@@ -23,7 +23,6 @@
     "eslint-plugin-react": "^7.3.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
-    "gh-pages": "^1.0.0",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.0",
     "node-sass": "^4.5.3",
@@ -32,51 +31,14 @@
     "sass-loader": "^6.0.6",
     "sasso": "^1.2.10",
     "style-loader": "^0.18.2",
-    "webpack": "^3.7.1",
-    "webpack-dev-server": "^2.9.1"
+    "webpack": "^3.9.1",
+    "webpack-dev-server": "^2.9.5"
   },
   "scripts": {
     "start": "webpack-dev-server",
     "prod": "npm run clean && NODE_ENV=production webpack -p --optimize-minimize",
     "clean": "rimraf ./dist/*",
     "deploy": "npm run prod && node deploy"
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 8,
-      "ecmaFeatures": {
-        "jsx": true,
-        "browser": true
-      }
-    },
-    "plugins": [
-      "react"
-    ],
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ],
-    "rules": {
-      "object-shorthand": "warn",
-      "prefer-arrow-callback": "warn",
-      "react/jsx-uses-react": "error",
-      "react/jsx-uses-vars": "error",
-      "react/prop-types": [
-        2,
-        {
-          "ignore": [
-            "match",
-            "history"
-          ]
-        }
-      ]
-    },
-    "env": {
-      "es6": true,
-      "node": true,
-      "browser": true
-    }
   },
   "babel": {
     "presets": [
