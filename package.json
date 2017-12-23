@@ -5,9 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
     "react-document-title": "^2.0.3",
-    "react-dom": "^16.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-markdown": "^2.5.0",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^1.2.0"
@@ -41,12 +41,6 @@
     "prod": "npm run clean && NODE_ENV=production webpack -p --optimize-minimize",
     "clean": "rimraf ./dist/*",
     "deploy": "npm run prod && node deploy"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ]
   },
   "author": "Axel Fuhrmann",
   "license": "ISC"
