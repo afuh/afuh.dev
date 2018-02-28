@@ -4,20 +4,12 @@ import DocumentTitle from 'react-document-title';
 import ProjectCard from './ProjectCard';
 
 import { getData, siteName } from '../helpers/api';
-import Spinner from '../helpers/Spinner';
 import ErrorMessage  from '../helpers/Error';
 
 class Projects extends Component {
   path = this.props.match.params.lang
   state = {
     data: [],
-    spinner: true
-  }
-  handleLoad = () => {
-    const loaded = [...this.section.querySelectorAll('img')].filter(i => !i.complete)
-    if (!loaded.length) {
-      this.setState({spinner: false})
-    }
   }
   componentDidMount(){
     if (!this.path) {
@@ -32,8 +24,8 @@ class Projects extends Component {
     if (this.path === path){
       return
     }
+    this.props.history.push(path)
     this.path = path
-    this.setState({spinner: true})
 
     if (!path) {
       this.request('Home')
@@ -48,7 +40,6 @@ class Projects extends Component {
   render () {
     const path = this.props.match.params.lang || this.props.match.path.split("/").slice(-1).toString()
     const { data } = this.state
-
     if (data.error) {
       return <ErrorMessage message={data.error} />
     }
@@ -59,15 +50,13 @@ class Projects extends Component {
             {data.map(project => (
               <ProjectCard
                 mini={true}
-                onload={this.handleLoad}
                 path={path}
                 key={project.name}
-                data={{name: project.name, image: project.image, tags: project.tags}}
+                data={{name: project.name, image: project.image, thumb: project.thumb, tags: project.tags}}
               />
               ))
             }
           </section>
-          {this.state.spinner && <Spinner />}
         </main>
       </DocumentTitle>
     )
