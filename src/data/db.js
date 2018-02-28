@@ -177,7 +177,7 @@ const db = [
     name: "Now That's Delicious!",
     info: "A full stack restaurant application which users can search, geolocate, review and curate their favourite restaurants from around the world.",
     md: `${require('../markdown/delicious.md')}`,
-    url: "http://delicious.axelfuhrmann.com",
+    url: "https://delicious-app.herokuapp.com",
     code: "https://github.com/afuh/delicious",
     image: `${require('../images/screenshots/delicious.png')}`,
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
