@@ -1,5 +1,15 @@
 const db = [
   {
+    name: "The Rick and Morty API",
+    info: `ShlaAPI!`,
+    md: `${require('../markdown/rickmorty.md')}`,
+    url: "http://rickandmortyapi.com",
+    code: "https://github.com/afuh/rick-and-morty-api",
+    image: `${require('../images/screenshots/rickmorty.jpeg')}`,
+    tags: ["react", "gatsby", "node", "express", "mongodb", "mongoose", "api"],
+    latest: true
+  },
+  {
     name: "React universal",
     info: `A mobile blog/instant messaging mock application.`,
     md: `${require('../markdown/universal.md')}`,
@@ -7,7 +17,6 @@ const db = [
     code: "https://github.com/afuh/universal",
     image: `${require('../images/screenshots/universal.png')}`,
     tags: ["react", "node", "express", "mongodb", "mongoose", "material ui"],
-    latest: true
   },
   {
     name: "The Next Web Layout",
@@ -19,7 +28,6 @@ const db = [
     code: "https://github.com/afuh/next-web",
     image: `${require('../images/screenshots/nextweb.png')}`,
     tags: ["react", "the odin project", "news api", "api"],
-    latest: true
   },
   {
     name: "Portfolio",
@@ -35,7 +43,6 @@ const db = [
     code: "https://github.com/afuh/afuh.github.io",
     image: `${require('../images/screenshots/portfolio.png')}`,
     tags: ["react"],
-    latest: true
   },
   {
     name: "Pinstagram",
@@ -60,7 +67,7 @@ const db = [
 
     For some time I wanted to do something simple that would tell me where the ISS is. I know there are plenty of places to look for that information, but considering that it's always a good time to continue exploring the Google API, I decided to build it myself.`,
     md: `${require('../markdown/iss.md')}`,
-    url: "http://iss.surge.sh/",
+    url: "http://iss.axelfuhrmann.com/",
     code: "https://github.com/afuh/iss",
     image: `${require('../images/screenshots/iss.png')}`,
     gif: `${require('../images/gifs/iss.gif')}`,
@@ -101,19 +108,6 @@ const db = [
     code: "https://github.com/afuh/sequencer",
     image: `${require('../images/screenshots/sequencer.png')}`,
     tags: ["jquery", "web audio", "api"],
-  },
-  {
-    name: "GitHub Battle",
-    info: `This App is the result of the awesome course React Fundamental sby Tyler McGinnis.
-
-    This app uses the GitHub API to showcase the most popular repositories. The user can also select between different languages to filter the results.
-
-    Additionally, the user can search and select two GitHub users to 'battle' each other. The application will find those users, analyze them and declare a winner.`,
-    md: `${require('../markdown/battle.md')}`,
-    url: "http://battle-gh.surge.sh/",
-    code: "https://github.com/afuh/battle",
-    image: `${require('../images/screenshots/battle.png')}`,
-    tags: ["react", "github", "api"],
   },
   {
     name: "Snake Game",
@@ -159,19 +153,6 @@ const db = [
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.png')}`,
     tags: ["javascript", "free code camp"],
-  },
-  {
-    name: "Simple Tabbed Browsing",
-    info: `A restaurant site that use tabbed browsing to access the Menu, About Us and Contact pages.
-
-    This is a project as described in The Odin Project but instead of building it in JQuery (as proposed) I decided to do it with React as I read the documentation.
-
-    This is my first App using React.`,
-    md: `${require('../markdown/menu.md')}`,
-    url: "https://afuh.github.io/react-browsing/",
-    code: "https://github.com/afuh/react-browsing",
-    image: `${require('../images/screenshots/menu.png')}`,
-    tags: ["react", "the odin project"],
   },
   {
     name: "Now That's Delicious!",
