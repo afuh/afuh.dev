@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
+import ProgressiveImage from 'react-progressive-image'
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 
 class ProjectCard extends Component {
   state = {
-    name: null,
-    image: null
+    data: {},
   }
   componentWillMount() {
-    const { name, image } = this.props.data
-    this.add(name, image)
+    const { data } = this.props
+    this.handleData(data)
   }
   componentWillUnmount(){
     this.remove()
   }
   componentWillReceiveProps(nextProps) {
-    const { name, image } = nextProps.data
+    const { data } = nextProps
     this.remove()
-    this.add(name, image)
+    this.handleData(data)
   }
-  add(name, image){
-    this.setState({ name, image })
+  handleData(data){
+    this.setState({ data })
   }
   remove(){
-    this.setState({ name: null, image: null })
+    this.setState({ data: null })
   }
   showTags(cl){
     const { tags } = this.props.data
@@ -34,14 +34,26 @@ class ProjectCard extends Component {
     )
   }
   render() {
-    const { onload, path, mini } = this.props
-    const { name, image } = this.state
-    const cl = mini ? 'mini' : "project"
+    const { path, mini } = this.props
+    const { name, image, thumb } = this.state.data
 
+    const cl = mini ? 'mini' : "project"
+    const blur = {
+      on: {
+        opacity: 0.5,
+        filter: "blur(5px)"
+      },
+      off: {
+        opacity: 1,
+        filter: "blur(0)"
+      }
+    }
     return (
       <article className={cl}>
         <div className={`${cl}__img`}>
-          <img onLoad={onload} onError={onload} src={image} alt={name} />
+          <ProgressiveImage src={image} placeholder={thumb}>
+            {(src, loading) => <img style={loading ? blur.on : blur.off} src={src} alt={name}/>}
+          </ProgressiveImage>
         </div>
         <Link to={`/${path}/${name}`} className={`${cl}__conteiner`}>
           <h1 style={{color: "#fff"}}>{name}</h1>
@@ -55,7 +67,6 @@ class ProjectCard extends Component {
 ProjectCard.propTypes = {
   data: PropTypes.object.isRequired,
   path: PropTypes.string.isRequired,
-  onload: PropTypes.func,
   mini: PropTypes.bool
 }
 

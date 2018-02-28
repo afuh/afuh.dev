@@ -1,13 +1,24 @@
 const db = [
   {
+    name: "The Rick and Morty API",
+    info: `ShlaAPI!`,
+    md: `${require('../markdown/rickmorty.md')}`,
+    url: "http://rickandmortyapi.com",
+    code: "https://github.com/afuh/rick-and-morty-api",
+    image: `${require('../images/screenshots/rickmorty.jpeg')}`,
+    thumb: `${require('../images/thumb/rickandmorty.jpeg')}`,
+    tags: ["react", "gatsby", "node", "express", "mongodb", "mongoose", "api"],
+    latest: true
+  },
+  {
     name: "React universal",
     info: `A mobile blog/instant messaging mock application.`,
     md: `${require('../markdown/universal.md')}`,
     url: "http://universal.axelfuhrmann.com",
     code: "https://github.com/afuh/universal",
     image: `${require('../images/screenshots/universal.png')}`,
+    thumb: `${require('../images/thumb/universal.jpeg')}`,
     tags: ["react", "node", "express", "mongodb", "mongoose", "material ui"],
-    latest: true
   },
   {
     name: "The Next Web Layout",
@@ -18,8 +29,8 @@ const db = [
     url: "http://next-web.surge.sh/",
     code: "https://github.com/afuh/next-web",
     image: `${require('../images/screenshots/nextweb.png')}`,
+    thumb: `${require('../images/thumb/nextweb.jpeg')}`,
     tags: ["react", "the odin project", "news api", "api"],
-    latest: true
   },
   {
     name: "Portfolio",
@@ -34,8 +45,8 @@ const db = [
     url: "https://axelfuhrmann.com",
     code: "https://github.com/afuh/afuh.github.io",
     image: `${require('../images/screenshots/portfolio.png')}`,
+    thumb: `${require('../images/thumb/portfolio.jpeg')}`,
     tags: ["react"],
-    latest: true
   },
   {
     name: "Pinstagram",
@@ -50,6 +61,7 @@ const db = [
     url: "http://pinstagram.axelfuhrmann.com",
     code: "https://github.com/afuh/pinstagram",
     image: `${require('../images/screenshots/pinsta.png')}`,
+    thumb: `${require('../images/thumb/pinsta.jpeg')}`,
     video: [`${require('../images/videos/pinsta.webm')}`, `${require('../images/videos/pinsta.mp4')}` ],
     tags: ["node", "javascript", "express", "mongodb", "mongoose", "pug", "passport"],
     latest: true
@@ -60,9 +72,10 @@ const db = [
 
     For some time I wanted to do something simple that would tell me where the ISS is. I know there are plenty of places to look for that information, but considering that it's always a good time to continue exploring the Google API, I decided to build it myself.`,
     md: `${require('../markdown/iss.md')}`,
-    url: "http://iss.surge.sh/",
+    url: "http://iss.axelfuhrmann.com/",
     code: "https://github.com/afuh/iss",
     image: `${require('../images/screenshots/iss.png')}`,
+    thumb: `${require('../images/thumb/iss.jpeg')}`,
     gif: `${require('../images/gifs/iss.gif')}`,
     video: [`${require('../images/videos/iss.webm')}`, `${require('../images/videos/iss.mp4')}` ],
     tags: ["javascript", "google maps", "api"],
@@ -78,6 +91,7 @@ const db = [
     url: "https://afuh.github.io/slider/",
     code: "https://github.com/afuh/slider",
     image: `${require('../images/screenshots/slide.png')}`,
+    thumb: `${require('../images/thumb/slide.jpeg')}`,
     tags: ["javascript", "the odin project"],
   },
   {
@@ -89,6 +103,7 @@ const db = [
     url: "http://weather-react.surge.sh/",
     code: "https://github.com/afuh/weather",
     image: `${require('../images/screenshots/weather.png')}`,
+    thumb: `${require('../images/thumb/weather.jpeg')}`,
     tags: ["react", "open weather map", "api", "free code camp"],
   },
   {
@@ -100,20 +115,8 @@ const db = [
     url: "https://afuh.github.io/sequencer/",
     code: "https://github.com/afuh/sequencer",
     image: `${require('../images/screenshots/sequencer.png')}`,
+    thumb: `${require('../images/thumb/sequencer.jpeg')}`,
     tags: ["jquery", "web audio", "api"],
-  },
-  {
-    name: "GitHub Battle",
-    info: `This App is the result of the awesome course React Fundamental sby Tyler McGinnis.
-
-    This app uses the GitHub API to showcase the most popular repositories. The user can also select between different languages to filter the results.
-
-    Additionally, the user can search and select two GitHub users to 'battle' each other. The application will find those users, analyze them and declare a winner.`,
-    md: `${require('../markdown/battle.md')}`,
-    url: "http://battle-gh.surge.sh/",
-    code: "https://github.com/afuh/battle",
-    image: `${require('../images/screenshots/battle.png')}`,
-    tags: ["react", "github", "api"],
   },
   {
     name: "Snake Game",
@@ -122,6 +125,7 @@ const db = [
     url: "https://afuh.github.io/snake-game/",
     code: "https://github.com/afuh/snake-game",
     image: `${require('../images/screenshots/snake.png')}`,
+    thumb: `${require('../images/thumb/snake.jpeg')}`,
     gif: `${require('../images/gifs/snake.gif')}`,
     video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
     tags: ["javascript", "p5.js", "the odin project"],
@@ -136,6 +140,7 @@ const db = [
     url: "https://afuh.github.io/calculator/",
     code: "https://github.com/afuh/calculator",
     image: `${require('../images/screenshots/calc.png')}`,
+    thumb: `${require('../images/thumb/calc.jpeg')}`,
     tags: ["jquery", "free code camp", "the odin project"],
   },
   {
@@ -149,6 +154,7 @@ const db = [
     url: "https://afuh.github.io/sketchpad/",
     code: "https://github.com/afuh/sketchpad",
     image: `${require('../images/screenshots/sketch.png')}`,
+    thumb: `${require('../images/thumb/sketch.jpeg')}`,
     tags: ["jquery", "the odin project"],
   },
   {
@@ -158,28 +164,17 @@ const db = [
     url: "https://afuh.github.io/frases/",
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.png')}`,
+    thumb: `${require('../images/thumb/quote.jpeg')}`,
     tags: ["javascript", "free code camp"],
-  },
-  {
-    name: "Simple Tabbed Browsing",
-    info: `A restaurant site that use tabbed browsing to access the Menu, About Us and Contact pages.
-
-    This is a project as described in The Odin Project but instead of building it in JQuery (as proposed) I decided to do it with React as I read the documentation.
-
-    This is my first App using React.`,
-    md: `${require('../markdown/menu.md')}`,
-    url: "https://afuh.github.io/react-browsing/",
-    code: "https://github.com/afuh/react-browsing",
-    image: `${require('../images/screenshots/menu.png')}`,
-    tags: ["react", "the odin project"],
   },
   {
     name: "Now That's Delicious!",
     info: "A full stack restaurant application which users can search, geolocate, review and curate their favourite restaurants from around the world.",
     md: `${require('../markdown/delicious.md')}`,
-    url: "http://delicious.axelfuhrmann.com",
+    url: "https://delicious-app.herokuapp.com",
     code: "https://github.com/afuh/delicious",
     image: `${require('../images/screenshots/delicious.png')}`,
+    thumb: `${require('../images/thumb/delicious.jpeg')}`,
     tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
   },
   {
@@ -189,6 +184,7 @@ const db = [
     url: "https://fcc-backend.herokuapp.com/",
     code: "https://github.com/afuh/fcc-backend-projects",
     image: `${require('../images/screenshots/backend.png')}`,
+    thumb: `${require('../images/thumb/backend.jpeg')}`,
     tags: ["node", "express", "mongodb", "mongoose", "pug", "api", "free code camp"]
   }
 ]

@@ -68,7 +68,7 @@ class Nav extends Component {
     window.onresize = this.handleResize
     const darkColor = window.location.pathname.split("/").length === 3 ? true : false
     const headerStyle = darkColor ? {color: "#fff"} : {color: "#4f4f4f"}
-    const bckStyle = {on: {background: "#4f4f4f"}, off: {background: "#fff" }}
+    const bckStyle = {on: {background: "#202329"}, off: {background: "#fff" }}
 
     return (
       <header style={darkColor ? bckStyle.on : bckStyle. off} className='main__nav nav'>

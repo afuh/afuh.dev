@@ -1,3 +1,4 @@
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
@@ -61,6 +62,7 @@ module.exports = {
     overlay: true,
     port: 3000,
     hot: true,
+    quiet: true,
     historyApiFallback: true
   },
   plugins: [
@@ -88,6 +90,7 @@ module.exports = {
        allChunks: true
      }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new FriendlyErrorsWebpackPlugin()
   ]
 };
