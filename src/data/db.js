@@ -18,7 +18,7 @@ const db = [
     code: "https://github.com/afuh/universal",
     image: `${require('../images/screenshots/universal.png')}`,
     thumb: `${require('../images/thumb/universal.jpeg')}`,
-    tags: ["react", "node", "express", "mongodb", "mongoose", "material ui"],
+    tags: ["react", "node", "express", "mongodb", "mongoose", "material ui"]
   },
   {
     name: "The Next Web Layout",
@@ -30,7 +30,7 @@ const db = [
     code: "https://github.com/afuh/next-web",
     image: `${require('../images/screenshots/nextweb.png')}`,
     thumb: `${require('../images/thumb/nextweb.jpeg')}`,
-    tags: ["react", "the odin project", "news api", "api"],
+    tags: ["react", "the odin project", "news api", "api"]
   },
   {
     name: "Portfolio",
@@ -46,7 +46,7 @@ const db = [
     code: "https://github.com/afuh/afuh.github.io",
     image: `${require('../images/screenshots/portfolio.png')}`,
     thumb: `${require('../images/thumb/portfolio.jpeg')}`,
-    tags: ["react"],
+    tags: [ "react" ]
   },
   {
     name: "Pinstagram",
@@ -62,7 +62,7 @@ const db = [
     code: "https://github.com/afuh/pinstagram",
     image: `${require('../images/screenshots/pinsta.png')}`,
     thumb: `${require('../images/thumb/pinsta.jpeg')}`,
-    video: [`${require('../images/videos/pinsta.webm')}`, `${require('../images/videos/pinsta.mp4')}` ],
+    video: [`${require('../images/videos/pinsta.webm')}`, `${require('../images/videos/pinsta.mp4')}`],
     tags: ["node", "javascript", "express", "mongodb", "mongoose", "pug", "passport"],
     latest: true
   },
@@ -77,7 +77,7 @@ const db = [
     image: `${require('../images/screenshots/iss.png')}`,
     thumb: `${require('../images/thumb/iss.jpeg')}`,
     gif: `${require('../images/gifs/iss.gif')}`,
-    video: [`${require('../images/videos/iss.webm')}`, `${require('../images/videos/iss.mp4')}` ],
+    video: [`${require('../images/videos/iss.webm')}`, `${require('../images/videos/iss.mp4')}`],
     tags: ["javascript", "google maps", "api"],
     latest: true
   },
@@ -92,7 +92,7 @@ const db = [
     code: "https://github.com/afuh/slider",
     image: `${require('../images/screenshots/slide.png')}`,
     thumb: `${require('../images/thumb/slide.jpeg')}`,
-    tags: ["javascript", "the odin project"],
+    tags: ["javascript", "the odin project"]
   },
   {
     name: "Weather React",
@@ -104,7 +104,7 @@ const db = [
     code: "https://github.com/afuh/weather",
     image: `${require('../images/screenshots/weather.png')}`,
     thumb: `${require('../images/thumb/weather.jpeg')}`,
-    tags: ["react", "open weather map", "api", "free code camp"],
+    tags: ["react", "open weather map", "api", "free code camp"]
   },
   {
     name: "Step Sequencer",
@@ -116,7 +116,7 @@ const db = [
     code: "https://github.com/afuh/sequencer",
     image: `${require('../images/screenshots/sequencer.png')}`,
     thumb: `${require('../images/thumb/sequencer.jpeg')}`,
-    tags: ["jquery", "web audio", "api"],
+    tags: ["jquery", "web audio", "api"]
   },
   {
     name: "Snake Game",
@@ -127,8 +127,8 @@ const db = [
     image: `${require('../images/screenshots/snake.png')}`,
     thumb: `${require('../images/thumb/snake.jpeg')}`,
     gif: `${require('../images/gifs/snake.gif')}`,
-    video: [`${require('../images/videos/snake.webm')}`,`${require('../images/videos/snake.mp4')}`],
-    tags: ["javascript", "p5.js", "the odin project"],
+    video: [`${require('../images/videos/snake.webm')}`, `${require('../images/videos/snake.mp4')}`],
+    tags: ["javascript", "p5.js", "the odin project"]
   },
   {
     name: "Calculator",
@@ -141,7 +141,7 @@ const db = [
     code: "https://github.com/afuh/calculator",
     image: `${require('../images/screenshots/calc.png')}`,
     thumb: `${require('../images/thumb/calc.jpeg')}`,
-    tags: ["jquery", "free code camp", "the odin project"],
+    tags: ["jquery", "free code camp", "the odin project"]
   },
   {
     name: "Sketchpad",
@@ -155,7 +155,7 @@ const db = [
     code: "https://github.com/afuh/sketchpad",
     image: `${require('../images/screenshots/sketch.png')}`,
     thumb: `${require('../images/thumb/sketch.jpeg')}`,
-    tags: ["jquery", "the odin project"],
+    tags: ["jquery", "the odin project"]
   },
   {
     name: "Quote Machine",
@@ -165,7 +165,7 @@ const db = [
     code: "https://github.com/afuh/frases",
     image: `${require('../images/screenshots/quote.png')}`,
     thumb: `${require('../images/thumb/quote.jpeg')}`,
-    tags: ["javascript", "free code camp"],
+    tags: ["javascript", "free code camp"]
   },
   {
     name: "Now That's Delicious!",
@@ -175,7 +175,7 @@ const db = [
     code: "https://github.com/afuh/delicious",
     image: `${require('../images/screenshots/delicious.png')}`,
     thumb: `${require('../images/thumb/delicious.jpeg')}`,
-    tags: ["node", "express", "mongodb", "mongoose", "pug", "passport",  "javascript", "google maps", "api"],
+    tags: ["node", "express", "mongodb", "mongoose", "pug", "passport", "javascript", "google maps", "api"]
   },
   {
     name: "FCC Back End API Projects",

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import DocumentTitle from 'react-document-title';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import DocumentTitle from 'react-document-title'
+import PropTypes from 'prop-types'
 
-import { siteName } from '../helpers/api';
+import { siteName } from '../helpers/api'
 
 const style = {
   main: {
@@ -52,7 +52,7 @@ ErrorMessage.defaultProps = {
 }
 
 ErrorMessage.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired
 }
 
-export default ErrorMessage;
+export default ErrorMessage
