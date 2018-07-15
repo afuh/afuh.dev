@@ -1,29 +1,31 @@
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const webpack = require('webpack');
-const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const autoprefixer = require('autoprefixer')
+const webpack = require('webpack')
+const path = require("path")
+
+const PORT = 3000
+const isProd = process.env.NODE_ENV === "production"
 
 const postcss = {
-  loader: 'postcss-loader',
+  loader: "postcss-loader",
   options: {
-    plugins() { return [autoprefixer({ browsers: 'last 3 versions' })]; }
+    plugins() {
+      return [ autoprefixer({ browsers: "last 3 versions" }) ]
+    }
   }
-};
+}
 
-const isProd = process.env.NODE_ENV === "production";
-const cssDev = ['style-loader', 'css-loader', postcss, 'sass-loader'];
-const cssProd = ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: ['css-loader', postcss, 'sass-loader'],
-                publicPath: '/dist'
-              });
-
+const css = isProd
+  ? ExtractTextPlugin.extract({
+    fallback: "style-loader",
+    use: ["css-loader", postcss, "sass-loader"],
+    publicPath: ""
+  })
+  : ["style-loader", "css-loader", "sass-loader"]
 
 module.exports = {
   entry: './src/index.js',
-  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: 'bundle.js',
@@ -34,11 +36,14 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        options: {
+          cacheDirectory: true
+        }
       },
       {
-        test: /\.(s+(a|c)ss|css)$/,
-        use: isProd ? cssProd : cssDev
+        test: /\.(s+(a|c)ss)$/,
+        use: css
       },
       {
         test: /\.(jpe?g|png|svg|gif)$/i,
@@ -60,9 +65,10 @@ module.exports = {
     stats: "errors-only",
     open: false,
     overlay: true,
-    port: 3000,
+    port: PORT,
     hot: true,
-    quiet: true,
+    // quiet: true,
+    clientLogLevel: "error",
     historyApiFallback: true
   },
   plugins: [
@@ -70,7 +76,7 @@ module.exports = {
       title: 'Axel Fuhrmann',
       favicon: './src/images/favicon.png',
       minify: {
-          collapseWhitespace: true
+        collapseWhitespace: true
       },
       template: './src/index.html',
       filename: 'index.html'
@@ -79,18 +85,16 @@ module.exports = {
       title: 'Axel Fuhrmann',
       favicon: './src/images/favicon.png',
       minify: {
-          collapseWhitespace: true
+        collapseWhitespace: true
       },
       template: './src/index.html',
       filename: '404.html'
     }),
     new ExtractTextPlugin({
-       filename: 'main.css',
-       disable: !isProd,
-       allChunks: true
-     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new FriendlyErrorsWebpackPlugin()
+      filename: 'main.css',
+      disable: !isProd,
+      allChunks: true
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
-};
+}
