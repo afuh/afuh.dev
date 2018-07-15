@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { NavLink, Link } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-import { siteName, nav } from '../helpers/api';
-import NavIcon from '../helpers/NavIcon';
+import { siteName, nav } from '../helpers/api'
+import NavIcon from '../helpers/NavIcon'
 
 const Lang = ({ hide, color }) => {
-  const fontColor = {white: {color: "#fff"}, dark: {color: "#4f4f4f" }}
-  const font =  color ? fontColor.white : fontColor.dark
+  const fontColor = { white: { color: "#fff" }, dark: { color: "#4f4f4f" } }
+  const font = color ? fontColor.white : fontColor.dark
 
   return (
     <ul className="nav__lang">
@@ -26,7 +26,7 @@ const Lang = ({ hide, color }) => {
         </li>
       ))}
       <li className="lang" onClick={hide}>
-        <Link style={{fontWeight: 600, color: font.color }} className="lang-link" to={`/#contact`}>contact</Link>
+        <Link style={{ fontWeight: 600, color: font.color }} className="lang-link" to={`/#contact`}>contact</Link>
       </li>
     </ul>
   )
@@ -39,15 +39,15 @@ Lang.propTypes = {
 
 class Nav extends Component {
   width = 640 //768 / 480
-  show = window.innerWidth <= this.width ? false : true
+  show = !(window.innerWidth <= this.width)
   state = {
-    switcher: window.innerWidth <= this.width ? 'close' : 'open',
+    switcher: window.innerWidth <= this.width ? 'close' : 'open'
   }
   handleResize = () => {
     if (window.innerWidth <= this.width) {
       this.setState({ switcher: "close" })
       this.show = false
-      document.body.classList.remove("open-nav");
+      document.body.classList.remove("open-nav")
     } else {
       this.setState({ switcher: "open" })
       this.show = true
@@ -57,22 +57,22 @@ class Nav extends Component {
     if (this.show && window.innerWidth <= this.width) {
       this.setState({ switcher: "close" })
       this.show = !this.show
-      document.body.classList.remove("open-nav");
+      document.body.classList.remove("open-nav")
     } else {
       this.setState({ switcher: "open" })
       this.show = !this.show
-      document.body.classList.add("open-nav");
+      document.body.classList.add("open-nav")
     }
   }
   render(){
     window.onresize = this.handleResize
-    const darkColor = window.location.pathname.split("/").length === 3 ? true : false
-    const headerStyle = darkColor ? {color: "#fff"} : {color: "#4f4f4f"}
-    const bckStyle = {on: {background: "#202329"}, off: {background: "#fff" }}
+    const darkColor = window.location.pathname.split("/").length === 3
+    const headerStyle = darkColor ? { color: "#fff" } : { color: "#4f4f4f" }
+    const bckStyle = { on: { background: "#202329" }, off: { background: "#fff" } }
 
     return (
-      <header style={darkColor ? bckStyle.on : bckStyle. off} className='main__nav nav'>
-        <CSSTransitionGroup  className="nav__fixed" component="nav"
+      <header style={darkColor ? bckStyle.on : bckStyle.off} className='main__nav nav'>
+        <CSSTransitionGroup className="nav__fixed" component="nav"
           transitionName="slide"
           transitionAppear={true}
           transitionAppearTimeout={300}
@@ -108,4 +108,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default Nav

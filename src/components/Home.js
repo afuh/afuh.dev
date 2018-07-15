@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import DocumentTitle from 'react-document-title';
+import React, { Component } from 'react'
+import DocumentTitle from 'react-document-title'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import ProjectCard from './ProjectCard';
+import ProjectCard from './ProjectCard'
 
-import { getData, siteName, countTags, allTags, contactLinks } from '../helpers/api';
+import { getData, siteName, countTags, allTags, contactLinks } from '../helpers/api'
 
 const Header = () => (
   <section className="intro">
-    <h1>Helloa, my name is <strong>Axel Fuhrmann</strong>.</h1>
+    <h1>Hello, my name is <strong>Axel Fuhrmann</strong>.</h1>
     <h2>I am a self-taught Web Developer.</h2>
   </section>
 )
 
-const Latest = ({data}) => (
+const Latest = ({ data }) => (
   <section className="latest">
     <div className="latest__conteiner">
       <h3>Latest Projects</h3>
@@ -24,11 +24,11 @@ const Latest = ({data}) => (
             mini={true}
             key={project.name}
             path={project.tags[0]}
-            data={{name: project.name, image: project.image, tags: project.tags}} />
+            data={{ name: project.name, image: project.image, tags: project.tags }} />
         ))}
       </section>
       <div className="see-more">
-        <h3 style={{padding: "50px 0 5px"}}>See More</h3>
+        <h3 style={{ padding: "50px 0 5px" }}>See More</h3>
         <div className={`see-more__tags`}>
           {allTags().map(tag => (
             <Link
@@ -103,4 +103,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Home

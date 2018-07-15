@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { icon } from './api';
+import { icon } from './api'
 
 const style = {
   spinner: {
@@ -17,7 +17,7 @@ const style = {
 
 const Spinner = () => (
   <div className="spinner" style={style.spinner}>
-    <img style={{width: "60px"}} src={icon('tail-spin.svg')} alt="spinner"/>
+    <img style={{ width: "60px" }} src={icon('tail-spin.svg')} alt="spinner"/>
   </div>
 )
 
