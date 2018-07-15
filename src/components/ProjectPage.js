@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import DocumentTitle from 'react-document-title';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import DocumentTitle from 'react-document-title'
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown"
 
-import { getProject, countTags, siteName, icon } from '../helpers/api';
-import ErrorMessage  from '../helpers/Error';
+import { getProject, countTags, siteName, icon } from '../helpers/api'
+import ErrorMessage from '../helpers/Error'
 
 const HandleVisual = ({ data }) => {
-  const { video, gif, image, name } = data;
+  const { video, gif, image, name } = data
 
   if (video && video.length) {
     return (
@@ -38,15 +38,15 @@ const Visual = ({ data, cl }) => {
             to={`/${tag}`}>
             {countTags(tag)}
           </Link>
-          ))
+        ))
         }
       </div>
       <div className={`${cl}__img`}>
-        <HandleVisual data={{video, gif, image, name}} />
+        <HandleVisual data={{ video, gif, image, name }} />
       </div>
       <div className={`${cl}__links`}>
         {name !== "Portfolio" && <a className={`${cl}__live`} href={url}>See it live</a>}
-        <a className={`${cl}__code`} href={code} target="_blank">Code</a>
+        <a className={`${cl}__code`} href={code} target="_blank" rel="noopener noreferrer">Code</a>
       </div>
     </div>
   )
@@ -110,7 +110,7 @@ const ProjectPage = ({ match, history }) => {
           transitionEnter={false}
           transitionLeave={false}>
 
-          <Visual data={{name, tags, video, gif, image, code, url}} cl={cl}/>
+          <Visual data={{ name, tags, video, gif, image, code, url }} cl={cl}/>
           <Info md={md} cl={cl}/>
           <Back onclick={history.goBack} cl={cl}/>
 

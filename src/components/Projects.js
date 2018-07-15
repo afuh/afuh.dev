@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import DocumentTitle from 'react-document-title';
+import React, { Component } from 'react'
+import DocumentTitle from 'react-document-title'
 
-import ProjectCard from './ProjectCard';
+import ProjectCard from './ProjectCard'
 
-import { getData, siteName } from '../helpers/api';
-import ErrorMessage  from '../helpers/Error';
+import { getData, siteName } from '../helpers/api'
+import ErrorMessage from '../helpers/Error'
 
 class Projects extends Component {
   path = this.props.match.params.lang
   state = {
-    data: [],
+    data: []
   }
   componentDidMount(){
     if (!this.path) {
       this.request('Home')
     } else {
-      this.request(this.path);
+      this.request(this.path)
     }
   }
   componentWillReceiveProps(nextProps) {
@@ -30,7 +30,7 @@ class Projects extends Component {
     if (!path) {
       this.request('Home')
     } else {
-      this.request(path);
+      this.request(path)
     }
   }
   request(path){
@@ -52,9 +52,9 @@ class Projects extends Component {
                 mini={true}
                 path={path}
                 key={project.name}
-                data={{name: project.name, image: project.image, thumb: project.thumb, tags: project.tags}}
+                data={{ name: project.name, image: project.image, thumb: project.thumb, tags: project.tags }}
               />
-              ))
+            ))
             }
           </section>
         </main>
@@ -63,4 +63,4 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default Projects

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import ProgressiveImage from 'react-progressive-image'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 class ProjectCard extends Component {
   state = {
-    data: {},
+    data: {}
   }
   componentWillMount() {
     const { data } = this.props
@@ -56,7 +56,7 @@ class ProjectCard extends Component {
           </ProgressiveImage>
         </div>
         <Link to={`/${path}/${name}`} className={`${cl}__conteiner`}>
-          <h1 style={{color: "#fff"}}>{name}</h1>
+          <h1 style={{ color: "#fff" }}>{name}</h1>
         </Link>
         {this.props.mini && this.showTags(cl)}
       </article>
@@ -70,4 +70,4 @@ ProjectCard.propTypes = {
   mini: PropTypes.bool
 }
 
-export default ProjectCard;
+export default ProjectCard
