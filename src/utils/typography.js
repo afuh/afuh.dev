@@ -13,7 +13,7 @@ const typography = new Typography({
   baseLineHeight: 1.6,
   scaleRatio: 2,
   headerFontFamily: ['Montserrat', ...family],
-  bodyFontFamily: family,
+  bodyFontFamily: ['Montserrat', ...family],
   headerColor: '#fff',
   bodyColor: '#fff',
   bodyWeight: '400'

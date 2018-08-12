@@ -13,7 +13,6 @@ injectGlobal`
     background: #111111;
   }
   *::selection {
-    color: #FF9800;
     background: #000;
   }
 

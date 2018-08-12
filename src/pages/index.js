@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Layout from 'components/layout'
 import TempMessage from 'components/message'
 
-import { flex } from 'utils/styles'
+import { flex, media } from 'utils/styles'
 
 const fadeIn = keyframes`
 	0% {
@@ -22,6 +22,11 @@ const Wrapper = styled.div`
   height: 90vh;
   position: relative;
   background: rgba(0, 0, 0, 0.5);
+
+	${media.xs(css`
+		width: 100vw;
+	  height: 100vh;
+	`)}
 `
 
 const Border = styled.div`
@@ -86,6 +91,14 @@ const HiddenTitle = Title.extend`
 
 const fontWeight = 500
 
+const Divider = styled.hr`
+	animation: ${fadeIn} 0.3s;
+	background: #454545;
+	height: 1px;
+	width: 25%;
+	transform: translateY(30px);
+`
+
 const IndexPage = ({ location }) => (
   <StaticQuery
     query={graphql`
@@ -119,6 +132,7 @@ const IndexPage = ({ location }) => (
                 </span>.
               </SubTitle>
             </Presentation>
+            <Divider />
             <TempMessage />
           </Content>
         </Wrapper>
