@@ -5,7 +5,7 @@ const family = ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Ox
 const typography = new Typography({
   googleFonts: [
     {
-      name: 'Raleway,',
+      name: 'Raleway',
       styles: ['700', '500', '400', '200']
     }
   ],
