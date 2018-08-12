@@ -55,8 +55,8 @@ const Background = () => (
   <Wrapper>
     <Animate
       values={paths[1] + paths[0] + paths[1]}
-      color="#000"
-      opacity={0.6}
+      color="#1c1c1c"
+      opacity={1}
     />
   </Wrapper>
 )
