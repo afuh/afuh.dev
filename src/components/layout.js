@@ -4,6 +4,7 @@ import styled, { injectGlobal, css } from "styled-components"
 
 import SEO from 'components/seo'
 import Footer from 'components/footer'
+import Background from 'components/background'
 
 import { hover, flex } from 'utils/styles'
 
@@ -40,6 +41,7 @@ const Main = styled.main`
 const Layout = ({ children, location }) => (
   <>
     <SEO path={location.pathname}/>
+    <Background />
     <Main>
       {children}
       <Footer />
