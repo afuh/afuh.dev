@@ -5,15 +5,15 @@ const family = ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Ox
 const typography = new Typography({
   googleFonts: [
     {
-      name: 'Montserrat',
+      name: 'Raleway,',
       styles: ['700', '500', '400', '200']
     }
   ],
   baseFontSize: "18px",
   baseLineHeight: 1.6,
   scaleRatio: 2,
-  headerFontFamily: ['Montserrat', ...family],
-  bodyFontFamily: ['Montserrat', ...family],
+  headerFontFamily: ["Raleway", ...family],
+  bodyFontFamily: ["Raleway", ...family],
   headerColor: '#fff',
   bodyColor: '#fff',
   bodyWeight: '400'
