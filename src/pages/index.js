@@ -1,12 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from 'components/layout'
 import TempMessage from 'components/message'
 
 import { flex } from 'utils/styles'
+
+const fadeIn = keyframes`
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+`
 
 const Wrapper = styled.div`
   width: 90vw;
@@ -51,11 +60,13 @@ const Presentation = styled.div`
 `
 
 const Title = styled.h1`
+  animation: ${fadeIn} 1s;
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
 `
 const SubTitle = styled.h2`
+  animation: ${fadeIn} 1.5s;
   font-weight: 200;
   font-size: 18px;
   margin: 0;

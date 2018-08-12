@@ -1,12 +1,24 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 import { flex } from 'utils/styles'
 
+const fadeIn = keyframes`
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+`
+
 const Paragraph = styled.p`
   font-size: 16px;
+	font-weight: 200;
+	letter-spacing: 0.02em;
   margin: 0;
+	padding: 0;
 `
 
 const Wrapper = styled.div`
@@ -19,6 +31,7 @@ const Wrapper = styled.div`
 `
 
 const Inner = styled.div`
+  animation: ${fadeIn} 2s;
   margin: 10px 0;
 `
 
