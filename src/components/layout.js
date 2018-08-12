@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import styled, { injectGlobal, css } from "styled-components"
 
 import SEO from 'components/seo'
-import { hover } from 'utils/styles'
+import Footer from 'components/footer'
+
+import { hover, flex } from 'utils/styles'
 
 injectGlobal`
   body {
@@ -31,9 +33,8 @@ injectGlobal`
 const Main = styled.main`
   background: rgba(28, 28, 28, 0.2);
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  ${flex}
 `
 
 const Layout = ({ children, location }) => (
@@ -41,6 +42,7 @@ const Layout = ({ children, location }) => (
     <SEO path={location.pathname}/>
     <Main>
       {children}
+      <Footer />
     </Main>
   </>
 )
