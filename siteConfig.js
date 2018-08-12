@@ -7,6 +7,9 @@ module.exports = {
   userTwitter: 'axelfuh',
   themeColor: '#000',
   backgroundColor: '#fff',
+  working: {
+    name: 'Mintfort', url: 'http://mintfort.com'
+  },
   social: [
     { name: "Github", url: 'https://github.com/afuh' },
     { name: "Twitter", url: 'https://twitter.com/axelfuh' },
