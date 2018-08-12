@@ -1,64 +1,56 @@
 {
   "name": "Portfolio",
-  "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "version": "1.0.0",
+  "author": "Axel Fuhrmann",
   "dependencies": {
-    "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-document-title": "^2.0.3",
-    "react-dom": "^16.2.0",
-    "react-hot-loader": "^4.0.0",
-    "react-markdown": "^3.2.2",
-    "react-progressive-image": "^0.3.0",
-    "react-router-dom": "^4.2.2",
-    "react-transition-group": "^1.2.0"
+    "babel-plugin-styled-components": "^1.5.1",
+    "dotenv": "^6.0.0",
+    "gatsby": "next",
+    "gatsby-plugin-google-analytics": "next",
+    "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-offline": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-sitemap": "next",
+    "gatsby-plugin-styled-components": "next",
+    "gatsby-plugin-typography": "^2.2.0-beta.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0",
+    "react-icons": "^3.0.5",
+    "react-typography": "^0.16.13",
+    "styled-components": "^3.4.2",
+    "typography": "^0.16.17"
   },
   "devDependencies": {
-    "autoprefixer": "^8.0.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-loader": "^7.1.3",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^1.0.0",
-    "eslint": "^5.1.0",
-    "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^1.1.10",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "^1.0.0-rc.13",
-    "image-webpack-loader": "^4.1.0",
+    "eslint": "^5.2.0",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
-    "node-sass": "^4.7.2",
-    "postcss-loader": "^2.1.1",
-    "rimraf": "^2.6.2",
-    "sass-loader": "^7.0.3",
-    "sasso": "^1.2.10",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.16.0",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "npm-run-all": "^4.1.3",
+    "stylelint": "^9.4.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.3.2"
   },
+  "license": "MIT",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
-    "dev": "webpack-dev-server --mode=development",
-    "build": "npm run clean && webpack --mode=production --progress",
-    "clean": "rimraf ./dist/*",
-    "deploy": "npm run build && node deploy",
-    "lint": "eslint src/. --fix"
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "serve": "gatsby serve",
+    "lint:css": "stylelint './src/**/*.js'",
+    "lint:js": "eslint ./src/. --fix",
+    "lint": "run-s lint:js lint:css",
+    "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.js": [
+    "*.js": [
+      "stylelint",
       "eslint --fix",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "author": "Axel Fuhrmann",
-  "license": "ISC"
+  }
 }
