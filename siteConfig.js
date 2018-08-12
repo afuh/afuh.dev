@@ -11,10 +11,10 @@ module.exports = {
     name: 'Mintfort', url: 'http://mintfort.com'
   },
   social: [
-    { name: "Github", url: 'https://github.com/afuh' },
-    { name: "Twitter", url: 'https://twitter.com/axelfuh' },
-    { name: "Codepen", url: 'https://codepen.io/mage20' },
-    { name: "Linkedin", url: 'https://www.linkedin.com/in/axel-fuh' },
-    { name: "Mail", url: 'mailto:axelfuh@gmail.com' }
+    { icon: "Github", url: 'https://github.com/afuh' },
+    { icon: "Twitter", url: 'https://twitter.com/axelfuh' },
+    { icon: "Codepen", url: 'https://codepen.io/mage20' },
+    { icon: "Linkedin", url: 'https://www.linkedin.com/in/axel-fuh' },
+    { icon: "Envelope", url: 'mailto:axelfuh@gmail.com' }
   ]
 }
