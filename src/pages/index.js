@@ -4,6 +4,7 @@ import styled, { css } from "styled-components"
 import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from 'components/layout'
+import TempMessage from 'components/message'
 import { flex } from 'utils/styles'
 
 const Wrapper = styled.div`
@@ -106,6 +107,7 @@ const IndexPage = ({ location }) => (
                 </span>.
               </SubTitle>
             </Presentation>
+            <TempMessage />
           </Content>
         </Wrapper>
       </Layout>
