@@ -27,6 +27,7 @@ const Icon = styled.a`
   padding: 10px;
   margin: 10px;
   font-size: 22px;
+  opacity: 0.6;
 `
 const findIcon = name => {
   const Component = require("react-icons/fa")['Fa' + name]

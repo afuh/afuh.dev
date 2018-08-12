@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from 'components/layout'
 import TempMessage from 'components/message'
+
 import { flex } from 'utils/styles'
 
 const Wrapper = styled.div`
@@ -38,10 +39,10 @@ const Border = styled.div`
 
 const Content = styled.section`
   height: 100%;
+  padding: 0 20px;
 
   ${flex({ dir: 'column' })}
   text-align: center;
-
 `
 
 const Presentation = styled.div`
