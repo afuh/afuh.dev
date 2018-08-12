@@ -14,7 +14,7 @@ const Wrapper = styled.footer`
 `
 
 const Icon = styled.a.attrs({
-  href: '//axelfuhrmann.com'
+  href: 'https://afuh.surge.sh/'
 })`
   border: none;
   padding-right: 14px;
