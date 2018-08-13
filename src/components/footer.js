@@ -28,7 +28,7 @@ const Text = styled.span`
 const Footer = () => (
   <Wrapper>
     <Icon>
-      <Text>last year portfolio</Text>
+      <Text>last year&apos;s portfolio</Text>
       <FaExternalLinkAlt />
     </Icon>
   </Wrapper>
