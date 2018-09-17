@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from 'components/layout'
 import TempMessage from 'components/message'
+import Footer from 'components/footer'
 
 import { flex, media } from 'utils/styles'
 
@@ -136,6 +137,7 @@ const IndexPage = ({ location }) => (
             <TempMessage />
           </Content>
         </Wrapper>
+        <Footer />
       </Layout>
     )}
   />

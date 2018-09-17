@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styled, { injectGlobal, css } from "styled-components"
 
 import SEO from 'components/seo'
-import Footer from 'components/footer'
 import Background from 'components/background'
 
 import { hover, flex } from 'utils/styles'
@@ -43,7 +42,6 @@ const Layout = ({ children, location }) => (
     <Background />
     <Main>
       {children}
-      <Footer />
     </Main>
   </>
 )
