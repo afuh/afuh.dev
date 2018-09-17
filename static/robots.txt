@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://axelfuhrmann.com/sitemap.xml

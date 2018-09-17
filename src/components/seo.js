@@ -13,7 +13,7 @@ const SEO = ({ path }) => (
     <link rel="icon" href={data.siteUrl + data.favicon}/>
 
     <meta name="description" content={data.description} />
-    <meta name="image" content={data.siteUrl + data.image} />
+    <meta name="image" content={data.siteUrl + data.cover} />
 
     <meta property="og:locale" content="en"/>
     <meta property="og:type" content="website" />
@@ -21,7 +21,7 @@ const SEO = ({ path }) => (
     <meta property="og:title" content={data.title} />
     <meta property="og:url" content={data.siteUrl + path} />
     <meta property="og:description" content={data.description} />
-    <meta property="og:image" content={data.siteUrl + data.image} />
+    <meta property="og:image" content={data.siteUrl + data.cover} />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1440" />
     <meta property="og:image:height" content="720" />
@@ -32,7 +32,7 @@ const SEO = ({ path }) => (
     <meta name="twitter:title" content={data.title} />
     <meta name="twitter:url" content={data.siteUrl + path} />
     <meta name="twitter:description" content={data.description} />
-    <meta name="twitter:image" content={data.siteUrl + data.image} />
+    <meta name="twitter:image" content={data.siteUrl + data.cover} />
   </Helmet>
 )
 

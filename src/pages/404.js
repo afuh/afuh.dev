@@ -6,7 +6,6 @@ import Layout from 'components/layout'
 const NotFoundPage = ({ location }) => (
   <Layout location={location}>
     <h1>404</h1>
-    <p>the sadness...</p>
   </Layout>
 )
 

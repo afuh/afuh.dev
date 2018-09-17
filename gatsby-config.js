@@ -39,6 +39,17 @@ module.exports = {
         icon: 'src/assets/icon-512x512.png'
       }
     },
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/sw.js": [
+            "Cache-Control: no-cache"
+          ]
+        }
+      }
+    },
+    'gatsby-plugin-netlify-cache'
   ]
 }
