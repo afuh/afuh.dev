@@ -39,6 +39,13 @@ module.exports = {
         icon: 'src/assets/icon-512x512.png'
       }
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.TOKEN
+      }
+    },
     'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-netlify`,
