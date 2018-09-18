@@ -71,6 +71,7 @@ const Title = styled.h1`
   margin: 0;
   text-transform: uppercase;
 `
+
 const SubTitle = styled.h2`
   animation: ${fadeIn} 1.5s;
   font-weight: 200;
@@ -78,7 +79,7 @@ const SubTitle = styled.h2`
   margin: 0;
 `
 
-const HiddenTitle = Title.extend`
+const HiddenTitle = styled(Title)`
   position: absolute;
   width: 100%;
   top: 0;
