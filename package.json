@@ -7,6 +7,7 @@
     "babel-plugin-styled-components": "^1.7.1",
     "dotenv": "^6.0.0",
     "gatsby": "^2.0.0",
+    "gatsby-plugin-catch-links": "^2.0.2",
     "gatsby-plugin-google-analytics": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-netlify": "^2.0.0",
