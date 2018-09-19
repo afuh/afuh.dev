@@ -10,3 +10,43 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     }
   })
 }
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  return new Promise((resolve, reject) => {
+    const component = path.resolve('src/templates/project.js')
+    resolve(
+      graphql(
+        `
+          {
+            allContentfulProject {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+          }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
+
+        result.data.allContentfulProject.edges.forEach(edge => {
+          const { slug } = edge.node
+          createPage({
+            path: slug,
+            component,
+            context: {
+              slug
+            }
+          })
+        })
+      })
+    )
+  })
+}
