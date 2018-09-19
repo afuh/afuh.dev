@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from "gatsby"
 import PropTypes from 'prop-types'
 
 const Project = ({ data }) => (
   <div>
-    {data.allContentfulProject.edges.map(({ edge: { node } }) =>
-      <p key={node.slug}>{node.title}</p>
+    {data.allContentfulProject.edges.map(edge =>
+      <Fragment key={edge.node.slug}>
+        <p>{edge.node.title}</p>
+        <div dangerouslySetInnerHTML={{ __html: edge.node.content.childMarkdownRemark.html }} />
+      </Fragment>
     )}
   </div>
 )
@@ -23,6 +26,11 @@ export const pageQuery = graphql`
         node {
           title
           slug
+          content {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
     }
