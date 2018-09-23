@@ -13,9 +13,9 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+  const allTags = []
 
   return new Promise((resolve, reject) => {
-    const component = path.resolve('src/templates/project.js')
     resolve(
       graphql(
         `
@@ -25,6 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   title
                   slug
+                  tags
                 }
               }
             }
@@ -37,14 +38,42 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         result.data.allContentfulProject.edges.forEach(edge => {
-          const { slug } = edge.node
+          const { slug, tags } = edge.node
+
+          // create project page
           createPage({
             path: slug,
-            component,
+            component: path.resolve('src/templates/project.js'),
             context: {
               slug
             }
           })
+
+          // get all tags
+          tags.forEach(tag => {
+            if (!allTags.includes(tag)) {
+              allTags.push(tag)
+            }
+
+            // create a tag page
+            createPage({
+              path: `/tag/${tag}`,
+              component: path.resolve('src/templates/tag.js'),
+              context: {
+                tag
+              }
+            })
+
+          })
+        })
+
+        // create a tag index
+        createPage({
+          path: '/tag',
+          component: path.resolve('src/templates/allTags.js'),
+          context: {
+            allTags
+          }
         })
       })
     )
