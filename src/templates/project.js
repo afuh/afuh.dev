@@ -1,6 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import PropTypes from 'prop-types'
 
 const Project = ({ data: { contentfulProject: project } }) => (
@@ -17,6 +17,13 @@ const Project = ({ data: { contentfulProject: project } }) => (
       <a href={project.code}>Code</a>
     </div>
     <div dangerouslySetInnerHTML={{ __html: project.content.childMarkdownRemark.html }} />
+    <div>
+      {project.tags.map(tag => (
+        <code key={tag} style={{ marginRight: 20 }}>
+          <Link to={`/tag/${tag}`}>{tag}</Link>
+        </code>
+      ))}
+    </div>
   </>
 )
 
