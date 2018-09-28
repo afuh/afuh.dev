@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, keyframes } from "styled-components"
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from 'components/layout'
 import TempMessage from 'components/message'
@@ -101,51 +101,53 @@ const Divider = styled.hr`
 	transform: translateY(30px);
 `
 
-const IndexPage = ({ location }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          meta: siteMetadata {
-            title
-            description
-            working {
-              name
-              url
-            }
-          }
-        }
-      }
-    `}
-    render={({ site: { meta } }) => (
-      <Layout location={location}>
-        <Wrapper>
-          <Border color={'#fafafa'}/>
-          <Border bottom color={'#fafafa'}/>
-          <Content>
-            <Presentation>
-              <Title>{meta.title}</Title>
-              <HiddenTitle>{meta.title.split(" ").reverse().join(" ")}</HiddenTitle>
-              <SubTitle>
-                <span style={{ fontWeight }}>{meta.description}</span>,
+const IndexPage = ({ location, data: { site: { meta } } }) => (
+  <Layout location={location}>
+    <Wrapper>
+      <Border color={'#fafafa'}/>
+      <Border bottom color={'#fafafa'}/>
+      <Content>
+        <Presentation>
+          <Title>{meta.title}</Title>
+          <HiddenTitle>{meta.title.split(" ").reverse().join(" ")}</HiddenTitle>
+          <SubTitle>
+            <span style={{ fontWeight }}>{meta.description}</span>,
                 currently working at {` `}
-                <span style={{ fontWeight }}>
-                  <a href={meta.working.url}>{meta.working.name}</a>
-                </span>.
-              </SubTitle>
-            </Presentation>
-            <Divider />
-            <TempMessage />
-          </Content>
-        </Wrapper>
-        <Footer />
-      </Layout>
-    )}
-  />
+            <span style={{ fontWeight }}>
+              <a href={meta.working.url}>{meta.working.name}</a>
+            </span>.
+          </SubTitle>
+        </Presentation>
+        <Divider />
+        <TempMessage />
+      </Content>
+    </Wrapper>
+    <Footer />
+  </Layout>
 )
 
 IndexPage.propTypes = {
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      meta: PropTypes.object.isRequired
+    })
+  })
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+	{
+		site {
+			meta: siteMetadata {
+				title
+				description
+				working {
+					name
+					url
+				}
+			}
+		}
+	}
+`
