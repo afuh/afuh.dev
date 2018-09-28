@@ -23,7 +23,6 @@ exports.createPages = ({ graphql, actions }) => {
             allContentfulProject {
               edges {
                 node {
-                  title
                   slug
                   tags
                 }
