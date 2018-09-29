@@ -40,7 +40,6 @@ export const pageQuery = graphql`
       url
       code
       tags
-      featured
       image {
         fluid(maxWidth: 960) {
           base64

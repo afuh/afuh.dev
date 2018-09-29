@@ -1,35 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
-const Tags = ({ pageContext, data }) => (
-  <>
-    <h1>{pageContext.tag}</h1>
-    <ul>
-      {data.allContentfulProject.edges.map(({ node: project }) => (
-        <li key={project.title}>
-          <Link to={project.slug}>{project.title}</Link>
-        </li>
-      ))}
-    </ul>
-  </>
-)
+import projects from 'components/projects'
 
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    allTags: PropTypes.array
-  }).isRequired
-}
-
-export default Tags
+export default ({ data }) => projects({ data })
 
 export const pageQuery = graphql`
   query($tag: [String!]) {
-    allContentfulProject(filter: { tags: { in: $tag } }) {
+    allContentfulProject(
+      filter: { tags: { in: $tag } }
+      sort: { fields: featured, order: DESC }
+    ) {
       edges {
         node {
-          title
-          slug
+          ...projectInfo
         }
       }
     }
