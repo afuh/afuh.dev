@@ -3,8 +3,16 @@ import Img from 'gatsby-image'
 import { graphql, Link } from "gatsby"
 import PropTypes from 'prop-types'
 
-const Project = ({ data: { contentfulProject: project } }) => (
+import SEO from 'utils/seo'
+
+const Project = ({ data: { contentfulProject: project }, location }) => (
   <>
+    <SEO
+      title={project.title}
+      description={project.content.md.excerpt}
+      pathname={location.pathname}
+      image={project.image.fluid.src}
+    />
     <h1>{project.title}</h1>
     <div style={{ maxWidth: 960 }}>
       <Img
@@ -16,7 +24,7 @@ const Project = ({ data: { contentfulProject: project } }) => (
       <a href={project.url}>Live</a>
       <a href={project.code}>Code</a>
     </div>
-    <div dangerouslySetInnerHTML={{ __html: project.content.childMarkdownRemark.html }} />
+    <div dangerouslySetInnerHTML={{ __html: project.content.md.html }} />
     <div>
       {project.tags.map(tag => (
         <code key={tag} style={{ marginRight: 20 }}>
@@ -50,8 +58,9 @@ export const pageQuery = graphql`
         }
       }
       content {
-        childMarkdownRemark {
+        md: childMarkdownRemark {
           html
+          excerpt
         }
       }
     }

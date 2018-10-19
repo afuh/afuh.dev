@@ -3,7 +3,7 @@ module.exports = {
   description: "Full stack developer",
   siteUrl: 'https://axelfuhrmann.com',
   favicon: '/images/icon-32x32.png',
-  cover: '/images/cover-1440x720.jpg',
+  image: '/images/cover-1440x720.jpg',
   userTwitter: 'rickandmortyapi',
   themeColor: '#000',
   backgroundColor: '#fff',

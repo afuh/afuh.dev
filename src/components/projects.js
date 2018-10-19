@@ -119,7 +119,7 @@ export const projectFragment = graphql`
     }
     content {
       childMarkdownRemark {
-        excerpt(pruneLength: 100)
+        excerpt
       }
     }
   }

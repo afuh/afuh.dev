@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { injectGlobal, css } from "styled-components"
 
-import SEO from 'components/seo'
 import Background from 'components/background'
 
+import SEO from 'utils/seo'
 import { hover, flex } from 'utils/styles'
 
 injectGlobal`
@@ -38,7 +38,7 @@ const Main = styled.main`
 
 const Layout = ({ children, location }) => (
   <>
-    <SEO path={location.pathname}/>
+    <SEO pathname={location.pathname}/>
     <Background />
     <Main>
       {children}
