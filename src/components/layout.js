@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { createGlobalStyle, css } from "styled-components"
 
-import Background from 'components/background'
+import Background from './background'
 
-import SEO from 'utils/seo'
-import { hover, flex } from 'utils/styles'
+import SEO from '../utils/seo'
+import { hover, flex } from '../utils/styles'
 
 const GlobalStyle = createGlobalStyle`
   body {

@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby"
 import Img from 'gatsby-image'
 import styled, { css } from "styled-components"
 
-import { flex, hover, grid } from 'utils/styles'
+import { flex, hover, grid } from '../utils/styles'
 
 const Card = styled.div`
   position: relative;
@@ -38,7 +38,7 @@ const Inner = styled.div`
 
   background: rgba(0, 0, 0, 0.2);
   transition: all 0.1s ease;
-  
+
   p {
     font-size: 12px;
     margin: 0;

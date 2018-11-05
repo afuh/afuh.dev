@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import styled, { css, keyframes } from "styled-components"
 import { graphql } from 'gatsby'
 
-import Layout from 'components/layout'
-import TempMessage from 'components/message'
-import Footer from 'components/footer'
+import Layout from '../components/layout'
+import TempMessage from '../components/message'
+import Footer from '../components/footer'
 
-import { flex, media } from 'utils/styles'
+import { flex, media } from '../utils/styles'
 
 const fadeIn = keyframes`
 	0% {

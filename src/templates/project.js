@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 import { graphql, Link } from "gatsby"
 import PropTypes from 'prop-types'
 
-import SEO from 'utils/seo'
+import SEO from '../utils/seo'
 
 const Project = ({ data: { contentfulProject: project }, location }) => (
   <>

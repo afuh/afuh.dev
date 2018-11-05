@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 
-import projects from 'components/projects'
+import projects from '../components/projects'
 
 export default ({ data }) => projects({ data })
 
