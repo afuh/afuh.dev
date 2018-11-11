@@ -4,14 +4,12 @@ import { Link } from "gatsby"
 import Img from 'gatsby-image'
 import styled, { css } from "styled-components"
 
-import { flex, hover, grid } from '../utils/styles'
+import { flex, hover } from '../utils/styles'
 
 const Card = styled.div`
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-
-  ${({ featured }) => featured ? grid([1, 2, 2]) : grid([1, 3, 2]) }
 `
 
 const Wrapper = styled.article`
@@ -76,7 +74,6 @@ const Projects = ({ data: { allContentfulProject: projects } }) => (
     {projects.edges.map(({ node: project }) => (
       <Card
         key={project.slug}
-        featured={project.featured}
       >
         <GatsbyLink to={project.slug}>
           <Info
