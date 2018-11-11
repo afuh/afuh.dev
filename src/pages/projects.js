@@ -1,16 +1,30 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 
-import projects from '../components/projects'
+import Projects from '../components/projects'
+import Layout from '../components/layout'
 
-export default ({ data }) => projects({ data })
+const ProjectsPage = ({ data: { contentfulProjects }, location }) => (
+  <Layout location={location}>
+    <Projects contentfulProjects={ contentfulProjects } />
+  </Layout>
+)
+
+ProjectsPage.propTypes = {
+  location: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    contentfulProjects: PropTypes.object
+  }).isRequired
+}
+
+export default ProjectsPage
 
 export const pageQuery = graphql`
   {
-    allContentfulProject(sort: { fields: featured, order: DESC }) {
-      edges {
-        node {
-          ...projectInfo
-        }
+    contentfulProjects {
+      projects {
+        ...projectInfo
       }
     }
   }

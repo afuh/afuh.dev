@@ -4,9 +4,10 @@ import { graphql, Link } from "gatsby"
 import PropTypes from 'prop-types'
 
 import SEO from '../utils/seo'
+import Layout from '../components/layout'
 
 const Project = ({ data: { contentfulProject: project }, location }) => (
-  <>
+  <Layout location={location}>
     <SEO
       title={project.title}
       description={project.content.md.excerpt}
@@ -32,10 +33,11 @@ const Project = ({ data: { contentfulProject: project }, location }) => (
         </code>
       ))}
     </div>
-  </>
+  </Layout>
 )
 
 Project.propTypes = {
+  location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired
 }
 

@@ -44,17 +44,11 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "serve": "gatsby serve",
-    "clear": "rm -rf ./.cache ./public",
-    "lint:css": "stylelint './src/**/*.js'",
-    "lint:js": "eslint ./src/. --fix",
-    "lint": "run-s lint:js lint:css",
-    "script": "git stash clear && git stash -k && lint-staged"
+    "serve": "gatsby serve"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run script",
-      "post-commit": "git stash apply"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

@@ -1,8 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import styled, { keyframes, css } from "styled-components"
+import styled, { keyframes } from "styled-components"
 
-import { flex, media } from '../utils/styles'
+import { flex } from '../utils/styles'
 
 const fadeIn = keyframes`
 	0% {
@@ -11,17 +11,6 @@ const fadeIn = keyframes`
 	100% {
 		opacity: 1;
 	}
-`
-
-const Paragraph = styled.p`
-  font-size: 16px;
-	font-weight: 200;
-  margin: 0;
-	padding: 0;
-
-	${media.xs(css`
-		 font-size: 14px;
-	`)}
 `
 
 const Wrapper = styled.div`
@@ -50,7 +39,7 @@ const findIcon = name => {
   return <Component />
 }
 
-const Message = () => (
+const SocialIcons = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -67,14 +56,6 @@ const Message = () => (
     render={({ site: { meta } }) => (
       <Wrapper>
         <Inner>
-          <Paragraph>
-            I’m working on my new portfolio at the moment.
-          </Paragraph>
-          <Paragraph>
-            In the meantime you can check <a href='//rickandmortyapi.com'>this great API</a>  ;)
-          </Paragraph>
-        </Inner>
-        <Inner>
           {meta.social.map(page => (
             <Icon key={page.icon} href={page.url}>{findIcon(page.icon)}</Icon>
           ))}
@@ -84,4 +65,4 @@ const Message = () => (
   />
 )
 
-export default Message
+export default SocialIcons

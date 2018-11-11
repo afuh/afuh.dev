@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css, keyframes } from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import TempMessage from '../components/message'
-import Footer from '../components/footer'
+import SocialIcons from '../components/socialIcons'
 
-import { flex, media } from '../utils/styles'
+import { flex } from '../utils/styles'
 
 const fadeIn = keyframes`
 	0% {
@@ -18,42 +17,8 @@ const fadeIn = keyframes`
 	}
 `
 
-const Wrapper = styled.div`
-  width: 90vw;
-  height: 90vh;
-  position: relative;
-  background: rgba(0, 0, 0, 0.5);
-
-	${media.xs(css`
-		width: 100vw;
-	  height: 100vh;
-	`)}
-`
-
-const Border = styled.div`
-  position: absolute;
-  height: 180px;
-  width: 14%;
-
-  ${({ bottom, color }) => (
-    bottom
-      ? css`
-        bottom: 0;
-        right: 0;
-        border-bottom: 1px solid ${color};
-        border-right: 1px solid ${color};
-      `
-      : css`
-        top: 0;
-        border-top: 1px solid ${color};
-        border-left: 1px solid ${color};
-
-      `
-  )}
-`
-
 const Content = styled.section`
-  height: 100%;
+  height: 100vh;
   padding: 0 20px;
 
   ${flex({ dir: 'column' })}
@@ -93,36 +58,22 @@ const HiddenTitle = styled(Title)`
 
 const fontWeight = 500
 
-const Divider = styled.hr`
-	animation: ${fadeIn} 0.3s;
-	background: #454545;
-	height: 1px;
-	width: 25%;
-	transform: translateY(30px);
-`
-
 const IndexPage = ({ location, data: { site: { meta } } }) => (
   <Layout location={location}>
-    <Wrapper>
-      <Border color={'#fafafa'}/>
-      <Border bottom color={'#fafafa'}/>
-      <Content>
-        <Presentation>
-          <Title>{meta.title}</Title>
-          <HiddenTitle>{meta.title.split(" ").reverse().join(" ")}</HiddenTitle>
-          <SubTitle>
-            <span style={{ fontWeight }}>{meta.description}</span>,
+    <Content>
+      <Presentation>
+        <Title>{meta.title}</Title>
+        <HiddenTitle>{meta.title.split(" ").reverse().join(" ")}</HiddenTitle>
+        <SubTitle>
+          <span style={{ fontWeight }}>{meta.description}</span>,
                 currently working at {` `}
-            <span style={{ fontWeight }}>
-              <a href={meta.working.url}>{meta.working.name}</a>
-            </span>.
-          </SubTitle>
-        </Presentation>
-        <Divider />
-        <TempMessage />
-      </Content>
-    </Wrapper>
-    <Footer />
+          <span style={{ fontWeight }}>
+            <a href={meta.working.url}>{meta.working.name}</a>
+          </span>.
+        </SubTitle>
+      </Presentation>
+      <SocialIcons />
+    </Content>
   </Layout>
 )
 
