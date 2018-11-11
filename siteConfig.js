@@ -14,7 +14,6 @@ module.exports = {
     { icon: "Github", url: 'https://github.com/afuh' },
     { icon: "Twitter", url: 'https://twitter.com/rickandmortyapi' },
     { icon: "Codepen", url: 'https://codepen.io/mage20' },
-    { icon: "Linkedin", url: 'https://www.linkedin.com/in/axel-fuh' },
-    { icon: "Envelope", url: 'mailto:axelfuh@gmail.com' }
+    { icon: "Linkedin", url: 'https://www.linkedin.com/in/axel-fuh' }
   ]
 }
