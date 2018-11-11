@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import Img from 'gatsby-image'
 import styled, { css } from "styled-components"
 
@@ -96,31 +96,3 @@ Projects.propTypes = {
 }
 
 export default Projects
-
-export const projectFragment = graphql`
-  fragment projectInfo on ContentfulProject {
-    title
-    slug
-    featured
-    image {
-      fixed(width: 400) {
-        height
-        width
-        src
-        srcSet
-      }
-      fluid(maxWidth: 960) {
-        base64
-        srcSet
-        sizes
-        src
-        aspectRatio
-      }
-    }
-    content {
-      childMarkdownRemark {
-        excerpt
-      }
-    }
-  }
-`
