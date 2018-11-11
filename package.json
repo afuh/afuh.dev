@@ -17,7 +17,6 @@
     "gatsby-plugin-react-helmet": "^3.0.1",
     "gatsby-plugin-sitemap": "^2.0.2",
     "gatsby-plugin-styled-components": "^3.0.1",
-    "gatsby-plugin-typography": "^2.2.1",
     "gatsby-source-contentful": "^2.0.10",
     "gatsby-transformer-remark": "^2.1.11",
     "react": "^16.6.0",
@@ -25,11 +24,9 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.2.2",
     "react-typography": "^0.16.13",
-    "styled-components": "^4.0.3",
-    "typography": "^0.16.17"
+    "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "clear": "rm -rf ./.cache ./public",
     "eslint": "^5.8.0",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.1.3",

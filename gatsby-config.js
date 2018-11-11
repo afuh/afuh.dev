@@ -15,12 +15,6 @@ module.exports = {
     'gatsby-plugin-catch-links',
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`
-      }
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GA,
