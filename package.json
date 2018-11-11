@@ -49,11 +49,12 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint:js": "eslint ./src/. --fix",
     "lint": "run-s lint:js lint:css",
-    "precommit": "lint-staged"
+    "script": "git stash clear && git stash -k && lint-staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run script",
+      "post-commit": "git stash apply"
     }
   },
   "lint-staged": {
