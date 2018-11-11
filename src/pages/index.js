@@ -6,6 +6,8 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SocialIcons from '../components/socialIcons'
 
+import FadeIn from '../components/textFadeIn'
+
 import { flex } from '../utils/styles'
 
 const fadeIn = keyframes`
@@ -62,8 +64,11 @@ const IndexPage = ({ location, data: { site: { meta } } }) => (
   <Layout location={location}>
     <Content>
       <Presentation>
-        <Title>{meta.title}</Title>
+        <Title>
+          <FadeIn text={meta.title} />
+        </Title>
         <HiddenTitle>{meta.title.split(" ").reverse().join(" ")}</HiddenTitle>
+
         <SubTitle>
           <span style={{ fontWeight }}>{meta.description}</span>,
                 currently working at {` `}
