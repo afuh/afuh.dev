@@ -15,6 +15,17 @@ module.exports = {
     'gatsby-plugin-catch-links',
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: "Roboto",
+            variants: ["300", "400", "500", "700"]
+          }
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GA,
