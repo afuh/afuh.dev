@@ -1,6 +1,18 @@
-import { css } from 'styled-components'
+import { css, createGlobalStyle } from 'styled-components'
 
-const percentage = num => parseFloat(Number(num * 100).toFixed(1))
+export const theme = {
+  black: "#212129",
+  white: "#F9F9FA",
+  gray: "#9F9FA3",
+  deeporange: "#FF5722",
+  innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)'
+}
+
+const screenBreak = {
+  mobile: 992,
+  phone: 650,
+  small: 480
+}
 
 export const flex = opt => css`
   display: flex;
@@ -18,23 +30,18 @@ export const hover = inner => css`
 `
 
 export const media = {
-  lg: inner => css`
-    @media (max-width: ${1200 / 16}em) {
+  mobile: inner => css`
+    @media (max-width: ${screenBreak.mobile / 16}em) {
       ${inner}
     }
   `,
-  md: inner => css`
-    @media (max-width: ${992 / 16}em) {
+  phone: inner => css`
+    @media (max-width: ${screenBreak.phone / 16}em) {
       ${inner}
     }
   `,
-  sm: inner => css`
-    @media (max-width: ${768 / 16}em) {
-      ${inner}
-    }
-  `,
-  xs: inner => css`
-    @media (max-width: ${480 / 16}em) {
+  small: inner => css`
+    @media (max-width: ${screenBreak.small / 16}em) {
       ${inner}
     }
   `,
@@ -45,18 +52,59 @@ export const media = {
   `
 }
 
-export const grid = arg => {
-  if (typeof arg !== 'object') return
+const defaultFont = [
+  '-apple-system',
+  'BlinkMacSystemFont',
+  '"Segoe UI"',
+  'Roboto',
+  'Oxygen-Sans',
+  'Ubuntu',
+  'Cantarell',
+  '"Helvetica Neue"',
+  'sans-serif'
+].join()
 
-  if (Array.isArray(arg)) {
-    const [col = 1, total = 12, gutter = 0] = arg
-
-    const grid = percentage(col/total)
-    const gut = percentage(gutter/200)
-
-    return css`
-      margin: ${gut + "%"};
-      flex-basis: ${grid - gutter + "%"};
-    `
+const typography = css`
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
   }
-}
+
+  a {
+    text-decoration: none;
+    color: ${theme.black};
+
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: underline;
+        color: ${theme.deeporange};
+      }
+    }
+`
+
+export const GlobalStyles = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 2;
+    font-family: ${defaultFont};
+    color: ${theme.black}
+  }
+
+  *::selection {
+    color: ${theme.white};
+    background: ${theme.black};
+  }
+
+  ${typography}
+`
