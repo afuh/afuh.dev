@@ -21,28 +21,24 @@ const fadeIn = keyframes`
 
 const Content = styled.section`
   height: 100vh;
-  padding: 0 20px;
 
   ${flex({ dir: 'column' })}
   text-align: center;
 `
 
-const Presentation = styled.div`
+const Inner = styled.div`
   width: 100%;
   position: relative;
 `
 
 const Title = styled.h1`
-  animation: ${fadeIn} 1s;
+	font-size: 3.0rem;
   font-weight: 700;
   margin: 0;
-  text-transform: uppercase;
 `
 
 const SubTitle = styled.h2`
-  animation: ${fadeIn} 1.5s;
-  font-weight: 200;
-  font-size: 18px;
+  font-weight: 400;
   margin: 0;
 `
 
@@ -58,26 +54,23 @@ const HiddenTitle = styled(Title)`
   }
 `
 
-const fontWeight = 500
+const Social = styled(SocialIcons)`
+	animation: ${fadeIn} 1s;
+`
 
 const IndexPage = ({ location, data: { site: { meta } } }) => (
   <Layout location={location}>
     <Content>
-      <Presentation>
+      <Inner>
         <Title>
           <FadeIn text={meta.title} />
         </Title>
         <HiddenTitle>{meta.title.split(" ").reverse().join(" ")}</HiddenTitle>
-
         <SubTitle>
-          <span style={{ fontWeight }}>{meta.description}</span>,
-                currently working at {` `}
-          <span style={{ fontWeight }}>
-            <a href={meta.working.url}>{meta.working.name}</a>
-          </span>.
+          <FadeIn text={meta.description} duration={3}/>
         </SubTitle>
-      </Presentation>
-      <SocialIcons />
+      </Inner>
+      <Social />
     </Content>
   </Layout>
 )

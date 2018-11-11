@@ -1,17 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 
 import { flex } from '../utils/styles'
-
-const fadeIn = keyframes`
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-`
 
 const Wrapper = styled.div`
   width: 100%;
@@ -23,7 +15,6 @@ const Wrapper = styled.div`
 `
 
 const Inner = styled.div`
-  animation: ${fadeIn} 2s;
   margin: 10px 0;
 `
 
@@ -39,7 +30,7 @@ const findIcon = name => {
   return <Component />
 }
 
-const SocialIcons = () => (
+const SocialIcons = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -54,7 +45,7 @@ const SocialIcons = () => (
       }
     `}
     render={({ site: { meta } }) => (
-      <Wrapper>
+      <Wrapper className={className}>
         <Inner>
           {meta.social.map(page => (
             <Icon key={page.icon} href={page.url}>{findIcon(page.icon)}</Icon>
@@ -64,5 +55,9 @@ const SocialIcons = () => (
     )}
   />
 )
+
+SocialIcons.propTypes = {
+  className: PropTypes.string
+}
 
 export default SocialIcons

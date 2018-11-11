@@ -96,7 +96,6 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    line-height: 2;
     font-family: ${defaultFont};
     color: ${theme.black}
   }

@@ -13,7 +13,7 @@ const fade = keyframes`
 
 const Span = styled.span`
   ${({ time }) => time && css`
-    animation ${fade} ${time*2}s;
+    animation ${fade} ${time}s ease-in;
   `}
 `
 

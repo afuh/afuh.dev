@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 
 const ProjectsPage = ({ data: { contentfulProjects }, location }) => (
   <Layout location={location}>
-    <Projects contentfulProjects={ contentfulProjects } />
+    <Projects projects={contentfulProjects.projects} />
   </Layout>
 )
 
