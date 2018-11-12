@@ -64,10 +64,23 @@ const defaultFont = [
   'sans-serif'
 ].join()
 
+
+export const fontS = size => css`
+  font-size: ${size}rem;
+
+  ${media.mobile(css`
+    font-size: ${size - (size/5)}rem;
+  `)}
+
+  ${media.phone(css`
+    font-size: ${size - (size/4)}rem;
+  `)}
+`
+
 const typography = css`
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-  }
+  h1 { ${fontS(3.2)}; }
+  h2 { ${fontS(2.4)}; }
+  h3 { ${fontS(1.9)}; }
 
   a {
     text-decoration: none;
@@ -96,6 +109,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
+    letter-spacing: 0.02rem;
     font-family: ${defaultFont};
     color: ${theme.black}
   }
