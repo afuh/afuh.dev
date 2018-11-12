@@ -8,17 +8,10 @@ export const projectFragment = graphql`
     featured
     image {
       fixed(width: 300) {
-        height
-        width
-        src
-        srcSet
+        ...GatsbyContentfulFixed
       }
       fluid(maxWidth: 960) {
-        base64
-        srcSet
-        sizes
-        src
-        aspectRatio
+        ...GatsbyContentfulFluid_noBase64
       }
     }
     content {

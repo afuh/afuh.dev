@@ -52,11 +52,7 @@ export const pageQuery = graphql`
       tags
       image {
         fluid(maxWidth: 960) {
-          base64
-          srcSet
-          sizes
-          src
-          aspectRatio
+          ...GatsbyContentfulFluid
         }
       }
       content {
