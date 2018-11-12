@@ -53,7 +53,6 @@ export const media = {
 }
 
 const defaultFont = [
-  'Roboto',
   '-apple-system',
   'BlinkMacSystemFont',
   '"Segoe UI"',
@@ -111,6 +110,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1.5rem;
     letter-spacing: 0.02rem;
     font-family: ${defaultFont};
+    text-rendering: optimizeLegibility;
     color: ${theme.black}
   }
 
