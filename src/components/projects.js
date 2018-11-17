@@ -6,34 +6,53 @@ import styled, { css, keyframes } from "styled-components"
 
 import { flex, hover } from '../utils/styles'
 
+const session = {
+  get: () => sessionStorage.getItem('project'),
+  set: id => sessionStorage.setItem('project', id)
+}
+
 const fadeIn = keyframes`
 	0% {
-    filter: grayscale(1);
+		opacity: 0;
+    ${'' /* filter: grayscale(1); */}
 	}
 	100% {
-    filter: grayscale(0);
+		opacity: 1;
+    ${'' /* filter: grayscale(0); */}
 	}
 `
 
 const Inner = styled.div`
-  height: 100%;
+	position: relative;
+	align-self: stretch;
+
   flex: 1;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   ${({ right }) => right && css`
+		overflow: auto;
     align-items: flex-end;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 13%;
+			height: 100%;
+			width: 1px;
+			background: ${({ theme }) => theme.black}1f;
+		}
   `}
 `
 
 const Wrapper = styled.div`
+	padding: 20px;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1000px;
 
   ${flex}
-  height: 400px;
+  max-height: 310px;
 `
 
 const Card = styled.div`
@@ -50,9 +69,9 @@ const GatsbyLink = styled(Link)`
 const Figure = styled.figure`
   margin: 0;
 
-  ${({ animate }) => animate && css`
-    animation: ${fadeIn} linear 0.5s alternate;
-  `}
+	img {
+		animation: ${fadeIn} .5s linear;
+	}
 `
 
 const Text = styled.button`
@@ -60,7 +79,11 @@ const Text = styled.button`
   cursor: pointer;
   letter-spacing: 0.12rem;
 
-  h3 {
+	&:focus {
+		outline: 0;
+	}
+
+  h2 {
     margin: 0 0 2px;
 
     ${({ theme, select }) => css`
@@ -81,46 +104,46 @@ const Caption = styled.figcaption`
 
 class Projects extends Component {
   state = {
-    project: null,
-    animate: false
+    project: null
   }
 
   componentDidMount(){
-    this.handleProjectImage()
+    this.handleSelectedProject()
   }
 
-  componentDidUpdate(prevProps, prevState){
-    const { project } = this.state
-
-    if (prevState.project && prevState.project.id !== project.id) {
-      this.setState({ animate: true })
-    }
-  }
-
-  handleProjectImage = id => {
+  handleSelectedProject = id => {
     const { projects } = this.props
+    const se = session.get()
+
+    if (!id && se) {
+      const [ project ] = projects.filter(project => project.id === se)
+      return this.setState({ project })
+    }
 
     if (!id) {
       return this.setState({ project: projects[0] })
-
     }
+
     const [ project ] = projects.filter(project => project.id === id)
 
-    this.setState({ project, animate: false })
+    this.setState({ project })
+    session.set(id)
   }
 
   render(){
     const { projects } = this.props
-    const { project, animate } = this.state
-
+    const { project } = this.state
     return (
       <Wrapper>
         <Inner>
           {project &&
             <GatsbyLink to={project.slug} key={project.slug}>
-              <Figure animate={animate}>
+              <Figure>
                 <Card>
-                  <Img fluid={project.image.fluid} style={{ height: 170, zIndex: -1 }}/>
+                  <Img
+                    style={{ zIndex: -1, height: 160 }}
+                    fluid={project.image.fluid}
+                  />
                 </Card>
                 <Caption>{project.content.childMarkdownRemark.excerpt}</Caption>
               </Figure>
@@ -132,9 +155,9 @@ class Projects extends Component {
             <div key={pr.id}>
               <Text
                 select={project && project.id === pr.id}
-                onClick={() => this.handleProjectImage(pr.id)}
+                onClick={() => this.handleSelectedProject(pr.id)}
               >
-                <h3>{pr.title}</h3>
+                <h2>{pr.title}</h2>
               </Text>
             </div>
           ))}
