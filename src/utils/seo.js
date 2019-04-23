@@ -63,7 +63,7 @@ const SEO = ({ title, description, image, pathname }) => {
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
   pathname: PropTypes.string
 }
 

@@ -58,8 +58,8 @@ const Social = styled(SocialIcons)`
 	animation: ${fadeIn} 1s;
 `
 
-const IndexPage = ({ location, data: { site: { meta } } }) => (
-  <Layout location={location}>
+const IndexPage = ({ data: { site: { meta } } }) => (
+  <Layout>
     <Content>
       <Inner>
         <Title>
@@ -76,7 +76,6 @@ const IndexPage = ({ location, data: { site: { meta } } }) => (
 )
 
 IndexPage.propTypes = {
-  location: PropTypes.object.isRequired,
   data: PropTypes.shape({
     site: PropTypes.shape({
       meta: PropTypes.object.isRequired

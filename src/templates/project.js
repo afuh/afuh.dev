@@ -6,13 +6,17 @@ import PropTypes from 'prop-types'
 import SEO from '../utils/seo'
 import Layout from '../components/layout'
 
-const Project = ({ data: { contentfulProject: project }, location }) => (
-  <Layout location={location}>
+const Project = ({ data: { project } }) => (
+  <Layout>
     <SEO
       title={project.title}
       description={project.content.md.excerpt}
       pathname={location.pathname}
-      image={project.image.fluid.src}
+      image={{
+        url: project.image.file.url,
+        contentType: project.image.file.contentType,
+        size: project.image.file.details.image
+      }}
     />
     <h1>{project.title}</h1>
     <div style={{ maxWidth: 960 }}>
@@ -37,7 +41,6 @@ const Project = ({ data: { contentfulProject: project }, location }) => (
 )
 
 Project.propTypes = {
-  location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired
 }
 
@@ -45,14 +48,24 @@ export default Project
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    contentfulProject(slug: { eq: $slug }) {
+    project: contentfulProject(slug: { eq: $slug }) {
       title
       url
       code
       tags
       image {
         fluid(maxWidth: 960) {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFluid_withWebp
+        }
+        file {
+          url
+          contentType
+          details {
+            image {
+              width
+              height
+            }
+          }
         }
       }
       content {
