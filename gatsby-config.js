@@ -2,18 +2,32 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 })
 
-const config = require('./siteConfig')
+const siteConfig = require('./config/siteConfig')
 
 module.exports = {
   siteMetadata: {
-    ...config
+    ...siteConfig
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
-    'gatsby-transformer-remark',
     'gatsby-plugin-catch-links',
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: siteConfig.backgroundColor,
+        showSpinner: false
+      }
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-external-links'
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -36,12 +50,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: config.title,
-        short_name: config.title,
-        description: config.description,
+        name: siteConfig.title,
+        short_name: siteConfig.title,
+        description: siteConfig.description,
         start_url: "/",
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
+        background_color: siteConfig.backgroundColor,
+        theme_color: siteConfig.themeColor,
         display: 'minimal-ui',
         icon: 'src/assets/icon-512x512.png'
       }
@@ -54,16 +68,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        headers: {
-          "/sw.js": [
-            "Cache-Control: no-cache"
-          ]
-        }
-      }
-    },
-    'gatsby-plugin-netlify-cache'
+    'gatsby-plugin-netlify-cache',
+    'gatsby-plugin-netlify'
   ]
 }

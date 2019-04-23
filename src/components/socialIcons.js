@@ -36,8 +36,8 @@ const SocialIcons = ({ className }) => (
       query {
         site {
           meta: siteMetadata {
-            social {
-              icon
+            external {
+              name
               url
             }
           }
