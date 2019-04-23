@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { keyframes } from "styled-components"
-import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SocialIcons from '../components/socialIcons'
 
 import FadeIn from '../components/textFadeIn'
 
+import { useSiteMeta } from '../utils/hooks'
 import { fontSize } from '../utils/styles'
 
 const fadeIn = keyframes`
@@ -58,22 +58,26 @@ const Social = styled(SocialIcons)`
 	animation: ${fadeIn} 1s;
 `
 
-const IndexPage = ({ data: { site: { meta } } }) => (
-  <Layout>
-    <Content>
-      <Inner>
-        <Title>
-          <FadeIn text={meta.title} />
-        </Title>
-        <HiddenTitle>{meta.title.split(" ").reverse().join(" ")}</HiddenTitle>
-        <SubTitle>
-          <FadeIn text={meta.description} duration={3}/>
-        </SubTitle>
-      </Inner>
-      <Social />
-    </Content>
-  </Layout>
-)
+const IndexPage = () => {
+  const { title, description } = useSiteMeta()
+
+  return (
+    <Layout>
+      <Content>
+        <Inner>
+          <Title>
+            <FadeIn text={title} />
+          </Title>
+          <HiddenTitle>{title.split(" ").reverse().join(" ")}</HiddenTitle>
+          <SubTitle>
+            <FadeIn text={description} duration={3}/>
+          </SubTitle>
+        </Inner>
+        <Social />
+      </Content>
+    </Layout>
+  )
+}
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -84,18 +88,3 @@ IndexPage.propTypes = {
 }
 
 export default IndexPage
-
-export const pageQuery = graphql`
-	{
-		site {
-			meta: siteMetadata {
-				title
-				description
-				working {
-					name
-					url
-				}
-			}
-		}
-	}
-`

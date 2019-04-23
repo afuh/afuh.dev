@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 import styled from "styled-components"
+
+import { useSiteMeta } from '../utils/hooks'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -26,31 +27,20 @@ const findIcon = name => {
   return <Component />
 }
 
-const SocialIcons = ({ className }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          meta: siteMetadata {
-            external {
-              name
-              url
-            }
-          }
-        }
-      }
-    `}
-    render={({ site: { meta } }) => (
-      <Wrapper className={className}>
-        <Inner>
-          {meta.external.map(page => (
-            <Icon key={page.name} href={page.url}>{findIcon(page.name)}</Icon>
-          ))}
-        </Inner>
-      </Wrapper>
-    )}
-  />
-)
+const SocialIcons = ({ className }) => {
+  const { external } = useSiteMeta()
+
+  return (
+    <Wrapper className={className}>
+      <Inner>
+        {external.map(page => (
+          <Icon key={page.name} href={page.url}>{findIcon(page.name)}</Icon>
+        ))}
+      </Inner>
+    </Wrapper>
+
+  )
+}
 
 SocialIcons.propTypes = {
   className: PropTypes.string
