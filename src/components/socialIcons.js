@@ -47,8 +47,8 @@ const SocialIcons = ({ className }) => (
     render={({ site: { meta } }) => (
       <Wrapper className={className}>
         <Inner>
-          {meta.social.map(page => (
-            <Icon key={page.icon} href={page.url}>{findIcon(page.icon)}</Icon>
+          {meta.external.map(page => (
+            <Icon key={page.name} href={page.url}>{findIcon(page.name)}</Icon>
           ))}
         </Inner>
       </Wrapper>
