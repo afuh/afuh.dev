@@ -8,7 +8,7 @@ import SocialIcons from '../components/socialIcons'
 
 import FadeIn from '../components/textFadeIn'
 
-import { flex, fontS } from '../utils/styles'
+import { fontSize } from '../utils/styles'
 
 const fadeIn = keyframes`
 	0% {
@@ -22,7 +22,6 @@ const fadeIn = keyframes`
 const Content = styled.section`
   height: 100vh;
 
-  ${flex({ dir: 'column' })}
   text-align: center;
 `
 
@@ -32,13 +31,13 @@ const Inner = styled.div`
 `
 
 const Title = styled.h1`
-	${fontS(4)};
+	${fontSize(4)};
 	letter-spacing: 0.4rem;
   margin: 0;
 `
 
 const SubTitle = styled.h2`
-	${fontS(3)};
+	${fontSize(3)};
   font-weight: 400;
   margin: 0;
 `

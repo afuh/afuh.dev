@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Img from 'gatsby-image'
 import styled, { css, keyframes } from "styled-components"
 
-import { flex, hover } from '../utils/styles'
+import { hover } from '../utils/styles'
 
 const session = {
   get: () => sessionStorage.getItem('project'),
@@ -51,7 +51,6 @@ const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 1000px;
 
-  ${flex}
   max-height: 310px;
 `
 

@@ -3,15 +3,11 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from "styled-components"
 
-import { flex } from '../utils/styles'
-
 const Wrapper = styled.div`
   width: 100%;
   height: auto;
   padding: 20px 0;
   max-width: 500px;
-
-  ${flex({ dir: 'column' })}
 `
 
 const Inner = styled.div`
