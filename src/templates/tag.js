@@ -27,7 +27,6 @@ export const pageQuery = graphql`
   query($tag: [String!]) {
     allContentfulProject(
       filter: { tags: { in: $tag } }
-      sort: { fields: featured, order: DESC }
     ) {
       edges {
         node {
