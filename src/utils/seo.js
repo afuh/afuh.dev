@@ -29,7 +29,6 @@ const SEO = ({ title, description, image, pathname }) => {
   const twitterUrl = external.find(item => item.name === 'Twitter').url.split("/")
   const twitterUser = "@" + twitterUrl[twitterUrl.length - 1]
 
-
   return (
     <Helmet
       htmlAttributes={{ lang: "en" }}
