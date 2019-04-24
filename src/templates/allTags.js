@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Layout from '../components/layout'
 
 const AllTags = ({ pageContext }) => (
-  <Layout>
+  <Layout heading='tags'>
     <ul>
       {pageContext.allTags.map(tag => (
         <li key={tag}>

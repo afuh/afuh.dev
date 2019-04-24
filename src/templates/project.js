@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 
 const Project = ({ data: { project } }) => (
   <Layout
+    heading={project.title}
     seo={{
       title: project.title,
       description: project.content.md.excerpt,
