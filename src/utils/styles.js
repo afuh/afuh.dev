@@ -2,7 +2,7 @@ import { css, createGlobalStyle } from 'styled-components'
 
 export const theme = {
   black: "#212129",
-  white: "#F9F9FA",
+  white: "#FEFEFE",
   gray: "#9F9FA3",
   deeporange: "#FF5722",
   innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)'
@@ -13,14 +13,6 @@ const screenBreak = {
   phone: 650,
   small: 480
 }
-
-export const flex = opt => css`
-  display: flex;
-
-  flex-direction: ${opt.dir|| "row"};
-  justify-content: ${opt.x || "center"};
-  align-items: ${opt.y || "center"};
-`
 
 export const hover = inner => css`
   &:hover,
@@ -49,6 +41,22 @@ export const media = {
     @media (max-width: ${n / 16}em) {
       ${inner}
     }
+  `,
+
+  medium: inner => css`
+    @media (min-width: ${screenBreak.medium / 16}em) {
+      ${inner}
+    }
+  `,
+  xlarge: inner => css`
+    @media (min-width: ${screenBreak.xlarge / 16}em) {
+      ${inner}
+    }
+  `,
+  xxlarge: inner => css`
+    @media (min-width: ${screenBreak.xxlarge / 16}em) {
+      ${inner}
+    }
   `
 }
 
@@ -64,22 +72,26 @@ const defaultFont = [
 ].join()
 
 
-export const fontS = size => css`
+export const fontSize = size => css`
   font-size: ${size}rem;
 
   ${media.mobile(css`
-    font-size: ${size - (size/5)}rem;
+    font-size: ${size - (size/12)}rem;
   `)}
 
   ${media.phone(css`
-    font-size: ${size - (size/4)}rem;
+    font-size: ${size - (size/10)}rem;
+  `)}
+
+  ${media.xxlarge(css`
+    font-size: ${size * 1.2}rem;
   `)}
 `
 
 const typography = css`
-  h1 { ${fontS(3.2)}; }
-  h2 { ${fontS(2.4)}; }
-  h3 { ${fontS(1.9)}; }
+  h1 { ${fontSize(3.2)}; }
+  h2 { ${fontSize(2.4)}; }
+  h3 { ${fontSize(1.9)}; }
 
   a {
     text-decoration: none;

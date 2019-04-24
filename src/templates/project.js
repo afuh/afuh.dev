@@ -3,17 +3,21 @@ import Img from 'gatsby-image'
 import { graphql, Link } from "gatsby"
 import PropTypes from 'prop-types'
 
-import SEO from '../utils/seo'
 import Layout from '../components/layout'
 
-const Project = ({ data: { contentfulProject: project }, location }) => (
-  <Layout location={location}>
-    <SEO
-      title={project.title}
-      description={project.content.md.excerpt}
-      pathname={location.pathname}
-      image={project.image.fluid.src}
-    />
+const Project = ({ data: { project } }) => (
+  <Layout
+    seo={{
+      title: project.title,
+      description: project.content.md.excerpt,
+      pathname: "/" + project.slug,
+      image: {
+        url: project.image.file.url,
+        contentType: project.image.file.contentType,
+        size: project.image.file.details.image
+      }
+    }}
+  >
     <h1>{project.title}</h1>
     <div style={{ maxWidth: 960 }}>
       <Img
@@ -37,7 +41,6 @@ const Project = ({ data: { contentfulProject: project }, location }) => (
 )
 
 Project.propTypes = {
-  location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired
 }
 
@@ -45,14 +48,25 @@ export default Project
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    contentfulProject(slug: { eq: $slug }) {
+    project: contentfulProject(slug: { eq: $slug }) {
       title
+      slug
       url
       code
       tags
       image {
         fluid(maxWidth: 960) {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFluid_withWebp
+        }
+        file {
+          url
+          contentType
+          details {
+            image {
+              width
+              height
+            }
+          }
         }
       }
       content {

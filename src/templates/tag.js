@@ -5,18 +5,17 @@ import { graphql } from "gatsby"
 import Layout from '../components/layout'
 import Projects from '../components/projects'
 
-const TagPage = ({ data: { allContentfulProject }, location }) => {
+const TagPage = ({ data: { allContentfulProject } }) => {
   const projects = allContentfulProject.edges.map(({ node }) => node)
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Projects projects={projects}/>
     </Layout>
   )
 }
 
 TagPage.propTypes = {
-  location: PropTypes.object.isRequired,
   data: PropTypes.shape({
     contentfulProjects: PropTypes.object
   }).isRequired
@@ -28,7 +27,6 @@ export const pageQuery = graphql`
   query($tag: [String!]) {
     allContentfulProject(
       filter: { tags: { in: $tag } }
-      sort: { fields: featured, order: DESC }
     ) {
       edges {
         node {

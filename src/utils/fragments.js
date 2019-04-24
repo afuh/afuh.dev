@@ -5,7 +5,6 @@ export const projectFragment = graphql`
     id
     title
     slug
-    featured
     image {
       fixed(width: 300) {
         ...GatsbyContentfulFixed

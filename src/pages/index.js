@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { keyframes } from "styled-components"
-import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SocialIcons from '../components/socialIcons'
 
-import FadeIn from '../components/textFadeIn'
-
-import { flex, fontS } from '../utils/styles'
+import { FadeInText, SocialIcons } from '../utils/UI'
+import { useSiteMeta } from '../utils/hooks'
+import { fontSize } from '../utils/styles'
 
 const fadeIn = keyframes`
 	0% {
@@ -22,7 +20,6 @@ const fadeIn = keyframes`
 const Content = styled.section`
   height: 100vh;
 
-  ${flex({ dir: 'column' })}
   text-align: center;
 `
 
@@ -32,13 +29,13 @@ const Inner = styled.div`
 `
 
 const Title = styled.h1`
-	${fontS(4)};
+	${fontSize(4)};
 	letter-spacing: 0.4rem;
   margin: 0;
 `
 
 const SubTitle = styled.h2`
-	${fontS(3)};
+	${fontSize(3)};
   font-weight: 400;
   margin: 0;
 `
@@ -59,25 +56,28 @@ const Social = styled(SocialIcons)`
 	animation: ${fadeIn} 1s;
 `
 
-const IndexPage = ({ location, data: { site: { meta } } }) => (
-  <Layout location={location}>
-    <Content>
-      <Inner>
-        <Title>
-          <FadeIn text={meta.title} />
-        </Title>
-        <HiddenTitle>{meta.title.split(" ").reverse().join(" ")}</HiddenTitle>
-        <SubTitle>
-          <FadeIn text={meta.description} duration={3}/>
-        </SubTitle>
-      </Inner>
-      <Social />
-    </Content>
-  </Layout>
-)
+const IndexPage = () => {
+  const { title, description } = useSiteMeta()
+
+  return (
+    <Layout>
+      <Content>
+        <Inner>
+          <Title>
+            <FadeInText text={title} duration={3} />
+          </Title>
+          <HiddenTitle>{title.split(" ").reverse().join(" ")}</HiddenTitle>
+          <SubTitle>
+            {description}
+          </SubTitle>
+        </Inner>
+        <Social />
+      </Content>
+    </Layout>
+  )
+}
 
 IndexPage.propTypes = {
-  location: PropTypes.object.isRequired,
   data: PropTypes.shape({
     site: PropTypes.shape({
       meta: PropTypes.object.isRequired
@@ -86,18 +86,3 @@ IndexPage.propTypes = {
 }
 
 export default IndexPage
-
-export const pageQuery = graphql`
-	{
-		site {
-			meta: siteMetadata {
-				title
-				description
-				working {
-					name
-					url
-				}
-			}
-		}
-	}
-`
