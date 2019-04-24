@@ -61,6 +61,7 @@ export const media = {
 }
 
 const defaultFont = [
+  'Roboto',
   '-apple-system',
   'BlinkMacSystemFont',
   '"Segoe UI"',
@@ -100,8 +101,7 @@ const typography = css`
       &:hover,
       &:active,
       &:focus {
-        text-decoration: underline;
-        color: ${theme.deeporange};
+        text-decoration: none;
       }
     }
 `
@@ -127,8 +127,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   *::selection {
-    color: ${theme.white};
-    background: ${theme.black};
+    color: ${theme.black};
+    background: ${theme.white};
   }
 
   ${typography}
