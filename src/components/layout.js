@@ -11,10 +11,8 @@ const Layout = ({ children, seo }) => (
     {({ location }) => (
       <>
         <SEO
-          title={seo && seo.title}
-          description={seo && seo.description}
+          {...seo}
           pathname={seo ? seo.pathname : location.pathname}
-          image={seo && seo.image}
         />
         <ThemeProvider theme={theme}>
           <>

@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 import styled, { keyframes } from "styled-components"
 
 import Layout from '../components/layout'
-import SocialIcons from '../components/socialIcons'
 
-import FadeIn from '../components/textFadeIn'
-
+import { FadeInText, SocialIcons } from '../utils/UI'
 import { useSiteMeta } from '../utils/hooks'
 import { fontSize } from '../utils/styles'
 
@@ -66,11 +64,11 @@ const IndexPage = () => {
       <Content>
         <Inner>
           <Title>
-            <FadeIn text={title} />
+            <FadeInText text={title} duration={3} />
           </Title>
           <HiddenTitle>{title.split(" ").reverse().join(" ")}</HiddenTitle>
           <SubTitle>
-            <FadeIn text={description} duration={3}/>
+            {description}
           </SubTitle>
         </Inner>
         <Social />

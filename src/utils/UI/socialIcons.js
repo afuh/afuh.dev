@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from "styled-components"
 
-import { useSiteMeta } from '../utils/hooks'
+import { useSiteMeta } from '../hooks'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -27,7 +27,7 @@ const findIcon = name => {
   return <Component />
 }
 
-const SocialIcons = ({ className }) => {
+export const SocialIcons = ({ className }) => {
   const { external } = useSiteMeta()
 
   return (
@@ -38,12 +38,9 @@ const SocialIcons = ({ className }) => {
         ))}
       </Inner>
     </Wrapper>
-
   )
 }
 
 SocialIcons.propTypes = {
   className: PropTypes.string
 }
-
-export default SocialIcons
