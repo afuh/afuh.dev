@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import { ThemeProvider } from "styled-components"
 import { Location } from '@reach/router'
 
-import SEO from '../utils/seo'
-import { GlobalStyles, theme } from '../utils/styles'
+import SEO from '../../utils/seo'
+import { GlobalStyles, theme } from '../../utils/styles'
 
-const Layout = ({ children, seo }) => (
+import Header from './header'
+
+const Layout = ({ children, seo, heading }) => (
   <Location>
     {({ location }) => (
       <>
@@ -17,6 +19,7 @@ const Layout = ({ children, seo }) => (
         <ThemeProvider theme={theme}>
           <>
             <GlobalStyles />
+            <Header heading={heading} />
             <main>
               {children}
             </main>
@@ -28,7 +31,11 @@ const Layout = ({ children, seo }) => (
 )
 
 Layout.propTypes = {
-  seo: PropTypes.object
+  seo: PropTypes.object,
+  heading: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]).isRequired
 }
 
 export default Layout
