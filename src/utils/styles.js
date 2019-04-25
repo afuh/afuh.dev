@@ -101,12 +101,12 @@ const typography = css`
     text-decoration: none;
     color: ${theme.black};
 
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration: none;
-      }
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
     }
+  }
 `
 
 export const GlobalStyles = createGlobalStyle`

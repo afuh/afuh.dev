@@ -1,11 +1,11 @@
 import React from 'react'
-import Img from 'gatsby-image'
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
+import Project from '../components/project'
 
-const Project = ({ data: { project } }) => (
+const ProjectPage = ({ data: { project } }) => (
   <Layout
     heading={project.title}
     seo={{
@@ -19,36 +19,18 @@ const Project = ({ data: { project } }) => (
       }
     }}
   >
-    <h1>{project.title}</h1>
-    <div style={{ maxWidth: 960 }}>
-      <Img
-        fluid={project.image.fluid}
-        alt={project.title}
-      />
-    </div>
-    <div>
-      <a href={project.url}>Live</a>
-      <a href={project.code}>Code</a>
-    </div>
-    <div dangerouslySetInnerHTML={{ __html: project.content.md.html }} />
-    <div>
-      {project.tags.map(tag => (
-        <code key={tag} style={{ marginRight: 20 }}>
-          <Link to={`/tag/${tag}`}>{tag}</Link>
-        </code>
-      ))}
-    </div>
+    <Project data={project} />
   </Layout>
 )
 
-Project.propTypes = {
+ProjectPage.propTypes = {
   data: PropTypes.object.isRequired
 }
 
-export default Project
+export default ProjectPage
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query PROJECT_PAGE_QUERY ($slug: String!) {
     project: contentfulProject(slug: { eq: $slug }) {
       title
       slug
