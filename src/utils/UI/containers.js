@@ -8,27 +8,27 @@ export const Inner = styled.div`
   display: flex;
   align-items: center;
 
-  ${({ margin }) => css`
-    margin: 0 ${margin}% 0 ${margin*2}%;
+  ${({ padding }) => css`
+    padding: 0 ${padding}% 0 ${padding*2}%;
 
     ${media.medium(css`
-      margin: 0 ${margin*2}% 0 ${margin*4}%;
+      padding: 0 ${padding*2}% 0 ${padding*4}%;
     `)}
 
     ${media.xlarge(css`
-      margin: 0 ${margin*3}% 0 ${margin*6}%;
+      padding: 0 ${padding*3}% 0 ${padding*6}%;
     `)}
 
     ${media.phone(css`
-      margin: 0 ${margin}%;
+      padding: 0 ${padding}%;
     `)}
   `};
 `
 
 Inner.propTypes = {
-  margin: number.isRequired
+  padding: number.isRequired
 }
 
 Inner.defaultProps = {
-  margin: 6
+  padding: 6
 }
