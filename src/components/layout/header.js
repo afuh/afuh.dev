@@ -5,14 +5,17 @@ import { Link as GatsbyLink } from 'gatsby'
 
 import { useSiteMeta } from '../../utils/hooks'
 import { media } from '../../utils/styles'
+import { Inner } from '../../utils/UI'
 
 const Wrapper = styled.header`
-  min-height: 220px;
-  background: ${({ theme }) => theme.black};
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0 8rem 0 24rem;
+
+  ${({ theme }) => theme && css`
+    height: ${theme.headerHeight.desktop}px;
+    background: ${theme.black};
+  `};
+
 
   .heading {
     flex: 1;
@@ -37,10 +40,6 @@ const Wrapper = styled.header`
       font-size: 1.6rem;
       text-transform: lowercase;
       margin: 1.2rem 0;
-
-      .active {
-        color: ${({ theme }) => theme.white};
-      }
     }
 
     ${media.phone(css`
@@ -54,36 +53,58 @@ const Link = styled(GatsbyLink)`
 
   &:hover,
   &:active,
-  &:focus {
+  &:focus,
+  &.active {
     color: ${({ theme }) => theme.white};
   }
 `
+
+const Heading = ({ data }) => (
+  <div className='heading'>
+    {typeof data === 'string' ?
+      <h1>{data}</h1> :
+      data
+    }
+  </div>
+)
+
+Heading.propTypes = {
+  data: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]).isRequired
+}
+
+const Nav = ({ data }) => (
+  <nav className='nav'>
+    <ul>
+      {data.map(item => (
+        <li key={item.name}>
+          <Link
+            activeClassName='active'
+            to={item.path}
+          >
+            {item.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)
+
+Nav.propTypes = {
+  data: PropTypes.array.isRequired
+}
 
 const Header = ({ heading }) => {
   const { nav } = useSiteMeta()
 
   return (
     <Wrapper>
-      <div className='heading'>
-        {typeof heading === 'string' ?
-          <h1>{heading}</h1> :
-          heading
-        }
-      </div>
-      <nav className='nav'>
-        <ul>
-          {nav.map(item => (
-            <li key={item.name}>
-              <Link
-                activeClassName='active'
-                to={item.path}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <Inner>
+        <Heading data={heading} />
+        <Nav data={nav} />
+      </Inner>
     </Wrapper>
   )
 }

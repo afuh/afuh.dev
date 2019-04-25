@@ -5,7 +5,10 @@ export const theme = {
   white: "#FEFEFE",
   gray: "#9F9FA3",
   deeporange: "#FF5722",
-  innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)'
+  innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)',
+  headerHeight: {
+    desktop: 220
+  }
 }
 
 const screenBreak = {
@@ -123,7 +126,8 @@ export const GlobalStyles = createGlobalStyle`
     letter-spacing: 0.02rem;
     font-family: ${defaultFont};
     text-rendering: optimizeLegibility;
-    color: ${theme.black}
+    color: ${theme.black};
+    background: ${theme.black};
   }
 
   *::selection {

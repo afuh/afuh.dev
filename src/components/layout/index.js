@@ -1,12 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ThemeProvider } from "styled-components"
+import styled, { css, ThemeProvider } from "styled-components"
 import { Location } from '@reach/router'
 
 import SEO from '../../utils/seo'
 import { GlobalStyles, theme } from '../../utils/styles'
 
 import Header from './header'
+
+const Main = styled.main`
+  ${({ theme }) => theme && css`
+    min-height: calc(100vh - ${theme.headerHeight.desktop}px);
+    background: ${theme.white};
+  `};
+`
 
 const Layout = ({ children, seo, heading }) => (
   <Location>
@@ -20,9 +27,9 @@ const Layout = ({ children, seo, heading }) => (
           <>
             <GlobalStyles />
             <Header heading={heading} />
-            <main>
+            <Main>
               {children}
-            </main>
+            </Main>
           </>
         </ThemeProvider>
       </>
