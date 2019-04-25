@@ -132,7 +132,7 @@ export const GlobalStyles = createGlobalStyle`
 
   *::selection {
     color: ${theme.black};
-    background: ${theme.white};
+    background: ${theme.deeporange};
   }
 
   ${typography}
