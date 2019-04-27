@@ -9,6 +9,7 @@ import { Inner } from '../utils/UI'
 const Wrapper = styled.div`
   display: flex;
   margin-top: 40px;
+  margin-bottom: 60px;
 
   .externals-wrapper {
     margin-left: 1rem;
@@ -20,6 +21,7 @@ const Wrapper = styled.div`
       display: block;
       margin-bottom: 1rem;
     }
+
   }
 `
 
@@ -28,32 +30,76 @@ const Content = styled.article`
 
   .image-wrapper {
     position: relative;
-  }
-
-  .shadow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    box-shadow: inset -2px 4px 10px rgba(0, 0, 0, 0.25);
-    top: 0;
-    left: 0;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset -2px 4px 10px rgba(0, 0, 0, 0.2);
+      top: 0;
+      left: 0;
+    }
   }
 
   .text-wrapper {
+    margin-top: 20px;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background-color: ${({ theme }) => theme.gray}1a;
+      margin: 20px auto 0;
+    }
+
+    p, li {
+      margin-top: 0;
+      font-size: 1.7rem;
+      line-height: 1.6;
+      font-family: "Open Sans", sans-serif;
+    }
+
     a {
       text-decoration: underline;
     }
+
+    ul {
+      padding-left: 20px;
+
+      li {
+        display: list-item;
+        text-align: match-parent;
+      }
+    }
+
   }
+
+  .tags-wrapper {
+    padding: 20px 0;
+    .tag-box {
+      display: inline;
+      padding: 5px 10px;
+      margin-right: 10px;
+      background: ${({ theme }) => theme.gray}1a;
+      font-weight: 700;
+      font-size: 1.2rem;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: ${({ theme }) => theme.gray}5e;
+      }
+    }
+  }
+
 `
 
 const Image = ({ image, title }) => (
-  <div className='image-wrapper'>
-    <Img
-      fluid={image.fluid}
-      alt={title}
-    />
-    <div className='shadow' />
-  </div>
+  <Img
+    className='image-wrapper'
+    fluid={image.fluid}
+    alt={title}
+  />
 )
 
 Image.propTypes = {
@@ -62,11 +108,16 @@ Image.propTypes = {
 }
 
 const Tags = ({ tags }) => (
-  tags.map(tag => (
-    <code key={tag} style={{ marginRight: 20 }}>
-      <Link to={`/tag/${tag}`}>{tag}</Link>
-    </code>
-  ))
+  <div className='tags-wrapper'>
+    {tags.map(tag => (
+      <div
+        key={tag}
+        className='tag-box'
+      >
+        <Link to={`/tag/${tag}`}>{tag}</Link>
+      </div>
+    ))}
+  </div>
 )
 
 Tags.propTypes = {

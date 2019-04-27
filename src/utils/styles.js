@@ -64,10 +64,10 @@ export const media = {
 }
 
 const defaultFont = [
-  'Roboto',
   '-apple-system',
   'BlinkMacSystemFont',
   '"Segoe UI"',
+  'Roboto',
   'Oxygen-Sans',
   'Ubuntu',
   'Cantarell',
