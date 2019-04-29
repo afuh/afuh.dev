@@ -1,20 +1,25 @@
 import React from 'react'
-import { Link } from "gatsby"
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
+import Projects from '../components/projects'
 
-const AllTags = ({ pageContext }) => (
-  <Layout heading='tags'>
-    <ul>
-      {pageContext.allTags.map(tag => (
-        <li key={tag}>
-          <Link to={`/tag/${tag}`}>{tag}</Link>
-        </li>
-      ))}
-    </ul>
-  </Layout>
-)
+const AllTags = ({ pageContext: { allTags } }) => {
+  const formatTags = allTags.reduce((acc, tag) => [
+    ...acc,
+    {
+      id: tag,
+      slug: 'tag/' + tag,
+      title: tag
+    }
+  ], [])
+
+  return (
+    <Layout heading='tags'>
+      <Projects data={formatTags} />
+    </Layout>
+  )
+}
 
 AllTags.propTypes = {
   pageContext: PropTypes.shape({
