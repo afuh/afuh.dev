@@ -2,11 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 
-import { FadeInText } from '../utils/UI'
+import { FadeInText, List } from '../utils/UI'
 import { useSiteMeta } from '../utils/hooks'
 
 import Layout from '../components/layout'
-import Projects from '../components/projects'
 
 const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
   const { title, description } = useSiteMeta()
@@ -25,7 +24,7 @@ const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
         </>
       )}
     >
-      <Projects data={projects} />
+      <List data={projects} />
     </Layout>
   )
 }

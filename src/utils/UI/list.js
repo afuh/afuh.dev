@@ -3,16 +3,18 @@ import PropTypes from 'prop-types'
 import styled from "styled-components"
 import { Link as GatsbyLink } from "gatsby"
 
-import { Inner } from '../utils/UI'
+import { Inner as ListInner } from './'
 
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  margin-top: 120px;
+const Inner = styled(ListInner)`
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-top: 120px;
 
-  li {
-    margin: 2rem 0;
+    li {
+      margin: 2rem 0;
+    }
   }
 `
 
@@ -27,9 +29,9 @@ const Link = styled(GatsbyLink)`
   }
 `
 
-const Projects = ({ data }) => (
+export const List = ({ data }) => (
   <Inner>
-    <List>
+    <ul>
       {data.map(project => (
         <li key={project.id}>
           <Link
@@ -39,12 +41,12 @@ const Projects = ({ data }) => (
           </Link>
         </li>
       ))}
-    </List>
+    </ul>
   </Inner>
 )
 
-Projects.propTypes = {
+List.propTypes = {
   data: PropTypes.array.isRequired
 }
 
-export default Projects
+export default List

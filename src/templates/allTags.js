@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
-import Projects from '../components/projects'
+import { List } from '../utils/UI'
 
 const AllTags = ({ pageContext: { allTags } }) => {
   const formatTags = allTags.reduce((acc, tag) => [
@@ -16,7 +16,7 @@ const AllTags = ({ pageContext: { allTags } }) => {
 
   return (
     <Layout heading='tags'>
-      <Projects data={formatTags} />
+      <List data={formatTags} />
     </Layout>
   )
 }
