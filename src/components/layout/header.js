@@ -16,7 +16,6 @@ const Wrapper = styled.header`
     background: ${theme.black};
   `};
 
-
   .heading {
     flex: 1;
 
@@ -81,6 +80,7 @@ const Nav = ({ data }) => (
       {data.map(item => (
         <li key={item.name}>
           <Link
+            partiallyActive={item.path.length > 1}
             activeClassName='active'
             to={item.path}
           >
