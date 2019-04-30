@@ -14,15 +14,6 @@ export const useSiteMeta = () => {
               name
               path
             }
-            working {
-              name
-              url
-            }
-            external {
-              name
-              url
-            }
-            email
           }
         }
       }

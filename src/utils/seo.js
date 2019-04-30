@@ -2,17 +2,18 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
-import { useSiteMeta } from './hooks'
+import { useSiteMeta, useSiteContent } from './hooks'
 
 const checkUrl = url => url.match(/^https/i) ? url : "https:" + url
 
 const SEO = ({ title, description, image, pathname }) => {
+  const { social } = useSiteContent()
+
   const {
     title: defaultTitle,
     description: defaultDescription,
     image: defaultImage,
-    siteUrl,
-    external
+    siteUrl
   } = useSiteMeta()
 
   const seo = {
@@ -26,7 +27,7 @@ const SEO = ({ title, description, image, pathname }) => {
     }
   }
 
-  const twitterUrl = external.find(item => item.name === 'Twitter').url.split("/")
+  const twitterUrl = social.find(item => /twitter/i.test(item.name)).url.split("/")
   const twitterUser = "@" + twitterUrl[twitterUrl.length - 1]
 
   return (
