@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Img from 'gatsby-image'
 import { Link } from "gatsby"
 
-import { Inner } from '../utils/UI'
+import { Inner, MarkdownWrapper } from '../utils/UI'
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,7 +21,6 @@ const Wrapper = styled.div`
       display: block;
       margin-bottom: 1rem;
     }
-
   }
 `
 
@@ -42,8 +41,6 @@ const Content = styled.article`
   }
 
   .text-wrapper {
-    margin-top: 20px;
-
     &::after {
       content: '';
       display: block;
@@ -51,31 +48,11 @@ const Content = styled.article`
       background-color: ${({ theme }) => theme.gray}1a;
       margin: 20px auto 0;
     }
-
-    p, li {
-      margin-top: 0;
-      font-size: 1.7rem;
-      line-height: 1.6;
-      font-family: "Open Sans", sans-serif;
-    }
-
-    a {
-      text-decoration: underline;
-    }
-
-    ul {
-      padding-left: 20px;
-
-      li {
-        display: list-item;
-        text-align: match-parent;
-      }
-    }
-
   }
 
   .tags-wrapper {
     padding: 20px 0;
+
     .tag-box {
       display: inline;
       padding: 5px 10px;
@@ -125,9 +102,9 @@ Tags.propTypes = {
 }
 
 const Text = ({ content }) => (
-  <div
+  <MarkdownWrapper
     className='text-wrapper'
-    dangerouslySetInnerHTML={{ __html: content.md.html }}
+    html={content.md.html}
   />
 )
 
