@@ -1,27 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
 import { graphql } from "gatsby"
 
-import { FadeInText, List } from '../utils/UI'
-import { media } from '../utils/styles'
+import { FadeInText } from '../utils/UI'
 import { useSiteMeta } from '../utils/hooks'
 
 import Layout from '../components/layout'
-import GHBox from '../components/githubBox'
-
-const GithubBox = styled(GHBox)`
-  position: absolute;
-  right: 0;
-  top: 0;
-  max-width: 320px;
-  margin-top: 40px;
-
-  ${media.custom(800, css`
-    position: inherit;
-    max-width: 100%;
-  `)}
-`
+import Home from '../components/home'
 
 const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
   const { title, description } = useSiteMeta()
@@ -40,10 +25,7 @@ const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
         </>
       )}
     >
-      <>
-        <List data={projects} />
-        <GithubBox className='github-box'/>
-      </>
+      <Home data={projects}/>
     </Layout>
   )
 }
