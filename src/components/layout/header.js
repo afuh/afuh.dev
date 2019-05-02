@@ -14,6 +14,10 @@ const Wrapper = styled.header`
   ${({ theme }) => theme && css`
     height: ${theme.headerHeight.desktop}px;
     background: ${theme.black};
+
+    ${media.phone(css`
+      height: ${theme.headerHeight.mobile}px;
+    `)}
   `};
 
   .heading {
@@ -24,6 +28,11 @@ const Wrapper = styled.header`
       font-weight: 900;
       font-size: 5.0rem;
       margin: 0;
+
+      ${media.phone(css`
+        text-align: center;
+        font-size: 3.4rem;
+      `)}
     }
 
     h2 {

@@ -17,13 +17,17 @@ const GithubBox = styled(GHBox)`
     position: inherit;
     max-width: 100%;
   `)}
+
+  ${media.phone(css`
+    display: none;
+  `)}
 `
 
 const Home = ({ data }) => (
-  <div>
+  <>
     <List data={data} />
-    <GithubBox className='github-box'/>
-  </div>
+    <GithubBox />
+  </>
 )
 
 Home.propTypes = {
