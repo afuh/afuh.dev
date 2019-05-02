@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css } from "styled-components"
 
 import { media } from '../../utils/styles'
+import { useProjectData } from '../../utils/hooks'
 
 const Wrapper = styled.div`
   margin-left: 1rem;
@@ -41,16 +42,18 @@ const Wrapper = styled.div`
   `)}
 `
 
-const ExternalLinks = ({ url, code, id }) => (
-  <Wrapper id={id}>
-    <a href={url}>Live</a>
-    <a href={code}>Code</a>
-  </Wrapper>
-)
+const ExternalLinks = ({ id }) => {
+  const { url, code } = useProjectData()
+
+  return (
+    <Wrapper id={id}>
+      <a href={url}>Live</a>
+      <a href={code}>Code</a>
+    </Wrapper>
+  )
+}
 
 ExternalLinks.propTypes = {
-  url: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired,
   id: PropTypes.string
 }
 

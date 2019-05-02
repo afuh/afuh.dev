@@ -4,10 +4,11 @@ import styled, { css } from "styled-components"
 import Img from 'gatsby-image'
 
 import { media } from '../../utils/styles'
+import { useProjectData } from '../../utils/hooks'
 
 const ImageWrapper = styled.div`
   position: relative;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -36,18 +37,20 @@ const ImageWrapper = styled.div`
   }
 `
 
-const Image = ({ image, title, id }) => (
-  <ImageWrapper id={id}>
-    <Img
-      fluid={image.fluid}
-      alt={title}
-    />
-  </ImageWrapper>
-)
+const Image = ({ id }) => {
+  const { image, title } = useProjectData()
+
+  return (
+    <ImageWrapper id={id}>
+      <Img
+        fluid={image.fluid}
+        alt={title}
+      />
+    </ImageWrapper>
+  )
+}
 
 Image.propTypes = {
-  image: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
   id: PropTypes.string
 }
 

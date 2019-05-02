@@ -31,7 +31,7 @@ const Home = ({ data }) => (
 )
 
 Home.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.array.isRequired
 }
 
 export default Home

@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 
 import Image from './image'
 import { MarkdownWrapper } from '../../utils/UI'
+import { useProjectData } from '../../utils/hooks'
 
 const Wrapper = styled.div`
   max-width: 630px;
@@ -56,27 +57,34 @@ Tags.propTypes = {
   tags: PropTypes.array.isRequired
 }
 
-const Text = ({ content }) => (
+const Text = ({ html }) => (
   <MarkdownWrapper
     className='text-wrapper'
-    html={content.md.html}
+    html={html}
   />
 )
 
 Text.propTypes = {
-  content: PropTypes.object.isRequired
+  html: PropTypes.string.isRequired
 }
 
-const Content = data => (
-  <Wrapper id={data.id}>
-    <Image {...data} id='desktop'/>
-    <Text {...data} />
-    <Tags {...data} />
-  </Wrapper>
-)
+const Content = ({ id }) => {
+  const { content, image, tags } = useProjectData()
+
+  return (
+    <Wrapper id={id}>
+      <Image
+        image={image}
+        id='desktop'
+      />
+      <Text html={content.md.html} />
+      <Tags tags={tags} />
+    </Wrapper>
+  )
+}
 
 Content.propTypes = {
-  data: PropTypes.object
+  id: PropTypes.string
 }
 
 export default Content

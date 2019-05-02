@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled, { css } from "styled-components"
 
 import Image from './image'
@@ -27,20 +26,16 @@ const Wrapper = styled.div`
   `)}
 `
 
-const Project = ({ data }) => (
+const Project = () => (
   <>
-    <Image {...data} id='mobile'/>
+    <Image id='mobile'/>
     <Inner>
       <Wrapper>
-        <Content {...data} id={'content'}/>
-        <ExternalLinks {...data} id={'external'}/>
+        <Content id='content'/>
+        <ExternalLinks id='external'/>
       </Wrapper>
     </Inner>
   </>
 )
-
-Project.propTypes = {
-  data: PropTypes.object.isRequired
-}
 
 export default Project

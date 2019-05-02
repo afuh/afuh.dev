@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import { graphql } from "gatsby"
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
 import Project from '../components/project'
+
+export const Context = createContext()
 
 const ProjectPage = ({ data: { project } }) => (
   <Layout
@@ -19,7 +21,9 @@ const ProjectPage = ({ data: { project } }) => (
       }
     }}
   >
-    <Project data={project} />
+    <Context.Provider value={project}>
+      <Project data={project} />
+    </Context.Provider>
   </Layout>
 )
 
