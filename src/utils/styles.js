@@ -7,7 +7,8 @@ export const theme = {
   deeporange: "#FF5722",
   innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)',
   headerHeight: {
-    desktop: 220
+    desktop: 220,
+    mobile: 110
   }
 }
 

@@ -7,10 +7,11 @@ import SEO from '../../utils/seo'
 import { GlobalStyles, theme } from '../../utils/styles'
 
 import Header from './header'
+import Footer from './footer'
 
 const Main = styled.main`
   position: relative;
-  
+
   ${({ theme }) => theme && css`
     min-height: calc(100vh - ${theme.headerHeight.desktop}px);
     background: ${theme.white};
@@ -32,6 +33,7 @@ const Layout = ({ children, seo, heading }) => (
             <Main>
               {children}
             </Main>
+            <Footer />
           </>
         </ThemeProvider>
       </>

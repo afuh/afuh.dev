@@ -1,0 +1,87 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled, { css } from 'styled-components'
+import { Link as GatsbyLink } from 'gatsby'
+
+import { useSiteMeta } from '../../utils/hooks'
+import { media } from '../../utils/styles'
+
+const Wrapper = styled.footer`
+  display: none;
+
+  ${media.phone(css`
+    display: flex;
+    justify-content: center;
+  `)}
+
+  ${({ theme }) => theme && css`
+    height: ${theme.headerHeight.mobile}px;
+    background: ${theme.black};
+  `};
+
+  ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    li {
+      font-size: 1.8rem;
+      text-transform: lowercase;
+      align-self: stretch;
+      flex: 1;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    }
+  }
+`
+
+const Link = styled(GatsbyLink)`
+  color: ${({ theme }) => theme.gray};
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    color: ${({ theme }) => theme.white};
+  }
+`
+
+const Nav = ({ data }) => (
+  <ul>
+    {data.map(item => (
+      <li key={item.name}>
+        <Link
+          partiallyActive={item.path.length > 1}
+          activeClassName='active'
+          to={item.path}
+        >
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+)
+
+Nav.propTypes = {
+  data: PropTypes.array.isRequired
+}
+
+const Footer = () => {
+  const { nav } = useSiteMeta()
+
+  return (
+    <Wrapper>
+      <Nav data={nav} />
+    </Wrapper>
+  )
+}
+
+export default Footer
