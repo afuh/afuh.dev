@@ -1,4 +1,4 @@
-import { number } from 'prop-types'
+import { number, bool } from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { media } from '../styles'
@@ -23,12 +23,18 @@ export const Inner = styled.div`
       padding: 0 ${padding}%;
     `)}
   `};
+
+  ${({ paddingTop }) => paddingTop && css`
+    padding-top: 120px;
+  `};
 `
 
 Inner.propTypes = {
-  padding: number.isRequired
+  padding: number.isRequired,
+  paddingTop: bool.isRequired
 }
 
 Inner.defaultProps = {
-  padding: 6
+  padding: 6,
+  paddingTop: false
 }

@@ -10,7 +10,6 @@ const Inner = styled(ListInner)`
     margin: 0;
     padding: 0;
     list-style-type: none;
-    margin-top: 120px;
 
     li {
       margin: 2rem 0;
@@ -30,7 +29,7 @@ const Link = styled(GatsbyLink)`
 `
 
 export const List = ({ data }) => (
-  <Inner>
+  <Inner paddingTop>
     <ul>
       {data.map(project => (
         <li key={project.id}>
