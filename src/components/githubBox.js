@@ -1,9 +1,22 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
+import { media } from '../utils/styles'
 import { useGithub } from '../utils/hooks'
 
+const mobilePadding = css`
+  ${({ theme }) => theme.globalPadding()};
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+`
+
 const Wrapper = styled.section`
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 320px;
+  margin-top: 40px;
+
   opacity: 0;
   visibility: hidden;
 
@@ -11,9 +24,10 @@ const Wrapper = styled.section`
   border-left: 2px solid #f4f4f4;
 
   h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     margin-top: 0;
-    font-weight: 700;
   }
 
   ul {
@@ -28,6 +42,15 @@ const Wrapper = styled.section`
   `};
 
   transition: opacity 1s ease;
+
+  ${media.custom(800, css`
+    position: inherit;
+    max-width: 100%;
+    margin-top: 0;
+    border-left: none;
+    border-top: 2px solid #f4f4f4;
+    ${mobilePadding}
+  `)}
 `
 
 const Card = styled.li`
@@ -40,11 +63,11 @@ const Card = styled.li`
 
   h3 {
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #747477;
   }
 
@@ -57,12 +80,10 @@ const Card = styled.li`
   }
 `
 
-const GithubBox = props => {
+const GithubBox = () => {
   const { data, loading, error } = useGithub({ user: 'afuh' })
-
   return (
     <Wrapper
-      {...props}
       loading={loading}
     >
       {!loading && !error &&
