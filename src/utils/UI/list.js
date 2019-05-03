@@ -29,7 +29,10 @@ const Link = styled(GatsbyLink)`
 `
 
 export const List = ({ data }) => (
-  <Inner paddingTop>
+  <Inner
+    as='section'
+    paddingTop
+  >
     <ul>
       {data.map(project => (
         <li key={project.id}>

@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 `
 
 const Project = () => (
-  <>
+  <article>
     <Image id='mobile'/>
     <Inner>
       <Wrapper>
@@ -35,7 +35,7 @@ const Project = () => (
         <ExternalLinks id='external'/>
       </Wrapper>
     </Inner>
-  </>
+  </article>
 )
 
 export default Project

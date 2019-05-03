@@ -6,7 +6,9 @@ import { Inner, MarkdownWrapper } from '../utils/UI'
 const About = ({ data }) => (
   <Inner paddingTop>
     <MarkdownWrapper
-      html={data.md.html} />
+      as='section'
+      html={data.md.html}
+    />
   </Inner>
 )
 

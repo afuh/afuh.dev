@@ -5,7 +5,10 @@ import { Inner, MarkdownWrapper } from '../utils/UI'
 
 const Contact = ({ data }) => (
   <Inner paddingTop>
-    <MarkdownWrapper html={data.md.html} />
+    <MarkdownWrapper
+      as='section'
+      html={data.md.html}
+    />
   </Inner>
 )
 
