@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   }
 
   a {
-    text-decoration: underline;
+    ${({ theme }) => theme.anchorHover}
   }
 
   ul {

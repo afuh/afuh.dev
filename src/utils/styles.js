@@ -4,12 +4,22 @@ export const theme = {
   black: "#212129",
   white: "#FEFEFE",
   gray: "#9F9FA3",
-  deeporange: "#FF5722",
+  accent: "#78ff78",
   innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)',
   headerHeight: {
     desktop: 220,
     mobile: 110
-  }
+  },
+  anchorHover: () => css`
+    box-shadow: inset 0 -0.5rem ${theme.black}16;
+    transition: box-shadow .1s ease;
+
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: inset 0 -1rem ${theme.black}16;
+    }
+  `
 }
 
 const screenBreak = {
@@ -17,13 +27,6 @@ const screenBreak = {
   phone: 650,
   small: 480
 }
-
-export const hover = inner => css`
-  &:hover,
-  &:focus {
-    ${inner}
-  }
-`
 
 export const media = {
   mobile: inner => css`
@@ -132,7 +135,7 @@ export const GlobalStyles = createGlobalStyle`
 
   *::selection {
     color: ${theme.black};
-    background: ${theme.deeporange};
+    background: ${theme.accent};
   }
 
   ${typography}

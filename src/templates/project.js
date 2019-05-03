@@ -22,7 +22,7 @@ const ProjectPage = ({ data: { project } }) => (
     }}
   >
     <Context.Provider value={project}>
-      <Project data={project} />
+      <Project />
     </Context.Provider>
   </Layout>
 )

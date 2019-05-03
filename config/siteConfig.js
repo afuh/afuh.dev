@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Axel Fuhrmann',
-  description: "Full stack developer, based in Berlin.",
+  description: "Full stack developer",
   siteUrl: 'https://axelfuhrmann.com',
   image: '/images/cover-720x360.jpg',
   themeColor: '#FEFEFE',

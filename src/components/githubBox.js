@@ -58,7 +58,7 @@ const Card = styled.li`
 `
 
 const GithubBox = props => {
-  const { data, loading, error } = useGithub({ user: 'afuh', sort: 'stargazers' })
+  const { data, loading, error } = useGithub({ user: 'afuh' })
 
   return (
     <Wrapper

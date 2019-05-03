@@ -14,6 +14,8 @@ const Wrapper = styled.div`
     font-weight: 700;
     display: block;
     margin-bottom: 1rem;
+
+    ${({ theme }) => theme.anchorHover}
   }
 
   ${media.phone(css`
@@ -48,7 +50,7 @@ const ExternalLinks = ({ id }) => {
   return (
     <Wrapper id={id}>
       <a href={url}>Live</a>
-      <a href={code}>Code</a>
+      <a href={code}>Repo</a>
     </Wrapper>
   )
 }
