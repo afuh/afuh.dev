@@ -19,6 +19,21 @@ export const theme = {
     &:focus {
       box-shadow: inset 0 -1rem ${theme.black}16;
     }
+  `,
+  globalPadding: (padding = 6) => css`
+    padding: 0 ${padding}% 0 ${padding*2}%;
+
+    ${media.medium(css`
+      padding: 0 ${padding*2}% 0 ${padding*4}%;
+    `)}
+
+    ${media.xlarge(css`
+      padding: 0 ${padding*3}% 0 ${padding*6}%;
+    `)}
+
+    ${media.phone(css`
+      padding: 0 ${padding}%;
+    `)}
   `
 }
 
