@@ -6,18 +6,19 @@ export const theme = {
   gray: "#9F9FA3",
   accent: "#78ff78",
   innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)',
+  globalWidth: 600,
   headerHeight: {
     desktop: 220,
     mobile: 110
   },
   anchorHover: () => css`
-    box-shadow: inset 0 -0.5rem ${theme.black}16;
+    box-shadow: inset 0 -0.5rem ${theme.accent}80;
     transition: box-shadow .1s ease;
 
     &:hover,
     &:active,
     &:focus {
-      box-shadow: inset 0 -1rem ${theme.black}16;
+      box-shadow: inset 0 -1rem ${theme.accent}80;
     }
   `,
   globalPadding: (padding = 6) => css`

@@ -9,37 +9,39 @@ const Wrapper = styled.div`
   margin-left: 1rem;
 
   a {
-    text-transform: lowercase;
+    padding: 0 6px;
+    color: ${({ theme }) => theme.white};
     font-size: 1.7rem;
     font-weight: 700;
     display: block;
     margin-bottom: 1rem;
 
-    ${({ theme }) => theme.anchorHover}
-  }
+    ${media.custom(880, css`
+      color: ${({ theme }) => theme.black};
+    `)}
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: ${({ theme }) => theme.black};
+      background: ${({ theme }) => theme.accent};
+      }
+    }
 
   ${media.phone(css`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0;
     height: 60px;
 
     a {
+      margin-bottom: 0;
       height: 100%;
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0;
-      border: 1px solid ${({ theme }) => theme.white};
-      background: #F2F2F2;
-
-      &:hover,
-      &:active,
-      &:focus {
-        background: ${({ theme }) => theme.gray}80;
-      }
     }
   `)}
 `
@@ -49,8 +51,8 @@ const ExternalLinks = ({ id }) => {
 
   return (
     <Wrapper id={id}>
-      <a href={url}>Live</a>
-      <a href={code}>Repo</a>
+      {url && <a href={url}>Live</a>}
+      {code && <a href={code}>Code</a>}
     </Wrapper>
   )
 }

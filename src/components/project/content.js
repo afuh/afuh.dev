@@ -8,8 +8,6 @@ import { MarkdownWrapper } from '../../utils/UI'
 import { useProjectData } from '../../utils/hooks'
 
 const Wrapper = styled.div`
-  max-width: 630px;
-
   .text-wrapper {
     &::after {
       content: '';

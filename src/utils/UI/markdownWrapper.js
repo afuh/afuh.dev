@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+  max-width: ${({ theme }) => theme.globalWidth}px;
   margin-top: 20px;
 
   p, li {
