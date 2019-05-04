@@ -39,6 +39,7 @@
   ],
   "scripts": {
     "build": "gatsby build",
+    "deploy": "netlify deploy -p -d public",
     "dev": "gatsby develop",
     "serve": "gatsby serve",
     "lint:css": "stylelint './src/**/*.js'",

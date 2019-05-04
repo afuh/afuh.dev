@@ -8,3 +8,4 @@ deploy.js
 .env.*
 .cache
 public
+.netlify
