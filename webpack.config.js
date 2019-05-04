@@ -7,6 +7,18 @@ const path = require("path")
 const PORT = 3000
 const isProd = process.env.NODE_ENV === "production"
 
+const files = ['index', '200', '400'].map(file =>
+  new HtmlWebpackPlugin({
+    title: 'Axel Fuhrmann',
+    favicon: './src/images/favicon.png',
+    minify: {
+      collapseWhitespace: true
+    },
+    template: './src/index.html',
+    filename: `${file}.html`
+  })
+)
+
 const postcss = {
   loader: "postcss-loader",
   options: {
@@ -72,24 +84,7 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Axel Fuhrmann',
-      favicon: './src/images/favicon.png',
-      minify: {
-        collapseWhitespace: true
-      },
-      template: './src/index.html',
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Axel Fuhrmann',
-      favicon: './src/images/favicon.png',
-      minify: {
-        collapseWhitespace: true
-      },
-      template: './src/index.html',
-      filename: '404.html'
-    }),
+    ...files,
     new ExtractTextPlugin({
       filename: 'main.css',
       disable: !isProd,

@@ -6,3 +6,7 @@ node_modules
 dist
 dbTEST.js
 deploy.js
+.env.*
+.cache
+public
+.netlify

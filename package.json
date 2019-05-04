@@ -45,7 +45,7 @@
     "dev": "webpack-dev-server --mode=development",
     "build": "npm run clean && webpack --mode=production --progress",
     "clean": "rimraf ./dist/*",
-    "deploy": "npm run build && node deploy",
+    "deploy": "npm run build && netlify deploy -p -d dist",
     "lint": "eslint src/. --fix"
   },
   "lint-staged": {
