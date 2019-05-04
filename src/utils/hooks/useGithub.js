@@ -30,14 +30,6 @@ const filterData = data => data
   ], [])
 
 export const useGithub = ({ user, query = {} }) => {
-  if (process.env.NODE_ENV !== 'production') {
-    return {
-      loading: false,
-      error: null,
-      data: fakeData
-    }
-  }
-
   const [data, setData] = useState([])
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -63,7 +55,15 @@ export const useGithub = ({ user, query = {} }) => {
     }
 
     fetchData()
-  }, [])
+  }, [ url ])
+
+  if (process.env.NODE_ENV !== 'production') {
+    return {
+      loading: false,
+      error: null,
+      data: fakeData
+    }
+  }
 
   return {
     data,

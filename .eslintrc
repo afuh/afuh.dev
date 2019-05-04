@@ -18,6 +18,7 @@ parser: babel-eslint
 plugins:
   - react
   - jsx-a11y
+  - react-hooks
 
 extends:
   - eslint:recommended
@@ -88,6 +89,8 @@ rules:
   strict: 0
 
   # React
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
   react/no-deprecated: 'off'
   react/display-name: 'off'
   react/prop-types:
