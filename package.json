@@ -43,9 +43,9 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
-    "build": "npm run clean && webpack --mode=production --progress",
-    "clean": "rimraf ./dist/*",
-    "deploy": "npm run build && netlify deploy -p -d dist",
+    "build": "webpack --mode=production --progress",
+    "prebuild": "rimraf dist",
+    "deploy": "netlify unlink && netlify link --name 2017-axelfuhrmann && netlify deploy -p -d dist",
     "lint": "eslint src/. --fix"
   },
   "lint-staged": {
