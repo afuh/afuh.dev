@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "build": "gatsby build",
-    "deploy": "netlify deploy -p -d public",
+    "deploy": "netlify unlink && netlify link --name 2018-axelfuhrmann && netlify deploy -p -d dist",
     "dev": "gatsby develop",
     "serve": "gatsby serve",
     "lint:css": "stylelint './src/**/*.js'",
