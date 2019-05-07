@@ -45,7 +45,7 @@
     "dev": "webpack-dev-server --mode=development",
     "build": "webpack --mode=production --progress",
     "prebuild": "rimraf dist",
-    "deploy": "netlify unlink && netlify link --name 2017-axelfuhrmann && netlify deploy -p -d dist",
+    "deploy": "surge dist https://v1-axelfuhrmann.surge.sh",
     "lint": "eslint src/. --fix"
   },
   "lint-staged": {
