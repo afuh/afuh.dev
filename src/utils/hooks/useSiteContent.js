@@ -23,6 +23,7 @@ export const useSiteContent = () => {
           name
           url
         }
+        technologies
       }
     }
     `

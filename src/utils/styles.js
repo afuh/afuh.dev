@@ -147,6 +147,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${defaultFont};
     text-rendering: optimizeLegibility;
     color: ${theme.black};
+    background: ${theme.white};
   }
 
   *::selection {

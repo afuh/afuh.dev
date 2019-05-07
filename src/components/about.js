@@ -3,17 +3,17 @@ import PropTypes from 'prop-types'
 
 import { Inner, MarkdownWrapper } from '../utils/UI'
 
-const About = ({ data }) => (
+const About = ({ text }) => (
   <Inner paddingTop>
     <MarkdownWrapper
       as='section'
-      html={data.md.html}
+      html={text.md.html}
     />
   </Inner>
 )
 
 About.propTypes = {
-  data: PropTypes.object.isRequired
+  text: PropTypes.object.isRequired
 }
 
 export default About

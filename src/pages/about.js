@@ -10,7 +10,7 @@ const AboutPage = () => {
 
   return (
     <Layout heading='About'>
-      <About data={aboutPage} />
+      <About text={aboutPage} />
     </Layout>
   )
 }
