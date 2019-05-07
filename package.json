@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "build": "gatsby build",
-    "deploy": "netlify unlink && netlify link --name 2018-axelfuhrmann && netlify deploy -p -d dist",
+    "deploy": "surge public https://v2-axelfuhrmann.surge.sh",
     "dev": "gatsby develop",
     "serve": "gatsby serve",
     "lint:css": "stylelint './src/**/*.js'",
