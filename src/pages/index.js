@@ -47,6 +47,7 @@ export const pageQuery = graphql`
         id
         slug
         title
+        isWork
       }
     }
   }
