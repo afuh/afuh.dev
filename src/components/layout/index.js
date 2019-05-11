@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, ThemeProvider } from "styled-components"
-import { Location } from '@reach/router'
 
 import SEO from '../../utils/seo'
+import withLocation from '../../utils/withLocation'
 import { GlobalStyles, theme } from '../../utils/styles'
 
 import Header from './header'
@@ -18,35 +18,34 @@ const Main = styled.main`
   `};
 `
 
-const Layout = ({ children, seo, heading }) => (
-  <Location>
-    {({ location }) => (
+const Layout = ({ children, seo, heading, location }) => (
+  <>
+    <SEO
+      {...seo}
+      pathname={seo ? seo.pathname : location.pathname}
+    />
+    <ThemeProvider theme={theme}>
       <>
-        <SEO
-          {...seo}
-          pathname={seo ? seo.pathname : location.pathname}
-        />
-        <ThemeProvider theme={theme}>
-          <>
-            <GlobalStyles />
-            <Header heading={heading} />
-            <Main>
-              {children}
-            </Main>
-            <Footer />
-          </>
-        </ThemeProvider>
+        <GlobalStyles />
+        <Header heading={heading} />
+        <Main>
+          {children}
+        </Main>
+        <Footer />
       </>
-    )}
-  </Location>
+    </ThemeProvider>
+  </>
 )
 
 Layout.propTypes = {
   seo: PropTypes.object,
+  location: PropTypes.shape({
+    pathname: PropTypes.string
+  }).isRequired,
   heading: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element
   ]).isRequired
 }
 
-export default Layout
+export default withLocation(Layout)
