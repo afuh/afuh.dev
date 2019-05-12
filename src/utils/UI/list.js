@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import styled from "styled-components"
 import { Link as GatsbyLink } from "gatsby"
 
-import { Inner as ListInner } from './'
-
-const Inner = styled(ListInner)`
+const Wrapper = styled.div`
   ul {
     margin: 0;
     padding: 0;
@@ -28,12 +26,8 @@ const Link = styled(GatsbyLink)`
   }
 `
 
-export const List = ({ data, paddingTop, ...rest }) => (
-  <Inner
-    as='section'
-    paddingTop={paddingTop}
-    {...rest}
-  >
+export const List = ({ data, ...rest }) => (
+  <Wrapper {...rest}>
     <ul>
       {data.map(project => (
         <li key={project.id}>
@@ -45,7 +39,7 @@ export const List = ({ data, paddingTop, ...rest }) => (
         </li>
       ))}
     </ul>
-  </Inner>
+  </Wrapper>
 )
 
 List.propTypes = {

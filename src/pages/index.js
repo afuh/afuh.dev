@@ -32,8 +32,8 @@ const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    site: PropTypes.shape({
-      meta: PropTypes.object.isRequired
+    contentfulProjects: PropTypes.shape({
+      projects: PropTypes.array.isRequired
     })
   })
 }
@@ -44,9 +44,7 @@ export const pageQuery = graphql`
   query HOME_QUERY {
     contentfulProjects {
       projects {
-        id
-        slug
-        title
+        ...projectInfo
         isWork
       }
     }

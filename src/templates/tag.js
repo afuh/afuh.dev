@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from "gatsby"
 
 import Layout from '../components/layout'
-import { List } from '../utils/UI'
+import { List, Inner } from '../utils/UI'
 
 const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
   const projects = allContentfulProject.edges.map(({ node }) => node)
@@ -11,20 +11,15 @@ const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
   return (
     <Layout
       heading={(
-        <>
-          <Link
-            to='/tag'
-          >
-            <h1>tags</h1>
-          </Link>
-          <h2>{pageContext.tag}</h2>
-        </>
+        <Link to='/tag'><h1>{pageContext.tag}</h1></Link>
       )}
     >
-      <List
-        data={projects}
+      <Inner
+        as='section'
         paddingTop
-      />
+      >
+        <List data={projects} />
+      </Inner>
     </Layout>
   )
 }
@@ -45,9 +40,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          id
-          slug
-          title
+          ...projectInfo
         }
       }
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
-import { List } from '../utils/UI'
+import { List, Inner } from '../utils/UI'
 
 const AllTags = ({ pageContext: { allTags } }) => {
   const formatTags = allTags.reduce((acc, tag) => [
@@ -16,10 +16,12 @@ const AllTags = ({ pageContext: { allTags } }) => {
 
   return (
     <Layout heading='tags'>
-      <List
-        data={formatTags}
+      <Inner
+        as='section'
         paddingTop
-      />
+      >
+        <List data={formatTags} />
+      </Inner>
     </Layout>
   )
 }

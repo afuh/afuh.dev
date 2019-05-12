@@ -36,8 +36,7 @@ export default ProjectPage
 export const pageQuery = graphql`
   query PROJECT_PAGE_QUERY ($slug: String!) {
     project: contentfulProject(slug: { eq: $slug }) {
-      title
-      slug
+      ...projectInfo
       url
       code
       tags
