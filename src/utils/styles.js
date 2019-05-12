@@ -4,6 +4,7 @@ export const theme = {
   black: "#212129",
   white: "#FEFEFE",
   gray: "#9F9FA3",
+  softGray: "#9F9FA31a",
   accent: "#78ff78",
   innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)',
   globalWidth: 600,

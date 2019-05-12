@@ -13,7 +13,7 @@ const Wrapper = styled.div`
       content: '';
       display: block;
       height: 2px;
-      background-color: ${({ theme }) => theme.gray}1a;
+      background-color: ${({ theme }) => theme.softGray};
       margin: 20px auto 0;
     }
   }
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
       display: inline;
       padding: 5px 10px;
       margin-right: 10px;
-      background: ${({ theme }) => theme.gray}1a;
+      background: ${({ theme }) => theme.softGray};
       font-weight: 700;
       font-size: 1.2rem;
 
