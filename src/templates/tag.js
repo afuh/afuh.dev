@@ -21,7 +21,10 @@ const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
         </>
       )}
     >
-      <List data={projects} />
+      <List
+        data={projects}
+        paddingTop
+      />
     </Layout>
   )
 }

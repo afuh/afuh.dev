@@ -16,7 +16,10 @@ const AllTags = ({ pageContext: { allTags } }) => {
 
   return (
     <Layout heading='tags'>
-      <List data={formatTags} />
+      <List
+        data={formatTags}
+        paddingTop
+      />
     </Layout>
   )
 }

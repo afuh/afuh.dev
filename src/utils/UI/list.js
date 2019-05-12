@@ -28,10 +28,11 @@ const Link = styled(GatsbyLink)`
   }
 `
 
-export const List = ({ data }) => (
+export const List = ({ data, paddingTop, ...rest }) => (
   <Inner
     as='section'
-    paddingTop
+    paddingTop={paddingTop}
+    {...rest}
   >
     <ul>
       {data.map(project => (
@@ -48,7 +49,12 @@ export const List = ({ data }) => (
 )
 
 List.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  paddingTop: PropTypes.bool.isRequired
+}
+
+List.defaultProps = {
+  paddingTop: false
 }
 
 export default List
