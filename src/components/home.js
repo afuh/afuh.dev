@@ -63,6 +63,7 @@ const Wrapper = styled.div`
   flex-direction: column;
 
   ${media.phone(css`
+    width: 100%;
     margin: 60px 0 0;
   `)}
 `

@@ -4,7 +4,7 @@ import styled, { css, ThemeProvider } from "styled-components"
 
 import SEO from '../../utils/seo'
 import withLocation from '../../utils/withLocation'
-import { GlobalStyles, theme } from '../../utils/styles'
+import { GlobalStyles, theme, media } from '../../utils/styles'
 
 import Header from './header'
 import Footer from './footer'
@@ -16,6 +16,13 @@ const Main = styled.main`
     min-height: calc(100vh - ${theme.headerHeight.desktop}px);
     background: ${theme.white};
   `};
+
+  ${media.phone(css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `)}
+
 `
 
 const Layout = ({ children, seo, heading, location }) => (
