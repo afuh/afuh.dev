@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import fakeData from '../fakeGithubData'
 
 const makeUrl = (user, query) => {
   const options = {
@@ -56,14 +55,6 @@ export const useGithub = ({ user, query = {} }) => {
 
     fetchData()
   }, [ url ])
-
-  if (process.env.NODE_ENV !== 'production') {
-    return {
-      loading: false,
-      error: null,
-      data: fakeData
-    }
-  }
 
   return {
     data,
