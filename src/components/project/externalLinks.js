@@ -46,13 +46,18 @@ const Wrapper = styled.div`
   `)}
 `
 
+const External = styled.a.attrs({
+  rel: "nofollow noopener noreferrer",
+  target: "_blank"
+})``
+
 const ExternalLinks = ({ id }) => {
   const { url, code } = useProjectData()
 
   return (
     <Wrapper id={id}>
-      {url && <a href={url}>Live</a>}
-      {code && <a href={code}>Code</a>}
+      <External href={url}>Live</External>
+      {code && <External href={code}>Code</External>}
     </Wrapper>
   )
 }
