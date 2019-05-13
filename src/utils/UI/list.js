@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Link as GatsbyLink } from "gatsby"
+
+import { useViewedProject } from '../../utils/hooks'
 
 const Wrapper = styled.div`
   ul {
@@ -24,23 +26,33 @@ const Link = styled(GatsbyLink)`
   &:focus {
     color: ${({ theme }) => theme.gray};
   }
+
+  ${({ checked }) => checked && css`
+    color: #6b6b6b;
+  `};
 `
 
-export const List = ({ data, ...rest }) => (
-  <Wrapper {...rest}>
-    <ul>
-      {data.map(project => (
-        <li key={project.id}>
-          <Link
-            to={"/" + project.slug}
-          >
-            {project.title}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </Wrapper>
-)
+export const List = ({ data, ...rest }) => {
+  const { addViewedProject, viewedProjects } = useViewedProject()
+
+  return (
+    <Wrapper {...rest}>
+      <ul>
+        {data.map(project => (
+          <li key={project.id}>
+            <Link
+              checked={viewedProjects.some(slug => slug === project.slug)}
+              onClick={() => addViewedProject(project.slug)}
+              to={"/" + project.slug}
+            >
+              {project.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Wrapper>
+  )
+}
 
 List.propTypes = {
   data: PropTypes.array.isRequired,
