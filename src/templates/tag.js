@@ -11,7 +11,10 @@ const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
   return (
     <Layout
       heading={(
-        <Link to='/tag'><h1>{pageContext.tag}</h1></Link>
+        <>
+          <h2>{pageContext.tag}</h2>
+          <Link to='/tag'><h1>tags</h1></Link>
+        </>
       )}
     >
       <Inner
