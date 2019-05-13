@@ -1,41 +1,57 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import styled, { css, keyframes } from "styled-components"
-
-const fade = keyframes`
-	0% {
-		opacity: 0.1;
-	}
-	100% {
-		opacity: 1;
-	}
-`
+import styled, { css } from "styled-components"
 
 const Span = styled.span`
-  ${({ time }) => time && css`
-    animation ${fade} ${time}s ease;
-  `}
+	transition: all .5s ease-in-out;
+
+	${({ time, initialOpacity }) => css`
+		transition-delay: ${time}s;
+		opacity: ${!time ? initialOpacity : 1};
+	`};
 `
 
-export const FadeInText = ({ text, duration }) => {
-  const addDec = int => parseFloat(int.toFixed(1))
-  const random = max => Math.random() * (0.0 - addDec(max)) + addDec(max)
+const Letter = ({ letter, duration, initialOpacity }) => {
+  const [time, setTime] = useState(0)
 
-  return text.split("").map((letter, i) => (
+  useEffect(() => {
+    const addDec = int => parseFloat(int.toFixed(1))
+    const random = max => Math.random() * (0.0 - addDec(max)) + addDec(max)
+
+    setTime(random(duration))
+  }, [ duration ])
+
+  return (
     <Span
-      key={i}
-      time={random(duration)}
+      time={time}
+      initialOpacity={initialOpacity}
     >
       {letter}
     </Span>
-  ))
+  )
 }
+
+Letter.propTypes = {
+  letter: PropTypes.string.isRequired,
+  duration: PropTypes.number.isRequired,
+  initialOpacity: PropTypes.number.isRequired
+}
+
+Letter.defaultProps = {
+  duration: 1,
+  initialOpacity: 0.1
+}
+
+export const FadeInText = props => (
+  props.text.split("").map((letter, i) => (
+    <Letter
+      key={i}
+      letter={letter}
+      {...props}
+    />
+  ))
+)
 
 FadeInText.propTypes = {
-  text: PropTypes.string.isRequired,
-  duration: PropTypes.number
-}
-
-FadeInText.defaultProps = {
-  duration: 2
+  text: PropTypes.string.isRequired
 }
