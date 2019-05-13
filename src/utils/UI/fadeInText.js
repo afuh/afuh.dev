@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css } from "styled-components"
 
 const Span = styled.span`
-	transition: all .5s ease-in-out;
+	transition: opacity .5s ease-in-out;
 
 	${({ time, initialOpacity }) => css`
 		transition-delay: ${time}s;
@@ -42,16 +42,16 @@ Letter.defaultProps = {
   initialOpacity: 0.1
 }
 
-export const FadeInText = props => (
-  props.text.split("").map((letter, i) => (
-    <Letter
-      key={i}
-      letter={letter}
-      {...props}
-    />
-  ))
-)
+const Wrapper = styled.div``
 
-FadeInText.propTypes = {
-  text: PropTypes.string.isRequired
-}
+export const FadeInText = props => (
+  <Wrapper {...props}>
+    {props.children.split("").map((letter, i) => (
+      <Letter
+        key={i}
+        letter={letter}
+        {...props}
+      />
+    ))}
+  </Wrapper>
+)

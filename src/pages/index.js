@@ -15,12 +15,13 @@ const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
     <Layout
       heading={(
         <>
-          <h1>
-            <FadeInText
-              text={title}
-              duration={5}
-            />
-          </h1>
+          <FadeInText
+            as="h1"
+            duration={0.6}
+            initialOpacity={0.01}
+          >
+            {title}
+          </FadeInText>
           <h2>{description}</h2>
         </>
       )}
