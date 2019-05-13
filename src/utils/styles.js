@@ -145,10 +145,14 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
     letter-spacing: 0.02rem;
-    font-family: ${defaultFont};
-    text-rendering: optimizeLegibility;
     color: ${theme.black};
     background: ${theme.white};
+    font-variant-ligatures: none;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    text-decoration-skip-ink: auto;
+
+    font-family: ${defaultFont};
   }
 
   *::selection {
