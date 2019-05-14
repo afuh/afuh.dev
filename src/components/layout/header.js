@@ -57,7 +57,7 @@ const Wrapper = styled.header`
   }
 `
 
-const Link = styled(GatsbyLink)`
+export const Link = styled(GatsbyLink)`
   color: ${({ theme }) => theme.gray};
 
   &:hover,

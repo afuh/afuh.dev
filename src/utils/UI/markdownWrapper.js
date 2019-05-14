@@ -5,12 +5,12 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   max-width: ${({ theme }) => theme.globalWidth}px;
   margin-top: 20px;
+  font-family: "Open Sans", sans-serif;
 
   p, li {
     margin-top: 0;
-    font-size: 1.7rem;
-    line-height: 1.6;
-    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
   }
 
   a {
@@ -24,6 +24,15 @@ const Wrapper = styled.div`
       display: list-item;
       text-align: match-parent;
     }
+  }
+
+  hr {
+    display: block;
+    height: 2px;
+    width: 120px;
+    background-color: ${({ theme }) => theme.softGray};
+    margin: 30px auto;
+    border-width: 0;
   }
 `
 

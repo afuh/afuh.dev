@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
-        color: siteConfig.accent,
+        color: "#78ff78",
         showSpinner: false
       }
     },

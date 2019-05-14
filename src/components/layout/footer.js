@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import { Link as GatsbyLink } from 'gatsby'
 
+import { Link } from './header'
 import { useSiteMeta } from '../../utils/hooks'
 import { media } from '../../utils/styles'
 
@@ -40,17 +40,6 @@ const Wrapper = styled.footer`
         height: 100%;
       }
     }
-  }
-`
-
-const Link = styled(GatsbyLink)`
-  color: ${({ theme }) => theme.gray};
-
-  &:hover,
-  &:active,
-  &:focus,
-  &.active {
-    color: ${({ theme }) => theme.white};
   }
 `
 
