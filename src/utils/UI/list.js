@@ -55,12 +55,7 @@ export const List = ({ data, ...rest }) => {
 }
 
 List.propTypes = {
-  data: PropTypes.array.isRequired,
-  paddingTop: PropTypes.bool.isRequired
-}
-
-List.defaultProps = {
-  paddingTop: false
+  data: PropTypes.array.isRequired
 }
 
 export default List

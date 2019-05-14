@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Inner, MarkdownWrapper } from '../utils/UI'
 
 const About = ({ text }) => (
-  <Inner paddingTop>
+  <Inner margin>
     <MarkdownWrapper
       as='section'
       html={text.md.html}

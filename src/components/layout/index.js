@@ -10,19 +10,13 @@ import Header from './header'
 import Footer from './footer'
 
 const Main = styled.main`
-  position: relative;
-
-  ${({ theme }) => theme && css`
-    min-height: calc(100vh - ${theme.headerHeight.desktop}px);
-    background: ${theme.white};
-  `};
+  min-height: calc(100vh - ${({ theme }) => theme.headerHeight.desktop}px);
 
   ${media.phone(css`
     display: flex;
     justify-content: center;
     align-items: center;
   `)}
-
 `
 
 const Layout = ({ children, seo, heading, location }) => (

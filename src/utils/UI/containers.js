@@ -1,5 +1,5 @@
 import { number, bool } from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Inner = styled.div`
   width: 100%;
@@ -7,17 +7,15 @@ export const Inner = styled.div`
   align-items: center;
 
   ${({ theme, padding }) => theme.globalPadding(padding)}
-  ${({ paddingTop }) => paddingTop && css`
-    padding-top: 120px;
-  `};
+  ${({ theme, margin }) => margin && theme.globalMargin()}
 `
 
 Inner.propTypes = {
   padding: number.isRequired,
-  paddingTop: bool.isRequired
+  margin: bool.isRequired
 }
 
 Inner.defaultProps = {
   padding: 6,
-  paddingTop: false
+  margin: false
 }

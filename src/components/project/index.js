@@ -9,16 +9,15 @@ import { Inner } from '../../utils/UI'
 import { media } from '../../utils/styles'
 
 const Wrapper = styled.div`
-  transform: translateY(-104px);
   display: flex;
-  margin: 40px 0 60px;
+  transform: translateY(-104px);
+  ${({ theme }) => theme.globalMargin()}
 
   ${media.custom(880, css`
     transform: translateY(0);
   `)}
 
   ${media.phone(css`
-    margin-top: 20px;
     flex-direction: column;
 
     #content {

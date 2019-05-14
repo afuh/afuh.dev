@@ -19,7 +19,7 @@ const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
     >
       <Inner
         as='section'
-        paddingTop
+        margin
       >
         <List data={projects} />
       </Inner>

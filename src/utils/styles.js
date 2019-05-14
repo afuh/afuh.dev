@@ -6,12 +6,20 @@ export const theme = {
   gray: "#9F9FA3",
   softGray: "#9F9FA31a",
   accent: "#78ff78",
-  innerShadow: 'inset -2px 4px 8px rgba(0, 0, 0, 0.25)',
   globalWidth: 600,
   headerHeight: {
     desktop: 220,
     mobile: 110
   },
+  globalMargin: (val = 40) => css`
+    margin-top: ${val}px;
+    margin-bottom: ${val}px;
+
+    ${media.phone(css`
+      margin-top: ${val/2}px;
+      margin-bottom: ${val/2}px;
+    `)}
+  `,
   anchorHover: () => css`
     box-shadow: inset 0 -0.5rem ${theme.accent}80;
     transition: box-shadow .1s ease;

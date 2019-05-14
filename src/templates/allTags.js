@@ -18,7 +18,7 @@ const AllTags = ({ pageContext: { allTags } }) => {
     <Layout heading='tags'>
       <Inner
         as='section'
-        paddingTop
+        margin
       >
         <List data={formatTags} />
       </Inner>
