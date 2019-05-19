@@ -5,7 +5,7 @@ import styled, { css, ThemeProvider } from "styled-components"
 import SEO from '../../utils/seo'
 import withLocation from '../../utils/withLocation'
 import { GlobalStyles, media } from '../../utils/styles'
-import { theme } from '../../utils/theme'
+import { useSwitchTheme } from '../../utils/hooks'
 
 import Header from './header'
 import Footer from './footer'
@@ -20,24 +20,28 @@ const Main = styled.main`
   `)}
 `
 
-const Layout = ({ children, seo, heading, location }) => (
-  <>
-    <SEO
-      {...seo}
-      pathname={seo ? seo.pathname : location.pathname}
-    />
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyles />
-        <Header heading={heading} />
-        <Main>
-          {children}
-        </Main>
-        <Footer />
-      </>
-    </ThemeProvider>
-  </>
-)
+const Layout = ({ children, seo, heading, location }) => {
+  const { theme } = useSwitchTheme()
+
+  return (
+    <>
+      <SEO
+        {...seo}
+        pathname={seo ? seo.pathname : location.pathname}
+      />
+      <ThemeProvider theme={theme}>
+        <>
+          <GlobalStyles />
+          <Header heading={heading} />
+          <Main>
+            {children}
+          </Main>
+          <Footer />
+        </>
+      </ThemeProvider>
+    </>
+  )
+}
 
 Layout.propTypes = {
   seo: PropTypes.object,

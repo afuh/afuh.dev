@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from "styled-components"
 
+import { media } from '../../utils/styles'
+
 const Span = styled.span`
 	transition: opacity .5s ease-in-out;
 
@@ -42,7 +44,13 @@ Letter.defaultProps = {
   initialOpacity: 0.1
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  display: inline-block;
+
+  ${media.phone(css`
+    display: block;
+  `)}
+`
 
 export const FadeInText = props => (
   <Wrapper {...props}>

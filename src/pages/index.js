@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 
 import { FadeInText } from '../utils/UI'
-import { useSiteMeta } from '../utils/hooks'
+import { useSiteMeta, useSwitchTheme } from '../utils/hooks'
 
 import Layout from '../components/layout'
 import Home from '../components/home'
 
 const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
   const { title, description } = useSiteMeta()
+  const { switchTheme } = useSwitchTheme()
 
   return (
     <Layout
@@ -19,6 +20,7 @@ const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
             as="h1"
             duration={0.6}
             initialOpacity={0.01}
+            onClick={() => switchTheme()}
           >
             {title}
           </FadeInText>
