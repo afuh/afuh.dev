@@ -1,4 +1,4 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 })
 
@@ -10,23 +10,23 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
-    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-sitemap',
     {
-      resolve: `gatsby-plugin-nprogress`,
+      resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: "#78ff78",
+        color: '#78ff78',
         showSpinner: false
       }
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
         fonts: [
           {
             family: 'Open Sans',
-            variants: [`400`, `700`, '800']
+            variants: ['400', '700', '800']
           }
         ]
       }
@@ -35,12 +35,21 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-external-links'
+          'gatsby-remark-external-links',
+          {
+            resolve: 'gatsby-remark-images-contentful',
+            options: {
+              maxWidth: 600,
+              linkImagesToOriginal: false,
+              withWebp: true,
+              backgroundColor: 'transparent'
+            }
+          }
         ]
       }
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GA,
         anonymize: true,
@@ -48,12 +57,12 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: siteConfig.title,
         short_name: siteConfig.title,
         description: siteConfig.description,
-        start_url: "/",
+        start_url: '/',
         background_color: siteConfig.backgroundColor,
         theme_color: siteConfig.themeColor,
         display: 'minimal-ui',
@@ -61,7 +70,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.TOKEN
