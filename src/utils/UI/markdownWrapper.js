@@ -7,6 +7,11 @@ const Wrapper = styled.div`
   margin-top: 20px;
   font-family: "Open Sans", sans-serif;
 
+  h2 {
+    margin-top: 60px;
+    border-bottom: 1px solid ${({ theme }) => theme.softGray};
+  }
+
   p, li {
     margin-top: 0;
     font-size: 1.6rem;
