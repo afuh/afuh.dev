@@ -4,7 +4,8 @@ import styled, { css, ThemeProvider } from "styled-components"
 
 import SEO from '../../utils/seo'
 import withLocation from '../../utils/withLocation'
-import { GlobalStyles, theme, media } from '../../utils/styles'
+import { GlobalStyles, media } from '../../utils/styles'
+import { theme } from '../../utils/theme'
 
 import Header from './header'
 import Footer from './footer'

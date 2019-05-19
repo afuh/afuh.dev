@@ -1,51 +1,5 @@
 import { css, createGlobalStyle } from 'styled-components'
 
-export const theme = {
-  black: "#212129",
-  white: "#FEFEFE",
-  gray: "#9F9FA3",
-  softGray: "#9F9FA31a",
-  accent: "#78ff78",
-  globalWidth: 600,
-  headerHeight: {
-    desktop: 220,
-    mobile: 110
-  },
-  globalMargin: (val = 40) => css`
-    margin-top: ${val}px;
-    margin-bottom: ${val}px;
-
-    ${media.phone(css`
-      margin-top: ${val/2}px;
-    `)}
-  `,
-  anchorHover: () => css`
-    box-shadow: inset 0 -0.2rem ${theme.gray}80;
-    transition: box-shadow .1s ease;
-
-    &:hover,
-    &:active,
-    &:focus {
-      box-shadow: inset 0 -1rem ${theme.accent}80;
-    }
-  `,
-  globalPadding: (padding = 6) => css`
-    padding: 0 ${padding}% 0 ${padding*2}%;
-
-    ${media.medium(css`
-      padding: 0 ${padding*2}% 0 ${padding*4}%;
-    `)}
-
-    ${media.xlarge(css`
-      padding: 0 ${padding*3}% 0 ${padding*6}%;
-    `)}
-
-    ${media.phone(css`
-      padding: 0 ${padding}%;
-    `)}
-  `
-}
-
 const screenBreak = {
   mobile: 992,
   phone: 650,
@@ -127,7 +81,7 @@ const typography = css`
 
   a {
     text-decoration: none;
-    color: ${theme.black};
+    color: ${({ theme }) => theme.black};
 
     &:hover,
     &:active,
@@ -148,23 +102,25 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    ${({ theme }) => css`
+      color: ${theme.black};
+      background: ${theme.white};
+
+      *::selection {
+        color: ${theme.black};
+        background: ${theme.accent};
+      }
+    `};
+
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
     letter-spacing: 0.02rem;
-    color: ${theme.black};
-    background: ${theme.white};
     font-variant-ligatures: none;
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     text-decoration-skip-ink: auto;
-
     font-family: ${defaultFont};
-  }
-
-  *::selection {
-    color: ${theme.black};
-    background: ${theme.accent};
   }
 
   ${typography}
