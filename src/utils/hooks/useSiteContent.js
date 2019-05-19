@@ -14,16 +14,10 @@ export const useSiteContent = () => {
             html
           }
         }
-        email
         social {
           name
           url
         }
-        portfolios {
-          name
-          url
-        }
-        technologies
       }
     }
     `
