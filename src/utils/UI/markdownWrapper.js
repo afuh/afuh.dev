@@ -8,8 +8,8 @@ const Wrapper = styled.div`
   font-family: "Open Sans", sans-serif;
 
   h2 {
-    margin-top: 60px;
-    border-bottom: 1px solid ${({ theme }) => theme.softGray};
+    margin-top: 40px;
+    margin-bottom: 8px;
   }
 
   p, li {
