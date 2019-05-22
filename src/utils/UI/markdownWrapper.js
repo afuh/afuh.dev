@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   margin-top: 20px;
   font-family: "Open Sans", sans-serif;
 
-  h2 {
+  h2, h3 {
     margin-top: 40px;
     margin-bottom: 8px;
   }
@@ -38,6 +38,13 @@ const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.softGray};
     margin: 30px auto;
     border-width: 0;
+  }
+
+  blockquote {
+    border-left: 4px solid ${({ theme }) => theme.softGray};
+    padding-left: 20px;
+    margin-left: 0;
+    font-style: italic;
   }
 `
 

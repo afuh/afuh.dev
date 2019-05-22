@@ -14,7 +14,7 @@ const Wrapper = styled.div`
       display: block;
       height: 2px;
       background-color: ${({ theme }) => theme.softGray};
-      margin: 20px auto 0;
+      margin: 40px auto 0;
     }
   }
 

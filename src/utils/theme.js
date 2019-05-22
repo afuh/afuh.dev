@@ -21,14 +21,15 @@ export const theme = {
       margin-top: ${val/2}px;
     `)}
   `,
-  anchorHover: () => css`
+  anchorHover: ({ theme }) => css`
     box-shadow: inset 0 -0.2rem ${theme.gray}80;
     transition: box-shadow .1s ease;
 
     &:hover,
     &:active,
     &:focus {
-      box-shadow: inset 0 -1rem ${theme.accent}80;
+      box-shadow: inset 0 -2rem ${theme.black};
+      color: ${theme.white};
     }
   `,
   globalPadding: (padding = 6) => css`
