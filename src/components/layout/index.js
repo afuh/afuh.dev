@@ -11,9 +11,8 @@ import Header from './header'
 import Footer from './footer'
 
 const Main = styled.main`
-  min-height: calc(100vh - ${({ theme }) => theme.headerHeight.desktop}px);
-
   ${media.phone(css`
+    min-height: calc(100vh - ${({ theme }) => theme.headerHeight.desktop}px);
     display: flex;
     justify-content: center;
     align-items: center;

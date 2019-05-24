@@ -17,6 +17,7 @@ const Wrapper = styled.section`
   ${media.phone(css`
     width: 100%;
   `)}
+
 `
 
 const Home = ({ data }) => {

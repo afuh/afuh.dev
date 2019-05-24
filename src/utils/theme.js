@@ -15,10 +15,9 @@ export const theme = {
   },
   globalMargin: (val = 40) => css`
     margin-top: ${val}px;
-    margin-bottom: ${val}px;
 
     ${media.phone(css`
-      margin-top: ${val/2}px;
+      margin: 40px 0;
     `)}
   `,
   anchorHover: ({ theme }) => css`
