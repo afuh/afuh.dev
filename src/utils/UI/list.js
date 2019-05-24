@@ -38,14 +38,14 @@ export const List = ({ data, ...rest }) => {
   return (
     <Wrapper {...rest}>
       <ul>
-        {data.map(project => (
-          <li key={project.id}>
+        {data.map(item => (
+          <li key={item.slug}>
             <Link
-              checked={viewedProjects.some(slug => slug === project.slug)}
-              onClick={() => addViewedProject(project.slug)}
-              to={"/" + project.slug}
+              checked={viewedProjects.some(slug => slug === item.slug)}
+              onClick={() => addViewedProject(item.slug)}
+              to={"/" + item.slug}
             >
-              {project.title}
+              {item.title}
             </Link>
           </li>
         ))}

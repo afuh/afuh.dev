@@ -4,15 +4,11 @@ import PropTypes from 'prop-types'
 import Layout from '../components/layout'
 import { List, Inner } from '../utils/UI'
 
-const AllTags = ({ pageContext: { allTags } }) => {
-  const formatTags = allTags.reduce((acc, tag) => [
-    ...acc,
-    {
-      id: tag,
-      slug: 'tag/' + tag,
-      title: tag
-    }
-  ], [])
+const AllTags = ({ pageContext: { tags } }) => {
+  const formatTags = tags.map(tag => ({
+    slug: `tag/${tag.name}`,
+    title: `${tag.name} (${tag.totalCount})`
+  }))
 
   return (
     <Layout heading='tags'>
