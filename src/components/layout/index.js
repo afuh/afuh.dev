@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import styled, { css, ThemeProvider } from "styled-components"
 
 import SEO from '../../utils/seo'
-import withLocation from '../../utils/withLocation'
 import { GlobalStyles, media } from '../../utils/styles'
-import { useSwitchTheme } from '../../utils/hooks'
+import { useSwitchTheme, useLocation } from '../../utils/hooks'
 
 import Header from './header'
 import Footer from './footer'
@@ -19,8 +18,9 @@ const Main = styled.main`
   `)}
 `
 
-const Layout = ({ children, seo, heading, location }) => {
+const Layout = ({ children, seo, heading }) => {
   const { theme } = useSwitchTheme()
+  const { location } = useLocation()
 
   return (
     <>
@@ -44,13 +44,10 @@ const Layout = ({ children, seo, heading, location }) => {
 
 Layout.propTypes = {
   seo: PropTypes.object,
-  location: PropTypes.shape({
-    pathname: PropTypes.string
-  }).isRequired,
   heading: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element
   ]).isRequired
 }
 
-export default withLocation(Layout)
+export default Layout
