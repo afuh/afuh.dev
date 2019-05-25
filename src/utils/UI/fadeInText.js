@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createElement } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from "styled-components"
 
 import { media } from '../../utils/styles'
+
+const isSSR = typeof window === 'undefined'
 
 const Span = styled.span`
 	transition: opacity .5s ease-in-out;
@@ -11,6 +13,14 @@ const Span = styled.span`
 		transition-delay: ${time}s;
 		opacity: ${!time ? initialOpacity : 1};
 	`};
+`
+
+const Wrapper = styled.div`
+  display: inline-block;
+
+  ${media.phone(css`
+    display: block;
+  `)}
 `
 
 const Letter = ({ letter, duration, initialOpacity }) => {
@@ -44,22 +54,22 @@ Letter.defaultProps = {
   initialOpacity: 0.1
 }
 
-const Wrapper = styled.div`
-  display: inline-block;
-
-  ${media.phone(css`
-    display: block;
-  `)}
-`
-
 export const FadeInText = props => (
-  <Wrapper {...props}>
-    {props.children.split("").map((letter, i) => (
-      <Letter
-        key={i}
-        letter={letter}
-        {...props}
-      />
-    ))}
-  </Wrapper>
+  isSSR ?
+    createElement(props.as, null, props.children) :
+    (
+      <Wrapper {...props}>
+        {props.children.split("").map((letter, i) => (
+          <Letter
+            key={i}
+            letter={letter}
+            {...props}
+          />
+        ))}
+      </Wrapper>
+    )
 )
+
+FadeInText.propTypes = {
+  as: PropTypes.string
+}
