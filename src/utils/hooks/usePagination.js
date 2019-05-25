@@ -21,10 +21,10 @@ export const usePagination = () => {
   return projects.reduce((acc, project, i) => {
     if (project.slug === pathname) {
       return {
-        next: projects.length === i + 1 ? null : `/${projects[i + 1].slug}`,
-        prev: i === 0 ? null : `/${projects[i - 1].slug}`
+        next: projects.length === i + 1 ? acc.prev : projects[i + 1].slug,
+        prev: i === 0 ? acc.next : projects[i - 1].slug
       }
     }
     return acc
-  }, {})
+  }, { prev: '', next: '' })
 }

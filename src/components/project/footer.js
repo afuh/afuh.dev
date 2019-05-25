@@ -1,11 +1,22 @@
 import React from 'react'
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
+import Pagination from './pagination'
 
 import { useProjectData } from '../../utils/hooks'
+import { media } from '../../utils/styles'
 
 const Wrapper = styled.div`
   padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ${media.phone(css`
+    padding: 20px 0 0;
+    display: block;
+  `)}
 
   .tag-box {
     display: inline;
@@ -23,11 +34,11 @@ const Wrapper = styled.div`
   }
 `
 
-const Footer = () => {
+const Tags = () => {
   const { tags } = useProjectData()
 
   return (
-    <Wrapper>
+    <div>
       {tags.map(tag => (
         <div
           key={tag}
@@ -36,8 +47,15 @@ const Footer = () => {
           <Link to={`/tag/${tag}`}>{tag}</Link>
         </div>
       ))}
-    </Wrapper>
+    </div>
   )
 }
+
+const Footer = () => (
+  <Wrapper>
+    <Tags />
+    <Pagination />
+  </Wrapper>
+)
 
 export default Footer
