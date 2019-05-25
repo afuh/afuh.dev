@@ -10,14 +10,12 @@ const Wrapper = styled.section`
   flex-direction: column;
 
   ${({ theme }) => css`
-    min-height: calc(100vh - ${theme.headerHeight.desktop}px);
     ${theme.globalMargin(80)}
   `};
 
   ${media.phone(css`
     width: 100%;
   `)}
-
 `
 
 const Home = ({ data }) => {
