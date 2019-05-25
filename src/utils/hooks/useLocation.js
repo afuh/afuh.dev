@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { globalHistory } from '@reach/router'
 
 export const useLocation = () => {
+  console.log(globalHistory.location.pathname)
   const initialState = {
     location: globalHistory.location
   }
