@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link as GatsbyLink } from "gatsby"
+import { Link as GatsbyLink, navigate } from "gatsby"
 import styled, { css } from "styled-components"
+import mousetrap from "mousetrap"
 
 import { usePagination, useViewedProject } from '../../utils/hooks'
 import { Arrow } from '../../utils/UI/icons'
@@ -52,18 +53,14 @@ const Link = styled(GatsbyLink)`
   `)}
 `
 
-const Button = ({ children, slug }) => {
-  const { addViewedProject } = useViewedProject()
-
-  return (
-    <Link
-      to={'/' + slug}
-      onClick={() => addViewedProject(slug)}
-    >
-      {children}
-    </Link>
-  )
-}
+const Button = ({ children, slug, ...rest }) => (
+  <Link
+    to={'/' + slug}
+    {...rest}
+  >
+    {children}
+  </Link>
+)
 
 Button.propTypes = {
   slug: PropTypes.string.isRequired
@@ -71,13 +68,36 @@ Button.propTypes = {
 
 const Pagination = () => {
   const { next, prev } = usePagination()
+  const { addViewedProject } = useViewedProject()
+
+  useEffect(() => {
+    mousetrap.bind('right', () => {
+      navigate(next)
+      addViewedProject(next)
+    })
+    mousetrap.bind('left', () => {
+      navigate(prev)
+      addViewedProject(prev)
+    })
+
+    return () => {
+      mousetrap.unbind('left')
+      mousetrap.unbind('right')
+    }
+  })
 
   return (
     <Wrapper>
-      <Button slug={prev}>
+      <Button
+        slug={prev}
+        onClick={() => addViewedProject(prev)}
+      >
         <Arrow.left/>
       </Button>
-      <Button slug={next}>
+      <Button
+        slug={next}
+        onClick={() => addViewedProject(next)}
+      >
         <Arrow.right/>
       </Button>
     </Wrapper>
