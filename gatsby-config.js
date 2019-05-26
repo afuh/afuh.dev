@@ -1,25 +1,55 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 })
 
-const config = require('./siteConfig')
+const siteConfig = require('./config/siteConfig')
 
 module.exports = {
   siteMetadata: {
-    ...config
+    ...siteConfig
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-sitemap',
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: 'gatsby-plugin-nprogress',
       options: {
-        pathToConfigModule: `src/utils/typography.js`
+        color: '#78ff78',
+        showSpinner: false
       }
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Open Sans',
+            variants: ['400', '700', '800']
+          }
+        ]
+      }
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-external-links',
+          {
+            resolve: 'gatsby-remark-images-contentful',
+            options: {
+              maxWidth: 600,
+              linkImagesToOriginal: false,
+              withWebp: true,
+              backgroundColor: 'transparent'
+            }
+          }
+        ]
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GA,
         anonymize: true,
@@ -27,29 +57,27 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: config.title,
-        short_name: config.title,
-        description: config.description,
-        start_url: "/",
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
+        name: siteConfig.title,
+        short_name: siteConfig.title,
+        description: siteConfig.description,
+        start_url: '/',
+        background_color: siteConfig.backgroundColor,
+        theme_color: siteConfig.themeColor,
         display: 'minimal-ui',
         icon: 'src/assets/icon-512x512.png'
       }
     },
-    'gatsby-plugin-offline',
     {
-      resolve: `gatsby-plugin-netlify`,
+      resolve: 'gatsby-source-contentful',
       options: {
-        headers: {
-          "/sw.js": [
-            "Cache-Control: no-cache"
-          ]
-        }
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.TOKEN
       }
     },
-    'gatsby-plugin-netlify-cache'
+    'gatsby-plugin-offline',
+    'gatsby-plugin-netlify-cache',
+    'gatsby-plugin-netlify'
   ]
 }
