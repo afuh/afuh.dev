@@ -65,7 +65,7 @@ module.exports = {
         start_url: '/',
         background_color: siteConfig.backgroundColor,
         theme_color: siteConfig.themeColor,
-        display: 'minimal-ui',
+        display: 'standalone',
         icon: 'src/assets/icon-512x512.png'
       }
     },
