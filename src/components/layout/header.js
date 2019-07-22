@@ -71,7 +71,7 @@ export const Link = styled(GatsbyLink)`
 const Heading = ({ data }) => (
   <div className='heading'>
     {typeof data === 'string' ?
-      <h1>{data}</h1> :
+      <Link to='/'><h1>{data}</h1></Link> :
       data
     }
   </div>
