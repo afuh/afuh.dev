@@ -7,7 +7,6 @@ const Wrapper = styled.div`
   `};
 
   padding: 10px 30px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +31,7 @@ const ImageWrapper = styled.div.attrs({
   border: 10px solid #fff;
 
   .placeholder {
-    opacity: ${p => p.loading ? 1 : 0};
+    opacity: ${p => p.isLoading ? 1 : 0};
     position: absolute;
     top: 0;
     left: 0;
@@ -46,20 +45,18 @@ const ImageWrapper = styled.div.attrs({
     height: 100%;
     object-fit: cover;
     object-position: center center;
-
-    opacity: ${p => p.loading ? 0 : 1};
-
+    opacity: ${p => p.isLoading ? 0 : 1};
     transition: opacity 1s;
   }
 `
 
 const ErrorPage = () => {
-  const [loading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(true)
 
   return (
     <Wrapper>
       <p>The page you are looking for doesn&apos;t exist, but here is a cute cat for you.</p>
-      <ImageWrapper loading={loading}>
+      <ImageWrapper isLoading={isLoading}>
         <div className='placeholder'/>
         <img
           onLoad={() => setLoading(false)}
