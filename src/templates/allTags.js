@@ -24,7 +24,7 @@ const AllTags = ({ pageContext: { tags } }) => {
 
 AllTags.propTypes = {
   pageContext: PropTypes.shape({
-    allTags: PropTypes.array
+    tags: PropTypes.array
   }).isRequired
 }
 
