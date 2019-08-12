@@ -30,7 +30,7 @@ const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
 TagPage.propTypes = {
   pageContext: PropTypes.object.isRequired,
   data: PropTypes.shape({
-    contentfulProjects: PropTypes.object
+    allContentfulProject: PropTypes.object
   }).isRequired
 }
 
