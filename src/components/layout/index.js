@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css, ThemeProvider } from "styled-components"
+import styled, { css, ThemeProvider } from 'styled-components'
 
 import SEO from '../../utils/seo'
 import { GlobalStyles, media } from '../../utils/styles'

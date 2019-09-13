@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createElement } from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components'
 
 import { media } from '../../utils/styles'
 
@@ -31,7 +31,7 @@ const Letter = ({ letter, duration, initialOpacity }) => {
     const random = max => Math.random() * (0.0 - addDec(max)) + addDec(max)
 
     setTime(random(duration))
-  }, [ duration ])
+  }, [duration])
 
   return (
     <Span
@@ -59,7 +59,7 @@ export const FadeInText = props => (
     createElement(props.as, null, props.children) :
     (
       <Wrapper {...props}>
-        {props.children.split("").map((letter, i) => (
+        {props.children.split('').map((letter, i) => (
           <Letter
             key={i}
             letter={letter}

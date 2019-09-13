@@ -16,7 +16,7 @@ export const usePagination = () => {
   const { contentfulProjects } = useStaticQuery(query)
   const { projects } = contentfulProjects
 
-  const pathname = location.pathname.replace(/\//g, "")
+  const pathname = location.pathname.replace(/\//g, '')
 
   return projects.reduce((acc, project, i) => {
     if (project.slug === pathname) {

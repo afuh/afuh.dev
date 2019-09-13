@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 
 import { FadeInText } from '../utils/UI'
 import { useSiteMeta, useSwitchTheme } from '../utils/hooks'
@@ -17,7 +17,7 @@ const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
       heading={(
         <>
           <FadeInText
-            as="h1"
+            as='h1'
             duration={0.6}
             initialOpacity={0.01}
             onClick={() => switchTheme()}
