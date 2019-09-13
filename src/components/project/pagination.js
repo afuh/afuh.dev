@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link as GatsbyLink, navigate } from "gatsby"
-import styled, { css } from "styled-components"
-import mousetrap from "mousetrap"
+import { Link as GatsbyLink, navigate } from 'gatsby'
+import styled, { css } from 'styled-components'
+import mousetrap from 'mousetrap'
 
 import { usePagination, useViewedProject } from '../../utils/hooks'
 import { Arrow } from '../../utils/UI/icons'

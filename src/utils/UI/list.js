@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from "styled-components"
-import { Link as GatsbyLink } from "gatsby"
+import styled, { css } from 'styled-components'
+import { Link as GatsbyLink } from 'gatsby'
 
 import { useViewedProject } from '../../utils/hooks'
 
@@ -43,7 +43,7 @@ export const List = ({ data, ...rest }) => {
             <Link
               checked={viewedProjects.some(slug => slug === item.slug)}
               onClick={() => addViewedProject(item.slug)}
-              to={"/" + item.slug}
+              to={'/' + item.slug}
             >
               {item.title}
             </Link>

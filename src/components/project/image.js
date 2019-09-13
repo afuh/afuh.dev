@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 
 import { media } from '../../utils/styles'

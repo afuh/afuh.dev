@@ -3,11 +3,11 @@ import { css } from 'styled-components'
 import { media } from './styles'
 
 export const theme = {
-  black: "#212129",
-  white: "#FEFEFE",
-  gray: "#9F9FA3",
-  softGray: "#9F9FA31a",
-  accent: "#78ff78",
+  black: '#212129',
+  white: '#FEFEFE',
+  gray: '#9F9FA3',
+  softGray: '#9F9FA31a',
+  accent: '#78ff78',
   globalWidth: 600,
   headerHeight: {
     desktop: 220,
@@ -20,7 +20,7 @@ export const theme = {
       margin: 40px 0;
     `)}
   `,
-  anchorHover: ({ theme }) => css`
+  anchorHover: () => css`
     box-shadow: inset 0 -0.2rem ${theme.gray}80;
     transition: box-shadow .1s ease;
 
