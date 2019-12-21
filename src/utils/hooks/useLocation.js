@@ -16,7 +16,7 @@ export const useLocation = () => {
     return () => {
       removeListener()
     }
-  }, [ initialState ])
+  }, [initialState])
 
   return state
 }

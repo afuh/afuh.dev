@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components'
 
 import Image from './image'
 import ExternalLinks from './externalLinks'

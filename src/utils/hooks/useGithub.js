@@ -41,8 +41,8 @@ export const useGithub = ({ user, query = {} }) => {
         const res = await fetch(url)
 
         if (res.status === 200) {
-          const data = await res.json()
-          const repos = filterData(data)
+          const ghData = await res.json()
+          const repos = filterData(ghData)
           setData(repos)
         } else {
           setError(res.statusText)
@@ -54,7 +54,7 @@ export const useGithub = ({ user, query = {} }) => {
     }
 
     fetchData()
-  }, [ url ])
+  }, [url])
 
   return {
     data,

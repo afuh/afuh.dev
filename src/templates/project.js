@@ -1,5 +1,5 @@
 import React, { createContext } from 'react'
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
@@ -13,7 +13,7 @@ const ProjectPage = ({ data: { project } }) => (
     seo={{
       title: project.title,
       description: project.content.md.excerpt,
-      pathname: "/" + project.slug,
+      pathname: '/' + project.slug,
       image: {
         url: project.image.file.url,
         contentType: project.image.file.contentType,
