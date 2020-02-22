@@ -2,30 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { media } from '../../utils/styles'
 import ProjectList from './projectList'
 
-const Wrapper = styled.section`
+const Wrapper = styled.section(({ theme }) => css`
   display: flex;
   flex-direction: column;
 
-  ${({ theme }) => css`
-    ${theme.globalMargin(80)}
-  `};
-
-  ${media.phone(css`
+  ${theme.globalMargin(80)}
+  ${theme.media.phone(css`
     width: 100%;
   `)}
-`
+`)
 
 const Home = ({ data }) => {
   const type = data.reduce((acc, project) => {
-    const key = project.isWork ? 'work' : 'personal'
+    const key = project.isWork ? 'work' : 'open source'
     acc[key].push(project)
     return acc
   }, {
     work: [],
-    personal: []
+    'open source': []
   })
 
   return (

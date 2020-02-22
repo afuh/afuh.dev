@@ -9,6 +9,11 @@ export const useSiteContent = () => {
             html
           }
         }
+        jobPosition {
+          title
+          company
+          url
+        }
         aboutPage {
           md: childMarkdownRemark {
             html

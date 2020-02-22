@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Footer from './footer'
 import Image from './image'
-import { MarkdownWrapper } from '../../utils/UI'
+import { MarkdownWrapper } from '../../components/shared'
 import { useProjectData } from '../../utils/hooks'
 
 const Wrapper = styled.div`

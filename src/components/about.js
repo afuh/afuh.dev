@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Inner, MarkdownWrapper } from '../utils/UI'
+import { Inner, MarkdownWrapper } from '../components/shared'
 
 const About = ({ text }) => (
   <Inner

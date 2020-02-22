@@ -2,17 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { List as BaseList, Inner } from '../../utils/UI'
-import { media } from '../../utils/styles'
+import { List as _List, Inner } from '../../components/shared'
 
-const List = styled(BaseList)`
+const List = styled(_List)(({ theme }) => css`
   margin-bottom: 60px;
 
   ul {
     position: relative;
-    border-left: 1px solid ${({ theme }) => theme.softGray};
+    border-left: 1px solid ${theme.softGray};
 
-    ${media.phone(css`
+    ${theme.media.phone(css`
       border-left: none;
       width: 100%;
     `)}
@@ -25,15 +24,15 @@ const List = styled(BaseList)`
       left: -2px;
       text-transform: uppercase;
       font-size: 1.2rem;
-      color: ${({ theme }) => theme.gray};
+      color: ${theme.gray};
       transform: rotate(90deg);
 	    transform-origin: top left;
 
-      ${media.phone(css`
+      ${theme.media.phone(css`
         transform: none;
         position: inherit;
         display: block;
-        border-bottom: 1px solid ${({ theme }) => theme.softGray};
+        border-bottom: 1px solid ${theme.softGray};
         margin-bottom: 10px;
       `)}
     }
@@ -41,7 +40,7 @@ const List = styled(BaseList)`
     li {
       padding-left: 1.6rem;
 
-      ${media.phone(css`
+      ${theme.media.phone(css`
         padding-left: 0;
       `)}
 
@@ -54,7 +53,7 @@ const List = styled(BaseList)`
       }
     }
   }
-`
+`)
 
 const ProjectList = ({ data, title }) => (
   <Inner>

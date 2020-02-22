@@ -1,36 +1,26 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { navigate } from 'gatsby'
 import styled, { css } from 'styled-components'
 
 import Pagination from './pagination'
 
 import { useProjectData } from '../../utils/hooks'
-import { media } from '../../utils/styles'
+import { Button } from '../../components/shared/'
 
 const Wrapper = styled.div`
   padding: 20px 0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  ${media.phone(css`
-    padding: 20px 0 0;
-    display: block;
-  `)}
-
-  .tag-box {
-    display: inline;
-    padding: 5px 10px;
+  .tags {
     margin-right: 10px;
-    background: ${({ theme }) => theme.softGray};
-    font-weight: 700;
-    font-size: 1.2rem;
 
-    &:hover,
-    &:active,
-    &:focus {
-      background: ${({ theme }) => theme.gray}5e;
-    }
+    ${({ theme }) => theme.media.phone(css`
+      margin-top: 4px;
+      margin-right: 4px;
+    `)}
   }
 `
 
@@ -40,12 +30,13 @@ const Tags = () => {
   return (
     <div>
       {tags.map(tag => (
-        <div
+        <Button
+          className='tags'
           key={tag}
-          className='tag-box'
+          onClick={() => navigate(`/tag/${tag}`)}
         >
-          <Link to={`/tag/${tag}`}>{tag}</Link>
-        </div>
+          {tag}
+        </Button>
       ))}
     </div>
   )

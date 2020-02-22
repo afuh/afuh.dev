@@ -2,33 +2,33 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { media } from '../../utils/styles'
+import { ExternalLink } from '../../components/shared/'
 import { useProjectData } from '../../utils/hooks'
 
-const Wrapper = styled.div`
+const Wrapper = styled.div(({ theme }) => css`
   margin-left: 1rem;
 
   a {
     padding: 0 6px;
-    color: ${({ theme }) => theme.white};
+    color: ${theme.secondary};
     font-size: 1.7rem;
     font-weight: 700;
     display: block;
     margin-bottom: 1rem;
 
-    ${media.custom(880, css`
-      color: ${({ theme }) => theme.black};
+    ${theme.media.custom(880, css`
+      color: ${theme.primary};
     `)}
 
     &:hover,
     &:active,
     &:focus {
-      color: ${({ theme }) => theme.black};
-      background: ${({ theme }) => theme.accent};
+      background: ${theme.gray}80;
+      color: ${theme.secondary};
       }
     }
 
-  ${media.phone(css`
+  ${theme.media.phone(css`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,20 +44,15 @@ const Wrapper = styled.div`
       align-items: center;
     }
   `)}
-`
-
-const External = styled.a.attrs({
-  rel: 'nofollow noopener noreferrer',
-  target: '_blank'
-})``
+`)
 
 const ExternalLinks = ({ id }) => {
   const { url, code } = useProjectData()
 
   return (
     <Wrapper id={id}>
-      <External href={url}>Live</External>
-      {code && <External href={code}>Code</External>}
+      <ExternalLink href={url}>Live</ExternalLink>
+      {code && <ExternalLink href={code}>Code</ExternalLink>}
     </Wrapper>
   )
 }
