@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
-import { useSiteMeta, useSiteContent } from './hooks'
+import { useSiteMeta, useSiteContent } from '../utils/hooks'
 
 const checkUrl = url => url.match(/^https/i) ? url : 'https:' + url
 
