@@ -73,7 +73,8 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.SPACE_ID,
-        accessToken: process.env.TOKEN
+        accessToken: process.env.TOKEN,
+        host: (process.env.ENABLE_GATSBY_REFRESH_ENDPOINT ? 'preview' : 'cdn') + '.contentful.com'
       }
     },
     'gatsby-plugin-offline',
