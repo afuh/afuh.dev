@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const Wrapper = styled.div`
-  max-width: ${({ theme }) => theme.globalWidth}px;
+const Wrapper = styled.div(({ theme }) => css`
+  max-width: ${theme.globalWidth}px;
   margin-top: 20px;
   font-family: "Open Sans", sans-serif;
 
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   }
 
   a {
-    ${({ theme }) => theme.anchorHover}
+    ${theme.anchorHover}
   }
 
   ul {
@@ -35,18 +35,18 @@ const Wrapper = styled.div`
     display: block;
     height: 2px;
     width: 120px;
-    background-color: ${({ theme }) => theme.softGray};
+    background-color: ${theme.softGray};
     margin: 30px auto;
     border-width: 0;
   }
 
   blockquote {
-    border-left: 4px solid ${({ theme }) => theme.softGray};
+    border-left: 4px solid ${theme.softGray};
     padding-left: 20px;
     margin-left: 0;
     font-style: italic;
   }
-`
+`)
 
 export const MarkdownWrapper = ({ html, children, ...rest }) => {
   if (children) {

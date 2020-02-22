@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { media } from '../utils/styles'
 import { useGithub } from '../utils/hooks'
 
 const mobilePadding = css`
@@ -43,7 +42,7 @@ const Wrapper = styled.section`
 
   transition: opacity 1s ease;
 
-  ${media.custom(800, css`
+  ${({ theme }) => theme.media.custom(800, css`
     position: inherit;
     max-width: 100%;
     margin-top: 0;

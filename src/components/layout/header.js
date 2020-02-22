@@ -4,32 +4,28 @@ import styled, { css } from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
 
 import { useSiteMeta } from '../../utils/hooks'
-import { media } from '../../utils/styles'
-import { Inner } from '../../utils/UI'
+import { Inner } from '../../components/shared'
 
-const Wrapper = styled.header`
+const Wrapper = styled.header(({ theme }) => css`
   display: flex;
   justify-content: center;
+  height: ${theme.headerHeight.desktop}px;
+  background: ${theme.primary};
 
-  ${({ theme }) => theme && css`
-    height: ${theme.headerHeight.desktop}px;
-    background: ${theme.black};
-
-    ${media.phone(css`
-      height: ${theme.headerHeight.mobile}px;
-    `)}
-  `};
+  ${theme.media.phone(css`
+    height: ${theme.headerHeight.mobile}px;
+  `)}
 
   .heading {
     flex: 1;
 
     h1, h2 {
-      color: ${({ theme }) => theme.white};
+      color: ${theme.secondary};
       font-weight: 900;
       font-size: 5.0rem;
       margin: 0;
 
-      ${media.phone(css`
+      ${theme.media.phone(css`
         text-align: center;
         font-size: 3.4rem;
       `)}
@@ -51,11 +47,11 @@ const Wrapper = styled.header`
       margin: 1.2rem 0;
     }
 
-    ${media.phone(css`
+    ${theme.media.phone(css`
       display: none;
     `)}
   }
-`
+`)
 
 export const Link = styled(GatsbyLink)`
   color: ${({ theme }) => theme.gray};
@@ -64,7 +60,7 @@ export const Link = styled(GatsbyLink)`
   &:active,
   &:focus,
   &.active {
-    color: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.secondary};
   }
 `
 

@@ -5,19 +5,18 @@ import Image from './image'
 import ExternalLinks from './externalLinks'
 import Content from './content'
 
-import { Inner } from '../../utils/UI'
-import { media } from '../../utils/styles'
+import { Inner } from '../../components/shared'
 
-const Wrapper = styled.div`
+const Wrapper = styled.div(({ theme }) => css`
   display: flex;
   transform: translateY(-104px);
-  ${({ theme }) => theme.globalMargin()}
+  ${theme.globalMargin()}
 
-  ${media.custom(880, css`
+  ${theme.media.custom(880, css`
     transform: translateY(0);
   `)}
 
-  ${media.phone(css`
+  ${theme.media.phone(css`
     flex-direction: column;
 
     #content {
@@ -28,7 +27,7 @@ const Wrapper = styled.div`
       order: 1;
     }
   `)}
-`
+`)
 
 const Project = () => (
   <article>

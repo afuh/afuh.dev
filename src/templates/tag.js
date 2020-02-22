@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import { List, Inner } from '../utils/UI'
+import { List, Inner } from '../components/shared'
 
 const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
   const projects = allContentfulProject.edges.map(({ node }) => node)

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
-import { List, Inner } from '../utils/UI'
+import { List, Inner } from '../components/shared'
 
 const AllTags = ({ pageContext: { tags } }) => {
   const formatTags = tags.map(tag => ({
