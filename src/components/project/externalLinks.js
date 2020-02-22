@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { ExternalLink } from '../../utils/UI/'
+import { ExternalLink } from '../../components/shared/'
 import { useProjectData } from '../../utils/hooks'
 
 const Wrapper = styled.div(({ theme }) => css`

@@ -5,7 +5,7 @@ import Image from './image'
 import ExternalLinks from './externalLinks'
 import Content from './content'
 
-import { Inner } from '../../utils/UI'
+import { Inner } from '../../components/shared'
 
 const Wrapper = styled.div(({ theme }) => css`
   display: flex;

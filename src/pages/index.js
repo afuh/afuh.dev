@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { FadeInText, ExternalLink as _ExternalLink } from '../utils/UI'
+import { FadeInText, ExternalLink as _ExternalLink } from '../components/shared'
 import { useSiteMeta, useSwitchTheme, useSiteContent } from '../utils/hooks'
 
 import Layout from '../components/layout'
