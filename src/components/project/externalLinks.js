@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
+import { ExternalLink } from '../../utils/UI/'
 import { media } from '../../utils/styles'
 import { useProjectData } from '../../utils/hooks'
 
@@ -46,18 +47,13 @@ const Wrapper = styled.div`
   `)}
 `
 
-const External = styled.a.attrs({
-  rel: 'nofollow noopener noreferrer',
-  target: '_blank'
-})``
-
 const ExternalLinks = ({ id }) => {
   const { url, code } = useProjectData()
 
   return (
     <Wrapper id={id}>
-      <External href={url}>Live</External>
-      {code && <External href={code}>Code</External>}
+      <ExternalLink href={url}>Live</ExternalLink>
+      {code && <ExternalLink href={code}>Code</ExternalLink>}
     </Wrapper>
   )
 }
