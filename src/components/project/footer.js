@@ -5,7 +5,6 @@ import styled, { css } from 'styled-components'
 import Pagination from './pagination'
 
 import { useProjectData } from '../../utils/hooks'
-import { media } from '../../utils/styles'
 import { Button } from '../../utils/UI/'
 
 const Wrapper = styled.div`
@@ -18,7 +17,7 @@ const Wrapper = styled.div`
   .tags {
     margin-right: 10px;
 
-    ${media.phone(css`
+    ${({ theme }) => theme.media.phone(css`
       margin-top: 4px;
       margin-right: 4px;
     `)}

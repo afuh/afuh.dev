@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components'
 import mousetrap from 'mousetrap'
 
 import { usePagination, useViewedProject } from '../../utils/hooks'
-import { media } from '../../utils/styles'
 import { Arrow } from '../../utils/UI/icons'
 import { Button } from '../../utils/UI/'
 
@@ -19,7 +18,7 @@ const Wrapper = styled.div`
       height: 1.2rem;
     }
 
-    ${media.phone(css`
+    ${({ theme }) => theme.media.phone(css`
       margin-top: 4px;
       margin-left: 4px;
     `)}

@@ -3,33 +3,32 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { ExternalLink } from '../../utils/UI/'
-import { media } from '../../utils/styles'
 import { useProjectData } from '../../utils/hooks'
 
-const Wrapper = styled.div`
+const Wrapper = styled.div(({ theme }) => css`
   margin-left: 1rem;
 
   a {
     padding: 0 6px;
-    color: ${({ theme }) => theme.secondary};
+    color: ${theme.secondary};
     font-size: 1.7rem;
     font-weight: 700;
     display: block;
     margin-bottom: 1rem;
 
-    ${media.custom(880, css`
-      color: ${({ theme }) => theme.primary};
+    ${theme.media.custom(880, css`
+      color: ${theme.primary};
     `)}
 
     &:hover,
     &:active,
     &:focus {
-      background: ${({ theme }) => theme.gray}80;
-      color: ${({ theme }) => theme.secondary};
+      background: ${theme.gray}80;
+      color: ${theme.secondary};
       }
     }
 
-  ${media.phone(css`
+  ${theme.media.phone(css`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +44,7 @@ const Wrapper = styled.div`
       align-items: center;
     }
   `)}
-`
+`)
 
 const ExternalLinks = ({ id }) => {
   const { url, code } = useProjectData()

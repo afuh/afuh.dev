@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 
-import { media } from '../../utils/styles'
 import { useProjectData } from '../../utils/hooks'
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.div(({ theme }) => css`
   position: relative;
 
   &::after {
@@ -23,19 +22,19 @@ const ImageWrapper = styled.div`
     display: none;
     visibility: hidden;
 
-    ${media.phone(css`
+    ${theme.media.phone(css`
       display: block;
       visibility: visible;
     `)}
   }
 
   &#desktop {
-    ${media.phone(css`
+    ${theme.media.phone(css`
       display: none;
       visibility: hidden;
     `)}
   }
-`
+`)
 
 const Image = ({ id }) => {
   const { image, title } = useProjectData()

@@ -3,20 +3,18 @@ import PropTypes from 'prop-types'
 import styled, { css, ThemeProvider } from 'styled-components'
 
 import SEO from '../../utils/seo'
-import { GlobalStyles, media } from '../../utils/styles'
+import { GlobalStyles } from '../../utils/styles'
 import { useSwitchTheme, useLocation } from '../../utils/hooks'
 
 import Header from './header'
 import Footer from './footer'
 
-const Main = styled.main`
-  ${media.phone(css`
-    min-height: calc(100vh - ${({ theme }) => theme.headerHeight.desktop}px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `)}
-`
+const Main = styled.main(({ theme }) => theme.media.phone(css`
+  min-height: calc(100vh - ${theme.headerHeight.desktop}px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`))
 
 const Layout = ({ children, seo, heading }) => {
   const { theme } = useSwitchTheme()

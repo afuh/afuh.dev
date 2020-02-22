@@ -13,6 +13,7 @@ export const theme = {
     desktop: 220,
     mobile: 110
   },
+  media,
   globalMargin: (val = 40) => css`
     margin-top: ${val}px;
 

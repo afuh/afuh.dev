@@ -4,20 +4,16 @@ import styled, { css } from 'styled-components'
 
 import { Link } from './header'
 import { useSiteMeta } from '../../utils/hooks'
-import { media } from '../../utils/styles'
 
-const Wrapper = styled.footer`
+const Wrapper = styled.footer(({ theme }) => css`
   display: none;
+  height: ${theme.headerHeight.mobile}px;
+  background: ${theme.primary};
 
-  ${media.phone(css`
+  ${theme.media.phone(css`
     display: flex;
     justify-content: center;
   `)}
-
-  ${({ theme }) => theme && css`
-    height: ${theme.headerHeight.mobile}px;
-    background: ${theme.primary};
-  `};
 
   ul {
     width: 100%;
@@ -41,7 +37,7 @@ const Wrapper = styled.footer`
       }
     }
   }
-`
+`)
 
 const Nav = ({ data }) => (
   <ul>
