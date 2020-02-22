@@ -16,7 +16,7 @@ const Wrapper = styled.footer`
 
   ${({ theme }) => theme && css`
     height: ${theme.headerHeight.mobile}px;
-    background: ${theme.black};
+    background: ${theme.primary};
   `};
 
   ul {

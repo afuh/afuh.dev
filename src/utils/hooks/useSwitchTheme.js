@@ -11,8 +11,8 @@ const SwitchThemeProvider = ({ children }) => {
   const switchTheme = () => {
     setTheme({
       ...defaultTheme,
-      white: theme.black,
-      black: theme.white
+      secondary: theme.primary,
+      primary: theme.secondary
     })
   }
 

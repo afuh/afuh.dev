@@ -13,7 +13,7 @@ const Wrapper = styled.header`
 
   ${({ theme }) => theme && css`
     height: ${theme.headerHeight.desktop}px;
-    background: ${theme.black};
+    background: ${theme.primary};
 
     ${media.phone(css`
       height: ${theme.headerHeight.mobile}px;
@@ -24,7 +24,7 @@ const Wrapper = styled.header`
     flex: 1;
 
     h1, h2 {
-      color: ${({ theme }) => theme.white};
+      color: ${({ theme }) => theme.secondary};
       font-weight: 900;
       font-size: 5.0rem;
       margin: 0;
@@ -64,7 +64,7 @@ export const Link = styled(GatsbyLink)`
   &:active,
   &:focus,
   &.active {
-    color: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.secondary};
   }
 `
 

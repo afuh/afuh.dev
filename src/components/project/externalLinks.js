@@ -10,21 +10,21 @@ const Wrapper = styled.div`
 
   a {
     padding: 0 6px;
-    color: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.secondary};
     font-size: 1.7rem;
     font-weight: 700;
     display: block;
     margin-bottom: 1rem;
 
     ${media.custom(880, css`
-      color: ${({ theme }) => theme.black};
+      color: ${({ theme }) => theme.primary};
     `)}
 
     &:hover,
     &:active,
     &:focus {
-      color: ${({ theme }) => theme.black};
-      background: ${({ theme }) => theme.accent};
+      background: ${({ theme }) => theme.gray}80;
+      color: ${({ theme }) => theme.secondary};
       }
     }
 
