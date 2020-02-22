@@ -1,37 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import { FadeInText } from '../utils/UI'
-import { useSiteMeta, useSwitchTheme } from '../utils/hooks'
+import { FadeInText, ExternalLink as _ExternalLink } from '../utils/UI'
+import { useSiteMeta, useSwitchTheme, useSiteContent } from '../utils/hooks'
 
 import Layout from '../components/layout'
 import Home from '../components/home'
 
-const IndexPage = ({ data: { contentfulProjects: { projects } } }) => {
-  const { title, description } = useSiteMeta()
+const ExternalLink = styled(_ExternalLink)`
+  color: ${({ theme }) => theme.secondary}
+`
+
+const Heading = () => {
+  const { title } = useSiteMeta()
   const { switchTheme } = useSwitchTheme()
+  const { jobPosition: { title: jobTitle, company, url } } = useSiteContent()
 
   return (
-    <Layout
-      heading={(
-        <>
-          <FadeInText
-            as='h1'
-            duration={0.6}
-            initialOpacity={0.01}
-            onClick={() => switchTheme()}
-          >
-            {title}
-          </FadeInText>
-          <h2>{description}</h2>
-        </>
-      )}
-    >
-      <Home data={projects}/>
-    </Layout>
+    <>
+      <FadeInText
+        as='h1'
+        duration={0.6}
+        initialOpacity={0.01}
+        onClick={() => switchTheme()}
+      >
+        {title}
+      </FadeInText>
+      <h2>{jobTitle} at <ExternalLink href={url} >{company}</ExternalLink></h2>
+    </>
   )
 }
+
+const IndexPage = ({ data: { contentfulProjects: { projects } } }) => (
+  <Layout heading={ <Heading />}>
+    <Home data={projects}/>
+  </Layout>
+)
 
 IndexPage.propTypes = {
   data: PropTypes.shape({

@@ -20,12 +20,12 @@ const Wrapper = styled.section`
 
 const Home = ({ data }) => {
   const type = data.reduce((acc, project) => {
-    const key = project.isWork ? 'work' : 'personal'
+    const key = project.isWork ? 'work' : 'open source'
     acc[key].push(project)
     return acc
   }, {
     work: [],
-    personal: []
+    'open source': []
   })
 
   return (
