@@ -4,8 +4,8 @@ import styled, { css } from 'styled-components'
 import mousetrap from 'mousetrap'
 
 import { usePagination, useViewedProject } from '../../utils/hooks'
-import { Arrow } from '../../components/shared/icons'
-import { Button } from '../../components/shared/'
+import { Arrow } from '../shared/icons'
+import { Button } from '../shared'
 
 const Wrapper = styled.div`
   display: flex;

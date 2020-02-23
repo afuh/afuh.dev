@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 import Pagination from './pagination'
 
 import { useProjectData } from '../../utils/hooks'
-import { Button } from '../../components/shared/'
+import { Button } from '../shared'
 
 const Wrapper = styled.div`
   padding: 20px 0;
