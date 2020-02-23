@@ -41,7 +41,7 @@ export const pageQuery = graphql`
       code
       tags
       image {
-        fluid(maxWidth: 960) {
+        fluid(maxWidth: 720) {
           ...GatsbyContentfulFluid_withWebp
         }
         file {

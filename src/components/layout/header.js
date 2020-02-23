@@ -22,7 +22,7 @@ const Wrapper = styled.header(({ theme }) => css`
     h1, h2 {
       color: ${theme.secondary};
       font-weight: 900;
-      font-size: 5.0rem;
+      font-size: 6.0rem;
       margin: 0;
 
       ${theme.media.phone(css`

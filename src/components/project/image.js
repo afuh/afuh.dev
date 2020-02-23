@@ -7,6 +7,8 @@ import { useProjectData } from '../../utils/hooks'
 
 const ImageWrapper = styled.div(({ theme }) => css`
   position: relative;
+  border-radius: 4px;
+  overflow: hidden;
 
   &::after {
     content: '';
