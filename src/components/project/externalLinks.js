@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { ExternalLink } from '../../components/shared/'
+import { ExternalLink } from '../shared'
 import { useProjectData } from '../../utils/hooks'
 
 const Wrapper = styled.div(({ theme }) => css`
@@ -23,25 +23,18 @@ const Wrapper = styled.div(({ theme }) => css`
     &:hover,
     &:active,
     &:focus {
-      background: ${theme.gray}80;
-      color: ${theme.secondary};
-      }
+      color: ${theme.accent};
     }
+  }
 
   ${theme.media.phone(css`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    height: 60px;
+    margin-left: 0;
+    padding-bottom: 24px;
+    border-bottom: 1px solid ${theme.softGray};
 
     a {
-      margin-bottom: 0;
-      height: 100%;
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin-right: 1rem;
+      padding: 0;
     }
   `)}
 `)
@@ -51,8 +44,8 @@ const ExternalLinks = ({ id }) => {
 
   return (
     <Wrapper id={id}>
-      <ExternalLink href={url}>Live</ExternalLink>
-      {code && <ExternalLink href={code}>Code</ExternalLink>}
+      <ExternalLink href={url}>live</ExternalLink>
+      {code && <ExternalLink href={code}>code</ExternalLink>}
     </Wrapper>
   )
 }

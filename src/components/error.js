@@ -38,7 +38,7 @@ const ErrorPage = () => (
       but here is a cute cat for you.
     </h2>
     <ImageWrapper>
-      <img src='https://source.unsplash.com/random/300/?cat,cats' alt='🐈'/>
+      <img src='https://source.unsplash.com/random/300x300/?cat,cats' alt='🐈'/>
     </ImageWrapper>
   </Wrapper>
 )

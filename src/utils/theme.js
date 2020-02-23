@@ -8,7 +8,7 @@ export const theme = {
   accent: '#78ffaa',
   gray: '#9F9FA3',
   softGray: '#9F9FA31a',
-  globalWidth: 600,
+  globalWidth: 720,
   headerHeight: {
     desktop: 220,
     mobile: 110

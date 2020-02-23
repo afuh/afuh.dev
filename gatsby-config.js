@@ -39,10 +39,11 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images-contentful',
             options: {
-              maxWidth: 600,
+              maxWidth: 720,
               linkImagesToOriginal: false,
               withWebp: true,
-              backgroundColor: 'transparent'
+              backgroundColor: 'transparent',
+              sizeByPixelDensity: true
             }
           }
         ]
@@ -75,6 +76,14 @@ module.exports = {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.TOKEN,
         host: (process.env.ENABLE_GATSBY_REFRESH_ENDPOINT ? 'preview' : 'cdn') + '.contentful.com'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.icon\.svg$/
+        }
       }
     },
     'gatsby-plugin-offline',

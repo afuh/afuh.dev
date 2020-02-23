@@ -3,9 +3,10 @@ import { navigate } from 'gatsby'
 import styled, { css } from 'styled-components'
 import mousetrap from 'mousetrap'
 
+import ArrowLeft from '../../assets/arrow-left.icon.svg'
+import ArrowRight from '../../assets/arrow-right.icon.svg'
 import { usePagination, useViewedProject } from '../../utils/hooks'
-import { Arrow } from '../../components/shared/icons'
-import { Button } from '../../components/shared/'
+import { Button } from '../shared'
 
 const Wrapper = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const Pagination = () => {
           addViewedProject(prev)
         }}
       >
-        <Arrow.left />
+        <ArrowLeft />
       </Button>
       <Button
         aria-label='next page'
@@ -64,7 +65,7 @@ const Pagination = () => {
           addViewedProject(next)
         }}
       >
-        <Arrow.right />
+        <ArrowRight />
       </Button>
     </Wrapper>
   )

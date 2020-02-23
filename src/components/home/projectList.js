@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { List as _List, Inner } from '../../components/shared'
+import { List as _List, Inner } from '../shared'
 
 const List = styled(_List)(({ theme }) => css`
   margin-bottom: 60px;

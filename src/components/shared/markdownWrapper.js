@@ -15,7 +15,7 @@ const Wrapper = styled.div(({ theme }) => css`
   p, li {
     margin-top: 0;
     font-size: 1.8rem;
-    line-height: 1.5;
+    line-height: 1.7;
   }
 
   a {

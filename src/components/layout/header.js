@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
 
 import { useSiteMeta } from '../../utils/hooks'
-import { Inner } from '../../components/shared'
+import { Inner } from '../shared'
 
 const Wrapper = styled.header(({ theme }) => css`
   display: flex;
@@ -22,7 +22,7 @@ const Wrapper = styled.header(({ theme }) => css`
     h1, h2 {
       color: ${theme.secondary};
       font-weight: 900;
-      font-size: 5.0rem;
+      font-size: 6.0rem;
       margin: 0;
 
       ${theme.media.phone(css`
