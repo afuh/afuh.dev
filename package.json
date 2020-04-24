@@ -50,7 +50,7 @@
     "gatsby"
   ],
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --log-pages",
     "dev": "gatsby develop -H 0.0.0.0",
     "test": "stylelint './src/**/*.js' && eslint src/.",
     "serve": "gatsby serve"
