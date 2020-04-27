@@ -50,14 +50,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: process.env.GA,
-        anonymize: true,
-        respectDNT: true
-      }
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: siteConfig.title,
