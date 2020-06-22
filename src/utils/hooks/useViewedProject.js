@@ -3,7 +3,7 @@ import React, { useState, createContext, useContext } from 'react'
 const Context = createContext()
 export const useViewedProject = () => useContext(Context)
 
-const ViewdProjectProvider = ({ children }) => {
+const ViewedProjectProvider = ({ children }) => {
   const [viewedProjects, setViewedProjects] = useState([])
 
   const addViewedProject = project => {
@@ -21,4 +21,4 @@ const ViewdProjectProvider = ({ children }) => {
   )
 }
 
-export default ViewdProjectProvider
+export default ViewedProjectProvider
