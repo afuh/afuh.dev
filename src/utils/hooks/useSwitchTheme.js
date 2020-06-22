@@ -1,19 +1,22 @@
 import React, { useState, createContext, useContext } from 'react'
 
-import { theme as defaultTheme } from '../theme'
+import { theme as light } from '../theme'
 
 const Context = createContext()
 export const useSwitchTheme = () => useContext(Context)
 
+const isSSR = typeof window === 'undefined'
+const cacheKey = 'af-theme'
+
 const SwitchThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(defaultTheme)
+  const cache = !isSSR && localStorage.getItem(cacheKey)
+  const isLight = cache ? JSON.parse(cache) : true
+  const dark = Object.assign({}, light, { secondary: light.primary, primary: light.secondary })
+  const [theme, setTheme] = useState(isLight ? light : dark)
 
   const switchTheme = () => {
-    setTheme({
-      ...defaultTheme,
-      secondary: theme.primary,
-      primary: theme.secondary
-    })
+    setTheme(!isLight ? light : dark)
+    !isSSR && localStorage.setItem(cacheKey, JSON.stringify(!isLight))
   }
 
   return (
