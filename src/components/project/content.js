@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Footer from './footer'
-import Image from './image'
 import { MarkdownWrapper } from '../shared'
 import { useProjectData } from '../../utils/hooks'
+import Footer from './footer'
+import Image from './image'
 
 const Wrapper = styled.div`
   .text-wrapper {
