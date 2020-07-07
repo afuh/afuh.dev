@@ -5,7 +5,7 @@ import mousetrap from 'mousetrap'
 
 import ArrowLeft from '../../assets/arrow-left.icon.svg'
 import ArrowRight from '../../assets/arrow-right.icon.svg'
-import { usePagination, useViewedProject } from '../../utils/hooks'
+import { usePagination, useTrackProject } from '../../utils/hooks'
 import { Button } from '../shared'
 
 const Wrapper = styled.div`
@@ -28,16 +28,16 @@ const Wrapper = styled.div`
 
 const Pagination = () => {
   const { next, prev } = usePagination()
-  const { addViewedProject } = useViewedProject()
+  const { addTrackedProject } = useTrackProject()
 
   useEffect(() => {
     mousetrap.bind('right', () => {
       navigate(next)
-      addViewedProject(next)
+      addTrackedProject(next)
     })
     mousetrap.bind('left', () => {
       navigate(prev)
-      addViewedProject(prev)
+      addTrackedProject(prev)
     })
 
     return () => {
@@ -52,7 +52,7 @@ const Pagination = () => {
         aria-label='previous page'
         onClick={() => {
           navigate(prev)
-          addViewedProject(prev)
+          addTrackedProject(prev)
         }}
       >
         <ArrowLeft />
@@ -62,7 +62,7 @@ const Pagination = () => {
         slug={next}
         onClick={() => {
           navigate(next)
-          addViewedProject(next)
+          addTrackedProject(next)
         }}
       >
         <ArrowRight />

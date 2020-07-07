@@ -4,7 +4,7 @@ import styled, { css, ThemeProvider } from 'styled-components'
 
 import SEO from '../seo'
 import { GlobalStyles } from '../../utils/styles'
-import { useSwitchTheme, useLocation } from '../../utils/hooks'
+import { useToggleTheme, useLocation } from '../../utils/hooks'
 
 import Header from './header'
 import Footer from './footer'
@@ -17,7 +17,7 @@ const Main = styled.main(({ theme }) => theme.media.phone(css`
 `))
 
 const Layout = ({ children, seo, heading }) => {
-  const { theme } = useSwitchTheme()
+  const { theme } = useToggleTheme()
   const { location } = useLocation()
 
   return (

@@ -33,7 +33,7 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^6.0.0",
-    "eslint-config-afuh": "^0.1.1",
+    "eslint-config-afuh": "^0.1.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.2",
