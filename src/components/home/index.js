@@ -14,28 +14,17 @@ const Wrapper = styled.section(({ theme }) => css`
   `)}
 `)
 
-const Home = ({ data }) => {
-  const type = data.reduce((acc, project) => {
-    const key = project.isWork ? 'work' : 'open source'
-    acc[key].push(project)
-    return acc
-  }, {
-    work: [],
-    'open source': []
-  })
-
-  return (
-    <Wrapper>
-      {Object.keys(type).map(key => (
-        <ProjectList
-          key={key}
-          title={key}
-          data={type[key]}
-        />
-      ))}
-    </Wrapper>
-  )
-}
+const Home = ({ data }) => (
+  <Wrapper>
+    {data.map(({ category, projects }) => (
+      <ProjectList
+        key={category}
+        title={category}
+        data={projects}
+      />
+    ))}
+  </Wrapper>
+)
 
 Home.propTypes = {
   data: PropTypes.array.isRequired

@@ -30,15 +30,14 @@ const Pagination = () => {
   const { next, prev } = usePagination()
   const { addTrackedProject } = useTrackProject()
 
+  const goTo = slug => {
+    navigate(`/${slug}`)
+    addTrackedProject(slug)
+  }
+
   useEffect(() => {
-    mousetrap.bind('right', () => {
-      navigate(next)
-      addTrackedProject(next)
-    })
-    mousetrap.bind('left', () => {
-      navigate(prev)
-      addTrackedProject(prev)
-    })
+    mousetrap.bind('right', () => goTo(next))
+    mousetrap.bind('left', () => goTo(prev))
 
     return () => {
       mousetrap.unbind('left')
@@ -50,20 +49,14 @@ const Pagination = () => {
     <Wrapper>
       <Button
         aria-label='previous page'
-        onClick={() => {
-          navigate(prev)
-          addTrackedProject(prev)
-        }}
+        onClick={() => goTo(prev)}
       >
         <ArrowLeft />
       </Button>
       <Button
         aria-label='next page'
         slug={next}
-        onClick={() => {
-          navigate(next)
-          addTrackedProject(next)
-        }}
+        onClick={() => goTo(next)}
       >
         <ArrowRight />
       </Button>

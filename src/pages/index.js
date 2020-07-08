@@ -24,7 +24,7 @@ const Heading = () => {
         as='h1'
         duration={0.6}
         initialOpacity={0.01}
-        onClick={() => toggleTheme()}
+        onClick={toggleTheme}
       >
         {title}
       </FadeInText>
@@ -33,17 +33,15 @@ const Heading = () => {
   )
 }
 
-const IndexPage = ({ data: { contentfulProjects: { projects } } }) => (
+const IndexPage = ({ data: { contentfulCuratedProjects } }) => (
   <Layout heading={ <Heading />}>
-    <Home data={projects}/>
+    <Home data={contentfulCuratedProjects.byCategory}/>
   </Layout>
 )
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    contentfulProjects: PropTypes.shape({
-      projects: PropTypes.array.isRequired
-    })
+    contentfulCuratedProjects: PropTypes.object.isRequired
   })
 }
 
@@ -51,10 +49,12 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query HOME_QUERY {
-    contentfulProjects {
-      projects {
-        ...projectInfo
-        isWork
+    contentfulCuratedProjects {
+  	  byCategory: projectsByCategory {
+        category
+        projects {
+          ...projectInfo
+        }
       }
     }
   }
