@@ -5,7 +5,7 @@ import mousetrap from 'mousetrap'
 
 import ArrowLeft from '../../assets/arrow-left.icon.svg'
 import ArrowRight from '../../assets/arrow-right.icon.svg'
-import { usePagination, useViewedProject } from '../../utils/hooks'
+import { usePagination, useTrackProject } from '../../utils/hooks'
 import { Button } from '../shared'
 
 const Wrapper = styled.div`
@@ -28,17 +28,16 @@ const Wrapper = styled.div`
 
 const Pagination = () => {
   const { next, prev } = usePagination()
-  const { addViewedProject } = useViewedProject()
+  const { addTrackedProject } = useTrackProject()
+
+  const goTo = slug => {
+    navigate(`/${slug}`)
+    addTrackedProject(slug)
+  }
 
   useEffect(() => {
-    mousetrap.bind('right', () => {
-      navigate(next)
-      addViewedProject(next)
-    })
-    mousetrap.bind('left', () => {
-      navigate(prev)
-      addViewedProject(prev)
-    })
+    mousetrap.bind('right', () => goTo(next))
+    mousetrap.bind('left', () => goTo(prev))
 
     return () => {
       mousetrap.unbind('left')
@@ -50,20 +49,14 @@ const Pagination = () => {
     <Wrapper>
       <Button
         aria-label='previous page'
-        onClick={() => {
-          navigate(prev)
-          addViewedProject(prev)
-        }}
+        onClick={() => goTo(prev)}
       >
         <ArrowLeft />
       </Button>
       <Button
         aria-label='next page'
         slug={next}
-        onClick={() => {
-          navigate(next)
-          addViewedProject(next)
-        }}
+        onClick={() => goTo(next)}
       >
         <ArrowRight />
       </Button>

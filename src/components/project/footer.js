@@ -2,10 +2,10 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import styled, { css } from 'styled-components'
 
-import Pagination from './pagination'
 
 import { useProjectData } from '../../utils/hooks'
 import { Button } from '../shared'
+import Pagination from './pagination'
 
 const Wrapper = styled.div`
   padding: 20px 0;

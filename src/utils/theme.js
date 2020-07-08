@@ -22,13 +22,13 @@ export const theme = {
     `)}
   `,
   anchorHover: () => css`
-    box-shadow: inset 0 -0.3rem ${theme.gray}80;
+    box-shadow: inset 0 -0.3rem ${theme.accent};
 
     &:hover,
     &:active,
     &:focus {
-      box-shadow: inset 0 -3rem ${theme.gray}80;
-      color: ${theme.secondary};
+      box-shadow: inset 0 -3rem ${theme.accent};
+      color: ${theme.primary};
     }
   `,
   globalPadding: (padding = 6) => css`

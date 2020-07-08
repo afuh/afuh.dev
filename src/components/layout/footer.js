@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { Link } from './header'
 import { useSiteMeta } from '../../utils/hooks'
+import { Link } from './header'
 
 const Wrapper = styled.footer(({ theme }) => css`
   display: none;

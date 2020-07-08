@@ -3,9 +3,11 @@ import { useLocation } from './'
 
 const query = graphql`
   {
-    contentfulProjects {
-      projects {
-        slug
+    contentfulCuratedProjects {
+  	  byCategory: projectsByCategory {
+        projects {
+          slug
+        }
       }
     }
   }
@@ -13,10 +15,12 @@ const query = graphql`
 
 export const usePagination = () => {
   const { location } = useLocation()
-  const { contentfulProjects } = useStaticQuery(query)
-  const { projects } = contentfulProjects
-
+  const { contentfulCuratedProjects } = useStaticQuery(query)
   const pathname = location.pathname.replace(/\//g, '')
+  const projects = contentfulCuratedProjects.byCategory.reduce((acc, item) => [
+    ...acc,
+    ...item.projects
+  ], [])
 
   return projects.reduce((acc, project, i) => {
     if (project.slug === pathname) {
