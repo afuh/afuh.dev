@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   `)}
 `
 
-const Letter = ({ letter, duration, initialOpacity }) => {
+const CharacterAnimation = ({ character, duration, initialOpacity }) => {
   const [time, setTime] = useState(0)
 
   useEffect(() => {
@@ -36,18 +36,18 @@ const Letter = ({ letter, duration, initialOpacity }) => {
       time={time}
       initialOpacity={initialOpacity}
     >
-      {letter}
+      {character}
     </Span>
   )
 }
 
-Letter.propTypes = {
-  letter: PropTypes.string.isRequired,
+CharacterAnimation.propTypes = {
+  character: PropTypes.string.isRequired,
   duration: PropTypes.number.isRequired,
   initialOpacity: PropTypes.number.isRequired
 }
 
-Letter.defaultProps = {
+CharacterAnimation.defaultProps = {
   duration: 1,
   initialOpacity: 0.1
 }
@@ -57,10 +57,10 @@ export const FadeInText = props => (
     createElement(props.as, null, props.children) :
     (
       <Wrapper {...props}>
-        {props.children.split('').map((letter, i) => (
-          <Letter
+        {props.children.split('').map((character, i) => (
+          <CharacterAnimation
             key={i}
-            letter={letter}
+            character={character}
             {...props}
           />
         ))}
