@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, ThemeProvider } from 'styled-components'
+import { useLocation } from '@reach/router'
 
 import SEO from '../seo'
 import { GlobalStyles } from '../../utils/styles'
-import { useToggleTheme, useLocation } from '../../utils/hooks'
+import { useToggleTheme } from '../../utils/hooks'
 
 import Header from './header'
 import Footer from './footer'
@@ -18,7 +19,7 @@ const Main = styled.main(({ theme }) => theme.media.phone(css`
 
 const Layout = ({ children, seo, heading }) => {
   const { theme } = useToggleTheme()
-  const { location } = useLocation()
+  const location = useLocation()
 
   return (
     <>

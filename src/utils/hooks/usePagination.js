@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby'
-import { useLocation } from './'
+import { useLocation } from '@reach/router'
 
 const query = graphql`
   {
@@ -14,7 +14,7 @@ const query = graphql`
 `
 
 export const usePagination = () => {
-  const { location } = useLocation()
+  const location = useLocation()
   const { contentfulCuratedProjects } = useStaticQuery(query)
   const pathname = location.pathname.replace(/\//g, '')
   const projects = contentfulCuratedProjects.byCategory.reduce((acc, item) => [
