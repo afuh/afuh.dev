@@ -6,35 +6,40 @@ import Image from './image'
 import ExternalLinks from './externalLinks'
 import Content from './content'
 
-const Wrapper = styled.div(({ theme }) => css`
-  display: flex;
-  transform: translateY(-104px);
-  ${theme.globalMargin()}
+const Wrapper = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    transform: translateY(-104px);
+    ${theme.globalMargin()}
 
-  ${theme.media.custom(880, css`
-    transform: translateY(0);
-  `)}
+    ${theme.media.custom(
+      880,
+      css`
+        transform: translateY(0);
+      `,
+    )}
 
   ${theme.media.phone(css`
-    flex-direction: column;
+      flex-direction: column;
 
-    #content {
-      order: 2;
-    }
+      #content {
+        order: 2;
+      }
 
-    #external {
-      order: 1;
-    }
-  `)}
-`)
+      #external {
+        order: 1;
+      }
+    `)}
+  `,
+)
 
 const Project = () => (
   <article>
-    <Image id='mobile'/>
+    <Image id="mobile" />
     <Inner>
       <Wrapper>
-        <Content id='content'/>
-        <ExternalLinks id='external'/>
+        <Content id="content" />
+        <ExternalLinks id="external" />
       </Wrapper>
     </Inner>
   </article>

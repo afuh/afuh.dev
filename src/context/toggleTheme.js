@@ -25,10 +25,12 @@ const ToggleThemeProvider = ({ children }) => {
   }
 
   return (
-    <Context.Provider value={{
-      theme,
-      toggleTheme
-    }}>
+    <Context.Provider
+      value={{
+        theme,
+        toggleTheme,
+      }}
+    >
       {children}
     </Context.Provider>
   )

@@ -11,7 +11,7 @@ import { Button } from '../shared'
 const Wrapper = styled.div`
   display: flex;
 
-  button  {
+  button {
     width: 60px;
     margin-left: 10px;
 
@@ -19,10 +19,11 @@ const Wrapper = styled.div`
       height: 1.2rem;
     }
 
-    ${({ theme }) => theme.media.phone(css`
-      margin-top: 4px;
-      margin-left: 4px;
-    `)}
+    ${({ theme }) =>
+      theme.media.phone(css`
+        margin-top: 4px;
+        margin-left: 4px;
+      `)}
   }
 `
 
@@ -30,7 +31,7 @@ const Pagination = () => {
   const { next, prev } = usePagination()
   const { addTrackedProject } = useTrackProject()
 
-  const goTo = slug => {
+  const goTo = (slug) => {
     navigate(`/${slug}`)
     addTrackedProject(slug)
   }
@@ -47,17 +48,10 @@ const Pagination = () => {
 
   return (
     <Wrapper>
-      <Button
-        aria-label='previous page'
-        onClick={() => goTo(prev)}
-      >
+      <Button aria-label="previous page" onClick={() => goTo(prev)}>
         <ArrowLeft />
       </Button>
-      <Button
-        aria-label='next page'
-        slug={next}
-        onClick={() => goTo(next)}
-      >
+      <Button aria-label="next page" slug={next} onClick={() => goTo(next)}>
         <ArrowRight />
       </Button>
     </Wrapper>

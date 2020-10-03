@@ -5,9 +5,7 @@ import TrackProject from './trackProject'
 
 const ContextProviders = ({ children }) => (
   <TrackProject>
-    <ToggleTheme>
-      {children}
-    </ToggleTheme>
+    <ToggleTheme>{children}</ToggleTheme>
   </TrackProject>
 )
 

@@ -27,9 +27,11 @@ const Link = styled(GatsbyLink)`
     color: ${({ theme }) => theme.gray};
   }
 
-  ${({ checked }) => checked && css`
-    color: #6b6b6b;
-  `};
+  ${({ checked }) =>
+    checked &&
+    css`
+      color: #6b6b6b;
+    `};
 `
 
 export const List = ({ data, ...rest }) => {
@@ -38,10 +40,10 @@ export const List = ({ data, ...rest }) => {
   return (
     <Wrapper {...rest}>
       <ul>
-        {data.map(item => (
+        {data.map((item) => (
           <li key={item.slug}>
             <Link
-              checked={trackedProjects.some(slug => slug === item.slug)}
+              checked={trackedProjects.some((slug) => slug === item.slug)}
               onClick={() => addTrackedProject(item.slug)}
               to={'/' + item.slug}
             >
@@ -55,7 +57,7 @@ export const List = ({ data, ...rest }) => {
 }
 
 List.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
 }
 
 export default List

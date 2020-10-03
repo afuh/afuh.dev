@@ -3,21 +3,21 @@ import { css, createGlobalStyle } from 'styled-components'
 const screenBreak = {
   mobile: 992,
   phone: 650,
-  small: 480
+  small: 480,
 }
 
 export const media = {
-  mobile: inner => css`
+  mobile: (inner) => css`
     @media (max-width: ${screenBreak.mobile / 16}em) {
       ${inner}
     }
   `,
-  phone: inner => css`
+  phone: (inner) => css`
     @media (max-width: ${screenBreak.phone / 16}em) {
       ${inner}
     }
   `,
-  small: inner => css`
+  small: (inner) => css`
     @media (max-width: ${screenBreak.small / 16}em) {
       ${inner}
     }
@@ -28,21 +28,21 @@ export const media = {
     }
   `,
 
-  medium: inner => css`
+  medium: (inner) => css`
     @media (min-width: ${screenBreak.medium / 16}em) {
       ${inner}
     }
   `,
-  xlarge: inner => css`
+  xlarge: (inner) => css`
     @media (min-width: ${screenBreak.xlarge / 16}em) {
       ${inner}
     }
   `,
-  xxlarge: inner => css`
+  xxlarge: (inner) => css`
     @media (min-width: ${screenBreak.xxlarge / 16}em) {
       ${inner}
     }
-  `
+  `,
 }
 
 const defaultFont = [
@@ -54,19 +54,18 @@ const defaultFont = [
   'Ubuntu',
   'Cantarell',
   '"Helvetica Neue"',
-  'sans-serif'
+  'sans-serif',
 ].join()
 
-
-export const fontSize = size => css`
+export const fontSize = (size) => css`
   font-size: ${size}rem;
 
   ${media.mobile(css`
-    font-size: ${size - (size/12)}rem;
+    font-size: ${size - size / 12}rem;
   `)}
 
   ${media.phone(css`
-    font-size: ${size - (size/10)}rem;
+    font-size: ${size - size / 10}rem;
   `)}
 
   ${media.xxlarge(css`
@@ -75,9 +74,15 @@ export const fontSize = size => css`
 `
 
 const typography = css`
-  h1 { ${fontSize(3.2)}; }
-  h2 { ${fontSize(2.4)}; }
-  h3 { ${fontSize(1.9)}; }
+  h1 {
+    ${fontSize(3.2)};
+  }
+  h2 {
+    ${fontSize(2.4)};
+  }
+  h3 {
+    ${fontSize(1.9)};
+  }
 
   a {
     text-decoration: none;
@@ -121,6 +126,11 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     text-decoration-skip-ink: auto;
     font-family: ${defaultFont};
+  }
+
+  .gatsby-image-wrapper img[src*="base64"] {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
   }
 
   ${typography}

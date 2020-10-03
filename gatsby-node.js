@@ -19,7 +19,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      `).then(result => {
+      `).then((result) => {
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)
@@ -35,8 +35,8 @@ exports.createPages = ({ graphql, actions }) => {
             path: slug,
             component: path.resolve('src/templates/project.js'),
             context: {
-              slug
-            }
+              slug,
+            },
           })
         })
 
@@ -46,8 +46,8 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/tag/${name}`,
             component: path.resolve('src/templates/tag.js'),
             context: {
-              tag: name
-            }
+              tag: name,
+            },
           })
         })
 
@@ -56,10 +56,10 @@ exports.createPages = ({ graphql, actions }) => {
           path: '/tag',
           component: path.resolve('src/templates/allTags.js'),
           context: {
-            tags: allContentfulProject.group
-          }
+            tags: allContentfulProject.group,
+          },
         })
-      })
+      }),
     )
   })
 }

@@ -35,27 +35,34 @@ const Wrapper = styled.section`
     list-style-type: none;
   }
 
-  ${({ loading }) => !loading && css`
-    opacity: 1;
-    visibility: visible;
-  `};
+  ${({ loading }) =>
+    !loading &&
+    css`
+      opacity: 1;
+      visibility: visible;
+    `};
 
   transition: opacity 1s ease;
 
-  ${({ theme }) => theme.media.custom(800, css`
-    position: inherit;
-    max-width: 100%;
-    margin-top: 0;
-    border-left: none;
-    border-top: 2px solid #f4f4f4;
-    ${mobilePadding}
-  `)}
+  ${({ theme }) =>
+    theme.media.custom(
+      800,
+      css`
+        position: inherit;
+        max-width: 100%;
+        margin-top: 0;
+        border-left: none;
+        border-top: 2px solid #f4f4f4;
+        ${mobilePadding}
+      `,
+    )}
 `
 
 const Card = styled.li`
   margin: 10px 0 15px;
 
-  h3, p {
+  h3,
+  p {
     margin: 4px 0;
     line-height: 1.2;
   }
@@ -82,23 +89,23 @@ const Card = styled.li`
 const GithubBox = () => {
   const { data, loading, error } = useGithub({ user: 'afuh' })
   return (
-    <Wrapper
-      loading={loading}
-    >
-      {!loading && !error &&
+    <Wrapper loading={loading}>
+      {!loading && !error && (
         <>
           <h2>github</h2>
           <ul>
-            {data.map(repo => (
+            {data.map((repo) => (
               <Card key={repo.url}>
-                <h3><a href={repo.url}>{repo.name}</a></h3>
+                <h3>
+                  <a href={repo.url}>{repo.name}</a>
+                </h3>
                 <p>{repo.description}</p>
                 <p>✩ {repo.stars}</p>
               </Card>
             ))}
           </ul>
         </>
-      }
+      )}
     </Wrapper>
   )
 }

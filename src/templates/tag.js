@@ -10,17 +10,16 @@ const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
 
   return (
     <Layout
-      heading={(
+      heading={
         <>
           <h2>{pageContext.tag}</h2>
-          <Link to='/tag'><h1>tags</h1></Link>
+          <Link to="/tag">
+            <h1>tags</h1>
+          </Link>
         </>
-      )}
+      }
     >
-      <Inner
-        as='section'
-        margin
-      >
+      <Inner as="section" margin>
         <List data={projects} />
       </Inner>
     </Layout>
@@ -30,17 +29,15 @@ const TagPage = ({ pageContext, data: { allContentfulProject } }) => {
 TagPage.propTypes = {
   pageContext: PropTypes.object.isRequired,
   data: PropTypes.shape({
-    allContentfulProject: PropTypes.object
-  }).isRequired
+    allContentfulProject: PropTypes.object,
+  }).isRequired,
 }
 
 export default TagPage
 
 export const pageQuery = graphql`
   query($tag: [String!]) {
-    allContentfulProject(
-      filter: { tags: { in: $tag } }
-    ) {
+    allContentfulProject(filter: { tags: { in: $tag } }) {
       edges {
         node {
           ...projectInfo

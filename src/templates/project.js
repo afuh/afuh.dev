@@ -17,8 +17,8 @@ const ProjectPage = ({ data: { project } }) => (
       image: {
         url: project.image.file.url,
         contentType: project.image.file.contentType,
-        size: project.image.file.details.image
-      }
+        size: project.image.file.details.image,
+      },
     }}
   >
     <Context.Provider value={project}>
@@ -28,13 +28,13 @@ const ProjectPage = ({ data: { project } }) => (
 )
 
 ProjectPage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 }
 
 export default ProjectPage
 
 export const pageQuery = graphql`
-  query PROJECT_PAGE_QUERY ($slug: String!) {
+  query PROJECT_PAGE_QUERY($slug: String!) {
     project: contentfulProject(slug: { eq: $slug }) {
       ...projectInfo
       url

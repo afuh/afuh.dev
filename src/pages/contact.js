@@ -9,7 +9,7 @@ const ContactPage = () => {
   const { contactPage } = useSiteContent()
 
   return (
-    <Layout heading='Contact'>
+    <Layout heading="Contact">
       <Contact data={contactPage} />
     </Layout>
   )
