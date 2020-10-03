@@ -128,5 +128,10 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${defaultFont};
   }
 
+  .gatsby-image-wrapper img[src*="base64"] {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+  }
+
   ${typography}
 `
