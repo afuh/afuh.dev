@@ -24,20 +24,15 @@ const Content = ({ id }) => {
 
   return (
     <Wrapper id={id}>
-      <Image
-        id='desktop'
-      />
-      <MarkdownWrapper
-        className='text-wrapper'
-        html={content.md.html}
-      />
+      <Image id="desktop" />
+      <MarkdownWrapper className="text-wrapper" html={content.md.html} />
       <Footer />
     </Wrapper>
   )
 }
 
 Content.propTypes = {
-  id: PropTypes.string
+  id: PropTypes.string,
 }
 
 export default Content

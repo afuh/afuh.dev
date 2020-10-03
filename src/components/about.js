@@ -4,19 +4,13 @@ import PropTypes from 'prop-types'
 import { Inner, MarkdownWrapper } from './shared'
 
 const About = ({ text }) => (
-  <Inner
-    margin
-    css='margin-bottom: 40px;'
-  >
-    <MarkdownWrapper
-      as='section'
-      html={text.md.html}
-    />
+  <Inner margin css="margin-bottom: 40px;">
+    <MarkdownWrapper as="section" html={text.md.html} />
   </Inner>
 )
 
 About.propTypes = {
-  text: PropTypes.object.isRequired
+  text: PropTypes.object.isRequired,
 }
 
 export default About

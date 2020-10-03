@@ -10,12 +10,14 @@ import { useToggleTheme } from '../../utils/hooks'
 import Header from './header'
 import Footer from './footer'
 
-const Main = styled.main(({ theme }) => theme.media.phone(css`
-  min-height: calc(100vh - ${theme.headerHeight.desktop}px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`))
+const Main = styled.main(({ theme }) =>
+  theme.media.phone(css`
+    min-height: calc(100vh - ${theme.headerHeight.desktop}px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `),
+)
 
 const Layout = ({ children, seo, heading }) => {
   const { theme } = useToggleTheme()
@@ -23,17 +25,12 @@ const Layout = ({ children, seo, heading }) => {
 
   return (
     <>
-      <SEO
-        {...seo}
-        pathname={seo ? seo.pathname : location.pathname}
-      />
+      <SEO {...seo} pathname={seo ? seo.pathname : location.pathname} />
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyles />
           <Header heading={heading} />
-          <Main>
-            {children}
-          </Main>
+          <Main>{children}</Main>
           <Footer />
         </>
       </ThemeProvider>
@@ -43,10 +40,7 @@ const Layout = ({ children, seo, heading }) => {
 
 Layout.propTypes = {
   seo: PropTypes.object,
-  heading: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]).isRequired
+  heading: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 }
 
 export default Layout

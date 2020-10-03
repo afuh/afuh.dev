@@ -12,10 +12,10 @@ export const Inner = styled.div`
 
 Inner.propTypes = {
   padding: number.isRequired,
-  margin: bool.isRequired
+  margin: bool.isRequired,
 }
 
 Inner.defaultProps = {
   padding: 6,
-  margin: false
+  margin: false,
 }

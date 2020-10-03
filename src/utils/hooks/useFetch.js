@@ -3,29 +3,29 @@ import { useEffect, useRef, useReducer } from 'react'
 const status = {
   LOADING: 'loading',
   ERROR: 'error',
-  SUCCESS: 'success'
+  SUCCESS: 'success',
 }
 
 const init = {
   status: 'idle',
   error: null,
-  data: []
+  data: [],
 }
 
 const reducer = (state, action) => {
   switch (action.type) {
-  case status.LOADING:
-    return { ...init, status: status.LOADING }
-  case status.SUCCESS:
-    return { ...init, status: status.SUCCESS, data: action.payload }
-  case status.ERROR:
-    return { ...init, status: status.ERROR, error: action.payload }
-  default:
-    return state
+    case status.LOADING:
+      return { ...init, status: status.LOADING }
+    case status.SUCCESS:
+      return { ...init, status: status.SUCCESS, data: action.payload }
+    case status.ERROR:
+      return { ...init, status: status.ERROR, error: action.payload }
+    default:
+      return state
   }
 }
 
-export const useFetch = url => {
+export const useFetch = (url) => {
   const cache = useRef(new Map())
   const [state, dispatch] = useReducer(reducer, init)
 
@@ -62,6 +62,6 @@ export const useFetch = url => {
     ...state,
     isLoading: state.status === status.LOADING,
     isSuccess: state.status === status.SUCCESS,
-    isError: state.status === status.ERROR
+    isError: state.status === status.ERROR,
   }
 }

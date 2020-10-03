@@ -10,39 +10,38 @@ import Layout from '../components/layout'
 import Home from '../components/home'
 
 const ExternalLink = styled(_ExternalLink)`
-  color: ${({ theme }) => theme.secondary}
+  color: ${({ theme }) => theme.secondary};
 `
 
 const Heading = () => {
   const { title } = useSiteMeta()
   const { toggleTheme } = useToggleTheme()
-  const { jobPosition: { title: jobTitle, company, url } } = useSiteContent()
+  const {
+    jobPosition: { title: jobTitle, company, url },
+  } = useSiteContent()
 
   return (
     <>
-      <FadeInText
-        as='h1'
-        duration={0.6}
-        initialOpacity={0.01}
-        onClick={toggleTheme}
-      >
+      <FadeInText as="h1" duration={0.6} initialOpacity={0.01} onClick={toggleTheme}>
         {title}
       </FadeInText>
-      <h2>{jobTitle} at <ExternalLink href={url} >{company}</ExternalLink></h2>
+      <h2>
+        {jobTitle} at <ExternalLink href={url}>{company}</ExternalLink>
+      </h2>
     </>
   )
 }
 
 const IndexPage = ({ data: { contentfulCuratedProjects } }) => (
-  <Layout heading={ <Heading />}>
-    <Home data={contentfulCuratedProjects.byCategory}/>
+  <Layout heading={<Heading />}>
+    <Home data={contentfulCuratedProjects.byCategory} />
   </Layout>
 )
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    contentfulCuratedProjects: PropTypes.object.isRequired
-  })
+    contentfulCuratedProjects: PropTypes.object.isRequired,
+  }),
 }
 
 export default IndexPage
@@ -50,7 +49,7 @@ export default IndexPage
 export const pageQuery = graphql`
   query HOME_QUERY {
     contentfulCuratedProjects {
-  	  byCategory: projectsByCategory {
+      byCategory: projectsByCategory {
         category
         projects {
           ...projectInfo

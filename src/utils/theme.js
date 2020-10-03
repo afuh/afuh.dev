@@ -11,7 +11,7 @@ export const theme = {
   globalWidth: 720,
   headerHeight: {
     desktop: 220,
-    mobile: 110
+    mobile: 110,
   },
   media,
   globalMargin: (val = 40) => css`
@@ -32,18 +32,18 @@ export const theme = {
     }
   `,
   globalPadding: (padding = 6) => css`
-    padding: 0 ${padding}% 0 ${padding*2}%;
+    padding: 0 ${padding}% 0 ${padding * 2}%;
 
     ${media.medium(css`
-      padding: 0 ${padding*2}% 0 ${padding*4}%;
+      padding: 0 ${padding * 2}% 0 ${padding * 4}%;
     `)}
 
     ${media.xlarge(css`
-      padding: 0 ${padding*3}% 0 ${padding*6}%;
+      padding: 0 ${padding * 3}% 0 ${padding * 6}%;
     `)}
 
     ${media.phone(css`
       padding: 0 ${padding}%;
     `)}
-  `
+  `,
 }

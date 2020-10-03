@@ -9,7 +9,7 @@ const AboutPage = () => {
   const { aboutPage } = useSiteContent()
 
   return (
-    <Layout heading='About'>
+    <Layout heading="About">
       <About text={aboutPage} />
     </Layout>
   )

@@ -6,27 +6,31 @@ const makeUrl = (user, query) => {
     sort: 'pushed',
     direction: 'DESC',
     type: 'all',
-    ...query
+    ...query,
   }
 
   const stringQuery = Object.keys(options)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(options[key])}`)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(options[key])}`)
     .join('&')
 
   return `https://api.github.com/users/${user}/repos?${stringQuery}`
 }
 
-const filterData = data => data
-  .filter(repo => !repo.fork)
-  .reduce((acc, { name, description, url, stargazers_count }) => [
-    ...acc,
-    {
-      name,
-      description,
-      url,
-      stars: stargazers_count
-    }
-  ], [])
+const filterData = (data) =>
+  data
+    .filter((repo) => !repo.fork)
+    .reduce(
+      (acc, { name, description, url, stargazers_count }) => [
+        ...acc,
+        {
+          name,
+          description,
+          url,
+          stars: stargazers_count,
+        },
+      ],
+      [],
+    )
 
 export const useGithub = ({ user, query = {} }) => {
   const [data, setData] = useState([])
@@ -47,7 +51,6 @@ export const useGithub = ({ user, query = {} }) => {
         } else {
           setError(res.statusText)
         }
-
       } finally {
         setLoading(false)
       }
@@ -59,6 +62,6 @@ export const useGithub = ({ user, query = {} }) => {
   return {
     data,
     loading,
-    error
+    error,
   }
 }

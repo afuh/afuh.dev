@@ -2,9 +2,11 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 const Wrapper = styled.div`
-  ${({ theme }) => theme && css`
-    min-height: calc(100vh - ${theme.headerHeight.desktop}px);
-  `};
+  ${({ theme }) =>
+    theme &&
+    css`
+      min-height: calc(100vh - ${theme.headerHeight.desktop}px);
+    `};
   padding: 10px 30px;
   display: flex;
   flex-direction: column;
@@ -33,12 +35,9 @@ const ImageWrapper = styled.div`
 
 const ErrorPage = () => (
   <Wrapper>
-    <h2>
-      The page you are looking for doesn&apos;t exist,
-      but here is a cute cat for you.
-    </h2>
+    <h2>The page you are looking for doesn&apos;t exist, but here is a cute cat for you.</h2>
     <ImageWrapper>
-      <img src='https://source.unsplash.com/random/300x300/?cat,cats' alt='🐈'/>
+      <img src="https://source.unsplash.com/random/300x300/?cat,cats" alt="🐈" />
     </ImageWrapper>
   </Wrapper>
 )
