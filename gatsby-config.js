@@ -5,6 +5,10 @@ require('dotenv').config({
 const siteConfig = require('./config/siteConfig')
 
 module.exports = {
+  flags: {
+    FAST_REFRESH: true,
+    FAST_DEV: true,
+  },
   siteMetadata: {
     ...siteConfig,
   },
@@ -22,14 +26,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: 'Open Sans',
-            variants: ['400', '700', '800'],
-          },
-        ],
+        google: {
+          families: ['Open Sans:400,700,800'],
+        },
       },
     },
     {
