@@ -10,12 +10,15 @@ import { useToggleTheme } from '../../utils/hooks'
 import Header from './header'
 import Footer from './footer'
 
-const Main = styled.main(({ theme }) =>
+const MainWrapper = styled.main(({ theme }) =>
   theme.media.phone(css`
-    min-height: calc(100vh - ${theme.headerHeight.desktop}px);
+    min-height: calc(100vh - ${theme.headerHeight.mobile}px);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
+    main {
+      flex: 1;
+    }
   `),
 )
 
@@ -30,8 +33,10 @@ const Layout = ({ children, seo, heading }) => {
         <>
           <GlobalStyles />
           <Header heading={heading} />
-          <Main>{children}</Main>
-          <Footer />
+          <MainWrapper>
+            <main>{children}</main>
+            <Footer />
+          </MainWrapper>
         </>
       </ThemeProvider>
     </>

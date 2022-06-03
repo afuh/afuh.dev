@@ -6,7 +6,6 @@ const Wrapper = styled.div(
   ({ theme }) => css`
     max-width: ${theme.globalWidth}px;
     margin-top: 20px;
-    font-family: 'Open Sans', sans-serif;
 
     h2,
     h3 {

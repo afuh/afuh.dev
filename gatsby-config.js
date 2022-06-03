@@ -5,10 +5,6 @@ require('dotenv').config({
 const siteConfig = require('./config/siteConfig')
 
 module.exports = {
-  flags: {
-    FAST_REFRESH: true,
-    FAST_DEV: true,
-  },
   siteMetadata: {
     ...siteConfig,
   },
@@ -18,21 +14,8 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-    {
-      resolve: 'gatsby-plugin-nprogress',
-      options: {
-        color: '#78ff78',
-        showSpinner: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Open Sans:400,700,800'],
-        },
-      },
-    },
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-image',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -45,7 +28,6 @@ module.exports = {
               linkImagesToOriginal: false,
               withWebp: true,
               backgroundColor: 'transparent',
-              sizeByPixelDensity: true,
             },
           },
         ],
@@ -81,7 +63,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify-cache',
     'gatsby-plugin-netlify',
   ],
 }

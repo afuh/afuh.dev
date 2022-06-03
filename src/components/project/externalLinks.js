@@ -25,8 +25,8 @@ const Wrapper = styled.div(
       )}
 
       &:hover,
-    &:active,
-    &:focus {
+      &:active,
+      &:focus {
         color: ${theme.accent};
       }
     }

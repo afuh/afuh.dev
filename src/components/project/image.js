@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import { useProjectData } from '../../utils/hooks'
 
@@ -10,6 +10,7 @@ const ImageWrapper = styled.div(
     position: relative;
     border-radius: 4px;
     overflow: hidden;
+    max-width: 720px;
 
     &::after {
       content: '';
@@ -45,7 +46,7 @@ const Image = ({ id }) => {
 
   return (
     <ImageWrapper id={id}>
-      <Img fluid={image.fluid} alt={title} />
+      <GatsbyImage image={image.gatsbyImageData} alt={title} />
     </ImageWrapper>
   )
 }

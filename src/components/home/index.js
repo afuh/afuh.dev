@@ -2,7 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import ProjectList from './projectList'
+import { List as _List, Inner } from '../shared'
+
+const List = styled(_List)`
+  margin-bottom: 60px;
+
+  ul {
+    position: relative;
+
+    li {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+`
 
 const Wrapper = styled.section(
   ({ theme }) => css`
@@ -18,9 +36,9 @@ const Wrapper = styled.section(
 
 const Home = ({ data }) => (
   <Wrapper>
-    {data.map(({ category, projects }) => (
-      <ProjectList key={category} title={category} data={projects} />
-    ))}
+    <Inner>
+      <List data={data} />
+    </Inner>
   </Wrapper>
 )
 
