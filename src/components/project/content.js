@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { MarkdownWrapper } from '../shared'
 import { useProjectData } from '../../utils/hooks'
-import Footer from './footer'
+import Pagination from './pagination'
 import Image from './image'
 
 const Wrapper = styled.div`
@@ -26,7 +26,7 @@ const Content = ({ id }) => {
     <Wrapper id={id}>
       <Image id="desktop" />
       <MarkdownWrapper className="text-wrapper" html={content.md.html} />
-      <Footer />
+      <Pagination />
     </Wrapper>
   )
 }

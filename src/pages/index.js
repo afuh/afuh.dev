@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { FadeInText, ExternalLink as _ExternalLink } from '../components/shared'
+import { ExternalLink as _ExternalLink } from '../components/shared'
 import { useSiteMeta, useToggleTheme, useSiteContent } from '../utils/hooks'
 
 import Layout from '../components/layout'
@@ -22,9 +22,9 @@ const Heading = () => {
 
   return (
     <>
-      <FadeInText as="h1" duration={0.6} initialOpacity={0.01} onClick={toggleTheme}>
+      <h1 onClick={toggleTheme} aria-hidden="true" style={{ cursor: 'pointer' }}>
         {title}
-      </FadeInText>
+      </h1>
       <h2>
         {jobTitle} at <ExternalLink href={url}>{company}</ExternalLink>
       </h2>
@@ -32,15 +32,15 @@ const Heading = () => {
   )
 }
 
-const IndexPage = ({ data: { contentfulCuratedProjects } }) => (
+const IndexPage = ({ data }) => (
   <Layout heading={<Heading />}>
-    <Home data={contentfulCuratedProjects.byCategory} />
+    <Home data={data.contentfulProjectList.projects} />
   </Layout>
 )
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    contentfulCuratedProjects: PropTypes.object.isRequired,
+    contentfulProjectList: PropTypes.object.isRequired,
   }),
 }
 
@@ -48,12 +48,9 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query HOME_QUERY {
-    contentfulCuratedProjects {
-      byCategory: projectsByCategory {
-        category
-        projects {
-          ...projectInfo
-        }
+    contentfulProjectList(category: { eq: "Open Source" }) {
+      projects {
+        ...projectInfo
       }
     }
   }

@@ -1,5 +1,5 @@
-import { useContext } from 'react'
+import { useContext, createContext } from 'react'
 
-import { Context } from '../../templates/project'
+export const ProjectContext = createContext()
 
-export const useProjectData = () => useContext(Context)
+export const useProjectData = () => useContext(ProjectContext)

@@ -1,11 +1,10 @@
-import React, { createContext } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
 import Project from '../components/project'
-
-export const Context = createContext()
+import { ProjectContext } from '../utils/hooks/useProjectData'
 
 const ProjectPage = ({ data: { project } }) => (
   <Layout
@@ -21,9 +20,9 @@ const ProjectPage = ({ data: { project } }) => (
       },
     }}
   >
-    <Context.Provider value={project}>
+    <ProjectContext.Provider value={project}>
       <Project />
-    </Context.Provider>
+    </ProjectContext.Provider>
   </Layout>
 )
 
@@ -39,11 +38,8 @@ export const pageQuery = graphql`
       ...projectInfo
       url
       code
-      tags
       image {
-        fluid(maxWidth: 720) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(placeholder: BLURRED)
         file {
           url
           contentType

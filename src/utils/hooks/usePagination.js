@@ -3,11 +3,9 @@ import { useLocation } from '@reach/router'
 
 const query = graphql`
   {
-    contentfulCuratedProjects {
-      byCategory: projectsByCategory {
-        projects {
-          slug
-        }
+    contentfulProjectList(category: { eq: "Open Source" }) {
+      projects {
+        slug
       }
     }
   }
@@ -15,9 +13,10 @@ const query = graphql`
 
 export const usePagination = () => {
   const location = useLocation()
-  const { contentfulCuratedProjects } = useStaticQuery(query)
   const pathname = location.pathname.replace(/\//g, '')
-  const projects = contentfulCuratedProjects.byCategory.reduce((acc, item) => [...acc, ...item.projects], [])
+  const {
+    contentfulProjectList: { projects },
+  } = useStaticQuery(query)
 
   return projects.reduce(
     (acc, project, i) => {

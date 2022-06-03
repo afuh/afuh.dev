@@ -28,7 +28,6 @@ const Wrapper = styled.header(
         margin: 0;
 
         ${theme.media.phone(css`
-          text-align: center;
           font-size: 3.4rem;
         `)}
       }
