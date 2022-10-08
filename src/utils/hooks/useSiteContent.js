@@ -8,11 +8,8 @@ export const useSiteContent = () => {
           personalIntro {
             md: childMarkdownRemark {
               html
+              excerpt(pruneLength: 120)
             }
-          }
-          social {
-            name
-            url
           }
         }
       }

@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 
 import { useSiteMeta, useToggleTheme, useSiteContent } from '../utils/hooks'
 import Layout from '../components/layout'
-import { List as _List, Inner, MarkdownWrapper } from '../components/shared'
+import { List as _List, Inner, MarkdownWrapper, SEO } from '../components/shared'
 
 const List = styled(_List)`
   margin-bottom: 60px;
@@ -76,6 +76,8 @@ IndexPage.propTypes = {
 }
 
 export default IndexPage
+
+export const Head = () => <SEO />
 
 export const pageQuery = graphql`
   query HOME_QUERY {

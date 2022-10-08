@@ -9,7 +9,6 @@ module.exports = {
     ...siteConfig,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',

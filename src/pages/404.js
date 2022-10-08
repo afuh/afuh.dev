@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 import Layout from '../components/layout'
+import { SEO } from '../components/shared'
 
 const Wrapper = styled.div`
   ${({ theme }) =>
@@ -47,3 +48,5 @@ const NotFoundPage = () => (
 )
 
 export default NotFoundPage
+
+export const Head = () => <SEO />

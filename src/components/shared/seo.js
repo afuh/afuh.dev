@@ -1,20 +1,18 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 
-import { useSiteMeta, useSiteContent } from '../utils/hooks'
+import { useSiteContent, useSiteMeta } from '../../utils/hooks'
 
 const checkUrl = (url) => (url.match(/^https/i) ? url : 'https:' + url)
 
-const SEO = ({ title, description, image, pathname }) => {
-  const { social } = useSiteContent()
-
-  const { title: defaultTitle, description: defaultDescription, image: defaultImage, siteUrl } = useSiteMeta()
+export const SEO = ({ title, description, image, pathname }) => {
+  const { title: defaultTitle, image: defaultImage, siteUrl } = useSiteMeta()
+  const { personalIntro } = useSiteContent()
 
   const seo = {
     title: title || defaultTitle,
-    description: description || defaultDescription,
-    url: `${siteUrl}${pathname || '/'}`,
+    description: description || personalIntro.md.excerpt,
+    url: `${siteUrl}${pathname || ''}`,
     image: {
       url: image ? checkUrl(image.url) : `${siteUrl}${defaultImage}`,
       contentType: image ? image.contentType : 'image/jpeg',
@@ -22,11 +20,9 @@ const SEO = ({ title, description, image, pathname }) => {
     },
   }
 
-  const twitterUrl = social.find((item) => /twitter/i.test(item.name)).url.split('/')
-  const twitterUser = '@' + twitterUrl[twitterUrl.length - 1]
-
   return (
-    <Helmet htmlAttributes={{ lang: 'en' }} title={seo.title}>
+    <>
+      <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image.url} />
 
@@ -41,14 +37,12 @@ const SEO = ({ title, description, image, pathname }) => {
       <meta property="og:image:width" content={seo.image.size.width} />
       <meta property="og:image:height" content={seo.image.size.height} />
 
-      <meta name="twitter:creator" content={twitterUser} />
-      <meta name="twitter:site" content={twitterUser} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image.url} />
-    </Helmet>
+    </>
   )
 }
 
@@ -65,5 +59,3 @@ SEO.defaultProps = {
   image: null,
   pathname: null,
 }
-
-export default SEO
