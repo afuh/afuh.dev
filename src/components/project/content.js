@@ -25,7 +25,7 @@ const Content = ({ id }) => {
   return (
     <Wrapper id={id}>
       <Image id="desktop" />
-      <MarkdownWrapper className="text-wrapper" html={content.md.html} />
+      <MarkdownWrapper className="text-wrapper" dangerouslySetInnerHTML={{ __html: content.md.html }} />
       <Pagination />
     </Wrapper>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, ThemeProvider } from 'styled-components'
+// eslint-disable-next-line import/no-unresolved
 import { useLocation } from '@reach/router'
 
 import SEO from '../seo'
@@ -8,7 +9,6 @@ import { GlobalStyles } from '../../utils/styles'
 import { useToggleTheme } from '../../utils/hooks'
 
 import Header from './header'
-import Footer from './footer'
 
 const MainWrapper = styled.main(({ theme }) =>
   theme.media.phone(css`
@@ -35,7 +35,6 @@ const Layout = ({ children, seo, heading }) => {
           <Header heading={heading} />
           <MainWrapper>
             <main>{children}</main>
-            <Footer />
           </MainWrapper>
         </>
       </ThemeProvider>

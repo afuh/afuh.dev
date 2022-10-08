@@ -1,13 +1,8 @@
 module.exports = {
   title: 'Axel Fuhrmann',
-  description: 'Full stack developer',
-  siteUrl: 'https://axelfuhrmann.com',
+  description: 'Software Engineer',
+  siteUrl: 'https://afuh.dev',
   image: '/images/cover-720x360.jpg',
   themeColor: '#FEFEFE',
   backgroundColor: '#212129',
-  nav: [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' }
-  ]
 }

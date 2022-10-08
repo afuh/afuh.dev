@@ -1,8 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-const Wrapper = styled.div(
+export const MarkdownWrapper = styled.section(
   ({ theme }) => css`
     max-width: ${theme.globalWidth}px;
     margin-top: 20px;
@@ -50,15 +48,3 @@ const Wrapper = styled.div(
     }
   `,
 )
-
-export const MarkdownWrapper = ({ html, children, ...rest }) => {
-  if (children) {
-    return <Wrapper {...rest}>{children}</Wrapper>
-  }
-
-  return <Wrapper dangerouslySetInnerHTML={{ __html: html }} {...rest} />
-}
-
-MarkdownWrapper.propTypes = {
-  html: PropTypes.string,
-}
