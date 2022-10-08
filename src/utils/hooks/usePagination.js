@@ -1,4 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby'
+// eslint-disable-next-line import/no-unresolved
 import { useLocation } from '@reach/router'
 
 const query = graphql`

@@ -12,10 +12,6 @@ export const useSiteMeta = () => {
             description
             siteUrl
             image
-            nav {
-              name
-              path
-            }
           }
         }
       }

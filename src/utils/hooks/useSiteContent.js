@@ -5,24 +5,11 @@ export const useSiteContent = () => {
     graphql`
       {
         content: contentfulSiteContent {
-          contactPage {
+          personalIntro {
             md: childMarkdownRemark {
               html
+              excerpt(pruneLength: 120)
             }
-          }
-          jobPosition {
-            title
-            company
-            url
-          }
-          aboutPage {
-            md: childMarkdownRemark {
-              html
-            }
-          }
-          social {
-            name
-            url
           }
         }
       }

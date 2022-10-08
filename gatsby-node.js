@@ -1,6 +1,9 @@
 const path = require('path')
 
-exports.createPages = async ({ graphql, actions: { createPage } }) => {
+exports.createPages = async ({ graphql, actions: { createPage, createRedirect } }) => {
+  createRedirect({ fromPath: '/contact', toPath: '/', isPermanent: true })
+  createRedirect({ fromPath: '/about', toPath: '/', isPermanent: true })
+
   const { data } = await graphql(`
     {
       allContentfulProject {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
 
-import { useSiteMeta } from '../../utils/hooks'
 import { Inner } from '../shared'
 
 const Wrapper = styled.header(
@@ -82,32 +81,11 @@ Heading.propTypes = {
   data: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 }
 
-const Nav = ({ data }) => (
-  <nav className="nav">
-    <ul>
-      {data.map((item) => (
-        <li key={item.name}>
-          <Link partiallyActive={item.path.length > 1} activeClassName="active" to={item.path}>
-            {item.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </nav>
-)
-
-Nav.propTypes = {
-  data: PropTypes.array.isRequired,
-}
-
 const Header = ({ heading }) => {
-  const { nav } = useSiteMeta()
-
   return (
     <Wrapper>
       <Inner>
         <Heading data={heading} />
-        <Nav data={nav} />
       </Inner>
     </Wrapper>
   )
