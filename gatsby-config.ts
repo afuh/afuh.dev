@@ -1,13 +1,24 @@
-require('dotenv').config({
+import type { GatsbyConfig } from 'gatsby'
+import * as dotenv from 'dotenv'
+
+dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const siteConfig = require('./config/siteConfig')
+const metadata = {
+  title: 'Axel Fuhrmann',
+  description: 'Software Engineer',
+  siteUrl: 'https://afuh.dev',
+  image: '/images/cover-720x360.jpg',
+  themeColor: '#FEFEFE',
+  backgroundColor: '#212129',
+}
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
-    ...siteConfig,
+    ...metadata,
   },
+  graphqlTypegen: true,
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
@@ -35,12 +46,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: siteConfig.title,
-        short_name: siteConfig.title,
-        description: siteConfig.description,
+        name: metadata.title,
+        short_name: metadata.title,
+        description: metadata.description,
         start_url: '/',
-        background_color: siteConfig.backgroundColor,
-        theme_color: siteConfig.themeColor,
+        background_color: metadata.backgroundColor,
+        theme_color: metadata.themeColor,
         display: 'standalone',
         icon: 'src/assets/icon-512x512.png',
       },
@@ -65,3 +76,5 @@ module.exports = {
     'gatsby-plugin-netlify',
   ],
 }
+
+export default config
