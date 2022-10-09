@@ -1,6 +1,33 @@
 import { css } from 'styled-components'
 
-import { media } from './styles'
+const screenBreak = {
+  mobile: 992,
+  phone: 650,
+  small: 480,
+}
+
+export const media = {
+  mobile: (inner) => css`
+    @media (max-width: ${screenBreak.mobile / 16}em) {
+      ${inner}
+    }
+  `,
+  phone: (inner) => css`
+    @media (max-width: ${screenBreak.phone / 16}em) {
+      ${inner}
+    }
+  `,
+  small: (inner) => css`
+    @media (max-width: ${screenBreak.small / 16}em) {
+      ${inner}
+    }
+  `,
+  custom: (n, inner) => css`
+    @media (max-width: ${n / 16}em) {
+      ${inner}
+    }
+  `,
+}
 
 export const theme = {
   primary: '#212129',
@@ -16,34 +43,8 @@ export const theme = {
   media,
   globalMargin: (val = 40) => css`
     margin-top: ${val}px;
-
     ${media.phone(css`
       margin: 40px 0;
-    `)}
-  `,
-  anchorHover: () => css`
-    box-shadow: inset 0 -0.3rem ${theme.accent};
-
-    &:hover,
-    &:active,
-    &:focus {
-      box-shadow: inset 0 -3rem ${theme.accent};
-      color: ${theme.primary};
-    }
-  `,
-  globalPadding: (padding = 6) => css`
-    padding: 0 ${padding}% 0 ${padding * 2}%;
-
-    ${media.medium(css`
-      padding: 0 ${padding * 2}% 0 ${padding * 4}%;
-    `)}
-
-    ${media.xlarge(css`
-      padding: 0 ${padding * 3}% 0 ${padding * 6}%;
-    `)}
-
-    ${media.phone(css`
-      padding: 0 ${padding}%;
     `)}
   `,
 }
