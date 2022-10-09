@@ -19,7 +19,13 @@ export const MarkdownWrapper = styled.section(
     }
 
     a {
-      ${theme.anchorHover}
+      box-shadow: inset 0 -0.3rem ${theme.accent};
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: inset 0 -3rem ${theme.accent};
+        color: ${theme.primary};
+      }
     }
 
     ul {

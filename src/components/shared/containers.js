@@ -1,13 +1,17 @@
 import { number, bool } from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Inner = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
+  ${({ theme }) => css`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 6% 0 12%;
 
-  ${({ theme, padding }) => theme.globalPadding(padding)}
-  ${({ theme, margin }) => margin && theme.globalMargin()}
+    ${theme.media.phone(css`
+      padding: 0 6%;
+    `)}
+  `}
 `
 
 Inner.propTypes = {

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, ThemeProvider } from 'styled-components'
 
-import { GlobalStyles } from '../../utils/styles'
+import { GlobalStyles } from '../../utils/globalStyles'
 import { useToggleTheme } from '../../utils/hooks'
 
 import Header from './header'
