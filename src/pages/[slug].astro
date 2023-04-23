@@ -1,0 +1,52 @@
+---
+import { Picture } from '@astrojs/image/components'
+import { marked } from 'marked'
+
+import { getProjects } from '../lib/contentful'
+import Page, { SEO } from '../layouts/Page.astro'
+import MarkdownSection from '../components/MarkdownSection.astro'
+
+type Props = {
+  title: string
+  content: string
+  url: string
+  codeUrl: string
+  imageUrl: string
+  seo: SEO
+}
+
+export const getStaticPaths = async () => {
+  const projects = await getProjects()
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: {
+      title: project.title,
+      content: marked.parse(project.content),
+      url: project.url,
+      codeUrl: project.codeUrl,
+      imageUrl: project.imageUrl,
+      seo: project.seo,
+    },
+  }))
+}
+
+const { title, content, url, codeUrl, imageUrl, seo } = Astro.props
+---
+
+<Page title={title} seo={seo}>
+  <article>
+    <Picture
+      src={imageUrl}
+      alt={title}
+      widths={[300, 400, 720]}
+      aspectRatio="16:9"
+      sizes="(max-width: 720px) 100vw, 720px"
+    />
+    <div>
+      <a href={url}>Live</a>
+      <a href={codeUrl}>Code</a>
+    </div>
+    <MarkdownSection set:html={content} />
+  </article>
+</Page>

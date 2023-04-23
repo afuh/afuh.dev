@@ -1,0 +1,48 @@
+---
+import '../styles/global.css'
+
+import BaseHead from '../components/BaseHead.astro'
+import Container from '../components/Container.astro'
+import Header from '../components/Header.astro'
+import { getSiteContent } from '../lib/contentful'
+
+export type SEO = {
+  description: string
+  image: {
+    url: string
+    contentType: string
+    size: { width: string; height: string }
+  }
+}
+
+type Props = {
+  title?: string
+  seo?: SEO
+}
+
+const siteContent = await getSiteContent()
+
+const { title = siteContent.title, seo } = Astro.props
+---
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+</style>
+
+<html lang="en">
+  <BaseHead title={title} seo={seo} />
+  <body>
+    <Header title={title} />
+    <main>
+      <section>
+        <Container>
+          <slot />
+        </Container>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://afuh.dev/sitemap-index.xml
+Host: https://afuh.dev

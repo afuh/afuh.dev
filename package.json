@@ -4,28 +4,29 @@
   "version": "4.0.0",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview --host",
+    "check": "astro check",
+    "astro": "astro",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/react": "^2.1.1",
-    "@astrojs/rss": "^2.3.2",
+    "@astrojs/image": "^0.16.6",
     "@astrojs/sitemap": "^1.2.2",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "astro": "^2.3.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "astro": "^2.2.2",
+    "contentful": "9.3.5",
+    "marked": "^4.3.0",
+    "sharp": "^0.32.0"
   },
   "devDependencies": {
+    "@types/marked": "^4.0.8",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-astro": "^0.26.1",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
     "prettier": "^2.8.7",
     "prettier-plugin-astro": "^0.8.0"
   }
