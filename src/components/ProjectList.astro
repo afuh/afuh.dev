@@ -9,7 +9,7 @@ const projects = await getProjects()
     {
       projects.map(({ title, slug }) => (
         <li>
-          <a class="link-strong" href={`/${slug}`}>
+          <a class="link-strong" href={`/${slug}`} rel="prefetch">
             {title}
           </a>
         </li>
