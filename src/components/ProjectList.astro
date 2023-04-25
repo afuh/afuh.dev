@@ -7,9 +7,11 @@ const projects = await getProjects()
 <section>
   <ul>
     {
-      projects.map((item) => (
+      projects.map(({ title, slug }) => (
         <li>
-          <a href={`/${item.slug}`}>{item.title}</a>
+          <a class="link-strong" href={`/${slug}`}>
+            {title}
+          </a>
         </li>
       ))
     }
@@ -27,12 +29,8 @@ const projects = await getProjects()
     margin: 2rem 0;
   }
 
-  a {
+  li .link-strong {
     font-size: 2.4rem;
     font-weight: 800;
-  }
-
-  a:hover {
-    color: var(--theme-primary-soft);
   }
 </style>

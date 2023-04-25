@@ -36,6 +36,11 @@ const isHome = Astro.url.pathname === '/'
     margin-top: 100px;
     font-weight: 800;
     font-size: 6rem;
+
+    @media (max-width: 50em) {
+      margin-top: 16px;
+      font-size: 4rem;
+    }
   }
 
   h2 {

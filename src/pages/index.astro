@@ -9,6 +9,12 @@ const { description } = await getSiteContent()
 ---
 
 <Page>
-  <MarkdownSection set:html={marked.parse(description)} style={{ paddingBottom: '32px', marginTop: 0 }} />
+  <MarkdownSection set:html={marked.parse(description)} />
   <ProjectList />
 </Page>
+
+<style>
+  .markdown-section {
+    margin: 32px 0 64px;
+  }
+</style>

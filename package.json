@@ -3,7 +3,7 @@
   "type": "module",
   "version": "4.0.0",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview --host",
     "check": "astro check",
@@ -22,6 +22,7 @@
     "@types/marked": "^4.0.8",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-astro": "^0.26.1",

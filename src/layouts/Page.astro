@@ -2,9 +2,9 @@
 import '../styles/global.css'
 
 import BaseHead from '../components/BaseHead.astro'
-import Container from '../components/Container.astro'
 import Header from '../components/Header.astro'
 import { getSiteContent } from '../lib/contentful'
+import Main from '../components/Main.astro'
 
 export type SEO = {
   description: string
@@ -25,24 +25,12 @@ const siteContent = await getSiteContent()
 const { title = siteContent.title, seo } = Astro.props
 ---
 
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
-  }
-</style>
-
 <html lang="en">
   <BaseHead title={title} seo={seo} />
   <body>
     <Header title={title} />
-    <main>
-      <section>
-        <Container>
-          <slot />
-        </Container>
-      </section>
-    </main>
+    <Main>
+      <slot />
+    </Main>
   </body>
 </html>

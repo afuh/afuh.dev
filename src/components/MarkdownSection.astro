@@ -6,62 +6,30 @@ type Props = HTMLAttributes<'section'>
 const { class: className, ...props } = Astro.props
 ---
 
-<section class:list={[className, 'md-section']} {...props}>
+<section class:list={[className, 'md', 'markdown-section']} {...props}>
   <slot />
 </section>
 
 <style is:global>
-  section.md-section {
-    max-width: var(--global-width);
-    margin-top: 20px;
+  .md p:last-child {
+    margin-bottom: 0;
   }
 
-  .md-section h2,
-  .md-section h3 {
-    margin-top: 40px;
-    margin-bottom: 8px;
-  }
-
-  .md-section p,
-  .md-section li {
+  .md p {
     margin-top: 0;
     font-size: 1.8rem;
     line-height: 1.7;
   }
 
-  .md-section a {
-    box-shadow: inset 0 -0.3rem var(--theme-accent);
+  .md a {
+    text-decoration: underline;
   }
 
-  .md-section a:hover,
-  .md-section a:active,
-  .md-section a:focus {
-    box-shadow: inset 0 -3rem var(--theme-accent);
-    color: #000;
-  }
-
-  .md-section ul {
-    padding-left: 20px;
-  }
-
-  .md-section li {
-    display: list-item;
-    text-align: match-parent;
-  }
-
-  .md-section hr {
-    display: block;
-    height: 2px;
-    width: 120px;
-    background-color: var(--theme-primary-soft);
-    margin: 30px auto;
-    border-width: 0;
-  }
-
-  .md-section blockquote {
-    border-left: 4px solid var(--theme-primary-soft);
-    padding-left: 20px;
-    margin-left: 0;
-    font-style: italic;
+  .md a:hover,
+  .md a:active,
+  .md a:focus {
+    background: var(--theme-primary);
+    color: var(--theme-secondary);
+    text-decoration: none;
   }
 </style>

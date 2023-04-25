@@ -6,17 +6,25 @@ type Props = HTMLAttributes<'div'>
 const { props } = Astro
 ---
 
-<div class="wrapper" {...props}>
-  <div>
+<div class="outer" {...props}>
+  <div class="inner">
     <slot />
   </div>
 </div>
 
 <style>
-  div.wrapper {
+  .outer {
     width: 100%;
     display: flex;
     align-items: center;
     padding: 0 12%;
+
+    @media (max-width: 50em) {
+      padding: 0 16px;
+    }
+  }
+
+  .inner {
+    max-width: 720px;
   }
 </style>
