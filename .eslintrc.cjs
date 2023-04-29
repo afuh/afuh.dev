@@ -1,3 +1,8 @@
+const jsRules = {
+  '@typescript-eslint/no-unused-vars': ['error'],
+  'no-console': 'error',
+}
+
 module.exports = {
   env: {
     node: true,
@@ -9,7 +14,6 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
   overrides: [
     {
       files: ['*.astro'],
@@ -18,18 +22,34 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.astro'],
       },
-      rules: {},
+      rules: jsRules,
     },
     {
       files: ['*.ts'],
       parser: '@typescript-eslint/parser',
       extends: ['plugin:@typescript-eslint/recommended'],
+      rules: jsRules,
+    },
+    {
+      files: ['*.d.ts'],
       rules: {
-        '@typescript-eslint/no-unused-vars': [
-          'error',
-          { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' },
-        ],
-        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/triple-slash-reference': 'off',
+      },
+    },
+    {
+      // Define the configuration for `<script>` tag.
+      // Script in `<script>` is assigned a virtual file name with the `.js` extension.
+      files: ['**/*.astro/*.js', '*.astro/*.js'],
+      env: {
+        browser: true,
+        es2020: true,
+      },
+      parserOptions: {
+        sourceType: 'module',
+      },
+      rules: {
+        // Prettier will be used as a `.astro` file.
+        'prettier/prettier': 'off',
       },
     },
   ],

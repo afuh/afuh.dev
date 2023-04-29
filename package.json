@@ -11,8 +11,9 @@
     "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview --host",
-    "test": "astro check",
+    "astro:check": "astro check",
     "astro": "astro",
+    "eslint": "eslint .",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -33,7 +34,11 @@
     "eslint-plugin-astro": "^0.26.1",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.7",
     "prettier-plugin-astro": "^0.8.0"
+  },
+  "lint-staged": {
+    "*.{astro,ts}": "eslint --cache --fix"
   }
 }
