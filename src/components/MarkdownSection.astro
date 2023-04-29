@@ -1,14 +1,22 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
+import { marked } from 'marked'
 
-type Props = HTMLAttributes<'section'>
+type Props = HTMLAttributes<'section'> & {
+  md: string
+}
 
-const { class: className, ...props } = Astro.props
+const { class: className, md, ...props } = Astro.props
+
+const renderer = {
+  link: (href: string, _title: string, text: string) =>
+    `<a href="${href}" ${href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`,
+}
+
+marked.use({ renderer })
 ---
 
-<section class:list={[className, 'md', 'markdown-section']} {...props}>
-  <slot />
-</section>
+<section class:list={[className, 'md', 'markdown-section']} {...props} set:html={marked.parse(md)} />
 
 <style is:global>
   .md p:last-child {

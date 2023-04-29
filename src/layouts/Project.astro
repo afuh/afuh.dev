@@ -1,0 +1,55 @@
+---
+import MarkdownSection from '../components/MarkdownSection.astro'
+
+type Props = {
+  content: string
+  url: string
+  codeUrl: string
+}
+
+const { content, url, codeUrl } = Astro.props
+const externalLink = { target: '_blank', rel: 'noopener noreferrer' }
+---
+
+<article>
+  <section class="links-wrapper">
+    <a class="link-strong" href={url} {...externalLink}>{url}</a>
+    <a class="link-strong" href={codeUrl} {...externalLink}>{codeUrl}</a>
+  </section>
+  <MarkdownSection md={content} />
+  <footer>
+    <hr />
+    <a class="link-strong" href="/" rel="prefetch">{'<-'} afuh.dev</a>
+  </footer>
+</article>
+
+<style>
+  .markdown-section,
+  hr {
+    margin-bottom: 32px;
+  }
+
+  .links-wrapper {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .links-wrapper a {
+    font-size: 1.5rem;
+    font-weight: normal;
+    padding-bottom: 8px;
+  }
+
+  footer hr {
+    display: block;
+    height: 1px;
+    background-color: var(--theme-border);
+    border-width: 0;
+  }
+
+  footer a {
+    padding-right: 64px;
+  }
+</style>

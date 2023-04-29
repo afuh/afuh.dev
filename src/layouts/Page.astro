@@ -1,19 +1,9 @@
 ---
-import '../styles/global.css'
-
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import { getSiteContent } from '../lib/contentful'
 import Main from '../components/Main.astro'
-
-export type SEO = {
-  description: string
-  image: {
-    url: string
-    contentType: string
-    size: { width: string; height: string }
-  }
-}
+import type { SEO } from '../types'
 
 type Props = {
   title?: string

@@ -1,5 +1,4 @@
 ---
-import { marked } from 'marked'
 import Page from '../layouts/Page.astro'
 import { getSiteContent } from '../lib/contentful'
 import MarkdownSection from '../components/MarkdownSection.astro'
@@ -9,7 +8,7 @@ const { description } = await getSiteContent()
 ---
 
 <Page>
-  <MarkdownSection set:html={marked.parse(description)} />
+  <MarkdownSection md={description} />
   <ProjectList />
 </Page>
 

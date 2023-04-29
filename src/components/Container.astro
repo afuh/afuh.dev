@@ -18,13 +18,15 @@ const { props } = Astro
     display: flex;
     align-items: center;
     padding: 0 12%;
+  }
 
-    @media (max-width: 50em) {
+  @media (max-width: 50em) {
+    .outer {
       padding: 0 16px;
     }
   }
 
   .inner {
-    max-width: 720px;
+    max-width: 1024px;
   }
 </style>

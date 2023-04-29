@@ -11,18 +11,17 @@
     "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview --host",
-    "check": "astro check",
+    "test": "astro check",
     "astro": "astro",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/image": "^0.16.6",
     "@astrojs/prefetch": "^0.2.1",
     "@astrojs/sitemap": "^1.2.2",
+    "@fontsource/jetbrains-mono": "^4.5.12",
     "astro": "^2.2.2",
     "contentful": "9.3.5",
-    "marked": "^4.3.0",
-    "sharp": "^0.32.0"
+    "marked": "^4.3.0"
   },
   "devDependencies": {
     "@types/marked": "^4.0.8",

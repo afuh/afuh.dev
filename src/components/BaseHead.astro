@@ -1,45 +1,33 @@
 ---
-import type { SEO } from '../layouts/Page.astro'
+import '@fontsource/jetbrains-mono'
+import '../styles/global.css'
+
 import { getSiteContent } from '../lib/contentful'
+import type { SEO } from '../types'
 
 export interface Props {
   title: string
   seo?: SEO
 }
 
-const { seoDescription } = await getSiteContent()
+const { seo: seoDefault } = await getSiteContent()
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-
-const seoDefault: SEO = {
-  description: seoDescription,
-  image: {
-    url: '/cover-720x360.jpg',
-    contentType: 'image/jpeg',
-    size: { width: '720', height: '360' },
-  },
-}
 
 const { title, seo = seoDefault } = Astro.props
 ---
 
 <head>
-  <!-- Global Metadata -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" />
-  <link rel="sitemap" href="/sitemap-index.xml" />
-  <meta name="generator" content={Astro.generator} />
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href={canonicalURL} />
-
-  <!-- Primary Meta Tags -->
   <title>{title}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="me" href="https://mastodon.art/@axelfuh" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="canonical" href={canonicalURL} />
   <meta name="title" content={title} />
   <meta name="description" content={seo.description} />
-
-  <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={Astro.url} />
@@ -49,8 +37,6 @@ const { title, seo = seoDefault } = Astro.props
   <meta property="og:image:type" content={seo.image.contentType} />
   <meta property="og:image:width" content={seo.image.size.width} />
   <meta property="og:image:height" content={seo.image.size.height} />
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content={Astro.url} />
   <meta property="twitter:title" content={title} />

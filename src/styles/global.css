@@ -14,8 +14,14 @@
 
 html {
  	box-sizing: border-box;
- 	font-size: 10px;
+ 	font-size: 14px;
  }
+
+@media (max-width: 50em) {
+	html {
+		font-size: 10px;
+	}
+}
 
  *,
  *:before,
@@ -28,20 +34,18 @@ body {
 	background: var(--theme-secondary);
 	padding: 0;
 	margin: 0;
-	font-size: 1.5rem;
-	letter-spacing: 0.02rem;
-	font-variant-ligatures: none;
 	text-rendering: optimizelegibility;
 	-webkit-font-smoothing: antialiased;
 	text-decoration-skip-ink: auto;
-	font-family: -apple-system,
+	font-family: "JetBrains Mono",
+		-apple-system,
 		BlinkMacSystemFont,
 		Segoe UI,
 		Oxygen-Sans,
 		Ubuntu,
 		Cantarell,
 		Helvetica Neue,
-		sans-serif
+		sans-serif;
 }
 
 ::selection {
@@ -62,5 +66,5 @@ a:hover, a:focus, a:active {
 .link-strong {
 	color: var(--theme-primary);
 	font-size: 1.7rem;
-	font-weight: 700;
+	font-weight: bold;
 }
