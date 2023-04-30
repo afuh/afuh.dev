@@ -1,11 +1,11 @@
-:root {
+:root.theme-light {
 	color-scheme: light;
 	--theme-primary: #212129;
 	--theme-secondary: #fefefe;
 	--theme-border: #edeaea;
 }
 
-:root.theme-dark {
+:root {
 	color-scheme: dark;
 	--theme-primary: #fefefe;
 	--theme-secondary: #212129;

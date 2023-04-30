@@ -48,9 +48,9 @@ const { title, seo = seoDefault } = Astro.props
     const root = document.documentElement
 
     if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      root.classList.remove('theme-dark')
+      root.classList.add('theme-light')
     } else {
-      root.classList.add('theme-dark')
+      root.classList.remove('theme-light')
     }
   </script>
 </head>
