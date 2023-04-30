@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import { getSiteContent } from '../lib/contentful'
+import Main from '../components/Main.astro'
+import type { SEO } from '../types'
+
+type Props = {
+  title?: string
+  seo?: SEO
+}
+
+const siteContent = await getSiteContent()
+
+const { title = siteContent.title, seo } = Astro.props
+---
+
+<html lang="en">
+  <BaseHead title={title} seo={seo} />
+  <body>
+    <Header title={title} />
+    <Main>
+      <slot />
+    </Main>
+  </body>
+</html>

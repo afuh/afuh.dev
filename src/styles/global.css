@@ -1,0 +1,70 @@
+:root.theme-light {
+	color-scheme: light;
+	--theme-primary: #212129;
+	--theme-secondary: #fefefe;
+	--theme-border: #edeaea;
+}
+
+:root {
+	color-scheme: dark;
+	--theme-primary: #fefefe;
+	--theme-secondary: #212129;
+	--theme-border: #31313e;
+}
+
+html {
+ 	box-sizing: border-box;
+ 	font-size: 14px;
+ }
+
+@media (max-width: 50em) {
+	html {
+		font-size: 10px;
+	}
+}
+
+ *,
+ *:before,
+ *:after {
+ 	box-sizing: inherit;
+ }
+
+body {
+	color: var(--theme-primary);
+	background: var(--theme-secondary);
+	padding: 0;
+	margin: 0;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	text-decoration-skip-ink: auto;
+	font-family: "JetBrains Mono",
+		-apple-system,
+		BlinkMacSystemFont,
+		Segoe UI,
+		Oxygen-Sans,
+		Ubuntu,
+		Cantarell,
+		Helvetica Neue,
+		sans-serif;
+}
+
+::selection {
+	color: var(--theme-secondary);
+	background-color: var(--theme-primary);
+}
+
+a {
+	text-decoration: none;
+	color: var(--theme-primary);
+}
+
+a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: #9F9FA3;
+}
+
+.link-strong {
+	color: var(--theme-primary);
+	font-size: 1.7rem;
+	font-weight: bold;
+}

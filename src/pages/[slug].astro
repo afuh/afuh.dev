@@ -1,0 +1,36 @@
+---
+import { getProjects } from '../lib/contentful'
+
+import Page from '../layouts/Page.astro'
+import Project from '../components/Project.astro'
+import type { SEO } from '../types'
+
+type Props = {
+  title: string
+  content: string
+  url: string
+  codeUrl: string
+  seo: SEO
+}
+
+export const getStaticPaths = async () => {
+  const projects = await getProjects()
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: {
+      title: project.title,
+      content: project.content,
+      url: project.url,
+      codeUrl: project.codeUrl,
+      seo: project.seo,
+    },
+  }))
+}
+
+const { title, content, url, codeUrl, seo } = Astro.props
+---
+
+<Page title={title} seo={seo}>
+  <Project content={content} url={url} codeUrl={codeUrl} />
+</Page>

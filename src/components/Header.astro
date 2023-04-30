@@ -1,0 +1,36 @@
+---
+import Container from './Container.astro'
+
+type Props = {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<Container component="header">
+  <h1>{title}</h1>
+</Container>
+
+<style>
+  header {
+    margin-top: 100px;
+  }
+
+  h1 {
+    font-size: 5.4rem;
+    font-weight: bold;
+    color: var(--theme-primary);
+    margin: 0;
+  }
+
+  @media (max-width: 50em) {
+    header {
+      margin-top: 16px;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+  }
+</style>

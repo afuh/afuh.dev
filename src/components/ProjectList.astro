@@ -1,0 +1,35 @@
+---
+import { getProjects } from '../lib/contentful'
+
+const projects = await getProjects()
+---
+
+<section>
+  <ul>
+    {
+      projects.map(({ title, slug }) => (
+        <li>
+          <a class="link-strong" href={`/${slug}`} rel="prefetch">
+            {title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    margin: 16px 0;
+  }
+
+  li .link-strong {
+    font-size: 2.4rem;
+  }
+</style>

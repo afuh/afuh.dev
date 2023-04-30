@@ -1,0 +1,19 @@
+---
+import Page from '../layouts/Page.astro'
+import { getSiteContent } from '../lib/contentful'
+import MarkdownSection from '../components/MarkdownSection.astro'
+import ProjectList from '../components/ProjectList.astro'
+
+const { description } = await getSiteContent()
+---
+
+<Page>
+  <MarkdownSection md={description} />
+  <ProjectList />
+</Page>
+
+<style>
+  .markdown-section {
+    margin: 16px 0 64px;
+  }
+</style>

@@ -1,6 +1,0 @@
-export { Inner } from './containers'
-export { List } from './list'
-export { MarkdownWrapper } from './markdownWrapper'
-export { ExternalLink } from './externalLink'
-export { Button } from './button'
-export { SEO } from './seo'
