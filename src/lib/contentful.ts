@@ -16,7 +16,6 @@ type ContentfulProject = ContentfulSEO & {
 
 type ContentfulSiteContent = ContentfulSEO & {
   title: string
-  shortDescription: string
   description: string
 }
 
@@ -62,7 +61,6 @@ export const getSiteContent = async () => {
 
   return {
     title: fields.title,
-    shortDescription: fields.shortDescription,
     description: fields.description,
     seo: getSEO(fields),
   }

@@ -1,20 +1,15 @@
 ---
 import Container from './Container.astro'
-import { getSiteContent } from '../lib/contentful'
 
 type Props = {
-  title?: string
+  title: string
 }
 
-const siteContent = await getSiteContent()
-
-const { title = siteContent.title } = Astro.props
-const isHome = Astro.url.pathname === '/'
+const { title } = Astro.props
 ---
 
 <Container component="header">
   <h1>{title}</h1>
-  {isHome && <h2>{siteContent.shortDescription}</h2>}
 </Container>
 
 <style>
@@ -22,19 +17,11 @@ const isHome = Astro.url.pathname === '/'
     margin-top: 100px;
   }
 
-  h1,
-  h2 {
+  h1 {
+    font-size: 5.4rem;
     font-weight: bold;
     color: var(--theme-primary);
     margin: 0;
-  }
-
-  h1 {
-    font-size: 5.4rem;
-  }
-
-  h2 {
-    font-size: 2rem;
   }
 
   @media (max-width: 50em) {
