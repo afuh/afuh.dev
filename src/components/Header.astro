@@ -12,18 +12,14 @@ const { title = siteContent.title } = Astro.props
 const isHome = Astro.url.pathname === '/'
 ---
 
-<header>
-  <Container>
-    <h1>{title}</h1>
-    {isHome && <h2>{siteContent.shortDescription}</h2>}
-  </Container>
-</header>
+<Container component="header">
+  <h1>{title}</h1>
+  {isHome && <h2>{siteContent.shortDescription}</h2>}
+</Container>
 
 <style>
   header {
-    display: flex;
-    justify-content: center;
-    background: var(--theme-secondary);
+    margin-top: 100px;
   }
 
   h1,
@@ -34,18 +30,20 @@ const isHome = Astro.url.pathname === '/'
   }
 
   h1 {
-    margin-top: 100px;
     font-size: 5.4rem;
-  }
-
-  @media (max-width: 50em) {
-    h1 {
-      margin-top: 16px;
-      font-size: 4rem;
-    }
   }
 
   h2 {
     font-size: 2rem;
+  }
+
+  @media (max-width: 50em) {
+    header {
+      margin-top: 16px;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
   }
 </style>

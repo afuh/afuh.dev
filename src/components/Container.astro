@@ -1,32 +1,29 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLTag } from 'astro/types'
 
-type Props = HTMLAttributes<'div'>
+type Props = {
+  component?: HTMLTag
+  class?: string
+}
 
-const { props } = Astro
+const { component, class: className, ...props } = Astro.props
+const Component = component || 'div'
 ---
 
-<div class="outer" {...props}>
-  <div class="inner">
-    <slot />
-  </div>
-</div>
-
+<Component class:list={['container', className]} {...props}>
+  <slot />
+</Component>
 <style>
-  .outer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 12%;
+  .container {
+    max-width: 1024px;
+    margin-left: 12%;
+    margin-right: 12%;
   }
 
   @media (max-width: 50em) {
-    .outer {
-      padding: 0 16px;
+    .container {
+      margin-left: 16px;
+      margin-right: 16px;
     }
-  }
-
-  .inner {
-    max-width: 1024px;
   }
 </style>
