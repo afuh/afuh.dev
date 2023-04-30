@@ -5,7 +5,7 @@ export const useSiteContent = () => {
     graphql`
       {
         content: contentfulSiteContent {
-          personalIntro {
+          description {
             md: childMarkdownRemark {
               html
               excerpt(pruneLength: 120)

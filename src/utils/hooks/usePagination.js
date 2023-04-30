@@ -4,7 +4,7 @@ import { useLocation } from '@reach/router'
 
 const query = graphql`
   {
-    contentfulProjectList(category: { eq: "Open Source" }) {
+    contentfulProjectList {
       projects {
         slug
       }

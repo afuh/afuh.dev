@@ -52,14 +52,14 @@ const Heading = () => {
 }
 
 const IndexPage = ({ data }) => {
-  const { personalIntro } = useSiteContent()
+  const { description } = useSiteContent()
 
   return (
     <Layout heading={<Heading />}>
       <Wrapper>
         <Inner css={{ flexDirection: 'column', alignItems: 'flex-start' }}>
           <MarkdownWrapper
-            dangerouslySetInnerHTML={{ __html: personalIntro.md.html }}
+            dangerouslySetInnerHTML={{ __html: description.md.html }}
             css={{ paddingBottom: 32, marginTop: 0 }}
           />
           <List data={data.contentfulProjectList.projects} />
@@ -81,7 +81,7 @@ export const Head = () => <SEO />
 
 export const pageQuery = graphql`
   query HOME_QUERY {
-    contentfulProjectList(category: { eq: "Open Source" }) {
+    contentfulProjectList {
       projects {
         ...projectInfo
       }

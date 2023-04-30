@@ -43,7 +43,7 @@ export const pageQuery = graphql`
       ...projectInfo
       url
       code
-      image {
+      image: seoImage {
         gatsbyImageData(placeholder: BLURRED)
         file {
           url

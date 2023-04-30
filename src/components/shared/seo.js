@@ -7,11 +7,11 @@ const checkUrl = (url) => (url.match(/^https/i) ? url : 'https:' + url)
 
 export const SEO = ({ title, description, image, pathname }) => {
   const { title: defaultTitle, image: defaultImage, siteUrl } = useSiteMeta()
-  const { personalIntro } = useSiteContent()
+  const { description: contentfulDescription } = useSiteContent()
 
   const seo = {
     title: title || defaultTitle,
-    description: description || personalIntro.md.excerpt,
+    description: description || contentfulDescription.md.excerpt,
     url: `${siteUrl}${pathname || ''}`,
     image: {
       url: image ? checkUrl(image.url) : `${siteUrl}${defaultImage}`,
