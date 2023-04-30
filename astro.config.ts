@@ -4,6 +4,6 @@ import prefetch from '@astrojs/prefetch'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://afuh.dev',
+  site: 'https://afuh.dev/',
   integrations: [sitemap(), prefetch()],
 })
