@@ -13,7 +13,7 @@ const renderer = {
     `<a href="${href}" ${href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`,
 }
 
-marked.use({ renderer })
+marked.use({ renderer, mangle: false, headerIds: false })
 ---
 
 <section class:list={[className, 'md', 'markdown-section']} {...props} set:html={marked.parse(md)} />
