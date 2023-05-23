@@ -1,13 +1,10 @@
 ---
-import type { HTMLTag } from 'astro/types'
+import type { HTMLTag, Polymorphic } from 'astro/types'
 
-type Props = {
-  component?: HTMLTag
-  class?: string
-}
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>
 
-const { component, class: className, ...props } = Astro.props
-const Component = component || 'div'
+const { as, class: className, ...props } = Astro.props
+const Component = as || 'div'
 ---
 
 <Component class:list={['container', className]} {...props}>
