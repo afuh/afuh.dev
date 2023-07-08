@@ -7,4 +7,7 @@ export default defineConfig({
   site: 'https://afuh.dev/',
   integrations: [sitemap(), prefetch()],
   compressHTML: true,
+  build: {
+    inlineStylesheets: 'auto',
+  },
 })
