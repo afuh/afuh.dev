@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 import { marked } from 'marked'
+import type { Renderer } from 'marked'
 
 type Props = HTMLAttributes<'section'> & {
   md: string
@@ -8,8 +9,8 @@ type Props = HTMLAttributes<'section'> & {
 
 const { class: className, md, ...props } = Astro.props
 
-const renderer = {
-  link: (href: string, _title: string, text: string) =>
+const renderer: { link: Renderer['link'] } = {
+  link: (href, _, text) =>
     `<a href="${href}" ${href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`,
 }
 
