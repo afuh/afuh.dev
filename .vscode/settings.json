@@ -7,5 +7,6 @@
   "eslint.validate": [
     "astro",
     "javascript",
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
