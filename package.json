@@ -17,27 +17,26 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/check": "^0.2.0",
-    "@astrojs/prefetch": "^0.4.1",
-    "@astrojs/sitemap": "^3.0.1",
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/sitemap": "^3.0.3",
+    "@fontsource/jetbrains-mono": "^5.0.17",
+    "astro": "^3.5.5",
     "autoprefixer": "^10.4.16",
-    "@fontsource/jetbrains-mono": "^5.0.14",
-    "astro": "^3.2.3",
     "contentful": "9.3.5",
-    "marked": "^9.1.0",
+    "marked": "^10.0.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
-    "eslint": "^8.51.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-astro": "^0.29.1",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0"
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2"
   },
   "lint-staged": {
     "*.{astro,ts}": "eslint --cache --fix"
