@@ -9,7 +9,7 @@ const projects = await getProjects()
     {
       projects.map(({ title, slug }) => (
         <li>
-          <a class="link-strong" href={`/${slug}`} rel="prefetch-intent">
+          <a class="link-strong" href={`/${slug}`} data-astro-prefetch>
             {title}
           </a>
         </li>
