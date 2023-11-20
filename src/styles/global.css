@@ -62,9 +62,3 @@ a:hover, a:focus, a:active {
 	text-decoration: none;
 	color: #9F9FA3;
 }
-
-.link-strong {
-	color: var(--theme-primary);
-	font-size: 1.7rem;
-	font-weight: bold;
-}

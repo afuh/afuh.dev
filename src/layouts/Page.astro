@@ -1,26 +1,63 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import { getSiteContent } from '../lib/contentful'
-import Main from '../components/Main.astro'
-import type { SEO } from '../types'
+import Base, { type SEOImage } from './Base.astro'
 
 type Props = {
   title?: string
-  seo?: SEO
+  description?: string
+  seoImage?: SEOImage
 }
 
-const siteContent = await getSiteContent()
-
-const { title = siteContent.title, seo } = Astro.props
+const {
+  title = 'Axel Fuhrmann',
+  description = "Hi 👋 I'm Axel, a Software Engineer based in Berlin. I'm currently working at UP42 as a Staff Frontend Engineer.",
+  seoImage,
+} = Astro.props
 ---
 
-<html lang="en">
-  <BaseHead title={title} seo={seo} />
-  <body>
-    <Header title={title} />
-    <Main>
-      <slot />
-    </Main>
-  </body>
-</html>
+<Base title={title} description={description} seoImage={seoImage}>
+  <header class="container">
+    <h1>{title}</h1>
+  </header>
+  <main class="container">
+    <slot />
+  </main>
+</Base>
+
+<style>
+  main {
+    padding: 16px 0 80px;
+  }
+  header {
+    margin-top: 80px;
+  }
+
+  h1 {
+    font-size: 5.4rem;
+    font-weight: bold;
+    color: var(--theme-primary);
+    margin: 0;
+  }
+
+  @media (max-width: 50em) {
+    header {
+      margin-top: 16px;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  .container {
+    max-width: 1024px;
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+
+  @media (max-width: 50em) {
+    .container {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+</style>
