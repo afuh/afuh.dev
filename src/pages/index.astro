@@ -1,19 +1,50 @@
 ---
 import Page from '../layouts/Page.astro'
-import { getSiteContent } from '../lib/contentful'
-import MarkdownSection from '../components/MarkdownSection.astro'
-import ProjectList from '../components/ProjectList.astro'
+import Link from '../components/Link.astro'
+import SectionContent from '../components/SectionContent.astro'
 
-const { description } = await getSiteContent()
+const mdContent = await Astro.glob('./*.md')
+const projects = mdContent.map(({ frontmatter, url }) => ({
+  title: frontmatter.title,
+  sort: frontmatter.sort,
+  slug: url || '',
+}))
 ---
 
 <Page>
-  <MarkdownSection md={description} />
-  <ProjectList />
+  <SectionContent style={{ margin: '16px 0 64px' }}>
+    <p>
+      Hi 👋<br />
+       I'm Axel, a Software Engineer based in Berlin. I'm currently working at <Link href="https://up42.com">UP42</Link>
+       as a Staff Frontend Engineer. You can visit my <Link href="https://github.com/afuh">GitHub</Link> profile to
+      check my current work.
+    </p>
+  </SectionContent>
+  <section>
+    <ul>
+      {
+        projects
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ title, slug }) => (
+            <li>
+              <Link href={slug} style={{ fontSize: '2.4rem' }}>
+                {title}
+              </Link>
+            </li>
+          ))
+      }
+    </ul>
+  </section>
 </Page>
 
 <style>
-  .markdown-section {
-    margin: 16px 0 64px;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    margin: 16px 0;
   }
 </style>

@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<'section'>
+
+const { class: className, ...props } = Astro.props
+---
+
+<section class:list={['section-content', className]} {...props}>
+  <slot />
+</section>
+
+<style is:global>
+  .section-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-content p {
+    margin-top: 0;
+    font-size: 1.8rem;
+    <line-height: 1.7;
+  }
+
+  .section-content a {
+    text-decoration: underline;
+  }
+
+  .section-content a:hover,
+  .section-content a:active,
+  .section-content a:focus {
+    background: var(--theme-primary);
+    color: var(--theme-secondary);
+    text-decoration: none;
+  }
+</style>

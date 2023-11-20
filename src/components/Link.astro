@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<'a'>
+
+const { href, ...attrs } = Astro.props
+
+const isExternal = (href: Props['href']) => href?.toString().startsWith('https')
+---
+
+<a
+  {...attrs}
+  href={href}
+  data-astro-prefetch={!isExternal(href) ? true : undefined}
+  target={isExternal(href) ? '_blank' : undefined}
+  rel={isExternal(href) ? 'noopener noreferrer' : undefined}><slot /></a
+>
+
+<style>
+  a {
+    color: var(--theme-primary);
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+import SectionContent from '../components/SectionContent.astro'
+import Page from './Page.astro'
+import Link from '../components/Link.astro'
+const { frontmatter } = Astro.props
+
+const images = await Astro.glob('../assets/*')
+const seoImage = images.find((data) => data.default?.src?.includes(frontmatter.url))
+---
+
+<Page
+  title={frontmatter.title}
+  description={frontmatter.description}
+  seoImage={{
+    url: seoImage?.default.src,
+    contentType: seoImage?.default.format,
+    size: {
+      width: seoImage?.default.width,
+      height: seoImage?.default.height,
+    },
+  }}
+>
+  <section class="links-wrapper">
+    <Link href={frontmatter.projectUrl}>{frontmatter.projectUrl}</Link>
+    <Link href={frontmatter.codeUrl}>{frontmatter.codeUrl}</Link>
+  </section>
+  <SectionContent>
+    <slot />
+  </SectionContent>
+  <footer>
+    <hr />
+    <Link href="/">{'<-'} afuh.dev</Link>
+  </footer>
+</Page>
+
+<style>
+  .section-content,
+  hr {
+    margin-bottom: 32px;
+  }
+
+  .links-wrapper {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .links-wrapper a {
+    font-size: 1.5rem;
+    font-weight: normal;
+    padding-bottom: 8px;
+  }
+
+  footer hr {
+    display: block;
+    height: 1px;
+    background-color: var(--theme-border);
+    border-width: 0;
+  }
+
+  footer a {
+    padding-right: 64px;
+  }
+</style>
