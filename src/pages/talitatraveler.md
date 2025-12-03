@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Project.astro
 title: Talita Traveler
-projectUrl: https://talitatraveler.com
+projectUrl: https://talitatraveler.netlify.app
 codeUrl: https://github.com/afuh/talitatraveler
 description: Explore Talitatraveler, a long-standing personal blog with a mix of short stories, poems, and witty content.
 sort: 2

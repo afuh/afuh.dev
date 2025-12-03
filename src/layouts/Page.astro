@@ -1,10 +1,11 @@
 ---
-import Base, { type SEOImage } from './Base.astro'
+import type { ImageMetadata } from 'astro'
+import Base from './Base.astro'
 
 type Props = {
   title?: string
   description?: string
-  seoImage?: SEOImage
+  seoImage?: ImageMetadata
 }
 
 const {
