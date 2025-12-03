@@ -14,10 +14,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.1",
-    "@astrojs/sitemap": "^3.0.3",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/sitemap": "3.6.0",
     "@fontsource/jetbrains-mono": "^5.0.17",
-    "astro": "^3.5.5",
+    "astro": "^5.16.3",
     "autoprefixer": "^10.4.16",
     "typescript": "^5.2.2",
     "unist-util-visit": "^5.0.0"
