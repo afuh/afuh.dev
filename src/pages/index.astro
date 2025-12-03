@@ -1,9 +1,15 @@
 ---
+import type { MarkdownInstance } from 'astro'
 import Page from '../layouts/Page.astro'
 import Link from '../components/Link.astro'
 import SectionContent from '../components/SectionContent.astro'
 
-const mdContent = await Astro.glob('./*.md')
+interface Frontmatter {
+  title: string
+  sort: number
+}
+
+const mdContent = Object.values(import.meta.glob<MarkdownInstance<Frontmatter>>('./*.md', { eager: true }))
 const projects = mdContent.map(({ frontmatter, url }) => ({
   title: frontmatter.title,
   sort: frontmatter.sort,
@@ -15,9 +21,9 @@ const projects = mdContent.map(({ frontmatter, url }) => ({
   <SectionContent style={{ margin: '16px 0 64px' }}>
     <p>
       Hi 👋<br />
-       I'm Axel, a Software Engineer based in Berlin. I'm currently working at <Link href="https://up42.com">UP42</Link>
-       as a Staff Frontend Engineer. You can visit my <Link href="https://github.com/afuh">GitHub</Link> profile to
-      check my current work.
+      I'm Axel, a Software Engineer based in Berlin. I'm currently working at <Link href="https://up42.com">UP42</Link>
+      as a Staff Frontend Engineer. You can visit my <Link href="https://github.com/afuh">GitHub</Link> profile to check my
+      current work.
     </p>
   </SectionContent>
   <section>
